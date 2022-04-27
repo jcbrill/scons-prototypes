@@ -16,7 +16,7 @@ else:
 
 ###
 
-_CACHE_FILENAME_WARN_NOEXTENSION = True
+_CACHE_FILENAME_WARN_NOEXTENSION = False
 
 _CACHE_FILENAME_DEFAULT = '.scons_msvc_cache.json'
 
@@ -34,6 +34,7 @@ def config_cache_filename(cache_config):
         # two passes at most to strip leading spaces and/or double quotes
         for n in range(2):
 
+            # save starting string
             cache_orig = cache_config
 
             # remove leading/trailing spaces
@@ -92,7 +93,7 @@ def config_cache_filename(cache_config):
             # warn if no extension: directory intended?
             _, ext = os.path.splitext(tail)
             if not ext:
-                # not scons: need to convert
+                # NOT AN SCONS WARNING: need to change
                 warnings.warn("cache file name does not have an extension {} ({})".format(repr(tail), repr(cache_config)))
 
         if head and not os.path.exists(head):
