@@ -1,37 +1,41 @@
 import os
 import os.path
-import warnings
 
-DEBUG = True
+def debug_on(message, *args):
+    if args:
+        print(message % args)
+    else:
+        print(message)
 
-if DEBUG:
-    def debug(message, *args):
-        if args:
-            print(message % args)
-        else:
-            print(message)
-else:
-    def debug(message, *args):
-        pass
+def debug_off(message, *args):
+    pass
 
-###
+debug = None
+def _set_debug(debugging):
+    global debug
+    debug = debug_on if debugging else debug_off
 
-_CACHE_FILENAME_WARN_NOEXTENSION = False
+### BEGIN SCONS COMPATIBLE CODE ###
+
+_CACHE_FILENAME_DOUBLEQUOTES_ALLOWED = True
 
 _CACHE_FILENAME_DEFAULT = '.scons_msvc_cache.json'
 
-def config_cache_filename(cache_config):
+def _config_cache_filename(cache_config):
 
     # A non-None return value does not mean that the file can be succesfully opened
     # as the user-defined request may contain characters that are illegal in a windows
-    # path and/or filename.  It simply means there is a candidate file name to attempt
-    # to open.
+    # path and/or filename, the destination may not be readable and/or writable (permissions,
+    # read-only, etc.).  It simply means there is a candidate file name to attempt to
+    # open for reading and writing.
 
     cache_filename = None
 
+    debug('cache_config=%s [input]', repr(cache_config))
+
     if cache_config:
 
-        # two passes at most to strip leading spaces and/or double quotes
+        # at most two passes to strip leading spaces and/or double quotes
         for n in range(2):
 
             # save starting string
@@ -40,6 +44,10 @@ def config_cache_filename(cache_config):
             # remove leading/trailing spaces
             cache_config = cache_config.strip()
             if not cache_config:
+                break
+
+            # exit loop if double quotes not expected
+            if not _CACHE_FILENAME_DOUBLEQUOTES_ALLOWED:
                 break
 
             # remove leading/trailing double quotes
@@ -69,6 +77,10 @@ def config_cache_filename(cache_config):
         debug('cache_config=%s [boolean false], cache_filename=%s', repr(cache_config), repr(cache_filename))
         return cache_filename
 
+    # process path: resolve home path and symlinks (necessary?)
+    cache_config = os.path.expanduser(cache_config)
+    cache_config = os.path.realpath(cache_config)
+
     if os.path.exists(cache_config):
         # existing directory or file
 
@@ -89,13 +101,6 @@ def config_cache_filename(cache_config):
     if tail:
         # use tail as filename
 
-        if _CACHE_FILENAME_WARN_NOEXTENSION:
-            # warn if no extension: directory intended?
-            _, ext = os.path.splitext(tail)
-            if not ext:
-                # NOT AN SCONS WARNING: need to change
-                warnings.warn("cache file name does not have an extension {} ({})".format(repr(tail), repr(cache_config)))
-
         if head and not os.path.exists(head):
             # head does not exist: missing path components
             debug('cache config=%s [head invalid=%s, tail=%s], cache_filename=%s', repr(cache_config), repr(head), repr(tail), repr(cache_filename))
@@ -110,19 +115,40 @@ def config_cache_filename(cache_config):
     debug('cache config=%s [head invalid=%s, tail=%s], cache_filename=%s', repr(cache_config), repr(head), repr(tail), repr(cache_filename))
     return cache_filename
 
-CONFIG_CACHE = config_cache_filename(os.environ.get('SCONS_CACHE_MSVC_CONFIG'))
-
-###
+### END SCONS COMPATIBLE CODE ###
 
 if __name__ == '__main__':
 
-    for test_value in [
+    import argparse
+
+    parser = argparse.ArgumentParser()
+
+    debug_group = parser.add_mutually_exclusive_group()
+    debug_group.add_argument('--debug', action='store_const', dest='debugging', const=True, help='display debugging messages')
+    debug_group.add_argument('--nodebug', action='store_const', dest='debugging', const=False, help='suppress debugging messages')
+
+    parser.set_defaults(debugging=True)
+
+    args = parser.parse_args()
+
+    _set_debug(args.debugging)
+
+    for cache_config in [
+
+        os.environ.get('SCONS_CACHE_MSVC_CONFIG'),
+
+        '~', # use default file name
+        '~\\scons_msvc_cache.json', # use specified file name
+        '~\\.mycachefile', # use specified file name
+        '~\\folderdoesnotexist\\.mycachefile', # head does not exist
 
         None, '', '  "  "  ',
 
         '|*<>', # cache file is an illegal filename
+        '~\\|*<>', # cache file is an illegal filename
+        'C:\\Windows\\Temp\\|*<>', # cache file is an illegal filename
 
-        '1', 'True', 'true', 'TRUE', '"1"', ' "True" ', ' " TRUE " ',      # enabled via boolean symbol
+        '1', 'True',  'true',  'TRUE',  '"1"', ' "True" ',  ' " TRUE " ',  # enabled via boolean symbol
         '0', 'False', 'false', 'FALSE', '"0"', ' "False" ', ' " False " ', # disabled via boolean symbol
 
         os.path.expanduser('~'),
@@ -131,7 +157,7 @@ if __name__ == '__main__':
         '.',
         '..\\..\\..\\..\\..', # this works even though too many directories (abspath reports root)
 
-        '.\\.mycachefile', '.\\mycachefile', # head exists, tail defined: cache file (warning no extension) 
+        '.\\.mycachefile', '.\\mycachefile', # head exists, tail defined: cache file
         '.\\mycachefile.txt', # head exists, tail defined: cache file
 
         '.\\folderdoesnotexist\\subdir\\', # head does not exist, tail undefined
@@ -145,7 +171,7 @@ if __name__ == '__main__':
         '  "  ' + r'C:\Windows\Temp' + '  "  ',       # C:\Windows\Temp folder exists, cache filename = C:\Windows\Temp\.scons_msvc_cache.json
 
     ]:
-        print("")
-        print("INPUT: {}".format(repr(test_value)))
-        print("OUTPUT: {}".format(repr(config_cache_filename(test_value))))
+        print("\nINPUT: {}".format(repr(cache_config)))
+        print("OUTPUT: {}".format(repr(_config_cache_filename(cache_config))))
+
 
