@@ -87,12 +87,12 @@ def _config_cache_filename(cache_config):
         if os.path.isfile(cache_config):
             # existing filename
             cache_filename = cache_config
-            debug('cache config=%s [file exists], cache_filename=%s', repr(cache_config), repr(cache_filename))
+            debug('cache_config=%s [file exists], cache_filename=%s', repr(cache_config), repr(cache_filename))
             return cache_filename
 
         # existing path: use default filename
         cache_filename = os.path.join(cache_config, _CACHE_FILENAME_DEFAULT)
-        debug('cache config=%s [path exists], cache_filename=%s', repr(cache_config), repr(cache_filename))
+        debug('cache_config=%s [path exists], cache_filename=%s', repr(cache_config), repr(cache_filename))
         return cache_filename
 
     # specified directory or file does not exist
@@ -103,16 +103,16 @@ def _config_cache_filename(cache_config):
 
         if head and not os.path.exists(head):
             # head does not exist: missing path components
-            debug('cache config=%s [head invalid=%s, tail=%s], cache_filename=%s', repr(cache_config), repr(head), repr(tail), repr(cache_filename))
+            debug('cache_config=%s [head invalid=%s, tail=%s], cache_filename=%s', repr(cache_config), repr(head), repr(tail), repr(cache_filename))
             return cache_filename
 
         # head (undefined or exists)
         cache_filename = cache_config
-        debug('cache config=%s [head valid=%s, tail=%s], cache_filename=%s', repr(cache_config), repr(head), repr(tail), repr(cache_filename))
+        debug('cache_config=%s [head valid=%s, tail=%s], cache_filename=%s', repr(cache_config), repr(head), repr(tail), repr(cache_filename))
         return cache_filename
 
     # head defined and tail not defined: directory that does not exist
-    debug('cache config=%s [head invalid=%s, tail=%s], cache_filename=%s', repr(cache_config), repr(head), repr(tail), repr(cache_filename))
+    debug('cache_config=%s [head invalid=%s, tail=%s], cache_filename=%s', repr(cache_config), repr(head), repr(tail), repr(cache_filename))
     return cache_filename
 
 ### END SCONS COMPATIBLE CODE ###
