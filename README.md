@@ -1,2 +1,2 @@
-# scons-snippets
-SCons code snippets and throwaway scripts
+# scons-prototypes
+SCons throwaway code snippets, fragments, and scripts
