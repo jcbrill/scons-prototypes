@@ -8,6 +8,7 @@ import textwrap
 
 COMSPEC = r'C:\Windows\system32\cmd.exe'
 POWERSHELL = r'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe'
+WHERE = r'C:\Windows\system32\where.exe'
 
 for MSVC_BATCH in [
     # VS2022 Community default location
@@ -167,6 +168,10 @@ if not os.path.exists(POWERSHELL):
     errmsg = f'Powershell path not found: {repr(POWERSHELL)}'
     raise RuntimeError(errmsg)
 
+if not os.path.exists(WHERE):
+    errmsg = f'Cmd path not found: {repr(WHERE)}'
+    raise RuntimeError(errmsg)
+
 if not os.path.exists(MSVC_BATCH):
     errmsg = f'MSVC batch path not found: {repr(MSVC_BATCH)}'
     raise RuntimeError(errmsg)
@@ -188,9 +193,10 @@ def call_subprocess(cmd, env, test='Test', prefix='', subprocess_method=None):
 
     print()
     print(textwrap.indent(test, prefix=indent0))
-    print(textwrap.indent('COMSPEC:', prefix=indent1))
-    print(textwrap.indent("os.environ['COMSPEC'] = {}".format(os.environ['COMSPEC']), prefix=indent2))
-    print(textwrap.indent("env['COMSPEC'] = {}".format(env['COMSPEC']), prefix=indent2))
+    print(textwrap.indent('CONFIGURATION:', prefix=indent1))
+    print(textwrap.indent("os.environ['COMSPEC'] = {}".format(os.environ.get('COMSPEC')), prefix=indent2))
+    print(textwrap.indent("env['COMSPEC'] = {}".format(env.get('COMSPEC')), prefix=indent2))
+    print(textwrap.indent("where.exe = {}".format(WHERE), prefix=indent2))
     print(textwrap.indent('COMMAND:', prefix=indent1))
     print(textwrap.indent(cmd, prefix=indent2))
     print(textwrap.indent('METHOD:', prefix=indent1))
@@ -214,20 +220,35 @@ def call_subprocess(cmd, env, test='Test', prefix='', subprocess_method=None):
 
 ### Run all tests
 
-cmd = f'"{MSVC_BATCH}" amd64 & set COMSPEC'
+cmd = f'"{MSVC_BATCH}" amd64 & set COMSPEC & where cl.exe'
 
 env = dict(os.environ)
 
 count = 0
 for subprocess_method, kind in subprocess_methods[SUBPROCESS_METHOD.lower()]:
     for os_comspec, env_comspec, label in [
-        (POWERSHELL, COMSPEC,    'TEST {} {} (os=ps, env=cmd):'),
-        (COMSPEC,    POWERSHELL, 'TEST {} {} (os=cmd, env=ps):'),
-        (POWERSHELL, POWERSHELL, 'TEST {} {} (os=ps, env=ps):'),
+
+        (None,       None,       'TEST {} {} (os=None, env=None):'),
+        (None,       COMSPEC,    'TEST {} {} (os=None, env=cmd):'),
+        (None,       POWERSHELL, 'TEST {} {} (os=None, env=ps):'),
+
+        (COMSPEC,    None,       'TEST {} {} (os=cmd, env=None):'),
         (COMSPEC,    COMSPEC,    'TEST {} {} (os=cmd, env=cmd):'),
+        (COMSPEC,    POWERSHELL, 'TEST {} {} (os=cmd, env=ps):'),
+
+        (POWERSHELL, None,       'TEST {} {} (os=ps, env=None):'),
+        (POWERSHELL, COMSPEC,    'TEST {} {} (os=ps, env=cmd):'),
+        (POWERSHELL, POWERSHELL, 'TEST {} {} (os=ps, env=ps):'),
+
     ]:
         count += 1
         test = label.format(count, kind)
-        os.environ['COMSPEC'] = os_comspec
-        env['COMSPEC'] = env_comspec
+        if os_comspec:
+            os.environ['COMSPEC'] = os_comspec
+        elif 'COMSPEC' in os.environ:
+            del os.environ['COMSPEC']
+        if env_comspec:
+            env['COMSPEC'] = env_comspec
+        elif 'COMSPEC' in env:
+            del env['COMSPEC']
         call_subprocess(cmd, env, test=test, subprocess_method=subprocess_method)
