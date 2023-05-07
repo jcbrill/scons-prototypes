@@ -161,19 +161,19 @@ subprocess_methods = {
 }
 
 if not os.path.exists(COMSPEC):
-    errmsg = f'Cmd path not found: {repr(COMSPEC)}'
+    errmsg = f'COMSPEC path not found: {repr(COMSPEC)}'
     raise RuntimeError(errmsg)
 
 if not os.path.exists(POWERSHELL):
-    errmsg = f'Powershell path not found: {repr(POWERSHELL)}'
+    errmsg = f'POWERSHELL path not found: {repr(POWERSHELL)}'
     raise RuntimeError(errmsg)
 
 if not os.path.exists(WHERE):
-    errmsg = f'Cmd path not found: {repr(WHERE)}'
+    errmsg = f'WHERE path not found: {repr(WHERE)}'
     raise RuntimeError(errmsg)
 
 if not os.path.exists(MSVC_BATCH):
-    errmsg = f'MSVC batch path not found: {repr(MSVC_BATCH)}'
+    errmsg = f'MSVC_BATCH path not found: {repr(MSVC_BATCH)}'
     raise RuntimeError(errmsg)
 
 if SUBPROCESS_METHOD not in subprocess_methods:
