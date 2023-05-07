@@ -176,7 +176,7 @@ if not os.path.exists(MSVC_BATCH):
     errmsg = f'MSVC_BATCH path not found: {repr(MSVC_BATCH)}'
     raise RuntimeError(errmsg)
 
-if SUBPROCESS_METHOD not in subprocess_methods:
+if SUBPROCESS_METHOD.lower() not in subprocess_methods:
     errmsg = f'SUBPROCESS_METHOD is not supported: {repr(SUBPROCESS_METHOD)}'
     raise RuntimeError(errmsg)
 
