@@ -1,7 +1,7 @@
-S:\Scratch\jbrill-popen>python -V
-Python 3.6.8
+(_env-310-64-scons) S:\Scratch\jbrill-popen>python -V
+Python 3.10.9
 
-S:\Scratch\jbrill-popen>python win_subprocess.py
+(_env-310-64-scons) S:\Scratch\jbrill-popen>python win_subprocess.py
 
 TEST 1 subprocess.Popen (os=None, env=None):
     CONFIGURATION:
@@ -9,7 +9,7 @@ TEST 1 subprocess.Popen (os=None, env=None):
         env['COMSPEC'] = None
         where.exe = C:\Windows\system32\where.exe
     COMMAND:
-        "c:\software\msvs-2022-143-com\vc\auxiliary\build\vcvarsall.bat" amd64 & set COMSPEC & where cl.exe
+        "C:\Windows\system32\cmd.exe" /c "c:\software\msvs-2022-143-com\vc\auxiliary\build\vcvarsall.bat" amd64 & set COMSPEC & where cl.exe
     METHOD:
         windows_subprocess_popen
     STDOUT:
@@ -32,7 +32,7 @@ TEST 2 subprocess.Popen (os=None, env=cmd):
         env['COMSPEC'] = C:\Windows\system32\cmd.exe
         where.exe = C:\Windows\system32\where.exe
     COMMAND:
-        "c:\software\msvs-2022-143-com\vc\auxiliary\build\vcvarsall.bat" amd64 & set COMSPEC & where cl.exe
+        "C:\Windows\system32\cmd.exe" /c "c:\software\msvs-2022-143-com\vc\auxiliary\build\vcvarsall.bat" amd64 & set COMSPEC & where cl.exe
     METHOD:
         windows_subprocess_popen
     STDOUT:
@@ -55,7 +55,7 @@ TEST 3 subprocess.Popen (os=None, env=ps):
         env['COMSPEC'] = C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe
         where.exe = C:\Windows\system32\where.exe
     COMMAND:
-        "c:\software\msvs-2022-143-com\vc\auxiliary\build\vcvarsall.bat" amd64 & set COMSPEC & where cl.exe
+        "C:\Windows\system32\cmd.exe" /c "c:\software\msvs-2022-143-com\vc\auxiliary\build\vcvarsall.bat" amd64 & set COMSPEC & where cl.exe
     METHOD:
         windows_subprocess_popen
     STDOUT:
@@ -86,7 +86,7 @@ TEST 4 subprocess.Popen (os=cmd, env=None):
         env['COMSPEC'] = None
         where.exe = C:\Windows\system32\where.exe
     COMMAND:
-        "c:\software\msvs-2022-143-com\vc\auxiliary\build\vcvarsall.bat" amd64 & set COMSPEC & where cl.exe
+        "C:\Windows\system32\cmd.exe" /c "c:\software\msvs-2022-143-com\vc\auxiliary\build\vcvarsall.bat" amd64 & set COMSPEC & where cl.exe
     METHOD:
         windows_subprocess_popen
     STDOUT:
@@ -109,7 +109,7 @@ TEST 5 subprocess.Popen (os=cmd, env=cmd):
         env['COMSPEC'] = C:\Windows\system32\cmd.exe
         where.exe = C:\Windows\system32\where.exe
     COMMAND:
-        "c:\software\msvs-2022-143-com\vc\auxiliary\build\vcvarsall.bat" amd64 & set COMSPEC & where cl.exe
+        "C:\Windows\system32\cmd.exe" /c "c:\software\msvs-2022-143-com\vc\auxiliary\build\vcvarsall.bat" amd64 & set COMSPEC & where cl.exe
     METHOD:
         windows_subprocess_popen
     STDOUT:
@@ -132,7 +132,7 @@ TEST 6 subprocess.Popen (os=cmd, env=ps):
         env['COMSPEC'] = C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe
         where.exe = C:\Windows\system32\where.exe
     COMMAND:
-        "c:\software\msvs-2022-143-com\vc\auxiliary\build\vcvarsall.bat" amd64 & set COMSPEC & where cl.exe
+        "C:\Windows\system32\cmd.exe" /c "c:\software\msvs-2022-143-com\vc\auxiliary\build\vcvarsall.bat" amd64 & set COMSPEC & where cl.exe
     METHOD:
         windows_subprocess_popen
     STDOUT:
@@ -163,25 +163,21 @@ TEST 7 subprocess.Popen (os=ps, env=None):
         env['COMSPEC'] = None
         where.exe = C:\Windows\system32\where.exe
     COMMAND:
-        "c:\software\msvs-2022-143-com\vc\auxiliary\build\vcvarsall.bat" amd64 & set COMSPEC & where cl.exe
+        "C:\Windows\system32\cmd.exe" /c "c:\software\msvs-2022-143-com\vc\auxiliary\build\vcvarsall.bat" amd64 & set COMSPEC & where cl.exe
     METHOD:
         windows_subprocess_popen
     STDOUT:
+        **********************************************************************
+        ** Visual Studio 2022 Developer Command Prompt v17.5.4
+        ** Copyright (c) 2022 Microsoft Corporation
+        **********************************************************************
+        [vcvarsall.bat] Environment initialized for: 'x64'
+        COMSPEC=C:\Windows\system32\cmd.exe
+        c:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.35.32215\bin\Hostx64\x64\cl.exe
 
     STDERR:
 
     EXCSTR:
-        subprocess error (returncode = 1): At line:1 char:70
-        + ... re\msvs-2022-143-com\vc\auxiliary\build\vcvarsall.bat amd64 & set COM ...
-        +                                                                 ~
-        The ampersand (&) character is not allowed. The & operator is reserved for future use; wrap an ampersand in double quotation marks ("&") to pass it as part of a string.
-        At line:1 char:84
-        + ... 43-com\vc\auxiliary\build\vcvarsall.bat amd64 & set COMSPEC & where c ...
-        +                                                                 ~
-        The ampersand (&) character is not allowed. The & operator is reserved for future use; wrap an ampersand in double quotation marks ("&") to pass it as part of a string.
-            + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
-            + FullyQualifiedErrorId : AmpersandNotAllowed
-
 
 
 TEST 8 subprocess.Popen (os=ps, env=cmd):
@@ -190,25 +186,21 @@ TEST 8 subprocess.Popen (os=ps, env=cmd):
         env['COMSPEC'] = C:\Windows\system32\cmd.exe
         where.exe = C:\Windows\system32\where.exe
     COMMAND:
-        "c:\software\msvs-2022-143-com\vc\auxiliary\build\vcvarsall.bat" amd64 & set COMSPEC & where cl.exe
+        "C:\Windows\system32\cmd.exe" /c "c:\software\msvs-2022-143-com\vc\auxiliary\build\vcvarsall.bat" amd64 & set COMSPEC & where cl.exe
     METHOD:
         windows_subprocess_popen
     STDOUT:
+        **********************************************************************
+        ** Visual Studio 2022 Developer Command Prompt v17.5.4
+        ** Copyright (c) 2022 Microsoft Corporation
+        **********************************************************************
+        [vcvarsall.bat] Environment initialized for: 'x64'
+        COMSPEC=C:\Windows\system32\cmd.exe
+        c:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.35.32215\bin\Hostx64\x64\cl.exe
 
     STDERR:
 
     EXCSTR:
-        subprocess error (returncode = 1): At line:1 char:70
-        + ... re\msvs-2022-143-com\vc\auxiliary\build\vcvarsall.bat amd64 & set COM ...
-        +                                                                 ~
-        The ampersand (&) character is not allowed. The & operator is reserved for future use; wrap an ampersand in double quotation marks ("&") to pass it as part of a string.
-        At line:1 char:84
-        + ... 43-com\vc\auxiliary\build\vcvarsall.bat amd64 & set COMSPEC & where c ...
-        +                                                                 ~
-        The ampersand (&) character is not allowed. The & operator is reserved for future use; wrap an ampersand in double quotation marks ("&") to pass it as part of a string.
-            + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
-            + FullyQualifiedErrorId : AmpersandNotAllowed
-
 
 
 TEST 9 subprocess.Popen (os=ps, env=ps):
@@ -217,7 +209,7 @@ TEST 9 subprocess.Popen (os=ps, env=ps):
         env['COMSPEC'] = C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe
         where.exe = C:\Windows\system32\where.exe
     COMMAND:
-        "c:\software\msvs-2022-143-com\vc\auxiliary\build\vcvarsall.bat" amd64 & set COMSPEC & where cl.exe
+        "C:\Windows\system32\cmd.exe" /c "c:\software\msvs-2022-143-com\vc\auxiliary\build\vcvarsall.bat" amd64 & set COMSPEC & where cl.exe
     METHOD:
         windows_subprocess_popen
     STDOUT:
@@ -225,17 +217,21 @@ TEST 9 subprocess.Popen (os=ps, env=ps):
     STDERR:
 
     EXCSTR:
-        subprocess error (returncode = 1): At line:1 char:70
-        + ... re\msvs-2022-143-com\vc\auxiliary\build\vcvarsall.bat amd64 & set COM ...
-        +                                                                 ~
-        The ampersand (&) character is not allowed. The & operator is reserved for future use; wrap an ampersand in double quotation marks ("&") to pass it as part of a string.
-        At line:1 char:84
-        + ... 43-com\vc\auxiliary\build\vcvarsall.bat amd64 & set COMSPEC & where c ...
-        +                                                                 ~
-        The ampersand (&) character is not allowed. The & operator is reserved for future use; wrap an ampersand in double quotation marks ("&") to pass it as part of a string.
-            + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
-            + FullyQualifiedErrorId : AmpersandNotAllowed
+        subprocess error (returncode = 1): vswhere.exe : The term 'vswhere.exe' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+        At line:1 char:1
+        + vswhere.exe -property catalog_productSemanticVersion -path c:\Softwar ...
+        + ~~~~~~~~~~~
+            + CategoryInfo          : ObjectNotFound: (vswhere.exe:String) [], CommandNotFoundException
+            + FullyQualifiedErrorId : CommandNotFoundException
+
+        Get-ChildItem : A positional parameter cannot be found that accepts argument '/a-d-h'.
+        At line:1 char:1
+        + dir c:\Software\MSVS-2022-143-Com\Common7\Tools\vsdevcmd\ext\*.bat /b ...
+        + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+            + CategoryInfo          : InvalidArgument: (:) [Get-ChildItem], ParameterBindingException
+            + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.GetChildItemCommand
+
+        INFO: Could not find files for the given pattern(s).
 
 
-
-S:\Scratch\jbrill-popen>
+(_env-310-64-scons) S:\Scratch\jbrill-popen>

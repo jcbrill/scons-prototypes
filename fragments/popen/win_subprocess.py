@@ -221,6 +221,7 @@ def call_subprocess(cmd, env, test='Test', prefix='', subprocess_method=None):
 ### Run all tests
 
 cmd = f'"{MSVC_BATCH}" amd64 & set COMSPEC & where cl.exe'
+cmd = f'"{COMSPEC}" /c "{MSVC_BATCH}" amd64 & set COMSPEC & where cl.exe'
 
 env = dict(os.environ)
 
