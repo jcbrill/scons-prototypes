@@ -1,0 +1,587 @@
+scons: Reading SConscript files ...
+
+Legend:
+    * : version summary information
+    VW: vswhere output information
+    CL: cl executable information
+    MB: msbuild executable information
+    DE: development executable information
+    SE: SCons environment information
+
+Environment(**{'MSVC_NOTFOUND_POLICY': 'Error'}):
+    ----------------------------------------------------------------------------------------------------
+    *  VS_VERSION = '17.11.4'
+    *  VC_TOOLSET = '14.41.34120'
+    *  VC_BUILDSERIES = '14.4'
+    *  VC_BUILDTOOLS = '14.3'
+    *  VC_LEGACY = '14.3'
+    *  CL_VERSION = '19.41.34120'
+    *  MSBUILD_VERSION = '17.11.9.46202'
+    ----------------------------------------------------------------------------------------------------
+    VW ENV_path = 'C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64'
+    VW installationPath = 'C:\\Program Files\\Microsoft Visual Studio\\2022\\Community'
+    VW installationVersion = '17.11.35312.102'
+    VW displayName = 'Visual Studio Community 2022'
+    VW productId = 'Microsoft.VisualStudio.Product.Community'
+    VW productPath = 'C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\devenv.exe'
+    VW buildVersion = '17.11.35312.102'
+    VW productDisplayVersion = '17.11.4'
+    VW productSemanticVersion = '17.11.4+35312.102'
+    CL cl_path = 'C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\cl.EXE'
+    CL cl_version = '19.41.34120'
+    CL vc_toolset = '14.41.34120'
+    CL vc_buildseries = '14.4'
+    CL vc_buildtools = '14.3'
+    CL vs_version = ''
+    MB msbuild_path = 'C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\\\MSBuild\\Current\\Bin\\amd64\\msbuild.exe'
+    MB msbuild_version = '17.11.9.46202'
+    DE dev_path = 'C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\devenv.com'
+    DE dev_isdevelop = True
+    DE dev_isexpress = False
+    SE MSVC_VERSION = '14.3'
+    ----------------------------------------------------------------------------------------------------
+
+Environment(**{'MSVC_VERSION': '14.3', 'MSVC_USE_SCRIPT': 'C:\\Program Files\\Microsoft Visual Studio\\2022\\Preview\\VC\\Auxiliary\\Build\\vcvarsall.bat', 'MSVC_USE_SCRIPT_ARGS': 'amd64', 'MSVC_NOTFOUND_POLICY': 'Error'}):
+    ----------------------------------------------------------------------------------------------------
+    *  VS_VERSION = '17.12.0-pre.2.0'
+    *  VC_TOOLSET = '14.42.34321'
+    *  VC_BUILDSERIES = '14.4'
+    *  VC_BUILDTOOLS = '14.3'
+    *  VC_LEGACY = '14.3'
+    *  CL_VERSION = '19.42.34321.1'
+    *  MSBUILD_VERSION = '17.12.0.42607'
+    ----------------------------------------------------------------------------------------------------
+    VW ENV_path = 'C:\\Program Files\\Microsoft Visual Studio\\2022\\Preview\\VC\\Tools\\MSVC\\14.42.34321\\bin\\HostX64\\x64'
+    VW installationPath = 'C:\\Program Files\\Microsoft Visual Studio\\2022\\Preview'
+    VW installationVersion = '17.12.35309.182'
+    VW displayName = 'Visual Studio Community 2022'
+    VW productId = 'Microsoft.VisualStudio.Product.Community'
+    VW productPath = 'C:\\Program Files\\Microsoft Visual Studio\\2022\\Preview\\Common7\\IDE\\devenv.exe'
+    VW buildVersion = '17.12.35309.182'
+    VW productDisplayVersion = '17.12.0 Preview 2.0'
+    VW productSemanticVersion = '17.12.0-pre.2.0+35309.182'
+    CL cl_path = 'C:\\Program Files\\Microsoft Visual Studio\\2022\\Preview\\VC\\Tools\\MSVC\\14.42.34321\\bin\\HostX64\\x64\\cl.EXE'
+    CL cl_version = '19.42.34321.1'
+    CL vc_toolset = '14.42.34321'
+    CL vc_buildseries = '14.4'
+    CL vc_buildtools = '14.3'
+    CL vs_version = ''
+    MB msbuild_path = 'C:\\Program Files\\Microsoft Visual Studio\\2022\\Preview\\\\MSBuild\\Current\\Bin\\amd64\\msbuild.exe'
+    MB msbuild_version = '17.12.0.42607'
+    DE dev_path = 'C:\\Program Files\\Microsoft Visual Studio\\2022\\Preview\\Common7\\IDE\\devenv.com'
+    DE dev_isdevelop = True
+    DE dev_isexpress = False
+    SE MSVC_VERSION = '14.3'
+    ----------------------------------------------------------------------------------------------------
+
+Environment(**{'MSVC_VERSION': '14.3', 'MSVC_NOTFOUND_POLICY': 'Error'}):
+    ----------------------------------------------------------------------------------------------------
+    *  VS_VERSION = '17.11.4'
+    *  VC_TOOLSET = '14.41.34120'
+    *  VC_BUILDSERIES = '14.4'
+    *  VC_BUILDTOOLS = '14.3'
+    *  VC_LEGACY = '14.3'
+    *  CL_VERSION = '19.41.34120'
+    *  MSBUILD_VERSION = '17.11.9.46202'
+    ----------------------------------------------------------------------------------------------------
+    VW ENV_path = 'C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64'
+    VW installationPath = 'C:\\Program Files\\Microsoft Visual Studio\\2022\\Community'
+    VW installationVersion = '17.11.35312.102'
+    VW displayName = 'Visual Studio Community 2022'
+    VW productId = 'Microsoft.VisualStudio.Product.Community'
+    VW productPath = 'C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\devenv.exe'
+    VW buildVersion = '17.11.35312.102'
+    VW productDisplayVersion = '17.11.4'
+    VW productSemanticVersion = '17.11.4+35312.102'
+    CL cl_path = 'C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\cl.EXE'
+    CL cl_version = '19.41.34120'
+    CL vc_toolset = '14.41.34120'
+    CL vc_buildseries = '14.4'
+    CL vc_buildtools = '14.3'
+    CL vs_version = ''
+    MB msbuild_path = 'C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\\\MSBuild\\Current\\Bin\\amd64\\msbuild.exe'
+    MB msbuild_version = '17.11.9.46202'
+    DE dev_path = 'C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\devenv.com'
+    DE dev_isdevelop = True
+    DE dev_isexpress = False
+    SE MSVC_VERSION = '14.3'
+    ----------------------------------------------------------------------------------------------------
+
+Environment(**{'MSVC_VERSION': '14.3', 'MSVC_TOOLSET_VERSION': '14.2', 'MSVC_NOTFOUND_POLICY': 'Error'}):
+    ----------------------------------------------------------------------------------------------------
+    *  VS_VERSION = '17.11.4'
+    *  VC_TOOLSET = '14.29.30133'
+    *  VC_BUILDSERIES = '14.2'
+    *  VC_BUILDTOOLS = '14.2'
+    *  VC_LEGACY = '14.3'
+    *  CL_VERSION = '19.29.30154'
+    *  MSBUILD_VERSION = '17.11.9.46202'
+    ----------------------------------------------------------------------------------------------------
+    VW ENV_path = 'C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64'
+    VW installationPath = 'C:\\Program Files\\Microsoft Visual Studio\\2022\\Community'
+    VW installationVersion = '17.11.35312.102'
+    VW displayName = 'Visual Studio Community 2022'
+    VW productId = 'Microsoft.VisualStudio.Product.Community'
+    VW productPath = 'C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\devenv.exe'
+    VW buildVersion = '17.11.35312.102'
+    VW productDisplayVersion = '17.11.4'
+    VW productSemanticVersion = '17.11.4+35312.102'
+    CL cl_path = 'C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\cl.EXE'
+    CL cl_version = '19.29.30154'
+    CL vc_toolset = '14.29.30133'
+    CL vc_buildseries = '14.2'
+    CL vc_buildtools = '14.2'
+    CL vs_version = ''
+    MB msbuild_path = 'C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\\\MSBuild\\Current\\Bin\\amd64\\msbuild.exe'
+    MB msbuild_version = '17.11.9.46202'
+    DE dev_path = 'C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\devenv.com'
+    DE dev_isdevelop = True
+    DE dev_isexpress = False
+    SE MSVC_VERSION = '14.3'
+    ----------------------------------------------------------------------------------------------------
+
+Environment(**{'MSVC_VERSION': '14.3', 'MSVC_TOOLSET_VERSION': '14.1', 'MSVC_NOTFOUND_POLICY': 'Error'}):
+    ----------------------------------------------------------------------------------------------------
+    *  VS_VERSION = '17.11.4'
+    *  VC_TOOLSET = '14.16.27023'
+    *  VC_BUILDSERIES = '14.1'
+    *  VC_BUILDTOOLS = '14.1'
+    *  VC_LEGACY = '14.3'
+    *  CL_VERSION = '19.16.27051'
+    *  MSBUILD_VERSION = '17.11.9.46202'
+    ----------------------------------------------------------------------------------------------------
+    VW ENV_path = 'C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.16.27023\\bin\\HostX64\\x64'
+    VW installationPath = 'C:\\Program Files\\Microsoft Visual Studio\\2022\\Community'
+    VW installationVersion = '17.11.35312.102'
+    VW displayName = 'Visual Studio Community 2022'
+    VW productId = 'Microsoft.VisualStudio.Product.Community'
+    VW productPath = 'C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\devenv.exe'
+    VW buildVersion = '17.11.35312.102'
+    VW productDisplayVersion = '17.11.4'
+    VW productSemanticVersion = '17.11.4+35312.102'
+    CL cl_path = 'C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.16.27023\\bin\\HostX64\\x64\\cl.EXE'
+    CL cl_version = '19.16.27051'
+    CL vc_toolset = '14.16.27023'
+    CL vc_buildseries = '14.1'
+    CL vc_buildtools = '14.1'
+    CL vs_version = ''
+    MB msbuild_path = 'C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\\\MSBuild\\Current\\Bin\\amd64\\msbuild.exe'
+    MB msbuild_version = '17.11.9.46202'
+    DE dev_path = 'C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\devenv.com'
+    DE dev_isdevelop = True
+    DE dev_isexpress = False
+    SE MSVC_VERSION = '14.3'
+    ----------------------------------------------------------------------------------------------------
+
+Environment(**{'MSVC_VERSION': '14.3', 'MSVC_TOOLSET_VERSION': '14.0', 'MSVC_NOTFOUND_POLICY': 'Error'}):
+    ----------------------------------------------------------------------------------------------------
+    *  VS_VERSION = '17.11.4'
+    *  VC_TOOLSET = '14.0'
+    *  VC_BUILDSERIES = '14.0'
+    *  VC_BUILDTOOLS = '14.0'
+    *  VC_LEGACY = '14.3'
+    *  CL_VERSION = '19.00.24215.1'
+    *  MSBUILD_VERSION = '17.11.9.46202'
+    ----------------------------------------------------------------------------------------------------
+    VW ENV_path = 'C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\TestWindow'
+    VW installationPath = 'C:\\Program Files\\Microsoft Visual Studio\\2022\\Community'
+    VW installationVersion = '17.11.35312.102'
+    VW displayName = 'Visual Studio Community 2022'
+    VW productId = 'Microsoft.VisualStudio.Product.Community'
+    VW productPath = 'C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\devenv.exe'
+    VW buildVersion = '17.11.35312.102'
+    VW productDisplayVersion = '17.11.4'
+    VW productSemanticVersion = '17.11.4+35312.102'
+    CL cl_path = 'C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\bin\\amd64\\cl.EXE'
+    CL cl_version = '19.00.24215.1'
+    CL vc_toolset = '14.0'
+    CL vc_buildseries = '14.0'
+    CL vc_buildtools = '14.0'
+    CL vs_version = '14.0'
+    MB msbuild_path = 'C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\\\MSBuild\\Current\\Bin\\amd64\\msbuild.exe'
+    MB msbuild_version = '17.11.9.46202'
+    DE dev_path = 'C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\devenv.com'
+    DE dev_isdevelop = True
+    DE dev_isexpress = False
+    SE MSVC_VERSION = '14.3'
+    ----------------------------------------------------------------------------------------------------
+
+Environment(**{'MSVC_VERSION': '14.2', 'MSVC_NOTFOUND_POLICY': 'Error'}):
+    ----------------------------------------------------------------------------------------------------
+    *  VS_VERSION = '16.11.40'
+    *  VC_TOOLSET = '14.29.30133'
+    *  VC_BUILDSERIES = '14.2'
+    *  VC_BUILDTOOLS = '14.2'
+    *  VC_LEGACY = '14.2'
+    *  CL_VERSION = '19.29.30154'
+    *  MSBUILD_VERSION = '16.11.2.50704'
+    ----------------------------------------------------------------------------------------------------
+    VW ENV_path = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64'
+    VW installationPath = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community'
+    VW installationVersion = '16.11.35229.62'
+    VW displayName = 'Visual Studio Community 2019'
+    VW productId = 'Microsoft.VisualStudio.Product.Community'
+    VW productPath = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\Common7\\IDE\\devenv.exe'
+    VW buildVersion = '16.11.35229.62'
+    VW productDisplayVersion = '16.11.40'
+    VW productSemanticVersion = '16.11.40+35229.62'
+    CL cl_path = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\cl.EXE'
+    CL cl_version = '19.29.30154'
+    CL vc_toolset = '14.29.30133'
+    CL vc_buildseries = '14.2'
+    CL vc_buildtools = '14.2'
+    CL vs_version = ''
+    MB msbuild_path = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\\\MSBuild\\Current\\Bin\\msbuild.exe'
+    MB msbuild_version = '16.11.2.50704'
+    DE dev_path = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\Common7\\IDE\\devenv.com'
+    DE dev_isdevelop = True
+    DE dev_isexpress = False
+    SE MSVC_VERSION = '14.2'
+    ----------------------------------------------------------------------------------------------------
+
+Environment(**{'MSVC_VERSION': '14.2', 'MSVC_TOOLSET_VERSION': '14.1', 'MSVC_NOTFOUND_POLICY': 'Error'}):
+    ----------------------------------------------------------------------------------------------------
+    *  VS_VERSION = '16.11.40'
+    *  VC_TOOLSET = '14.16.27023'
+    *  VC_BUILDSERIES = '14.1'
+    *  VC_BUILDTOOLS = '14.1'
+    *  VC_LEGACY = '14.2'
+    *  CL_VERSION = '19.16.27051'
+    *  MSBUILD_VERSION = '16.11.2.50704'
+    ----------------------------------------------------------------------------------------------------
+    VW ENV_path = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.16.27023\\bin\\HostX64\\x64'
+    VW installationPath = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community'
+    VW installationVersion = '16.11.35229.62'
+    VW displayName = 'Visual Studio Community 2019'
+    VW productId = 'Microsoft.VisualStudio.Product.Community'
+    VW productPath = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\Common7\\IDE\\devenv.exe'
+    VW buildVersion = '16.11.35229.62'
+    VW productDisplayVersion = '16.11.40'
+    VW productSemanticVersion = '16.11.40+35229.62'
+    CL cl_path = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.16.27023\\bin\\HostX64\\x64\\cl.EXE'
+    CL cl_version = '19.16.27051'
+    CL vc_toolset = '14.16.27023'
+    CL vc_buildseries = '14.1'
+    CL vc_buildtools = '14.1'
+    CL vs_version = ''
+    MB msbuild_path = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\\\MSBuild\\Current\\Bin\\msbuild.exe'
+    MB msbuild_version = '16.11.2.50704'
+    DE dev_path = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\Common7\\IDE\\devenv.com'
+    DE dev_isdevelop = True
+    DE dev_isexpress = False
+    SE MSVC_VERSION = '14.2'
+    ----------------------------------------------------------------------------------------------------
+
+Environment(**{'MSVC_VERSION': '14.2', 'MSVC_TOOLSET_VERSION': '14.0', 'MSVC_NOTFOUND_POLICY': 'Error'}):
+    ----------------------------------------------------------------------------------------------------
+    *  VS_VERSION = '16.11.40'
+    *  VC_TOOLSET = '14.0'
+    *  VC_BUILDSERIES = '14.0'
+    *  VC_BUILDTOOLS = '14.0'
+    *  VC_LEGACY = '14.2'
+    *  CL_VERSION = '19.00.24215.1'
+    *  MSBUILD_VERSION = '16.11.2.50704'
+    ----------------------------------------------------------------------------------------------------
+    VW ENV_path = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\TestWindow'
+    VW installationPath = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community'
+    VW installationVersion = '16.11.35229.62'
+    VW displayName = 'Visual Studio Community 2019'
+    VW productId = 'Microsoft.VisualStudio.Product.Community'
+    VW productPath = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\Common7\\IDE\\devenv.exe'
+    VW buildVersion = '16.11.35229.62'
+    VW productDisplayVersion = '16.11.40'
+    VW productSemanticVersion = '16.11.40+35229.62'
+    CL cl_path = 'C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\bin\\amd64\\cl.EXE'
+    CL cl_version = '19.00.24215.1'
+    CL vc_toolset = '14.0'
+    CL vc_buildseries = '14.0'
+    CL vc_buildtools = '14.0'
+    CL vs_version = '14.0'
+    MB msbuild_path = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\\\MSBuild\\Current\\Bin\\msbuild.exe'
+    MB msbuild_version = '16.11.2.50704'
+    DE dev_path = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\Common7\\IDE\\devenv.com'
+    DE dev_isdevelop = True
+    DE dev_isexpress = False
+    SE MSVC_VERSION = '14.2'
+    ----------------------------------------------------------------------------------------------------
+
+Environment(**{'MSVC_VERSION': '14.1', 'MSVC_NOTFOUND_POLICY': 'Error'}):
+    ----------------------------------------------------------------------------------------------------
+    *  VS_VERSION = '15.9.66'
+    *  VC_TOOLSET = '14.16.27023'
+    *  VC_BUILDSERIES = '14.1'
+    *  VC_BUILDTOOLS = '14.1'
+    *  VC_LEGACY = '14.1'
+    *  CL_VERSION = '19.16.27051'
+    *  MSBUILD_VERSION = '15.9.21.664'
+    ----------------------------------------------------------------------------------------------------
+    VW ENV_path = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\VC\\Tools\\MSVC\\14.16.27023\\bin\\HostX64\\x64'
+    VW installationPath = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community'
+    VW installationVersion = '15.9.35229.15'
+    VW displayName = 'Visual Studio Community 2017'
+    VW productId = 'Microsoft.VisualStudio.Product.Community'
+    VW productPath = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\Common7\\IDE\\devenv.exe'
+    VW buildVersion = '15.9.35229.15'
+    VW productDisplayVersion = '15.9.66'
+    VW productSemanticVersion = '15.9.66+35229.15'
+    CL cl_path = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\VC\\Tools\\MSVC\\14.16.27023\\bin\\HostX64\\x64\\cl.EXE'
+    CL cl_version = '19.16.27051'
+    CL vc_toolset = '14.16.27023'
+    CL vc_buildseries = '14.1'
+    CL vc_buildtools = '14.1'
+    CL vs_version = ''
+    MB msbuild_path = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\\\MSBuild\\15.0\\bin\\msbuild.exe'
+    MB msbuild_version = '15.9.21.664'
+    DE dev_path = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\Common7\\IDE\\devenv.com'
+    DE dev_isdevelop = True
+    DE dev_isexpress = False
+    SE MSVC_VERSION = '14.1'
+    ----------------------------------------------------------------------------------------------------
+
+Environment(**{'MSVC_VERSION': '14.1', 'MSVC_TOOLSET_VERSION': '14.0', 'MSVC_NOTFOUND_POLICY': 'Error'}):
+    ----------------------------------------------------------------------------------------------------
+    *  VS_VERSION = '15.9.66'
+    *  VC_TOOLSET = '14.0'
+    *  VC_BUILDSERIES = '14.0'
+    *  VC_BUILDTOOLS = '14.0'
+    *  VC_LEGACY = '14.1'
+    *  CL_VERSION = '19.00.24215.1'
+    *  MSBUILD_VERSION = '15.9.21.664'
+    ----------------------------------------------------------------------------------------------------
+    VW ENV_path = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\TestWindow'
+    VW installationPath = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community'
+    VW installationVersion = '15.9.35229.15'
+    VW displayName = 'Visual Studio Community 2017'
+    VW productId = 'Microsoft.VisualStudio.Product.Community'
+    VW productPath = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\Common7\\IDE\\devenv.exe'
+    VW buildVersion = '15.9.35229.15'
+    VW productDisplayVersion = '15.9.66'
+    VW productSemanticVersion = '15.9.66+35229.15'
+    CL cl_path = 'C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\bin\\amd64\\cl.EXE'
+    CL cl_version = '19.00.24215.1'
+    CL vc_toolset = '14.0'
+    CL vc_buildseries = '14.0'
+    CL vc_buildtools = '14.0'
+    CL vs_version = '14.0'
+    MB msbuild_path = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\\\MSBuild\\15.0\\bin\\msbuild.exe'
+    MB msbuild_version = '15.9.21.664'
+    DE dev_path = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\Common7\\IDE\\devenv.com'
+    DE dev_isdevelop = True
+    DE dev_isexpress = False
+    SE MSVC_VERSION = '14.1'
+    ----------------------------------------------------------------------------------------------------
+
+Environment(**{'MSVC_VERSION': '14.0', 'MSVC_NOTFOUND_POLICY': 'Error'}):
+    ----------------------------------------------------------------------------------------------------
+    *  VS_VERSION = '14.0'
+    *  VC_TOOLSET = '14.0'
+    *  VC_BUILDSERIES = '14.0'
+    *  VC_BUILDTOOLS = '14.0'
+    *  VC_LEGACY = '14.0'
+    *  CL_VERSION = '19.00.24215.1'
+    *  MSBUILD_VERSION = '4.8.9032.0'
+    ----------------------------------------------------------------------------------------------------
+    CL cl_path = 'C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\BIN\\amd64\\cl.EXE'
+    CL cl_version = '19.00.24215.1'
+    CL vc_toolset = '14.0'
+    CL vc_buildseries = '14.0'
+    CL vc_buildtools = '14.0'
+    CL vs_version = '14.0'
+    MB msbuild_path = 'C:\\WINDOWS\\Microsoft.NET\\Framework64\\v4.0.30319\\msbuild.exe'
+    MB msbuild_version = '4.8.9032.0'
+    DE dev_path = 'C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\Common7\\IDE\\devenv.com'
+    DE dev_isdevelop = True
+    DE dev_isexpress = False
+    SE MSVC_VERSION = '14.0'
+    ----------------------------------------------------------------------------------------------------
+
+Environment(**{'MSVC_VERSION': '12.0', 'MSVC_NOTFOUND_POLICY': 'Error'}):
+    ----------------------------------------------------------------------------------------------------
+    *  VS_VERSION = '12.0'
+    *  VC_TOOLSET = '12.0'
+    *  VC_BUILDSERIES = '12.0'
+    *  VC_BUILDTOOLS = '12.0'
+    *  VC_LEGACY = '12.0'
+    *  CL_VERSION = '18.00.40629'
+    *  MSBUILD_VERSION = '4.8.9032.0'
+    ----------------------------------------------------------------------------------------------------
+    CL cl_path = 'C:\\Program Files (x86)\\Microsoft Visual Studio 12.0\\VC\\BIN\\amd64\\cl.EXE'
+    CL cl_version = '18.00.40629'
+    CL vc_toolset = '12.0'
+    CL vc_buildseries = '12.0'
+    CL vc_buildtools = '12.0'
+    CL vs_version = '12.0'
+    MB msbuild_path = 'C:\\WINDOWS\\Microsoft.NET\\Framework64\\v4.0.30319\\msbuild.exe'
+    MB msbuild_version = '4.8.9032.0'
+    DE dev_path = 'C:\\Program Files (x86)\\Microsoft Visual Studio 12.0\\Common7\\IDE\\devenv.com'
+    DE dev_isdevelop = True
+    DE dev_isexpress = False
+    SE MSVC_VERSION = '12.0'
+    ----------------------------------------------------------------------------------------------------
+
+Environment(**{'MSVC_VERSION': '11.0', 'MSVC_NOTFOUND_POLICY': 'Error'}):
+    ----------------------------------------------------------------------------------------------------
+    *  VS_VERSION = '11.0'
+    *  VC_TOOLSET = '11.0'
+    *  VC_BUILDSERIES = '11.0'
+    *  VC_BUILDTOOLS = '11.0'
+    *  VC_LEGACY = '11.0'
+    *  CL_VERSION = '17.00.61030'
+    *  MSBUILD_VERSION = '4.8.9032.0'
+    ----------------------------------------------------------------------------------------------------
+    CL cl_path = 'C:\\Program Files (x86)\\Microsoft Visual Studio 11.0\\VC\\BIN\\amd64\\cl.EXE'
+    CL cl_version = '17.00.61030'
+    CL vc_toolset = '11.0'
+    CL vc_buildseries = '11.0'
+    CL vc_buildtools = '11.0'
+    CL vs_version = '11.0'
+    MB msbuild_path = 'C:\\WINDOWS\\Microsoft.NET\\Framework64\\v4.0.30319\\msbuild.exe'
+    MB msbuild_version = '4.8.9032.0'
+    DE dev_path = 'C:\\Program Files (x86)\\Microsoft Visual Studio 11.0\\Common7\\IDE\\devenv.com'
+    DE dev_isdevelop = True
+    DE dev_isexpress = False
+    SE MSVC_VERSION = '11.0'
+    ----------------------------------------------------------------------------------------------------
+
+Environment(**{'MSVC_VERSION': '10.0', 'MSVC_NOTFOUND_POLICY': 'Error'}):
+    ----------------------------------------------------------------------------------------------------
+    *  VS_VERSION = '10.0'
+    *  VC_TOOLSET = '10.0'
+    *  VC_BUILDSERIES = '10.0'
+    *  VC_BUILDTOOLS = '10.0'
+    *  VC_LEGACY = '10.0'
+    *  CL_VERSION = '16.00.40219.01'
+    *  MSBUILD_VERSION = '4.8.9032.0'
+    ----------------------------------------------------------------------------------------------------
+    CL cl_path = 'c:\\Program Files (x86)\\Microsoft Visual Studio 10.0\\VC\\BIN\\amd64\\cl.EXE'
+    CL cl_version = '16.00.40219.01'
+    CL vc_toolset = '10.0'
+    CL vc_buildseries = '10.0'
+    CL vc_buildtools = '10.0'
+    CL vs_version = '10.0'
+    MB msbuild_path = 'C:\\WINDOWS\\Microsoft.NET\\Framework64\\v4.0.30319\\msbuild.exe'
+    MB msbuild_version = '4.8.9032.0'
+    DE dev_path = 'C:\\Program Files (x86)\\Microsoft Visual Studio 10.0\\Common7\\IDE\\devenv.com'
+    DE dev_isdevelop = True
+    DE dev_isexpress = False
+    SE MSVC_VERSION = '10.0'
+    ----------------------------------------------------------------------------------------------------
+
+Environment(**{'MSVC_VERSION': '9.0', 'MSVC_NOTFOUND_POLICY': 'Error'}):
+    ----------------------------------------------------------------------------------------------------
+    *  VS_VERSION = '9.0'
+    *  VC_TOOLSET = '9.0'
+    *  VC_BUILDSERIES = '9.0'
+    *  VC_BUILDTOOLS = '9.0'
+    *  VC_LEGACY = '9.0'
+    *  CL_VERSION = '15.00.30729.01'
+    *  MSBUILD_VERSION = '3.5.30729.9151'
+    ----------------------------------------------------------------------------------------------------
+    CL cl_path = 'C:\\Program Files (x86)\\Microsoft Visual Studio 9.0\\VC\\BIN\\amd64\\cl.EXE'
+    CL cl_version = '15.00.30729.01'
+    CL vc_toolset = '9.0'
+    CL vc_buildseries = '9.0'
+    CL vc_buildtools = '9.0'
+    CL vs_version = '9.0'
+    MB msbuild_path = 'C:\\WINDOWS\\Microsoft.NET\\Framework64\\v3.5\\msbuild.exe'
+    MB msbuild_version = '3.5.30729.9151'
+    DE dev_path = 'C:\\Program Files (x86)\\Microsoft Visual Studio 9.0\\Common7\\IDE\\devenv.com'
+    DE dev_isdevelop = True
+    DE dev_isexpress = False
+    SE MSVC_VERSION = '9.0'
+    ----------------------------------------------------------------------------------------------------
+
+Environment(**{'MSVC_VERSION': '8.0', 'MSVC_NOTFOUND_POLICY': 'Error'}):
+    ----------------------------------------------------------------------------------------------------
+    *  VS_VERSION = '8.0'
+    *  VC_TOOLSET = '8.0'
+    *  VC_BUILDSERIES = '8.0'
+    *  VC_BUILDTOOLS = '8.0'
+    *  VC_LEGACY = '8.0'
+    *  CL_VERSION = '14.00.50727.762'
+    *  MSBUILD_VERSION = '2.0.50727.9157'
+    ----------------------------------------------------------------------------------------------------
+    CL cl_path = 'C:\\Program Files (x86)\\Microsoft Visual Studio 8\\VC\\BIN\\amd64\\cl.EXE'
+    CL cl_version = '14.00.50727.762'
+    CL vc_toolset = '8.0'
+    CL vc_buildseries = '8.0'
+    CL vc_buildtools = '8.0'
+    CL vs_version = '8.0'
+    MB msbuild_path = 'C:\\WINDOWS\\Microsoft.NET\\Framework64\\v2.0.50727\\msbuild.exe'
+    MB msbuild_version = '2.0.50727.9157'
+    DE dev_path = 'C:\\Program Files (x86)\\Microsoft Visual Studio 8\\Common7\\IDE\\devenv.com'
+    DE dev_isdevelop = True
+    DE dev_isexpress = False
+    SE MSVC_VERSION = '8.0'
+    ----------------------------------------------------------------------------------------------------
+
+Environment(**{'MSVC_VERSION': '7.1', 'MSVC_NOTFOUND_POLICY': 'Error'}):
+    ----------------------------------------------------------------------------------------------------
+    *  VS_VERSION = '7.1'
+    *  VC_TOOLSET = '7.1'
+    *  VC_BUILDSERIES = '7.1'
+    *  VC_BUILDTOOLS = '7.1'
+    *  VC_LEGACY = '7.1'
+    *  CL_VERSION = '13.10.6030'
+    *  MSBUILD_VERSION = ''
+    ----------------------------------------------------------------------------------------------------
+    CL cl_path = 'C:\\Program Files (x86)\\Microsoft Visual Studio .NET 2003\\VC7\\BIN\\cl.EXE'
+    CL cl_version = '13.10.6030'
+    CL vc_toolset = '7.1'
+    CL vc_buildseries = '7.1'
+    CL vc_buildtools = '7.1'
+    CL vs_version = '7.1'
+    DE dev_path = 'C:\\Program Files (x86)\\Microsoft Visual Studio .NET 2003\\Common7\\IDE\\devenv.com'
+    DE dev_isdevelop = True
+    DE dev_isexpress = False
+    SE MSVC_VERSION = '7.1'
+    ----------------------------------------------------------------------------------------------------
+
+Environment(**{'MSVC_VERSION': '7.0', 'MSVC_NOTFOUND_POLICY': 'Error'}):
+    ----------------------------------------------------------------------------------------------------
+    *  VS_VERSION = '7.0'
+    *  VC_TOOLSET = '7.0'
+    *  VC_BUILDSERIES = '7.0'
+    *  VC_BUILDTOOLS = '7.0'
+    *  VC_LEGACY = '7.0'
+    *  CL_VERSION = '13.00.9466'
+    *  MSBUILD_VERSION = ''
+    ----------------------------------------------------------------------------------------------------
+    CL cl_path = 'C:\\Program Files (x86)\\Microsoft Visual Studio .NET\\VC7\\BIN\\cl.EXE'
+    CL cl_version = '13.00.9466'
+    CL vc_toolset = '7.0'
+    CL vc_buildseries = '7.0'
+    CL vc_buildtools = '7.0'
+    CL vs_version = '7.0'
+    DE dev_path = 'C:\\Program Files (x86)\\Microsoft Visual Studio .NET\\Common7\\IDE\\devenv.com'
+    DE dev_isdevelop = True
+    DE dev_isexpress = False
+    SE MSVC_VERSION = '7.0'
+    ----------------------------------------------------------------------------------------------------
+
+Environment(**{'MSVC_VERSION': '6.0', 'MSVC_NOTFOUND_POLICY': 'Error'}):
+    ----------------------------------------------------------------------------------------------------
+    *  VS_VERSION = '6.0'
+    *  VC_TOOLSET = '6.0'
+    *  VC_BUILDSERIES = '6.0'
+    *  VC_BUILDTOOLS = '6.0'
+    *  VC_LEGACY = '6.0'
+    *  CL_VERSION = '12.00.8804'
+    *  MSBUILD_VERSION = ''
+    ----------------------------------------------------------------------------------------------------
+    CL cl_path = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\VC98\\BIN\\cl.EXE'
+    CL cl_version = '12.00.8804'
+    CL vc_toolset = '6.0'
+    CL vc_buildseries = '6.0'
+    CL vc_buildtools = '6.0'
+    CL vs_version = '6.0'
+    DE dev_path = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\Common\\msdev98\\BIN\\msdev.com'
+    DE dev_isdevelop = True
+    DE dev_isexpress = False
+    SE MSVC_VERSION = '6.0'
+    ----------------------------------------------------------------------------------------------------
+
+scons: done reading SConscript files.
+scons: Building targets ...
+scons: `.' is up to date.
+scons: done building targets.

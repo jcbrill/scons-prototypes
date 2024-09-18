@@ -1,0 +1,473 @@
+[
+    {
+        "version_info": {
+            "VS_VERSION": "17.11.4",
+            "VC_TOOLSET": "14.41.34120",
+            "VC_BUILDSERIES": "14.4",
+            "VC_BUILDTOOLS": "14.3",
+            "VC_LEGACY": "14.3",
+            "CL_VERSION": "19.41.34120",
+            "MSBUILD_VERSION": "17.11.9.46202"
+        },
+        "vswhere_info": {
+            "ENV_path": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64",
+            "installationPath": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools",
+            "installationVersion": "17.11.35312.102",
+            "displayName": "Visual Studio Build Tools 2022",
+            "productId": "Microsoft.VisualStudio.Product.BuildTools",
+            "productPath": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\Tools\\LaunchDevCmd.bat",
+            "buildVersion": "17.11.35312.102",
+            "productDisplayVersion": "17.11.4",
+            "productSemanticVersion": "17.11.4+35312.102"
+        },
+        "cl_info": {
+            "cl_path": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\cl.EXE",
+            "cl_version": "19.41.34120",
+            "vc_toolset": "14.41.34120",
+            "vc_buildseries": "14.4",
+            "vc_buildtools": "14.3",
+            "vs_version": ""
+        },
+        "msbuild_info": {
+            "msbuild_path": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\\\MSBuild\\Current\\Bin\\amd64\\msbuild.exe",
+            "msbuild_version": "17.11.9.46202"
+        },
+        "dev_info": {},
+        "scons_info": {
+            "MSVC_VERSION": "14.3"
+        }
+    },
+    {
+        "version_info": {
+            "VS_VERSION": "17.12.0-pre.2.0",
+            "VC_TOOLSET": "14.42.34321",
+            "VC_BUILDSERIES": "14.4",
+            "VC_BUILDTOOLS": "14.3",
+            "VC_LEGACY": "14.3",
+            "CL_VERSION": "19.42.34321.1",
+            "MSBUILD_VERSION": "17.12.0.42607"
+        },
+        "vswhere_info": {
+            "ENV_path": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\Preview\\VC\\Tools\\MSVC\\14.42.34321\\bin\\HostX64\\x64",
+            "installationPath": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\Preview",
+            "installationVersion": "17.12.35309.182",
+            "displayName": "Visual Studio Build Tools 2022",
+            "productId": "Microsoft.VisualStudio.Product.BuildTools",
+            "productPath": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\Preview\\Common7\\Tools\\LaunchDevCmd.bat",
+            "buildVersion": "17.12.35309.182",
+            "productDisplayVersion": "17.12.0 Preview 2.0",
+            "productSemanticVersion": "17.12.0-pre.2.0+35309.182"
+        },
+        "cl_info": {
+            "cl_path": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\Preview\\VC\\Tools\\MSVC\\14.42.34321\\bin\\HostX64\\x64\\cl.EXE",
+            "cl_version": "19.42.34321.1",
+            "vc_toolset": "14.42.34321",
+            "vc_buildseries": "14.4",
+            "vc_buildtools": "14.3",
+            "vs_version": ""
+        },
+        "msbuild_info": {
+            "msbuild_path": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\Preview\\\\MSBuild\\Current\\Bin\\amd64\\msbuild.exe",
+            "msbuild_version": "17.12.0.42607"
+        },
+        "dev_info": {},
+        "scons_info": {
+            "MSVC_VERSION": "14.3"
+        }
+    },
+    {
+        "version_info": {
+            "VS_VERSION": "17.11.4",
+            "VC_TOOLSET": "14.41.34120",
+            "VC_BUILDSERIES": "14.4",
+            "VC_BUILDTOOLS": "14.3",
+            "VC_LEGACY": "14.3",
+            "CL_VERSION": "19.41.34120",
+            "MSBUILD_VERSION": "17.11.9.46202"
+        },
+        "vswhere_info": {
+            "ENV_path": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64",
+            "installationPath": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools",
+            "installationVersion": "17.11.35312.102",
+            "displayName": "Visual Studio Build Tools 2022",
+            "productId": "Microsoft.VisualStudio.Product.BuildTools",
+            "productPath": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\Tools\\LaunchDevCmd.bat",
+            "buildVersion": "17.11.35312.102",
+            "productDisplayVersion": "17.11.4",
+            "productSemanticVersion": "17.11.4+35312.102"
+        },
+        "cl_info": {
+            "cl_path": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\cl.EXE",
+            "cl_version": "19.41.34120",
+            "vc_toolset": "14.41.34120",
+            "vc_buildseries": "14.4",
+            "vc_buildtools": "14.3",
+            "vs_version": ""
+        },
+        "msbuild_info": {
+            "msbuild_path": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\\\MSBuild\\Current\\Bin\\amd64\\msbuild.exe",
+            "msbuild_version": "17.11.9.46202"
+        },
+        "dev_info": {},
+        "scons_info": {
+            "MSVC_VERSION": "14.3"
+        }
+    },
+    {
+        "version_info": {
+            "VS_VERSION": "17.11.4",
+            "VC_TOOLSET": "14.29.30133",
+            "VC_BUILDSERIES": "14.2",
+            "VC_BUILDTOOLS": "14.2",
+            "VC_LEGACY": "14.3",
+            "CL_VERSION": "19.29.30154",
+            "MSBUILD_VERSION": "17.11.9.46202"
+        },
+        "vswhere_info": {
+            "ENV_path": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64",
+            "installationPath": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools",
+            "installationVersion": "17.11.35312.102",
+            "displayName": "Visual Studio Build Tools 2022",
+            "productId": "Microsoft.VisualStudio.Product.BuildTools",
+            "productPath": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\Tools\\LaunchDevCmd.bat",
+            "buildVersion": "17.11.35312.102",
+            "productDisplayVersion": "17.11.4",
+            "productSemanticVersion": "17.11.4+35312.102"
+        },
+        "cl_info": {
+            "cl_path": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\cl.EXE",
+            "cl_version": "19.29.30154",
+            "vc_toolset": "14.29.30133",
+            "vc_buildseries": "14.2",
+            "vc_buildtools": "14.2",
+            "vs_version": ""
+        },
+        "msbuild_info": {
+            "msbuild_path": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\\\MSBuild\\Current\\Bin\\amd64\\msbuild.exe",
+            "msbuild_version": "17.11.9.46202"
+        },
+        "dev_info": {},
+        "scons_info": {
+            "MSVC_VERSION": "14.3"
+        }
+    },
+    {
+        "version_info": {
+            "VS_VERSION": "17.11.4",
+            "VC_TOOLSET": "14.16.27023",
+            "VC_BUILDSERIES": "14.1",
+            "VC_BUILDTOOLS": "14.1",
+            "VC_LEGACY": "14.3",
+            "CL_VERSION": "19.16.27051",
+            "MSBUILD_VERSION": "17.11.9.46202"
+        },
+        "vswhere_info": {
+            "ENV_path": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.16.27023\\bin\\HostX64\\x64",
+            "installationPath": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools",
+            "installationVersion": "17.11.35312.102",
+            "displayName": "Visual Studio Build Tools 2022",
+            "productId": "Microsoft.VisualStudio.Product.BuildTools",
+            "productPath": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\Tools\\LaunchDevCmd.bat",
+            "buildVersion": "17.11.35312.102",
+            "productDisplayVersion": "17.11.4",
+            "productSemanticVersion": "17.11.4+35312.102"
+        },
+        "cl_info": {
+            "cl_path": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.16.27023\\bin\\HostX64\\x64\\cl.EXE",
+            "cl_version": "19.16.27051",
+            "vc_toolset": "14.16.27023",
+            "vc_buildseries": "14.1",
+            "vc_buildtools": "14.1",
+            "vs_version": ""
+        },
+        "msbuild_info": {
+            "msbuild_path": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\\\MSBuild\\Current\\Bin\\amd64\\msbuild.exe",
+            "msbuild_version": "17.11.9.46202"
+        },
+        "dev_info": {},
+        "scons_info": {
+            "MSVC_VERSION": "14.3"
+        }
+    },
+    {
+        "version_info": {
+            "VS_VERSION": "17.11.4",
+            "VC_TOOLSET": "14.0",
+            "VC_BUILDSERIES": "14.0",
+            "VC_BUILDTOOLS": "14.0",
+            "VC_LEGACY": "14.3",
+            "CL_VERSION": "19.00.24247.2",
+            "MSBUILD_VERSION": "17.11.9.46202"
+        },
+        "vswhere_info": {
+            "ENV_path": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\CommonExtensions\\Microsoft\\TestWindow",
+            "installationPath": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools",
+            "installationVersion": "17.11.35312.102",
+            "displayName": "Visual Studio Build Tools 2022",
+            "productId": "Microsoft.VisualStudio.Product.BuildTools",
+            "productPath": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\Tools\\LaunchDevCmd.bat",
+            "buildVersion": "17.11.35312.102",
+            "productDisplayVersion": "17.11.4",
+            "productSemanticVersion": "17.11.4+35312.102"
+        },
+        "cl_info": {
+            "cl_path": "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\bin\\amd64\\cl.EXE",
+            "cl_version": "19.00.24247.2",
+            "vc_toolset": "14.0",
+            "vc_buildseries": "14.0",
+            "vc_buildtools": "14.0",
+            "vs_version": "14.0"
+        },
+        "msbuild_info": {
+            "msbuild_path": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\\\MSBuild\\Current\\Bin\\amd64\\msbuild.exe",
+            "msbuild_version": "17.11.9.46202"
+        },
+        "dev_info": {},
+        "scons_info": {
+            "MSVC_VERSION": "14.3"
+        }
+    },
+    {
+        "version_info": {
+            "VS_VERSION": "16.11.40",
+            "VC_TOOLSET": "14.29.30133",
+            "VC_BUILDSERIES": "14.2",
+            "VC_BUILDTOOLS": "14.2",
+            "VC_LEGACY": "14.2",
+            "CL_VERSION": "19.29.30154",
+            "MSBUILD_VERSION": "16.11.2.50704"
+        },
+        "vswhere_info": {
+            "ENV_path": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64",
+            "installationPath": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools",
+            "installationVersion": "16.11.35229.62",
+            "displayName": "Visual Studio Build Tools 2019",
+            "productId": "Microsoft.VisualStudio.Product.BuildTools",
+            "productPath": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\Common7\\Tools\\LaunchDevCmd.bat",
+            "buildVersion": "16.11.35229.62",
+            "productDisplayVersion": "16.11.40",
+            "productSemanticVersion": "16.11.40+35229.62"
+        },
+        "cl_info": {
+            "cl_path": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\cl.EXE",
+            "cl_version": "19.29.30154",
+            "vc_toolset": "14.29.30133",
+            "vc_buildseries": "14.2",
+            "vc_buildtools": "14.2",
+            "vs_version": ""
+        },
+        "msbuild_info": {
+            "msbuild_path": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\\\MSBuild\\Current\\Bin\\msbuild.exe",
+            "msbuild_version": "16.11.2.50704"
+        },
+        "dev_info": {},
+        "scons_info": {
+            "MSVC_VERSION": "14.2"
+        }
+    },
+    {
+        "version_info": {
+            "VS_VERSION": "16.11.40",
+            "VC_TOOLSET": "14.16.27023",
+            "VC_BUILDSERIES": "14.1",
+            "VC_BUILDTOOLS": "14.1",
+            "VC_LEGACY": "14.2",
+            "CL_VERSION": "19.16.27051",
+            "MSBUILD_VERSION": "16.11.2.50704"
+        },
+        "vswhere_info": {
+            "ENV_path": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Tools\\MSVC\\14.16.27023\\bin\\HostX64\\x64",
+            "installationPath": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools",
+            "installationVersion": "16.11.35229.62",
+            "displayName": "Visual Studio Build Tools 2019",
+            "productId": "Microsoft.VisualStudio.Product.BuildTools",
+            "productPath": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\Common7\\Tools\\LaunchDevCmd.bat",
+            "buildVersion": "16.11.35229.62",
+            "productDisplayVersion": "16.11.40",
+            "productSemanticVersion": "16.11.40+35229.62"
+        },
+        "cl_info": {
+            "cl_path": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Tools\\MSVC\\14.16.27023\\bin\\HostX64\\x64\\cl.EXE",
+            "cl_version": "19.16.27051",
+            "vc_toolset": "14.16.27023",
+            "vc_buildseries": "14.1",
+            "vc_buildtools": "14.1",
+            "vs_version": ""
+        },
+        "msbuild_info": {
+            "msbuild_path": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\\\MSBuild\\Current\\Bin\\msbuild.exe",
+            "msbuild_version": "16.11.2.50704"
+        },
+        "dev_info": {},
+        "scons_info": {
+            "MSVC_VERSION": "14.2"
+        }
+    },
+    {
+        "version_info": {
+            "VS_VERSION": "16.11.40",
+            "VC_TOOLSET": "14.0",
+            "VC_BUILDSERIES": "14.0",
+            "VC_BUILDTOOLS": "14.0",
+            "VC_LEGACY": "14.2",
+            "CL_VERSION": "19.00.24247.2",
+            "MSBUILD_VERSION": "16.11.2.50704"
+        },
+        "vswhere_info": {
+            "ENV_path": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\Common7\\IDE\\CommonExtensions\\Microsoft\\TestWindow",
+            "installationPath": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools",
+            "installationVersion": "16.11.35229.62",
+            "displayName": "Visual Studio Build Tools 2019",
+            "productId": "Microsoft.VisualStudio.Product.BuildTools",
+            "productPath": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\Common7\\Tools\\LaunchDevCmd.bat",
+            "buildVersion": "16.11.35229.62",
+            "productDisplayVersion": "16.11.40",
+            "productSemanticVersion": "16.11.40+35229.62"
+        },
+        "cl_info": {
+            "cl_path": "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\bin\\amd64\\cl.EXE",
+            "cl_version": "19.00.24247.2",
+            "vc_toolset": "14.0",
+            "vc_buildseries": "14.0",
+            "vc_buildtools": "14.0",
+            "vs_version": "14.0"
+        },
+        "msbuild_info": {
+            "msbuild_path": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\\\MSBuild\\Current\\Bin\\msbuild.exe",
+            "msbuild_version": "16.11.2.50704"
+        },
+        "dev_info": {},
+        "scons_info": {
+            "MSVC_VERSION": "14.2"
+        }
+    },
+    {
+        "version_info": {
+            "VS_VERSION": "15.9.66",
+            "VC_TOOLSET": "14.16.27023",
+            "VC_BUILDSERIES": "14.1",
+            "VC_BUILDTOOLS": "14.1",
+            "VC_LEGACY": "14.1",
+            "CL_VERSION": "19.16.27051",
+            "MSBUILD_VERSION": "15.9.21.664"
+        },
+        "vswhere_info": {
+            "ENV_path": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\BuildTools\\VC\\Tools\\MSVC\\14.16.27023\\bin\\HostX64\\x64",
+            "installationPath": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\BuildTools",
+            "installationVersion": "15.9.35229.15",
+            "displayName": "Visual Studio Build Tools 2017",
+            "productId": "Microsoft.VisualStudio.Product.BuildTools",
+            "productPath": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\BuildTools\\Common7\\Tools\\LaunchDevCmd.bat",
+            "buildVersion": "15.9.35229.15",
+            "productDisplayVersion": "15.9.66",
+            "productSemanticVersion": "15.9.66+35229.15"
+        },
+        "cl_info": {
+            "cl_path": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\BuildTools\\VC\\Tools\\MSVC\\14.16.27023\\bin\\HostX64\\x64\\cl.EXE",
+            "cl_version": "19.16.27051",
+            "vc_toolset": "14.16.27023",
+            "vc_buildseries": "14.1",
+            "vc_buildtools": "14.1",
+            "vs_version": ""
+        },
+        "msbuild_info": {
+            "msbuild_path": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\BuildTools\\\\MSBuild\\15.0\\bin\\msbuild.exe",
+            "msbuild_version": "15.9.21.664"
+        },
+        "dev_info": {},
+        "scons_info": {
+            "MSVC_VERSION": "14.1"
+        }
+    },
+    {
+        "version_info": {
+            "VS_VERSION": "15.9.66",
+            "VC_TOOLSET": "14.0",
+            "VC_BUILDSERIES": "14.0",
+            "VC_BUILDTOOLS": "14.0",
+            "VC_LEGACY": "14.1",
+            "CL_VERSION": "19.00.24247.2",
+            "MSBUILD_VERSION": "15.9.21.664"
+        },
+        "vswhere_info": {
+            "ENV_path": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\BuildTools\\Common7\\IDE\\CommonExtensions\\Microsoft\\TestWindow",
+            "installationPath": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\BuildTools",
+            "installationVersion": "15.9.35229.15",
+            "displayName": "Visual Studio Build Tools 2017",
+            "productId": "Microsoft.VisualStudio.Product.BuildTools",
+            "productPath": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\BuildTools\\Common7\\Tools\\LaunchDevCmd.bat",
+            "buildVersion": "15.9.35229.15",
+            "productDisplayVersion": "15.9.66",
+            "productSemanticVersion": "15.9.66+35229.15"
+        },
+        "cl_info": {
+            "cl_path": "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\bin\\amd64\\cl.EXE",
+            "cl_version": "19.00.24247.2",
+            "vc_toolset": "14.0",
+            "vc_buildseries": "14.0",
+            "vc_buildtools": "14.0",
+            "vs_version": "14.0"
+        },
+        "msbuild_info": {
+            "msbuild_path": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\BuildTools\\\\MSBuild\\15.0\\bin\\msbuild.exe",
+            "msbuild_version": "15.9.21.664"
+        },
+        "dev_info": {},
+        "scons_info": {
+            "MSVC_VERSION": "14.1"
+        }
+    },
+    {
+        "version_info": {
+            "VS_VERSION": "14.0",
+            "VC_TOOLSET": "14.0",
+            "VC_BUILDSERIES": "14.0",
+            "VC_BUILDTOOLS": "14.0",
+            "VC_LEGACY": "14.0",
+            "CL_VERSION": "19.00.24247.2",
+            "MSBUILD_VERSION": "4.8.9032.0"
+        },
+        "vswhere_info": {},
+        "cl_info": {
+            "cl_path": "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\BIN\\amd64\\cl.EXE",
+            "cl_version": "19.00.24247.2",
+            "vc_toolset": "14.0",
+            "vc_buildseries": "14.0",
+            "vc_buildtools": "14.0",
+            "vs_version": "14.0"
+        },
+        "msbuild_info": {
+            "msbuild_path": "C:\\WINDOWS\\Microsoft.NET\\Framework64\\v4.0.30319\\msbuild.exe",
+            "msbuild_version": "4.8.9032.0"
+        },
+        "dev_info": {},
+        "scons_info": {
+            "MSVC_VERSION": "14.0"
+        }
+    },
+    {
+        "version_info": {
+            "VS_VERSION": "9.0",
+            "VC_TOOLSET": "9.0",
+            "VC_BUILDSERIES": "9.0",
+            "VC_BUILDTOOLS": "9.0",
+            "VC_LEGACY": "9.0",
+            "CL_VERSION": "15.00.30729.01",
+            "MSBUILD_VERSION": ""
+        },
+        "vswhere_info": {},
+        "cl_info": {
+            "cl_path": "C:\\Program Files (x86)\\Common Files\\Microsoft\\Visual C++ for Python\\9.0\\VC\\Bin\\amd64\\cl.EXE",
+            "cl_version": "15.00.30729.01",
+            "vc_toolset": "9.0",
+            "vc_buildseries": "9.0",
+            "vc_buildtools": "9.0",
+            "vs_version": "9.0"
+        },
+        "msbuild_info": {},
+        "dev_info": {},
+        "scons_info": {
+            "MSVC_VERSION": "9.0"
+        }
+    }
+]

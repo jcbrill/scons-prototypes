@@ -1,0 +1,430 @@
+scons: Reading SConscript files ...
+
+Legend:
+    * : version summary information
+    VW: vswhere output information
+    CL: cl executable information
+    MB: msbuild executable information
+    DE: development executable information
+    SE: SCons environment information
+
+Environment(**{'MSVC_NOTFOUND_POLICY': 'Error'}):
+    ----------------------------------------------------------------------------------------------------
+    *  VS_VERSION = '15.9.66'
+    *  VC_TOOLSET = '14.16.27023'
+    *  VC_BUILDSERIES = '14.1'
+    *  VC_BUILDTOOLS = '14.1'
+    *  VC_LEGACY = '14.1Exp'
+    *  CL_VERSION = '19.16.27051'
+    *  MSBUILD_VERSION = '15.9.21.664'
+    ----------------------------------------------------------------------------------------------------
+    VW ENV_path = 'C:\\Program Files\\Microsoft Visual Studio\\2017\\WDExpress\\VC\\Tools\\MSVC\\14.16.27023\\bin\\HostX86\\x86'
+    VW installationPath = 'C:\\Program Files\\Microsoft Visual Studio\\2017\\WDExpress'
+    VW installationVersion = '15.9.35229.15'
+    VW displayName = 'Visual Studio 2017 Desktop Express'
+    VW productId = 'Microsoft.VisualStudio.Product.WDExpress'
+    VW productPath = 'C:\\Program Files\\Microsoft Visual Studio\\2017\\WDExpress\\Common7\\IDE\\WDExpress.exe'
+    VW buildVersion = '15.9.35229.15'
+    VW productDisplayVersion = '15.9.66'
+    VW productSemanticVersion = '15.9.66+35229.15'
+    CL cl_path = 'C:\\Program Files\\Microsoft Visual Studio\\2017\\WDExpress\\VC\\Tools\\MSVC\\14.16.27023\\bin\\HostX86\\x86\\cl.EXE'
+    CL cl_version = '19.16.27051'
+    CL vc_toolset = '14.16.27023'
+    CL vc_buildseries = '14.1'
+    CL vc_buildtools = '14.1'
+    CL vs_version = ''
+    MB msbuild_path = 'C:\\Program Files\\Microsoft Visual Studio\\2017\\WDExpress\\\\MSBuild\\15.0\\bin\\msbuild.exe'
+    MB msbuild_version = '15.9.21.664'
+    DE dev_path = 'C:\\Program Files\\Microsoft Visual Studio\\2017\\WDExpress\\Common7\\IDE\\wdexpress.exe'
+    DE dev_isdevelop = False
+    DE dev_isexpress = True
+    SE MSVC_VERSION = '14.1'
+    ----------------------------------------------------------------------------------------------------
+
+Environment(**{'MSVC_VERSION': '14.1', 'MSVC_NOTFOUND_POLICY': 'Error'}):
+    ----------------------------------------------------------------------------------------------------
+    *  VS_VERSION = '15.9.66'
+    *  VC_TOOLSET = '14.16.27023'
+    *  VC_BUILDSERIES = '14.1'
+    *  VC_BUILDTOOLS = '14.1'
+    *  VC_LEGACY = '14.1Exp'
+    *  CL_VERSION = '19.16.27051'
+    *  MSBUILD_VERSION = '15.9.21.664'
+    ----------------------------------------------------------------------------------------------------
+    VW ENV_path = 'C:\\Program Files\\Microsoft Visual Studio\\2017\\WDExpress\\VC\\Tools\\MSVC\\14.16.27023\\bin\\HostX86\\x86'
+    VW installationPath = 'C:\\Program Files\\Microsoft Visual Studio\\2017\\WDExpress'
+    VW installationVersion = '15.9.35229.15'
+    VW displayName = 'Visual Studio 2017 Desktop Express'
+    VW productId = 'Microsoft.VisualStudio.Product.WDExpress'
+    VW productPath = 'C:\\Program Files\\Microsoft Visual Studio\\2017\\WDExpress\\Common7\\IDE\\WDExpress.exe'
+    VW buildVersion = '15.9.35229.15'
+    VW productDisplayVersion = '15.9.66'
+    VW productSemanticVersion = '15.9.66+35229.15'
+    CL cl_path = 'C:\\Program Files\\Microsoft Visual Studio\\2017\\WDExpress\\VC\\Tools\\MSVC\\14.16.27023\\bin\\HostX86\\x86\\cl.EXE'
+    CL cl_version = '19.16.27051'
+    CL vc_toolset = '14.16.27023'
+    CL vc_buildseries = '14.1'
+    CL vc_buildtools = '14.1'
+    CL vs_version = ''
+    MB msbuild_path = 'C:\\Program Files\\Microsoft Visual Studio\\2017\\WDExpress\\\\MSBuild\\15.0\\bin\\msbuild.exe'
+    MB msbuild_version = '15.9.21.664'
+    DE dev_path = 'C:\\Program Files\\Microsoft Visual Studio\\2017\\WDExpress\\Common7\\IDE\\wdexpress.exe'
+    DE dev_isdevelop = False
+    DE dev_isexpress = True
+    SE MSVC_VERSION = '14.1'
+    ----------------------------------------------------------------------------------------------------
+
+Environment(**{'MSVC_VERSION': '14.1', 'MSVC_TOOLSET_VERSION': '14.0', 'MSVC_NOTFOUND_POLICY': 'Error'}):
+    ----------------------------------------------------------------------------------------------------
+    *  VS_VERSION = '15.9.66'
+    *  VC_TOOLSET = '14.0'
+    *  VC_BUILDSERIES = '14.0'
+    *  VC_BUILDTOOLS = '14.0'
+    *  VC_LEGACY = '14.1Exp'
+    *  CL_VERSION = '19.00.23026'
+    *  MSBUILD_VERSION = '15.9.21.664'
+    ----------------------------------------------------------------------------------------------------
+    VW ENV_path = 'C:\\Program Files\\Microsoft Visual Studio\\2017\\WDExpress\\Common7\\IDE\\CommonExtensions\\Microsoft\\TestWindow'
+    VW installationPath = 'C:\\Program Files\\Microsoft Visual Studio\\2017\\WDExpress'
+    VW installationVersion = '15.9.35229.15'
+    VW displayName = 'Visual Studio 2017 Desktop Express'
+    VW productId = 'Microsoft.VisualStudio.Product.WDExpress'
+    VW productPath = 'C:\\Program Files\\Microsoft Visual Studio\\2017\\WDExpress\\Common7\\IDE\\WDExpress.exe'
+    VW buildVersion = '15.9.35229.15'
+    VW productDisplayVersion = '15.9.66'
+    VW productSemanticVersion = '15.9.66+35229.15'
+    CL cl_path = 'C:\\Program Files\\Microsoft Visual Studio 14.0\\VC\\bin\\cl.EXE'
+    CL cl_version = '19.00.23026'
+    CL vc_toolset = '14.0'
+    CL vc_buildseries = '14.0'
+    CL vc_buildtools = '14.0'
+    CL vs_version = '14.0'
+    MB msbuild_path = 'C:\\Program Files\\Microsoft Visual Studio\\2017\\WDExpress\\\\MSBuild\\15.0\\bin\\msbuild.exe'
+    MB msbuild_version = '15.9.21.664'
+    DE dev_path = 'C:\\Program Files\\Microsoft Visual Studio\\2017\\WDExpress\\Common7\\IDE\\wdexpress.exe'
+    DE dev_isdevelop = False
+    DE dev_isexpress = True
+    SE MSVC_VERSION = '14.1'
+    ----------------------------------------------------------------------------------------------------
+
+Environment(**{'MSVC_VERSION': '14.1Exp', 'MSVC_NOTFOUND_POLICY': 'Error'}):
+    ----------------------------------------------------------------------------------------------------
+    *  VS_VERSION = '15.9.66'
+    *  VC_TOOLSET = '14.16.27023'
+    *  VC_BUILDSERIES = '14.1'
+    *  VC_BUILDTOOLS = '14.1'
+    *  VC_LEGACY = '14.1Exp'
+    *  CL_VERSION = '19.16.27051'
+    *  MSBUILD_VERSION = '15.9.21.664'
+    ----------------------------------------------------------------------------------------------------
+    VW ENV_path = 'C:\\Program Files\\Microsoft Visual Studio\\2017\\WDExpress\\VC\\Tools\\MSVC\\14.16.27023\\bin\\HostX86\\x86'
+    VW installationPath = 'C:\\Program Files\\Microsoft Visual Studio\\2017\\WDExpress'
+    VW installationVersion = '15.9.35229.15'
+    VW displayName = 'Visual Studio 2017 Desktop Express'
+    VW productId = 'Microsoft.VisualStudio.Product.WDExpress'
+    VW productPath = 'C:\\Program Files\\Microsoft Visual Studio\\2017\\WDExpress\\Common7\\IDE\\WDExpress.exe'
+    VW buildVersion = '15.9.35229.15'
+    VW productDisplayVersion = '15.9.66'
+    VW productSemanticVersion = '15.9.66+35229.15'
+    CL cl_path = 'C:\\Program Files\\Microsoft Visual Studio\\2017\\WDExpress\\VC\\Tools\\MSVC\\14.16.27023\\bin\\HostX86\\x86\\cl.EXE'
+    CL cl_version = '19.16.27051'
+    CL vc_toolset = '14.16.27023'
+    CL vc_buildseries = '14.1'
+    CL vc_buildtools = '14.1'
+    CL vs_version = ''
+    MB msbuild_path = 'C:\\Program Files\\Microsoft Visual Studio\\2017\\WDExpress\\\\MSBuild\\15.0\\bin\\msbuild.exe'
+    MB msbuild_version = '15.9.21.664'
+    DE dev_path = 'C:\\Program Files\\Microsoft Visual Studio\\2017\\WDExpress\\Common7\\IDE\\wdexpress.exe'
+    DE dev_isdevelop = False
+    DE dev_isexpress = True
+    SE MSVC_VERSION = '14.1Exp'
+    ----------------------------------------------------------------------------------------------------
+
+Environment(**{'MSVC_VERSION': '14.0', 'MSVC_NOTFOUND_POLICY': 'Error'}):
+    ----------------------------------------------------------------------------------------------------
+    *  VS_VERSION = '14.0'
+    *  VC_TOOLSET = '14.0'
+    *  VC_BUILDSERIES = '14.0'
+    *  VC_BUILDTOOLS = '14.0'
+    *  VC_LEGACY = '14.0Exp'
+    *  CL_VERSION = '19.00.23026'
+    *  MSBUILD_VERSION = '4.8.9037.0'
+    ----------------------------------------------------------------------------------------------------
+    CL cl_path = 'C:\\Program Files\\Microsoft Visual Studio 14.0\\VC\\BIN\\cl.EXE'
+    CL cl_version = '19.00.23026'
+    CL vc_toolset = '14.0'
+    CL vc_buildseries = '14.0'
+    CL vc_buildtools = '14.0'
+    CL vs_version = '14.0'
+    MB msbuild_path = 'C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\msbuild.exe'
+    MB msbuild_version = '4.8.9037.0'
+    DE dev_path = 'C:\\Program Files\\Microsoft Visual Studio 14.0\\Common7\\IDE\\wdexpress.exe'
+    DE dev_isdevelop = False
+    DE dev_isexpress = True
+    SE MSVC_VERSION = '14.0'
+    ----------------------------------------------------------------------------------------------------
+
+Environment(**{'MSVC_VERSION': '14.0Exp', 'MSVC_NOTFOUND_POLICY': 'Error'}):
+    ----------------------------------------------------------------------------------------------------
+    *  VS_VERSION = '14.0'
+    *  VC_TOOLSET = '14.0'
+    *  VC_BUILDSERIES = '14.0'
+    *  VC_BUILDTOOLS = '14.0'
+    *  VC_LEGACY = '14.0Exp'
+    *  CL_VERSION = '19.00.23026'
+    *  MSBUILD_VERSION = '4.8.9037.0'
+    ----------------------------------------------------------------------------------------------------
+    CL cl_path = 'C:\\Program Files\\Microsoft Visual Studio 14.0\\VC\\BIN\\cl.EXE'
+    CL cl_version = '19.00.23026'
+    CL vc_toolset = '14.0'
+    CL vc_buildseries = '14.0'
+    CL vc_buildtools = '14.0'
+    CL vs_version = '14.0'
+    MB msbuild_path = 'C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\msbuild.exe'
+    MB msbuild_version = '4.8.9037.0'
+    DE dev_path = 'C:\\Program Files\\Microsoft Visual Studio 14.0\\Common7\\IDE\\wdexpress.exe'
+    DE dev_isdevelop = False
+    DE dev_isexpress = True
+    SE MSVC_VERSION = '14.0Exp'
+    ----------------------------------------------------------------------------------------------------
+
+Environment(**{'MSVC_VERSION': '12.0', 'MSVC_NOTFOUND_POLICY': 'Error'}):
+    ----------------------------------------------------------------------------------------------------
+    *  VS_VERSION = '12.0'
+    *  VC_TOOLSET = '12.0'
+    *  VC_BUILDSERIES = '12.0'
+    *  VC_BUILDTOOLS = '12.0'
+    *  VC_LEGACY = '12.0Exp'
+    *  CL_VERSION = '18.00.40629'
+    *  MSBUILD_VERSION = '4.8.9037.0'
+    ----------------------------------------------------------------------------------------------------
+    CL cl_path = 'C:\\Program Files\\Microsoft Visual Studio 12.0\\VC\\BIN\\cl.EXE'
+    CL cl_version = '18.00.40629'
+    CL vc_toolset = '12.0'
+    CL vc_buildseries = '12.0'
+    CL vc_buildtools = '12.0'
+    CL vs_version = '12.0'
+    MB msbuild_path = 'C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\msbuild.exe'
+    MB msbuild_version = '4.8.9037.0'
+    DE dev_path = 'C:\\Program Files\\Microsoft Visual Studio 12.0\\Common7\\IDE\\wdexpress.exe'
+    DE dev_isdevelop = False
+    DE dev_isexpress = True
+    SE MSVC_VERSION = '12.0'
+    ----------------------------------------------------------------------------------------------------
+
+Environment(**{'MSVC_VERSION': '12.0Exp', 'MSVC_NOTFOUND_POLICY': 'Error'}):
+    ----------------------------------------------------------------------------------------------------
+    *  VS_VERSION = '12.0'
+    *  VC_TOOLSET = '12.0'
+    *  VC_BUILDSERIES = '12.0'
+    *  VC_BUILDTOOLS = '12.0'
+    *  VC_LEGACY = '12.0Exp'
+    *  CL_VERSION = '18.00.40629'
+    *  MSBUILD_VERSION = '4.8.9037.0'
+    ----------------------------------------------------------------------------------------------------
+    CL cl_path = 'C:\\Program Files\\Microsoft Visual Studio 12.0\\VC\\BIN\\cl.EXE'
+    CL cl_version = '18.00.40629'
+    CL vc_toolset = '12.0'
+    CL vc_buildseries = '12.0'
+    CL vc_buildtools = '12.0'
+    CL vs_version = '12.0'
+    MB msbuild_path = 'C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\msbuild.exe'
+    MB msbuild_version = '4.8.9037.0'
+    DE dev_path = 'C:\\Program Files\\Microsoft Visual Studio 12.0\\Common7\\IDE\\wdexpress.exe'
+    DE dev_isdevelop = False
+    DE dev_isexpress = True
+    SE MSVC_VERSION = '12.0Exp'
+    ----------------------------------------------------------------------------------------------------
+
+Environment(**{'MSVC_VERSION': '11.0', 'MSVC_NOTFOUND_POLICY': 'Error'}):
+    ----------------------------------------------------------------------------------------------------
+    *  VS_VERSION = '11.0'
+    *  VC_TOOLSET = '11.0'
+    *  VC_BUILDSERIES = '11.0'
+    *  VC_BUILDTOOLS = '11.0'
+    *  VC_LEGACY = '11.0Exp'
+    *  CL_VERSION = '17.00.61030'
+    *  MSBUILD_VERSION = '4.8.9037.0'
+    ----------------------------------------------------------------------------------------------------
+    CL cl_path = 'C:\\Program Files\\Microsoft Visual Studio 11.0\\VC\\BIN\\cl.EXE'
+    CL cl_version = '17.00.61030'
+    CL vc_toolset = '11.0'
+    CL vc_buildseries = '11.0'
+    CL vc_buildtools = '11.0'
+    CL vs_version = '11.0'
+    MB msbuild_path = 'C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\msbuild.exe'
+    MB msbuild_version = '4.8.9037.0'
+    DE dev_path = 'C:\\Program Files\\Microsoft Visual Studio 11.0\\Common7\\IDE\\wdexpress.exe'
+    DE dev_isdevelop = False
+    DE dev_isexpress = True
+    SE MSVC_VERSION = '11.0'
+    ----------------------------------------------------------------------------------------------------
+
+Environment(**{'MSVC_VERSION': '11.0Exp', 'MSVC_NOTFOUND_POLICY': 'Error'}):
+    ----------------------------------------------------------------------------------------------------
+    *  VS_VERSION = '11.0'
+    *  VC_TOOLSET = '11.0'
+    *  VC_BUILDSERIES = '11.0'
+    *  VC_BUILDTOOLS = '11.0'
+    *  VC_LEGACY = '11.0Exp'
+    *  CL_VERSION = '17.00.61030'
+    *  MSBUILD_VERSION = '4.8.9037.0'
+    ----------------------------------------------------------------------------------------------------
+    CL cl_path = 'C:\\Program Files\\Microsoft Visual Studio 11.0\\VC\\BIN\\cl.EXE'
+    CL cl_version = '17.00.61030'
+    CL vc_toolset = '11.0'
+    CL vc_buildseries = '11.0'
+    CL vc_buildtools = '11.0'
+    CL vs_version = '11.0'
+    MB msbuild_path = 'C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\msbuild.exe'
+    MB msbuild_version = '4.8.9037.0'
+    DE dev_path = 'C:\\Program Files\\Microsoft Visual Studio 11.0\\Common7\\IDE\\wdexpress.exe'
+    DE dev_isdevelop = False
+    DE dev_isexpress = True
+    SE MSVC_VERSION = '11.0Exp'
+    ----------------------------------------------------------------------------------------------------
+
+Environment(**{'MSVC_VERSION': '10.0', 'MSVC_NOTFOUND_POLICY': 'Error'}):
+    ----------------------------------------------------------------------------------------------------
+    *  VS_VERSION = '10.0'
+    *  VC_TOOLSET = '10.0'
+    *  VC_BUILDSERIES = '10.0'
+    *  VC_BUILDTOOLS = '10.0'
+    *  VC_LEGACY = '10.0Exp'
+    *  CL_VERSION = '16.00.40219.01'
+    *  MSBUILD_VERSION = '4.8.9037.0'
+    ----------------------------------------------------------------------------------------------------
+    CL cl_path = 'c:\\Program Files\\Microsoft Visual Studio 10.0\\VC\\BIN\\cl.EXE'
+    CL cl_version = '16.00.40219.01'
+    CL vc_toolset = '10.0'
+    CL vc_buildseries = '10.0'
+    CL vc_buildtools = '10.0'
+    CL vs_version = '10.0'
+    MB msbuild_path = 'C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\msbuild.exe'
+    MB msbuild_version = '4.8.9037.0'
+    DE dev_path = 'c:\\Program Files\\Microsoft Visual Studio 10.0\\Common7\\IDE\\vcexpress.exe'
+    DE dev_isdevelop = False
+    DE dev_isexpress = True
+    SE MSVC_VERSION = '10.0'
+    ----------------------------------------------------------------------------------------------------
+
+Environment(**{'MSVC_VERSION': '10.0Exp', 'MSVC_NOTFOUND_POLICY': 'Error'}):
+    ----------------------------------------------------------------------------------------------------
+    *  VS_VERSION = '10.0'
+    *  VC_TOOLSET = '10.0'
+    *  VC_BUILDSERIES = '10.0'
+    *  VC_BUILDTOOLS = '10.0'
+    *  VC_LEGACY = '10.0Exp'
+    *  CL_VERSION = '16.00.40219.01'
+    *  MSBUILD_VERSION = '4.8.9037.0'
+    ----------------------------------------------------------------------------------------------------
+    CL cl_path = 'c:\\Program Files\\Microsoft Visual Studio 10.0\\VC\\BIN\\cl.EXE'
+    CL cl_version = '16.00.40219.01'
+    CL vc_toolset = '10.0'
+    CL vc_buildseries = '10.0'
+    CL vc_buildtools = '10.0'
+    CL vs_version = '10.0'
+    MB msbuild_path = 'C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\msbuild.exe'
+    MB msbuild_version = '4.8.9037.0'
+    DE dev_path = 'c:\\Program Files\\Microsoft Visual Studio 10.0\\Common7\\IDE\\vcexpress.exe'
+    DE dev_isdevelop = False
+    DE dev_isexpress = True
+    SE MSVC_VERSION = '10.0Exp'
+    ----------------------------------------------------------------------------------------------------
+
+Environment(**{'MSVC_VERSION': '9.0', 'MSVC_NOTFOUND_POLICY': 'Error'}):
+    ----------------------------------------------------------------------------------------------------
+    *  VS_VERSION = '9.0'
+    *  VC_TOOLSET = '9.0'
+    *  VC_BUILDSERIES = '9.0'
+    *  VC_BUILDTOOLS = '9.0'
+    *  VC_LEGACY = '9.0Exp'
+    *  CL_VERSION = '15.00.30729.01'
+    *  MSBUILD_VERSION = ''
+    ----------------------------------------------------------------------------------------------------
+    CL cl_path = 'C:\\Program Files\\Microsoft Visual Studio 9.0\\VC\\BIN\\cl.EXE'
+    CL cl_version = '15.00.30729.01'
+    CL vc_toolset = '9.0'
+    CL vc_buildseries = '9.0'
+    CL vc_buildtools = '9.0'
+    CL vs_version = '9.0'
+    DE dev_path = 'C:\\Program Files\\Microsoft Visual Studio 9.0\\Common7\\IDE\\vcexpress.exe'
+    DE dev_isdevelop = False
+    DE dev_isexpress = True
+    SE MSVC_VERSION = '9.0'
+    ----------------------------------------------------------------------------------------------------
+
+Environment(**{'MSVC_VERSION': '9.0Exp', 'MSVC_NOTFOUND_POLICY': 'Error'}):
+    ----------------------------------------------------------------------------------------------------
+    *  VS_VERSION = '9.0'
+    *  VC_TOOLSET = '9.0'
+    *  VC_BUILDSERIES = '9.0'
+    *  VC_BUILDTOOLS = '9.0'
+    *  VC_LEGACY = '9.0Exp'
+    *  CL_VERSION = '15.00.30729.01'
+    *  MSBUILD_VERSION = ''
+    ----------------------------------------------------------------------------------------------------
+    CL cl_path = 'C:\\Program Files\\Microsoft Visual Studio 9.0\\VC\\BIN\\cl.EXE'
+    CL cl_version = '15.00.30729.01'
+    CL vc_toolset = '9.0'
+    CL vc_buildseries = '9.0'
+    CL vc_buildtools = '9.0'
+    CL vs_version = '9.0'
+    DE dev_path = 'C:\\Program Files\\Microsoft Visual Studio 9.0\\Common7\\IDE\\vcexpress.exe'
+    DE dev_isdevelop = False
+    DE dev_isexpress = True
+    SE MSVC_VERSION = '9.0Exp'
+    ----------------------------------------------------------------------------------------------------
+
+Environment(**{'MSVC_VERSION': '8.0', 'MSVC_NOTFOUND_POLICY': 'Error'}):
+    ----------------------------------------------------------------------------------------------------
+    *  VS_VERSION = '8.0'
+    *  VC_TOOLSET = '8.0'
+    *  VC_BUILDSERIES = '8.0'
+    *  VC_BUILDTOOLS = '8.0'
+    *  VC_LEGACY = '8.0Exp'
+    *  CL_VERSION = '14.00.50727.762'
+    *  MSBUILD_VERSION = '2.0.50727.9149'
+    ----------------------------------------------------------------------------------------------------
+    CL cl_path = 'C:\\Program Files\\Microsoft Visual Studio 8\\VC\\BIN\\cl.EXE'
+    CL cl_version = '14.00.50727.762'
+    CL vc_toolset = '8.0'
+    CL vc_buildseries = '8.0'
+    CL vc_buildtools = '8.0'
+    CL vs_version = '8.0'
+    MB msbuild_path = 'C:\\Windows\\Microsoft.NET\\Framework\\v2.0.50727\\msbuild.exe'
+    MB msbuild_version = '2.0.50727.9149'
+    DE dev_path = 'C:\\Program Files\\Microsoft Visual Studio 8\\Common7\\IDE\\vcexpress.exe'
+    DE dev_isdevelop = False
+    DE dev_isexpress = True
+    SE MSVC_VERSION = '8.0'
+    ----------------------------------------------------------------------------------------------------
+
+Environment(**{'MSVC_VERSION': '8.0Exp', 'MSVC_NOTFOUND_POLICY': 'Error'}):
+    ----------------------------------------------------------------------------------------------------
+    *  VS_VERSION = '8.0'
+    *  VC_TOOLSET = '8.0'
+    *  VC_BUILDSERIES = '8.0'
+    *  VC_BUILDTOOLS = '8.0'
+    *  VC_LEGACY = '8.0Exp'
+    *  CL_VERSION = '14.00.50727.762'
+    *  MSBUILD_VERSION = '2.0.50727.9149'
+    ----------------------------------------------------------------------------------------------------
+    CL cl_path = 'C:\\Program Files\\Microsoft Visual Studio 8\\VC\\BIN\\cl.EXE'
+    CL cl_version = '14.00.50727.762'
+    CL vc_toolset = '8.0'
+    CL vc_buildseries = '8.0'
+    CL vc_buildtools = '8.0'
+    CL vs_version = '8.0'
+    MB msbuild_path = 'C:\\Windows\\Microsoft.NET\\Framework\\v2.0.50727\\msbuild.exe'
+    MB msbuild_version = '2.0.50727.9149'
+    DE dev_path = 'C:\\Program Files\\Microsoft Visual Studio 8\\Common7\\IDE\\vcexpress.exe'
+    DE dev_isdevelop = False
+    DE dev_isexpress = True
+    SE MSVC_VERSION = '8.0Exp'
+    ----------------------------------------------------------------------------------------------------
+
+scons: done reading SConscript files.
+scons: Building targets ...
+scons: `.' is up to date.
+scons: done building targets.

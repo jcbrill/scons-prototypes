@@ -1,0 +1,139 @@
+import json
+import os
+import platform
+from SCons.Tool.MSCommon import MSVCVersionNotFound, MSVCToolsetVersionNotFound, MSVCScriptNotFound
+from scons_msvc_info import msvc_info_env
+
+class Results:
+
+    _computername = os.environ.get("COMPUTERNAME", "unknown")
+    _results_list = []
+
+    @classmethod
+    def _gather_results(cls, msvc_info):
+        if msvc_info:
+            results_dict = msvc_info._asdict()
+            cls._results_list.append(results_dict)
+
+    @classmethod
+    def write_json(cls, filename=None):
+        if not filename:
+            filename = f"_results_{cls._computername}.json"
+        with open(filename, "w") as fh:
+            fh.write(json.dumps(cls._results_list, indent=4, sort_keys=False))
+
+    _need_legend = True
+
+    @classmethod
+    def display_results(cls, *, env_kwargs, env, msvc_info):
+
+        cls._gather_results(msvc_info)
+
+        nmarker = 100
+
+        if cls._need_legend:
+            cls._need_legend = False
+            print(f"\nLegend:")
+            print(f"    * : version summary information")
+            print(f"    VW: vswhere output information")
+            print(f"    CL: cl executable information")
+            print(f"    MB: msbuild executable information")
+            print(f"    DE: development executable information")
+            print(f"    SE: SCons environment information")
+
+        print(f"\nEnvironment(**{env_kwargs}):")
+        print(f"    {'-' * nmarker}")
+        for label, mapping in [
+            ("*  ", msvc_info.version_info),
+            ("VW ", msvc_info.vswhere_info),
+            ("CL ", msvc_info.cl_info),
+            ("MB ", msvc_info.msbuild_info),
+            ("DE ", msvc_info.dev_info),
+            ("SE ", msvc_info.scons_info),
+         ]:
+            for key, val in mapping.items():
+                print(f"    {label}{key} = {val!r}")
+            if label.startswith("*"):
+                print(f"    {'-' * nmarker}")
+        print(f"    {'-' * nmarker}")
+
+# script target architecture for 64-bit and 32-bit (increases likelihood of success)
+SCRIPT_TARGET_ARCH = "amd64" if platform.machine().endswith('64') else "x86"
+
+env_list = []
+for kwargs in [
+
+    {},
+
+    # VS2022 Preview (custom installation path)
+    {"MSVC_VERSION": "14.3", "MSVC_USE_SCRIPT": r"C:\Software\MSVS-2022-143-Com-Pre\VC\Auxiliary\Build\vcvarsall.bat", "MSVC_USE_SCRIPT_ARGS": SCRIPT_TARGET_ARCH},
+    {"MSVC_VERSION": "14.3", "MSVC_USE_SCRIPT": r"C:\Software\MSVS-2022-143-BT-Pre\VC\Auxiliary\Build\vcvarsall.bat", "MSVC_USE_SCRIPT_ARGS": SCRIPT_TARGET_ARCH},
+
+    # VS2022 Preview
+    {"MSVC_VERSION": "14.3", "MSVC_USE_SCRIPT": r"C:\Program Files\Microsoft Visual Studio\2022\Preview\VC\Auxiliary\Build\vcvarsall.bat", "MSVC_USE_SCRIPT_ARGS": SCRIPT_TARGET_ARCH},
+    {"MSVC_VERSION": "14.3", "MSVC_USE_SCRIPT": r"C:\Program Files (x86)\Microsoft Visual Studio\2022\Preview\VC\Auxiliary\Build\vcvarsall.bat", "MSVC_USE_SCRIPT_ARGS": SCRIPT_TARGET_ARCH},
+
+    # VS2022
+    {"MSVC_VERSION": "14.3"},
+    {"MSVC_VERSION": "14.3", "MSVC_TOOLSET_VERSION": "14.2"},
+    {"MSVC_VERSION": "14.3", "MSVC_TOOLSET_VERSION": "14.1"},
+    {"MSVC_VERSION": "14.3", "MSVC_TOOLSET_VERSION": "14.0"},
+    {"MSVC_VERSION": "14.3", "MSVC_USE_SCRIPT": r"C:\Software\MSVS-2022-143-BT\VC\Auxiliary\Build\vcvarsall.bat", "MSVC_USE_SCRIPT_ARGS": SCRIPT_TARGET_ARCH},
+
+    # VS2019
+    {"MSVC_VERSION": "14.2"},
+    {"MSVC_VERSION": "14.2", "MSVC_TOOLSET_VERSION": "14.1"},
+    {"MSVC_VERSION": "14.2", "MSVC_TOOLSET_VERSION": "14.0"},
+    {"MSVC_VERSION": "14.2", "MSVC_USE_SCRIPT": r"C:\Software\MSVS-2019-142-BT\VC\Auxiliary\Build\vcvarsall.bat", "MSVC_USE_SCRIPT_ARGS": SCRIPT_TARGET_ARCH},
+
+    # VS2017
+    {"MSVC_VERSION": "14.1"},
+    {"MSVC_VERSION": "14.1", "MSVC_TOOLSET_VERSION": "14.0"},
+    {"MSVC_VERSION": "14.1Exp"},
+    {"MSVC_VERSION": "14.1", "MSVC_USE_SCRIPT": r"C:\Software\MSVS-2017-141-BT\VC\Auxiliary\Build\vcvarsall.bat", "MSVC_USE_SCRIPT_ARGS": SCRIPT_TARGET_ARCH},
+
+    # VS2017 Express: **intentionally incorrect MSVC_VERSION**
+    {"MSVC_VERSION": "14.3", "MSVC_USE_SCRIPT": r"C:\Software\MSVS-2017-141-Exp\VC\Auxiliary\Build\vcvarsall.bat", "MSVC_USE_SCRIPT_ARGS": "x86_amd64"},
+
+    # VS2015
+    {"MSVC_VERSION": "14.0"},
+    {"MSVC_VERSION": "14.0Exp"},
+
+    # VS2013
+    {"MSVC_VERSION": "12.0"},
+    {"MSVC_VERSION": "12.0Exp"},
+
+    # VS2012
+    {"MSVC_VERSION": "11.0"},
+    {"MSVC_VERSION": "11.0Exp"},
+
+    # VS2010
+    {"MSVC_VERSION": "10.0"},
+    {"MSVC_VERSION": "10.0Exp"},
+
+    # VS2008
+    {"MSVC_VERSION": "9.0"},
+    {"MSVC_VERSION": "9.0Exp"},
+
+    # VS2005
+    {"MSVC_VERSION": "8.0"},
+    {"MSVC_VERSION": "8.0Exp"},
+
+    # VS2003, VS2002, VC6
+    {"MSVC_VERSION": "7.1"},
+    {"MSVC_VERSION": "7.0"},
+    {"MSVC_VERSION": "6.0"},
+
+]:
+    kwargs['MSVC_NOTFOUND_POLICY'] = "Error"
+    try:
+        env = Environment(**kwargs)
+    except (MSVCVersionNotFound, MSVCToolsetVersionNotFound, MSVCScriptNotFound):
+        continue
+    msvc_info = msvc_info_env(env)
+    if not msvc_info:
+        continue
+    Results.display_results(env_kwargs=kwargs, env=env, msvc_info=msvc_info)
+
+print()
+Results.write_json()

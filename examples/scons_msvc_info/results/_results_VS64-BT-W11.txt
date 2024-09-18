@@ -1,0 +1,384 @@
+scons: Reading SConscript files ...
+
+Legend:
+    * : version summary information
+    VW: vswhere output information
+    CL: cl executable information
+    MB: msbuild executable information
+    DE: development executable information
+    SE: SCons environment information
+
+Environment(**{'MSVC_NOTFOUND_POLICY': 'Error'}):
+    ----------------------------------------------------------------------------------------------------
+    *  VS_VERSION = '17.11.4'
+    *  VC_TOOLSET = '14.41.34120'
+    *  VC_BUILDSERIES = '14.4'
+    *  VC_BUILDTOOLS = '14.3'
+    *  VC_LEGACY = '14.3'
+    *  CL_VERSION = '19.41.34120'
+    *  MSBUILD_VERSION = '17.11.9.46202'
+    ----------------------------------------------------------------------------------------------------
+    VW ENV_path = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64'
+    VW installationPath = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools'
+    VW installationVersion = '17.11.35312.102'
+    VW displayName = 'Visual Studio Build Tools 2022'
+    VW productId = 'Microsoft.VisualStudio.Product.BuildTools'
+    VW productPath = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\Tools\\LaunchDevCmd.bat'
+    VW buildVersion = '17.11.35312.102'
+    VW productDisplayVersion = '17.11.4'
+    VW productSemanticVersion = '17.11.4+35312.102'
+    CL cl_path = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\cl.EXE'
+    CL cl_version = '19.41.34120'
+    CL vc_toolset = '14.41.34120'
+    CL vc_buildseries = '14.4'
+    CL vc_buildtools = '14.3'
+    CL vs_version = ''
+    MB msbuild_path = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\\\MSBuild\\Current\\Bin\\amd64\\msbuild.exe'
+    MB msbuild_version = '17.11.9.46202'
+    SE MSVC_VERSION = '14.3'
+    ----------------------------------------------------------------------------------------------------
+
+Environment(**{'MSVC_VERSION': '14.3', 'MSVC_USE_SCRIPT': 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\Preview\\VC\\Auxiliary\\Build\\vcvarsall.bat', 'MSVC_USE_SCRIPT_ARGS': 'amd64', 'MSVC_NOTFOUND_POLICY': 'Error'}):
+    ----------------------------------------------------------------------------------------------------
+    *  VS_VERSION = '17.12.0-pre.2.0'
+    *  VC_TOOLSET = '14.42.34321'
+    *  VC_BUILDSERIES = '14.4'
+    *  VC_BUILDTOOLS = '14.3'
+    *  VC_LEGACY = '14.3'
+    *  CL_VERSION = '19.42.34321.1'
+    *  MSBUILD_VERSION = '17.12.0.42607'
+    ----------------------------------------------------------------------------------------------------
+    VW ENV_path = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\Preview\\VC\\Tools\\MSVC\\14.42.34321\\bin\\HostX64\\x64'
+    VW installationPath = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\Preview'
+    VW installationVersion = '17.12.35309.182'
+    VW displayName = 'Visual Studio Build Tools 2022'
+    VW productId = 'Microsoft.VisualStudio.Product.BuildTools'
+    VW productPath = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\Preview\\Common7\\Tools\\LaunchDevCmd.bat'
+    VW buildVersion = '17.12.35309.182'
+    VW productDisplayVersion = '17.12.0 Preview 2.0'
+    VW productSemanticVersion = '17.12.0-pre.2.0+35309.182'
+    CL cl_path = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\Preview\\VC\\Tools\\MSVC\\14.42.34321\\bin\\HostX64\\x64\\cl.EXE'
+    CL cl_version = '19.42.34321.1'
+    CL vc_toolset = '14.42.34321'
+    CL vc_buildseries = '14.4'
+    CL vc_buildtools = '14.3'
+    CL vs_version = ''
+    MB msbuild_path = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\Preview\\\\MSBuild\\Current\\Bin\\amd64\\msbuild.exe'
+    MB msbuild_version = '17.12.0.42607'
+    SE MSVC_VERSION = '14.3'
+    ----------------------------------------------------------------------------------------------------
+
+Environment(**{'MSVC_VERSION': '14.3', 'MSVC_NOTFOUND_POLICY': 'Error'}):
+    ----------------------------------------------------------------------------------------------------
+    *  VS_VERSION = '17.11.4'
+    *  VC_TOOLSET = '14.41.34120'
+    *  VC_BUILDSERIES = '14.4'
+    *  VC_BUILDTOOLS = '14.3'
+    *  VC_LEGACY = '14.3'
+    *  CL_VERSION = '19.41.34120'
+    *  MSBUILD_VERSION = '17.11.9.46202'
+    ----------------------------------------------------------------------------------------------------
+    VW ENV_path = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64'
+    VW installationPath = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools'
+    VW installationVersion = '17.11.35312.102'
+    VW displayName = 'Visual Studio Build Tools 2022'
+    VW productId = 'Microsoft.VisualStudio.Product.BuildTools'
+    VW productPath = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\Tools\\LaunchDevCmd.bat'
+    VW buildVersion = '17.11.35312.102'
+    VW productDisplayVersion = '17.11.4'
+    VW productSemanticVersion = '17.11.4+35312.102'
+    CL cl_path = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\cl.EXE'
+    CL cl_version = '19.41.34120'
+    CL vc_toolset = '14.41.34120'
+    CL vc_buildseries = '14.4'
+    CL vc_buildtools = '14.3'
+    CL vs_version = ''
+    MB msbuild_path = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\\\MSBuild\\Current\\Bin\\amd64\\msbuild.exe'
+    MB msbuild_version = '17.11.9.46202'
+    SE MSVC_VERSION = '14.3'
+    ----------------------------------------------------------------------------------------------------
+
+Environment(**{'MSVC_VERSION': '14.3', 'MSVC_TOOLSET_VERSION': '14.2', 'MSVC_NOTFOUND_POLICY': 'Error'}):
+    ----------------------------------------------------------------------------------------------------
+    *  VS_VERSION = '17.11.4'
+    *  VC_TOOLSET = '14.29.30133'
+    *  VC_BUILDSERIES = '14.2'
+    *  VC_BUILDTOOLS = '14.2'
+    *  VC_LEGACY = '14.3'
+    *  CL_VERSION = '19.29.30154'
+    *  MSBUILD_VERSION = '17.11.9.46202'
+    ----------------------------------------------------------------------------------------------------
+    VW ENV_path = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64'
+    VW installationPath = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools'
+    VW installationVersion = '17.11.35312.102'
+    VW displayName = 'Visual Studio Build Tools 2022'
+    VW productId = 'Microsoft.VisualStudio.Product.BuildTools'
+    VW productPath = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\Tools\\LaunchDevCmd.bat'
+    VW buildVersion = '17.11.35312.102'
+    VW productDisplayVersion = '17.11.4'
+    VW productSemanticVersion = '17.11.4+35312.102'
+    CL cl_path = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\cl.EXE'
+    CL cl_version = '19.29.30154'
+    CL vc_toolset = '14.29.30133'
+    CL vc_buildseries = '14.2'
+    CL vc_buildtools = '14.2'
+    CL vs_version = ''
+    MB msbuild_path = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\\\MSBuild\\Current\\Bin\\amd64\\msbuild.exe'
+    MB msbuild_version = '17.11.9.46202'
+    SE MSVC_VERSION = '14.3'
+    ----------------------------------------------------------------------------------------------------
+
+Environment(**{'MSVC_VERSION': '14.3', 'MSVC_TOOLSET_VERSION': '14.1', 'MSVC_NOTFOUND_POLICY': 'Error'}):
+    ----------------------------------------------------------------------------------------------------
+    *  VS_VERSION = '17.11.4'
+    *  VC_TOOLSET = '14.16.27023'
+    *  VC_BUILDSERIES = '14.1'
+    *  VC_BUILDTOOLS = '14.1'
+    *  VC_LEGACY = '14.3'
+    *  CL_VERSION = '19.16.27051'
+    *  MSBUILD_VERSION = '17.11.9.46202'
+    ----------------------------------------------------------------------------------------------------
+    VW ENV_path = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.16.27023\\bin\\HostX64\\x64'
+    VW installationPath = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools'
+    VW installationVersion = '17.11.35312.102'
+    VW displayName = 'Visual Studio Build Tools 2022'
+    VW productId = 'Microsoft.VisualStudio.Product.BuildTools'
+    VW productPath = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\Tools\\LaunchDevCmd.bat'
+    VW buildVersion = '17.11.35312.102'
+    VW productDisplayVersion = '17.11.4'
+    VW productSemanticVersion = '17.11.4+35312.102'
+    CL cl_path = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.16.27023\\bin\\HostX64\\x64\\cl.EXE'
+    CL cl_version = '19.16.27051'
+    CL vc_toolset = '14.16.27023'
+    CL vc_buildseries = '14.1'
+    CL vc_buildtools = '14.1'
+    CL vs_version = ''
+    MB msbuild_path = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\\\MSBuild\\Current\\Bin\\amd64\\msbuild.exe'
+    MB msbuild_version = '17.11.9.46202'
+    SE MSVC_VERSION = '14.3'
+    ----------------------------------------------------------------------------------------------------
+
+Environment(**{'MSVC_VERSION': '14.3', 'MSVC_TOOLSET_VERSION': '14.0', 'MSVC_NOTFOUND_POLICY': 'Error'}):
+    ----------------------------------------------------------------------------------------------------
+    *  VS_VERSION = '17.11.4'
+    *  VC_TOOLSET = '14.0'
+    *  VC_BUILDSERIES = '14.0'
+    *  VC_BUILDTOOLS = '14.0'
+    *  VC_LEGACY = '14.3'
+    *  CL_VERSION = '19.00.24247.2'
+    *  MSBUILD_VERSION = '17.11.9.46202'
+    ----------------------------------------------------------------------------------------------------
+    VW ENV_path = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\CommonExtensions\\Microsoft\\TestWindow'
+    VW installationPath = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools'
+    VW installationVersion = '17.11.35312.102'
+    VW displayName = 'Visual Studio Build Tools 2022'
+    VW productId = 'Microsoft.VisualStudio.Product.BuildTools'
+    VW productPath = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\Tools\\LaunchDevCmd.bat'
+    VW buildVersion = '17.11.35312.102'
+    VW productDisplayVersion = '17.11.4'
+    VW productSemanticVersion = '17.11.4+35312.102'
+    CL cl_path = 'C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\bin\\amd64\\cl.EXE'
+    CL cl_version = '19.00.24247.2'
+    CL vc_toolset = '14.0'
+    CL vc_buildseries = '14.0'
+    CL vc_buildtools = '14.0'
+    CL vs_version = '14.0'
+    MB msbuild_path = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\\\MSBuild\\Current\\Bin\\amd64\\msbuild.exe'
+    MB msbuild_version = '17.11.9.46202'
+    SE MSVC_VERSION = '14.3'
+    ----------------------------------------------------------------------------------------------------
+
+Environment(**{'MSVC_VERSION': '14.2', 'MSVC_NOTFOUND_POLICY': 'Error'}):
+    ----------------------------------------------------------------------------------------------------
+    *  VS_VERSION = '16.11.40'
+    *  VC_TOOLSET = '14.29.30133'
+    *  VC_BUILDSERIES = '14.2'
+    *  VC_BUILDTOOLS = '14.2'
+    *  VC_LEGACY = '14.2'
+    *  CL_VERSION = '19.29.30154'
+    *  MSBUILD_VERSION = '16.11.2.50704'
+    ----------------------------------------------------------------------------------------------------
+    VW ENV_path = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64'
+    VW installationPath = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools'
+    VW installationVersion = '16.11.35229.62'
+    VW displayName = 'Visual Studio Build Tools 2019'
+    VW productId = 'Microsoft.VisualStudio.Product.BuildTools'
+    VW productPath = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\Common7\\Tools\\LaunchDevCmd.bat'
+    VW buildVersion = '16.11.35229.62'
+    VW productDisplayVersion = '16.11.40'
+    VW productSemanticVersion = '16.11.40+35229.62'
+    CL cl_path = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\cl.EXE'
+    CL cl_version = '19.29.30154'
+    CL vc_toolset = '14.29.30133'
+    CL vc_buildseries = '14.2'
+    CL vc_buildtools = '14.2'
+    CL vs_version = ''
+    MB msbuild_path = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\\\MSBuild\\Current\\Bin\\msbuild.exe'
+    MB msbuild_version = '16.11.2.50704'
+    SE MSVC_VERSION = '14.2'
+    ----------------------------------------------------------------------------------------------------
+
+Environment(**{'MSVC_VERSION': '14.2', 'MSVC_TOOLSET_VERSION': '14.1', 'MSVC_NOTFOUND_POLICY': 'Error'}):
+    ----------------------------------------------------------------------------------------------------
+    *  VS_VERSION = '16.11.40'
+    *  VC_TOOLSET = '14.16.27023'
+    *  VC_BUILDSERIES = '14.1'
+    *  VC_BUILDTOOLS = '14.1'
+    *  VC_LEGACY = '14.2'
+    *  CL_VERSION = '19.16.27051'
+    *  MSBUILD_VERSION = '16.11.2.50704'
+    ----------------------------------------------------------------------------------------------------
+    VW ENV_path = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Tools\\MSVC\\14.16.27023\\bin\\HostX64\\x64'
+    VW installationPath = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools'
+    VW installationVersion = '16.11.35229.62'
+    VW displayName = 'Visual Studio Build Tools 2019'
+    VW productId = 'Microsoft.VisualStudio.Product.BuildTools'
+    VW productPath = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\Common7\\Tools\\LaunchDevCmd.bat'
+    VW buildVersion = '16.11.35229.62'
+    VW productDisplayVersion = '16.11.40'
+    VW productSemanticVersion = '16.11.40+35229.62'
+    CL cl_path = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Tools\\MSVC\\14.16.27023\\bin\\HostX64\\x64\\cl.EXE'
+    CL cl_version = '19.16.27051'
+    CL vc_toolset = '14.16.27023'
+    CL vc_buildseries = '14.1'
+    CL vc_buildtools = '14.1'
+    CL vs_version = ''
+    MB msbuild_path = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\\\MSBuild\\Current\\Bin\\msbuild.exe'
+    MB msbuild_version = '16.11.2.50704'
+    SE MSVC_VERSION = '14.2'
+    ----------------------------------------------------------------------------------------------------
+
+Environment(**{'MSVC_VERSION': '14.2', 'MSVC_TOOLSET_VERSION': '14.0', 'MSVC_NOTFOUND_POLICY': 'Error'}):
+    ----------------------------------------------------------------------------------------------------
+    *  VS_VERSION = '16.11.40'
+    *  VC_TOOLSET = '14.0'
+    *  VC_BUILDSERIES = '14.0'
+    *  VC_BUILDTOOLS = '14.0'
+    *  VC_LEGACY = '14.2'
+    *  CL_VERSION = '19.00.24247.2'
+    *  MSBUILD_VERSION = '16.11.2.50704'
+    ----------------------------------------------------------------------------------------------------
+    VW ENV_path = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\Common7\\IDE\\CommonExtensions\\Microsoft\\TestWindow'
+    VW installationPath = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools'
+    VW installationVersion = '16.11.35229.62'
+    VW displayName = 'Visual Studio Build Tools 2019'
+    VW productId = 'Microsoft.VisualStudio.Product.BuildTools'
+    VW productPath = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\Common7\\Tools\\LaunchDevCmd.bat'
+    VW buildVersion = '16.11.35229.62'
+    VW productDisplayVersion = '16.11.40'
+    VW productSemanticVersion = '16.11.40+35229.62'
+    CL cl_path = 'C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\bin\\amd64\\cl.EXE'
+    CL cl_version = '19.00.24247.2'
+    CL vc_toolset = '14.0'
+    CL vc_buildseries = '14.0'
+    CL vc_buildtools = '14.0'
+    CL vs_version = '14.0'
+    MB msbuild_path = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\\\MSBuild\\Current\\Bin\\msbuild.exe'
+    MB msbuild_version = '16.11.2.50704'
+    SE MSVC_VERSION = '14.2'
+    ----------------------------------------------------------------------------------------------------
+
+Environment(**{'MSVC_VERSION': '14.1', 'MSVC_NOTFOUND_POLICY': 'Error'}):
+    ----------------------------------------------------------------------------------------------------
+    *  VS_VERSION = '15.9.66'
+    *  VC_TOOLSET = '14.16.27023'
+    *  VC_BUILDSERIES = '14.1'
+    *  VC_BUILDTOOLS = '14.1'
+    *  VC_LEGACY = '14.1'
+    *  CL_VERSION = '19.16.27051'
+    *  MSBUILD_VERSION = '15.9.21.664'
+    ----------------------------------------------------------------------------------------------------
+    VW ENV_path = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\BuildTools\\VC\\Tools\\MSVC\\14.16.27023\\bin\\HostX64\\x64'
+    VW installationPath = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\BuildTools'
+    VW installationVersion = '15.9.35229.15'
+    VW displayName = 'Visual Studio Build Tools 2017'
+    VW productId = 'Microsoft.VisualStudio.Product.BuildTools'
+    VW productPath = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\BuildTools\\Common7\\Tools\\LaunchDevCmd.bat'
+    VW buildVersion = '15.9.35229.15'
+    VW productDisplayVersion = '15.9.66'
+    VW productSemanticVersion = '15.9.66+35229.15'
+    CL cl_path = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\BuildTools\\VC\\Tools\\MSVC\\14.16.27023\\bin\\HostX64\\x64\\cl.EXE'
+    CL cl_version = '19.16.27051'
+    CL vc_toolset = '14.16.27023'
+    CL vc_buildseries = '14.1'
+    CL vc_buildtools = '14.1'
+    CL vs_version = ''
+    MB msbuild_path = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\BuildTools\\\\MSBuild\\15.0\\bin\\msbuild.exe'
+    MB msbuild_version = '15.9.21.664'
+    SE MSVC_VERSION = '14.1'
+    ----------------------------------------------------------------------------------------------------
+
+Environment(**{'MSVC_VERSION': '14.1', 'MSVC_TOOLSET_VERSION': '14.0', 'MSVC_NOTFOUND_POLICY': 'Error'}):
+    ----------------------------------------------------------------------------------------------------
+    *  VS_VERSION = '15.9.66'
+    *  VC_TOOLSET = '14.0'
+    *  VC_BUILDSERIES = '14.0'
+    *  VC_BUILDTOOLS = '14.0'
+    *  VC_LEGACY = '14.1'
+    *  CL_VERSION = '19.00.24247.2'
+    *  MSBUILD_VERSION = '15.9.21.664'
+    ----------------------------------------------------------------------------------------------------
+    VW ENV_path = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\BuildTools\\Common7\\IDE\\CommonExtensions\\Microsoft\\TestWindow'
+    VW installationPath = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\BuildTools'
+    VW installationVersion = '15.9.35229.15'
+    VW displayName = 'Visual Studio Build Tools 2017'
+    VW productId = 'Microsoft.VisualStudio.Product.BuildTools'
+    VW productPath = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\BuildTools\\Common7\\Tools\\LaunchDevCmd.bat'
+    VW buildVersion = '15.9.35229.15'
+    VW productDisplayVersion = '15.9.66'
+    VW productSemanticVersion = '15.9.66+35229.15'
+    CL cl_path = 'C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\bin\\amd64\\cl.EXE'
+    CL cl_version = '19.00.24247.2'
+    CL vc_toolset = '14.0'
+    CL vc_buildseries = '14.0'
+    CL vc_buildtools = '14.0'
+    CL vs_version = '14.0'
+    MB msbuild_path = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\BuildTools\\\\MSBuild\\15.0\\bin\\msbuild.exe'
+    MB msbuild_version = '15.9.21.664'
+    SE MSVC_VERSION = '14.1'
+    ----------------------------------------------------------------------------------------------------
+
+Environment(**{'MSVC_VERSION': '14.0', 'MSVC_NOTFOUND_POLICY': 'Error'}):
+    ----------------------------------------------------------------------------------------------------
+    *  VS_VERSION = '14.0'
+    *  VC_TOOLSET = '14.0'
+    *  VC_BUILDSERIES = '14.0'
+    *  VC_BUILDTOOLS = '14.0'
+    *  VC_LEGACY = '14.0'
+    *  CL_VERSION = '19.00.24247.2'
+    *  MSBUILD_VERSION = '4.8.9032.0'
+    ----------------------------------------------------------------------------------------------------
+    CL cl_path = 'C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\BIN\\amd64\\cl.EXE'
+    CL cl_version = '19.00.24247.2'
+    CL vc_toolset = '14.0'
+    CL vc_buildseries = '14.0'
+    CL vc_buildtools = '14.0'
+    CL vs_version = '14.0'
+    MB msbuild_path = 'C:\\WINDOWS\\Microsoft.NET\\Framework64\\v4.0.30319\\msbuild.exe'
+    MB msbuild_version = '4.8.9032.0'
+    SE MSVC_VERSION = '14.0'
+    ----------------------------------------------------------------------------------------------------
+
+Environment(**{'MSVC_VERSION': '9.0', 'MSVC_NOTFOUND_POLICY': 'Error'}):
+    ----------------------------------------------------------------------------------------------------
+    *  VS_VERSION = '9.0'
+    *  VC_TOOLSET = '9.0'
+    *  VC_BUILDSERIES = '9.0'
+    *  VC_BUILDTOOLS = '9.0'
+    *  VC_LEGACY = '9.0'
+    *  CL_VERSION = '15.00.30729.01'
+    *  MSBUILD_VERSION = ''
+    ----------------------------------------------------------------------------------------------------
+    CL cl_path = 'C:\\Program Files (x86)\\Common Files\\Microsoft\\Visual C++ for Python\\9.0\\VC\\Bin\\amd64\\cl.EXE'
+    CL cl_version = '15.00.30729.01'
+    CL vc_toolset = '9.0'
+    CL vc_buildseries = '9.0'
+    CL vc_buildtools = '9.0'
+    CL vs_version = '9.0'
+    SE MSVC_VERSION = '9.0'
+    ----------------------------------------------------------------------------------------------------
+
+scons: done reading SConscript files.
+scons: Building targets ...
+scons: `.' is up to date.
+scons: done building targets.

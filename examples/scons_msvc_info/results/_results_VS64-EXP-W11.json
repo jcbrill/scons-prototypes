@@ -1,0 +1,548 @@
+[
+    {
+        "version_info": {
+            "VS_VERSION": "15.9.66",
+            "VC_TOOLSET": "14.16.27023",
+            "VC_BUILDSERIES": "14.1",
+            "VC_BUILDTOOLS": "14.1",
+            "VC_LEGACY": "14.1Exp",
+            "CL_VERSION": "19.16.27051",
+            "MSBUILD_VERSION": "15.9.21.664"
+        },
+        "vswhere_info": {
+            "ENV_path": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\WDExpress\\VC\\Tools\\MSVC\\14.16.27023\\bin\\HostX86\\x64",
+            "installationPath": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\WDExpress",
+            "installationVersion": "15.9.35229.15",
+            "displayName": "Visual Studio 2017 Desktop Express",
+            "productId": "Microsoft.VisualStudio.Product.WDExpress",
+            "productPath": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\WDExpress\\Common7\\IDE\\WDExpress.exe",
+            "buildVersion": "15.9.35229.15",
+            "productDisplayVersion": "15.9.66",
+            "productSemanticVersion": "15.9.66+35229.15"
+        },
+        "cl_info": {
+            "cl_path": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\WDExpress\\VC\\Tools\\MSVC\\14.16.27023\\bin\\HostX86\\x64\\cl.EXE",
+            "cl_version": "19.16.27051",
+            "vc_toolset": "14.16.27023",
+            "vc_buildseries": "14.1",
+            "vc_buildtools": "14.1",
+            "vs_version": ""
+        },
+        "msbuild_info": {
+            "msbuild_path": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\WDExpress\\\\MSBuild\\15.0\\bin\\msbuild.exe",
+            "msbuild_version": "15.9.21.664"
+        },
+        "dev_info": {
+            "dev_path": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\WDExpress\\Common7\\IDE\\wdexpress.exe",
+            "dev_isdevelop": false,
+            "dev_isexpress": true
+        },
+        "scons_info": {
+            "MSVC_VERSION": "14.1"
+        }
+    },
+    {
+        "version_info": {
+            "VS_VERSION": "15.9.66",
+            "VC_TOOLSET": "14.16.27023",
+            "VC_BUILDSERIES": "14.1",
+            "VC_BUILDTOOLS": "14.1",
+            "VC_LEGACY": "14.1Exp",
+            "CL_VERSION": "19.16.27051",
+            "MSBUILD_VERSION": "15.9.21.664"
+        },
+        "vswhere_info": {
+            "ENV_path": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\WDExpress\\VC\\Tools\\MSVC\\14.16.27023\\bin\\HostX86\\x64",
+            "installationPath": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\WDExpress",
+            "installationVersion": "15.9.35229.15",
+            "displayName": "Visual Studio 2017 Desktop Express",
+            "productId": "Microsoft.VisualStudio.Product.WDExpress",
+            "productPath": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\WDExpress\\Common7\\IDE\\WDExpress.exe",
+            "buildVersion": "15.9.35229.15",
+            "productDisplayVersion": "15.9.66",
+            "productSemanticVersion": "15.9.66+35229.15"
+        },
+        "cl_info": {
+            "cl_path": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\WDExpress\\VC\\Tools\\MSVC\\14.16.27023\\bin\\HostX86\\x64\\cl.EXE",
+            "cl_version": "19.16.27051",
+            "vc_toolset": "14.16.27023",
+            "vc_buildseries": "14.1",
+            "vc_buildtools": "14.1",
+            "vs_version": ""
+        },
+        "msbuild_info": {
+            "msbuild_path": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\WDExpress\\\\MSBuild\\15.0\\bin\\msbuild.exe",
+            "msbuild_version": "15.9.21.664"
+        },
+        "dev_info": {
+            "dev_path": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\WDExpress\\Common7\\IDE\\wdexpress.exe",
+            "dev_isdevelop": false,
+            "dev_isexpress": true
+        },
+        "scons_info": {
+            "MSVC_VERSION": "14.1"
+        }
+    },
+    {
+        "version_info": {
+            "VS_VERSION": "15.9.66",
+            "VC_TOOLSET": "14.0",
+            "VC_BUILDSERIES": "14.0",
+            "VC_BUILDTOOLS": "14.0",
+            "VC_LEGACY": "14.1Exp",
+            "CL_VERSION": "19.00.23026",
+            "MSBUILD_VERSION": "15.9.21.664"
+        },
+        "vswhere_info": {
+            "ENV_path": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\WDExpress\\Common7\\IDE\\CommonExtensions\\Microsoft\\TestWindow",
+            "installationPath": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\WDExpress",
+            "installationVersion": "15.9.35229.15",
+            "displayName": "Visual Studio 2017 Desktop Express",
+            "productId": "Microsoft.VisualStudio.Product.WDExpress",
+            "productPath": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\WDExpress\\Common7\\IDE\\WDExpress.exe",
+            "buildVersion": "15.9.35229.15",
+            "productDisplayVersion": "15.9.66",
+            "productSemanticVersion": "15.9.66+35229.15"
+        },
+        "cl_info": {
+            "cl_path": "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\bin\\x86_amd64\\cl.EXE",
+            "cl_version": "19.00.23026",
+            "vc_toolset": "14.0",
+            "vc_buildseries": "14.0",
+            "vc_buildtools": "14.0",
+            "vs_version": "14.0"
+        },
+        "msbuild_info": {
+            "msbuild_path": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\WDExpress\\\\MSBuild\\15.0\\bin\\msbuild.exe",
+            "msbuild_version": "15.9.21.664"
+        },
+        "dev_info": {
+            "dev_path": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\WDExpress\\Common7\\IDE\\wdexpress.exe",
+            "dev_isdevelop": false,
+            "dev_isexpress": true
+        },
+        "scons_info": {
+            "MSVC_VERSION": "14.1"
+        }
+    },
+    {
+        "version_info": {
+            "VS_VERSION": "15.9.66",
+            "VC_TOOLSET": "14.16.27023",
+            "VC_BUILDSERIES": "14.1",
+            "VC_BUILDTOOLS": "14.1",
+            "VC_LEGACY": "14.1Exp",
+            "CL_VERSION": "19.16.27051",
+            "MSBUILD_VERSION": "15.9.21.664"
+        },
+        "vswhere_info": {
+            "ENV_path": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\WDExpress\\VC\\Tools\\MSVC\\14.16.27023\\bin\\HostX86\\x64",
+            "installationPath": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\WDExpress",
+            "installationVersion": "15.9.35229.15",
+            "displayName": "Visual Studio 2017 Desktop Express",
+            "productId": "Microsoft.VisualStudio.Product.WDExpress",
+            "productPath": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\WDExpress\\Common7\\IDE\\WDExpress.exe",
+            "buildVersion": "15.9.35229.15",
+            "productDisplayVersion": "15.9.66",
+            "productSemanticVersion": "15.9.66+35229.15"
+        },
+        "cl_info": {
+            "cl_path": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\WDExpress\\VC\\Tools\\MSVC\\14.16.27023\\bin\\HostX86\\x64\\cl.EXE",
+            "cl_version": "19.16.27051",
+            "vc_toolset": "14.16.27023",
+            "vc_buildseries": "14.1",
+            "vc_buildtools": "14.1",
+            "vs_version": ""
+        },
+        "msbuild_info": {
+            "msbuild_path": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\WDExpress\\\\MSBuild\\15.0\\bin\\msbuild.exe",
+            "msbuild_version": "15.9.21.664"
+        },
+        "dev_info": {
+            "dev_path": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\WDExpress\\Common7\\IDE\\wdexpress.exe",
+            "dev_isdevelop": false,
+            "dev_isexpress": true
+        },
+        "scons_info": {
+            "MSVC_VERSION": "14.1Exp"
+        }
+    },
+    {
+        "version_info": {
+            "VS_VERSION": "14.0",
+            "VC_TOOLSET": "14.0",
+            "VC_BUILDSERIES": "14.0",
+            "VC_BUILDTOOLS": "14.0",
+            "VC_LEGACY": "14.0Exp",
+            "CL_VERSION": "19.00.23026",
+            "MSBUILD_VERSION": "4.8.9032.0"
+        },
+        "vswhere_info": {},
+        "cl_info": {
+            "cl_path": "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\BIN\\x86_amd64\\cl.EXE",
+            "cl_version": "19.00.23026",
+            "vc_toolset": "14.0",
+            "vc_buildseries": "14.0",
+            "vc_buildtools": "14.0",
+            "vs_version": "14.0"
+        },
+        "msbuild_info": {
+            "msbuild_path": "c:\\WINDOWS\\Microsoft.NET\\Framework64\\v4.0.30319\\msbuild.exe",
+            "msbuild_version": "4.8.9032.0"
+        },
+        "dev_info": {
+            "dev_path": "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\Common7\\IDE\\wdexpress.exe",
+            "dev_isdevelop": false,
+            "dev_isexpress": true
+        },
+        "scons_info": {
+            "MSVC_VERSION": "14.0"
+        }
+    },
+    {
+        "version_info": {
+            "VS_VERSION": "14.0",
+            "VC_TOOLSET": "14.0",
+            "VC_BUILDSERIES": "14.0",
+            "VC_BUILDTOOLS": "14.0",
+            "VC_LEGACY": "14.0Exp",
+            "CL_VERSION": "19.00.23026",
+            "MSBUILD_VERSION": "4.8.9032.0"
+        },
+        "vswhere_info": {},
+        "cl_info": {
+            "cl_path": "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\BIN\\x86_amd64\\cl.EXE",
+            "cl_version": "19.00.23026",
+            "vc_toolset": "14.0",
+            "vc_buildseries": "14.0",
+            "vc_buildtools": "14.0",
+            "vs_version": "14.0"
+        },
+        "msbuild_info": {
+            "msbuild_path": "c:\\WINDOWS\\Microsoft.NET\\Framework64\\v4.0.30319\\msbuild.exe",
+            "msbuild_version": "4.8.9032.0"
+        },
+        "dev_info": {
+            "dev_path": "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\Common7\\IDE\\wdexpress.exe",
+            "dev_isdevelop": false,
+            "dev_isexpress": true
+        },
+        "scons_info": {
+            "MSVC_VERSION": "14.0Exp"
+        }
+    },
+    {
+        "version_info": {
+            "VS_VERSION": "12.0",
+            "VC_TOOLSET": "12.0",
+            "VC_BUILDSERIES": "12.0",
+            "VC_BUILDTOOLS": "12.0",
+            "VC_LEGACY": "12.0Exp",
+            "CL_VERSION": "18.00.40629",
+            "MSBUILD_VERSION": "4.8.9032.0"
+        },
+        "vswhere_info": {},
+        "cl_info": {
+            "cl_path": "C:\\Program Files (x86)\\Microsoft Visual Studio 12.0\\VC\\BIN\\x86_amd64\\cl.EXE",
+            "cl_version": "18.00.40629",
+            "vc_toolset": "12.0",
+            "vc_buildseries": "12.0",
+            "vc_buildtools": "12.0",
+            "vs_version": "12.0"
+        },
+        "msbuild_info": {
+            "msbuild_path": "c:\\WINDOWS\\Microsoft.NET\\Framework64\\v4.0.30319\\msbuild.exe",
+            "msbuild_version": "4.8.9032.0"
+        },
+        "dev_info": {
+            "dev_path": "C:\\Program Files (x86)\\Microsoft Visual Studio 12.0\\Common7\\IDE\\wdexpress.exe",
+            "dev_isdevelop": false,
+            "dev_isexpress": true
+        },
+        "scons_info": {
+            "MSVC_VERSION": "12.0"
+        }
+    },
+    {
+        "version_info": {
+            "VS_VERSION": "12.0",
+            "VC_TOOLSET": "12.0",
+            "VC_BUILDSERIES": "12.0",
+            "VC_BUILDTOOLS": "12.0",
+            "VC_LEGACY": "12.0Exp",
+            "CL_VERSION": "18.00.40629",
+            "MSBUILD_VERSION": "4.8.9032.0"
+        },
+        "vswhere_info": {},
+        "cl_info": {
+            "cl_path": "C:\\Program Files (x86)\\Microsoft Visual Studio 12.0\\VC\\BIN\\x86_amd64\\cl.EXE",
+            "cl_version": "18.00.40629",
+            "vc_toolset": "12.0",
+            "vc_buildseries": "12.0",
+            "vc_buildtools": "12.0",
+            "vs_version": "12.0"
+        },
+        "msbuild_info": {
+            "msbuild_path": "c:\\WINDOWS\\Microsoft.NET\\Framework64\\v4.0.30319\\msbuild.exe",
+            "msbuild_version": "4.8.9032.0"
+        },
+        "dev_info": {
+            "dev_path": "C:\\Program Files (x86)\\Microsoft Visual Studio 12.0\\Common7\\IDE\\wdexpress.exe",
+            "dev_isdevelop": false,
+            "dev_isexpress": true
+        },
+        "scons_info": {
+            "MSVC_VERSION": "12.0Exp"
+        }
+    },
+    {
+        "version_info": {
+            "VS_VERSION": "11.0",
+            "VC_TOOLSET": "11.0",
+            "VC_BUILDSERIES": "11.0",
+            "VC_BUILDTOOLS": "11.0",
+            "VC_LEGACY": "11.0Exp",
+            "CL_VERSION": "17.00.61030",
+            "MSBUILD_VERSION": "4.8.9032.0"
+        },
+        "vswhere_info": {},
+        "cl_info": {
+            "cl_path": "C:\\Program Files (x86)\\Microsoft Visual Studio 11.0\\VC\\BIN\\x86_amd64\\cl.EXE",
+            "cl_version": "17.00.61030",
+            "vc_toolset": "11.0",
+            "vc_buildseries": "11.0",
+            "vc_buildtools": "11.0",
+            "vs_version": "11.0"
+        },
+        "msbuild_info": {
+            "msbuild_path": "c:\\WINDOWS\\Microsoft.NET\\Framework64\\v4.0.30319\\msbuild.exe",
+            "msbuild_version": "4.8.9032.0"
+        },
+        "dev_info": {
+            "dev_path": "C:\\Program Files (x86)\\Microsoft Visual Studio 11.0\\Common7\\IDE\\wdexpress.exe",
+            "dev_isdevelop": false,
+            "dev_isexpress": true
+        },
+        "scons_info": {
+            "MSVC_VERSION": "11.0"
+        }
+    },
+    {
+        "version_info": {
+            "VS_VERSION": "11.0",
+            "VC_TOOLSET": "11.0",
+            "VC_BUILDSERIES": "11.0",
+            "VC_BUILDTOOLS": "11.0",
+            "VC_LEGACY": "11.0Exp",
+            "CL_VERSION": "17.00.61030",
+            "MSBUILD_VERSION": "4.8.9032.0"
+        },
+        "vswhere_info": {},
+        "cl_info": {
+            "cl_path": "C:\\Program Files (x86)\\Microsoft Visual Studio 11.0\\VC\\BIN\\x86_amd64\\cl.EXE",
+            "cl_version": "17.00.61030",
+            "vc_toolset": "11.0",
+            "vc_buildseries": "11.0",
+            "vc_buildtools": "11.0",
+            "vs_version": "11.0"
+        },
+        "msbuild_info": {
+            "msbuild_path": "c:\\WINDOWS\\Microsoft.NET\\Framework64\\v4.0.30319\\msbuild.exe",
+            "msbuild_version": "4.8.9032.0"
+        },
+        "dev_info": {
+            "dev_path": "C:\\Program Files (x86)\\Microsoft Visual Studio 11.0\\Common7\\IDE\\wdexpress.exe",
+            "dev_isdevelop": false,
+            "dev_isexpress": true
+        },
+        "scons_info": {
+            "MSVC_VERSION": "11.0Exp"
+        }
+    },
+    {
+        "version_info": {
+            "VS_VERSION": "10.0",
+            "VC_TOOLSET": "10.0",
+            "VC_BUILDSERIES": "10.0",
+            "VC_BUILDTOOLS": "10.0",
+            "VC_LEGACY": "10.0Exp",
+            "CL_VERSION": "16.00.40219.01",
+            "MSBUILD_VERSION": "4.8.9032.0"
+        },
+        "vswhere_info": {},
+        "cl_info": {
+            "cl_path": "c:\\Program Files (x86)\\Microsoft Visual Studio 10.0\\VC\\BIN\\cl.EXE",
+            "cl_version": "16.00.40219.01",
+            "vc_toolset": "10.0",
+            "vc_buildseries": "10.0",
+            "vc_buildtools": "10.0",
+            "vs_version": "10.0"
+        },
+        "msbuild_info": {
+            "msbuild_path": "c:\\WINDOWS\\Microsoft.NET\\Framework64\\v4.0.30319\\msbuild.exe",
+            "msbuild_version": "4.8.9032.0"
+        },
+        "dev_info": {
+            "dev_path": "C:\\Program Files (x86)\\Microsoft Visual Studio 10.0\\Common7\\IDE\\vcexpress.exe",
+            "dev_isdevelop": false,
+            "dev_isexpress": true
+        },
+        "scons_info": {
+            "MSVC_VERSION": "10.0"
+        }
+    },
+    {
+        "version_info": {
+            "VS_VERSION": "10.0",
+            "VC_TOOLSET": "10.0",
+            "VC_BUILDSERIES": "10.0",
+            "VC_BUILDTOOLS": "10.0",
+            "VC_LEGACY": "10.0Exp",
+            "CL_VERSION": "16.00.40219.01",
+            "MSBUILD_VERSION": "4.8.9032.0"
+        },
+        "vswhere_info": {},
+        "cl_info": {
+            "cl_path": "c:\\Program Files (x86)\\Microsoft Visual Studio 10.0\\VC\\BIN\\cl.EXE",
+            "cl_version": "16.00.40219.01",
+            "vc_toolset": "10.0",
+            "vc_buildseries": "10.0",
+            "vc_buildtools": "10.0",
+            "vs_version": "10.0"
+        },
+        "msbuild_info": {
+            "msbuild_path": "c:\\WINDOWS\\Microsoft.NET\\Framework64\\v4.0.30319\\msbuild.exe",
+            "msbuild_version": "4.8.9032.0"
+        },
+        "dev_info": {
+            "dev_path": "C:\\Program Files (x86)\\Microsoft Visual Studio 10.0\\Common7\\IDE\\vcexpress.exe",
+            "dev_isdevelop": false,
+            "dev_isexpress": true
+        },
+        "scons_info": {
+            "MSVC_VERSION": "10.0Exp"
+        }
+    },
+    {
+        "version_info": {
+            "VS_VERSION": "9.0",
+            "VC_TOOLSET": "9.0",
+            "VC_BUILDSERIES": "9.0",
+            "VC_BUILDTOOLS": "9.0",
+            "VC_LEGACY": "9.0Exp",
+            "CL_VERSION": "15.00.30729.01",
+            "MSBUILD_VERSION": ""
+        },
+        "vswhere_info": {},
+        "cl_info": {
+            "cl_path": "C:\\Program Files (x86)\\Microsoft Visual Studio 9.0\\VC\\BIN\\cl.EXE",
+            "cl_version": "15.00.30729.01",
+            "vc_toolset": "9.0",
+            "vc_buildseries": "9.0",
+            "vc_buildtools": "9.0",
+            "vs_version": "9.0"
+        },
+        "msbuild_info": {},
+        "dev_info": {
+            "dev_path": "C:\\Program Files (x86)\\Microsoft Visual Studio 9.0\\Common7\\IDE\\vcexpress.exe",
+            "dev_isdevelop": false,
+            "dev_isexpress": true
+        },
+        "scons_info": {
+            "MSVC_VERSION": "9.0"
+        }
+    },
+    {
+        "version_info": {
+            "VS_VERSION": "9.0",
+            "VC_TOOLSET": "9.0",
+            "VC_BUILDSERIES": "9.0",
+            "VC_BUILDTOOLS": "9.0",
+            "VC_LEGACY": "9.0Exp",
+            "CL_VERSION": "15.00.30729.01",
+            "MSBUILD_VERSION": ""
+        },
+        "vswhere_info": {},
+        "cl_info": {
+            "cl_path": "C:\\Program Files (x86)\\Microsoft Visual Studio 9.0\\VC\\BIN\\cl.EXE",
+            "cl_version": "15.00.30729.01",
+            "vc_toolset": "9.0",
+            "vc_buildseries": "9.0",
+            "vc_buildtools": "9.0",
+            "vs_version": "9.0"
+        },
+        "msbuild_info": {},
+        "dev_info": {
+            "dev_path": "C:\\Program Files (x86)\\Microsoft Visual Studio 9.0\\Common7\\IDE\\vcexpress.exe",
+            "dev_isdevelop": false,
+            "dev_isexpress": true
+        },
+        "scons_info": {
+            "MSVC_VERSION": "9.0Exp"
+        }
+    },
+    {
+        "version_info": {
+            "VS_VERSION": "8.0",
+            "VC_TOOLSET": "8.0",
+            "VC_BUILDSERIES": "8.0",
+            "VC_BUILDTOOLS": "8.0",
+            "VC_LEGACY": "8.0Exp",
+            "CL_VERSION": "14.00.50727.762",
+            "MSBUILD_VERSION": "2.0.50727.9157"
+        },
+        "vswhere_info": {},
+        "cl_info": {
+            "cl_path": "C:\\Program Files (x86)\\Microsoft Visual Studio 8\\VC\\BIN\\cl.EXE",
+            "cl_version": "14.00.50727.762",
+            "vc_toolset": "8.0",
+            "vc_buildseries": "8.0",
+            "vc_buildtools": "8.0",
+            "vs_version": "8.0"
+        },
+        "msbuild_info": {
+            "msbuild_path": "C:\\WINDOWS\\Microsoft.NET\\Framework\\v2.0.50727\\msbuild.exe",
+            "msbuild_version": "2.0.50727.9157"
+        },
+        "dev_info": {
+            "dev_path": "C:\\Program Files (x86)\\Microsoft Visual Studio 8\\Common7\\IDE\\vcexpress.exe",
+            "dev_isdevelop": false,
+            "dev_isexpress": true
+        },
+        "scons_info": {
+            "MSVC_VERSION": "8.0"
+        }
+    },
+    {
+        "version_info": {
+            "VS_VERSION": "8.0",
+            "VC_TOOLSET": "8.0",
+            "VC_BUILDSERIES": "8.0",
+            "VC_BUILDTOOLS": "8.0",
+            "VC_LEGACY": "8.0Exp",
+            "CL_VERSION": "14.00.50727.762",
+            "MSBUILD_VERSION": "2.0.50727.9157"
+        },
+        "vswhere_info": {},
+        "cl_info": {
+            "cl_path": "C:\\Program Files (x86)\\Microsoft Visual Studio 8\\VC\\BIN\\cl.EXE",
+            "cl_version": "14.00.50727.762",
+            "vc_toolset": "8.0",
+            "vc_buildseries": "8.0",
+            "vc_buildtools": "8.0",
+            "vs_version": "8.0"
+        },
+        "msbuild_info": {
+            "msbuild_path": "C:\\WINDOWS\\Microsoft.NET\\Framework\\v2.0.50727\\msbuild.exe",
+            "msbuild_version": "2.0.50727.9157"
+        },
+        "dev_info": {
+            "dev_path": "C:\\Program Files (x86)\\Microsoft Visual Studio 8\\Common7\\IDE\\vcexpress.exe",
+            "dev_isdevelop": false,
+            "dev_isexpress": true
+        },
+        "scons_info": {
+            "MSVC_VERSION": "8.0Exp"
+        }
+    }
+]
