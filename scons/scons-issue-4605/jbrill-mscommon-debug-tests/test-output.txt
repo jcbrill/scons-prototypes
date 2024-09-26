@@ -1,0 +1,342 @@
+==========BEGIN============
+SCONS_MSCOMMON_DEBUG=S:\SCons\test-mscommon-debug-filename\Folder With Spaces\debug1.txt
+scons: Reading SConscript files ...
+scons: done reading SConscript files.
+scons: Building targets ...
+scons: `.' is up to date.
+scons: done building targets.
+===========================
+
+==========BEGIN============
+SCONS_MSCOMMON_DEBUG=S:\SCons\test-mscommon-debug-filename\Folder With Spaces\debug2.txt
+scons: Reading SConscript files ...
+scons: done reading SConscript files.
+scons: Building targets ...
+scons: `.' is up to date.
+scons: done building targets.
+===========================
+
+==========BEGIN============
+SCONS_MSCOMMON_DEBUG="S:\SCons\test-mscommon-debug-filename\Folder With Spaces\debug3.txt"
+scons: Reading SConscript files ...
+
+scons: warning: SCONS_MSCOMMON_DEBUG file name is invalid:
+  filename: '"S:\\SCons\\test-mscommon-debug-filename\\Folder With Spaces\\debug3.txt"'
+  modified: 'S:\\SCons\\test-mscommon-debug-filename\\Folder With Spaces\\debug3.txt'
+    action: leading and trailing double quotes removed
+File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+scons: done reading SConscript files.
+scons: Building targets ...
+scons: `.' is up to date.
+scons: done building targets.
+===========================
+
+==========BEGIN============
+SCONS_MSCOMMON_DEBUG="S:\SCons\test-mscommon-debug-filename\Folder With Spaces\debug4.txt
+scons: Reading SConscript files ...
+
+scons: warning: SCONS_MSCOMMON_DEBUG file name is invalid:
+  filename: '"S:\\SCons\\test-mscommon-debug-filename\\Folder With Spaces\\debug4.txt'
+   abspath: 'S:\\SCons\\test-mscommon-debug-filename\\"S:\\SCons\\test-mscommon-debug-filename\\Folder With Spaces\\debug4.txt'
+    reason: file name contains illegal characters ('"', ':')
+File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+OSError: [Errno 22] Invalid argument: 'S:\\SCons\\test-mscommon-debug-filename\\"S:\\SCons\\test-mscommon-debug-filename\\Folder With Spaces\\debug4.txt':
+  File "S:\SCons\test-mscommon-debug-filename\SConstruct", line 1:
+    env = Environment()
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Environment.py", line 1282:
+    apply_tools(self, tools, toolpath)
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Environment.py", line 120:
+    _ = env.Tool(tool)
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Environment.py", line 2095:
+    tool(self)
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Tool\__init__.py", line 265:
+    self.generate(env, *args, **kw)
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Tool\default.py", line 35:
+    for t in SCons.Tool.tool_list(env['PLATFORM'], env):
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Tool\__init__.py", line 769:
+    c_compiler = FindTool(c_compilers, env) or c_compilers[0]
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Tool\__init__.py", line 671:
+    t = Tool(tool)
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Tool\__init__.py", line 118:
+    module = self._tool_module()
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Tool\__init__.py", line 201:
+    spec.loader.exec_module(module)
+  File "<frozen importlib._bootstrap_external>", line 940:
+    
+  File "<frozen importlib._bootstrap>", line 241:
+    
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Tool\msvc.py", line 42:
+    import SCons.Tool.msvs
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Tool\msvs.py", line 48:
+    from SCons.Tool.MSCommon import (
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Tool\MSCommon\__init__.py", line 33:
+    from SCons.Tool.MSCommon.sdk import (  # noqa: F401
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Tool\MSCommon\sdk.py", line 35:
+    from .common import debug, read_reg
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Tool\MSCommon\common.py", line 304:
+    raise e.with_traceback(None)
+===========================
+
+==========BEGIN============
+SCONS_MSCOMMON_DEBUG=S:\SCons\test-mscommon-debug-filename\Folder With Spaces\debug5.txt"
+scons: Reading SConscript files ...
+
+scons: warning: SCONS_MSCOMMON_DEBUG file name is invalid:
+  filename: 'S:\\SCons\\test-mscommon-debug-filename\\Folder With Spaces\\debug5.txt"'
+   abspath: 'S:\\SCons\\test-mscommon-debug-filename\\Folder With Spaces\\debug5.txt"'
+    reason: file name contains illegal characters ('"')
+File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+OSError: [Errno 22] Invalid argument: 'S:\\SCons\\test-mscommon-debug-filename\\Folder With Spaces\\debug5.txt"':
+  File "S:\SCons\test-mscommon-debug-filename\SConstruct", line 1:
+    env = Environment()
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Environment.py", line 1282:
+    apply_tools(self, tools, toolpath)
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Environment.py", line 120:
+    _ = env.Tool(tool)
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Environment.py", line 2095:
+    tool(self)
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Tool\__init__.py", line 265:
+    self.generate(env, *args, **kw)
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Tool\default.py", line 35:
+    for t in SCons.Tool.tool_list(env['PLATFORM'], env):
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Tool\__init__.py", line 769:
+    c_compiler = FindTool(c_compilers, env) or c_compilers[0]
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Tool\__init__.py", line 671:
+    t = Tool(tool)
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Tool\__init__.py", line 118:
+    module = self._tool_module()
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Tool\__init__.py", line 201:
+    spec.loader.exec_module(module)
+  File "<frozen importlib._bootstrap_external>", line 940:
+    
+  File "<frozen importlib._bootstrap>", line 241:
+    
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Tool\msvc.py", line 42:
+    import SCons.Tool.msvs
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Tool\msvs.py", line 48:
+    from SCons.Tool.MSCommon import (
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Tool\MSCommon\__init__.py", line 33:
+    from SCons.Tool.MSCommon.sdk import (  # noqa: F401
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Tool\MSCommon\sdk.py", line 35:
+    from .common import debug, read_reg
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Tool\MSCommon\common.py", line 304:
+    raise e.with_traceback(None)
+===========================
+
+==========BEGIN============
+SCONS_MSCOMMON_DEBUG=S:\SCons\test-mscommon-debug-filename\Folder With Spaces\dqbeg"dqend.txt
+scons: Reading SConscript files ...
+
+scons: warning: SCONS_MSCOMMON_DEBUG file name is invalid:
+  filename: 'S:\\SCons\\test-mscommon-debug-filename\\Folder With Spaces\\dqbeg"dqend.txt'
+   abspath: 'S:\\SCons\\test-mscommon-debug-filename\\Folder With Spaces\\dqbeg"dqend.txt'
+    reason: file name contains illegal characters ('"')
+File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+OSError: [Errno 22] Invalid argument: 'S:\\SCons\\test-mscommon-debug-filename\\Folder With Spaces\\dqbeg"dqend.txt':
+  File "S:\SCons\test-mscommon-debug-filename\SConstruct", line 1:
+    env = Environment()
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Environment.py", line 1282:
+    apply_tools(self, tools, toolpath)
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Environment.py", line 120:
+    _ = env.Tool(tool)
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Environment.py", line 2095:
+    tool(self)
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Tool\__init__.py", line 265:
+    self.generate(env, *args, **kw)
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Tool\default.py", line 35:
+    for t in SCons.Tool.tool_list(env['PLATFORM'], env):
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Tool\__init__.py", line 769:
+    c_compiler = FindTool(c_compilers, env) or c_compilers[0]
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Tool\__init__.py", line 671:
+    t = Tool(tool)
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Tool\__init__.py", line 118:
+    module = self._tool_module()
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Tool\__init__.py", line 201:
+    spec.loader.exec_module(module)
+  File "<frozen importlib._bootstrap_external>", line 940:
+    
+  File "<frozen importlib._bootstrap>", line 241:
+    
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Tool\msvc.py", line 42:
+    import SCons.Tool.msvs
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Tool\msvs.py", line 48:
+    from SCons.Tool.MSCommon import (
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Tool\MSCommon\__init__.py", line 33:
+    from SCons.Tool.MSCommon.sdk import (  # noqa: F401
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Tool\MSCommon\sdk.py", line 35:
+    from .common import debug, read_reg
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Tool\MSCommon\common.py", line 304:
+    raise e.with_traceback(None)
+===========================
+
+==========BEGIN============
+SCONS_MSCOMMON_DEBUG=S:\SCons\test-mscommon-debug-filename\Folder With Spaces\qmarkbeg?qmarkend.txt
+scons: Reading SConscript files ...
+
+scons: warning: SCONS_MSCOMMON_DEBUG file name is invalid:
+  filename: 'S:\\SCons\\test-mscommon-debug-filename\\Folder With Spaces\\qmarkbeg?qmarkend.txt'
+   abspath: 'S:\\SCons\\test-mscommon-debug-filename\\Folder With Spaces\\qmarkbeg?qmarkend.txt'
+    reason: file name contains illegal characters ('?')
+File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+OSError: [Errno 22] Invalid argument: 'S:\\SCons\\test-mscommon-debug-filename\\Folder With Spaces\\qmarkbeg?qmarkend.txt':
+  File "S:\SCons\test-mscommon-debug-filename\SConstruct", line 1:
+    env = Environment()
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Environment.py", line 1282:
+    apply_tools(self, tools, toolpath)
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Environment.py", line 120:
+    _ = env.Tool(tool)
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Environment.py", line 2095:
+    tool(self)
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Tool\__init__.py", line 265:
+    self.generate(env, *args, **kw)
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Tool\default.py", line 35:
+    for t in SCons.Tool.tool_list(env['PLATFORM'], env):
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Tool\__init__.py", line 769:
+    c_compiler = FindTool(c_compilers, env) or c_compilers[0]
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Tool\__init__.py", line 671:
+    t = Tool(tool)
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Tool\__init__.py", line 118:
+    module = self._tool_module()
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Tool\__init__.py", line 201:
+    spec.loader.exec_module(module)
+  File "<frozen importlib._bootstrap_external>", line 940:
+    
+  File "<frozen importlib._bootstrap>", line 241:
+    
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Tool\msvc.py", line 42:
+    import SCons.Tool.msvs
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Tool\msvs.py", line 48:
+    from SCons.Tool.MSCommon import (
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Tool\MSCommon\__init__.py", line 33:
+    from SCons.Tool.MSCommon.sdk import (  # noqa: F401
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Tool\MSCommon\sdk.py", line 35:
+    from .common import debug, read_reg
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Tool\MSCommon\common.py", line 304:
+    raise e.with_traceback(None)
+===========================
+
+==========BEGIN============
+SCONS_MSCOMMON_DEBUG=S:\SCons\test-mscommon-debug-filename\Folder With Spaces\colonbeg:colonend.txt
+scons: Reading SConscript files ...
+
+scons: warning: SCONS_MSCOMMON_DEBUG file name is invalid:
+  filename: 'S:\\SCons\\test-mscommon-debug-filename\\Folder With Spaces\\colonbeg:colonend.txt'
+   abspath: 'S:\\SCons\\test-mscommon-debug-filename\\Folder With Spaces\\colonbeg:colonend.txt'
+    reason: file name contains illegal characters (':')
+File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+scons: done reading SConscript files.
+scons: Building targets ...
+scons: `.' is up to date.
+scons: done building targets.
+===========================
+
+==========BEGIN============
+SCONS_MSCOMMON_DEBUG=S:\SCons\test-mscommon-debug-filename\Folder With Spaces\aux.txt
+scons: Reading SConscript files ...
+
+scons: warning: SCONS_MSCOMMON_DEBUG file name is invalid:
+  filename: 'S:\\SCons\\test-mscommon-debug-filename\\Folder With Spaces\\aux.txt'
+   abspath: '\\\\.\\aux'
+    reason: file name contains a reserved name ('aux')
+File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+FileNotFoundError: [Errno 2] No such file or directory: '\\\\.\\aux':
+  File "S:\SCons\test-mscommon-debug-filename\SConstruct", line 1:
+    env = Environment()
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Environment.py", line 1282:
+    apply_tools(self, tools, toolpath)
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Environment.py", line 120:
+    _ = env.Tool(tool)
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Environment.py", line 2095:
+    tool(self)
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Tool\__init__.py", line 265:
+    self.generate(env, *args, **kw)
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Tool\default.py", line 35:
+    for t in SCons.Tool.tool_list(env['PLATFORM'], env):
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Tool\__init__.py", line 769:
+    c_compiler = FindTool(c_compilers, env) or c_compilers[0]
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Tool\__init__.py", line 671:
+    t = Tool(tool)
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Tool\__init__.py", line 118:
+    module = self._tool_module()
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Tool\__init__.py", line 201:
+    spec.loader.exec_module(module)
+  File "<frozen importlib._bootstrap_external>", line 940:
+    
+  File "<frozen importlib._bootstrap>", line 241:
+    
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Tool\msvc.py", line 42:
+    import SCons.Tool.msvs
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Tool\msvs.py", line 48:
+    from SCons.Tool.MSCommon import (
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Tool\MSCommon\__init__.py", line 33:
+    from SCons.Tool.MSCommon.sdk import (  # noqa: F401
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Tool\MSCommon\sdk.py", line 35:
+    from .common import debug, read_reg
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Tool\MSCommon\common.py", line 304:
+    raise e.with_traceback(None)
+===========================
+
+==========BEGIN============
+SCONS_MSCOMMON_DEBUG=S:\SCons\test-mscommon-debug-filename\Folder With Spaces\
+scons: Reading SConscript files ...
+
+scons: warning: SCONS_MSCOMMON_DEBUG file name is invalid:
+  filename: 'S:\\SCons\\test-mscommon-debug-filename\\Folder With Spaces\\'
+   abspath: 'S:\\SCons\\test-mscommon-debug-filename\\Folder With Spaces'
+    reason: file name is a directory
+File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+PermissionError: [Errno 13] Permission denied: 'S:\\SCons\\test-mscommon-debug-filename\\Folder With Spaces':
+  File "S:\SCons\test-mscommon-debug-filename\SConstruct", line 1:
+    env = Environment()
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Environment.py", line 1282:
+    apply_tools(self, tools, toolpath)
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Environment.py", line 120:
+    _ = env.Tool(tool)
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Environment.py", line 2095:
+    tool(self)
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Tool\__init__.py", line 265:
+    self.generate(env, *args, **kw)
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Tool\default.py", line 35:
+    for t in SCons.Tool.tool_list(env['PLATFORM'], env):
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Tool\__init__.py", line 769:
+    c_compiler = FindTool(c_compilers, env) or c_compilers[0]
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Tool\__init__.py", line 671:
+    t = Tool(tool)
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Tool\__init__.py", line 118:
+    module = self._tool_module()
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Tool\__init__.py", line 201:
+    spec.loader.exec_module(module)
+  File "<frozen importlib._bootstrap_external>", line 940:
+    
+  File "<frozen importlib._bootstrap>", line 241:
+    
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Tool\msvc.py", line 42:
+    import SCons.Tool.msvs
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Tool\msvs.py", line 48:
+    from SCons.Tool.MSCommon import (
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Tool\MSCommon\__init__.py", line 33:
+    from SCons.Tool.MSCommon.sdk import (  # noqa: F401
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Tool\MSCommon\sdk.py", line 35:
+    from .common import debug, read_reg
+  File "S:\SCons\jbrill-mscommon-debug\scripts\..\SCons\Tool\MSCommon\common.py", line 304:
+    raise e.with_traceback(None)
+===========================
+
+==========BEGIN============
+SCONS_MSCOMMON_DEBUG=S:\SCons\test-mscommon-debug-filename\Folder With Spaces\prn1.txt
+scons: Reading SConscript files ...
+scons: done reading SConscript files.
+scons: Building targets ...
+scons: `.' is up to date.
+scons: done building targets.
+===========================
+
+==========BEGIN============
+SCONS_MSCOMMON_DEBUG=S:\SCons\test-mscommon-debug-filename\Folder With Spaces\ con.txt
+scons: Reading SConscript files ...
+scons: done reading SConscript files.
+scons: Building targets ...
+scons: `.' is up to date.
+scons: done building targets.
+===========================
+
