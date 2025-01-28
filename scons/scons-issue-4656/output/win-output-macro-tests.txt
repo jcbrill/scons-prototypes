@@ -3,8 +3,8 @@
 
 --- scons:deps:beg ---
 main.c GCC C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE -fsyntax-only -E -dI -w S:\SCons\Test-4656\tests\MacroTest\main.c
-GCCPreProcessorScanner main.c result: ['compiler_gcc.h', 'arch_x64.h']
-GCCPreProcessorScanner main.c expect: ['compiler_gcc.h', 'arch_x64.h']
+GCCPreProcessorScanner main.c result: ['compiler_mingw.h', 'arch_x64.h']
+GCCPreProcessorScanner main.c expect: ['compiler_mingw.h', 'arch_x64.h']
 GCCPreProcessorScanner main.c: dependencies match
 scons: `.' is up to date.
 --- scons:deps:end ---
@@ -15,18 +15,18 @@ gcc -o main.o -c main.c
 gcc -o main.exe main.o
 +-.
   +-arch_x64.h
-  +-compiler_gcc.h
+  +-compiler_mingw.h
   +-main.c
   +-main.exe
   | +-main.o
   | | +-main.c
-  | | +-compiler_gcc.h
+  | | +-compiler_mingw.h
   | | +-arch_x64.h
   | | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
   | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
   +-main.o
   | +-main.c
-  | +-compiler_gcc.h
+  | +-compiler_mingw.h
   | +-arch_x64.h
   | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
   +-SConstruct
@@ -85,7 +85,7 @@ Removed main.exe
 
 --- scons:deps:beg ---
 CConditionalScanner main.c result: []
-CConditionalScanner main.c expect: ['compiler_gcc.h', 'arch_x64.h']
+CConditionalScanner main.c expect: ['compiler_mingw.h', 'arch_x64.h']
 CConditionalScanner main.c: !!! DEPENDENCIES DO NOT MATCH !!!
 scons: `.' is up to date.
 --- scons:deps:end ---
@@ -117,7 +117,7 @@ Removed main.exe
 
 --- scons:deps:beg ---
 CScanner main.c result: ['arch_x64.h', 'arch_x86.h', 'compiler_gcc.h', 'compiler_mingw.h', 'compiler_msvc.h']
-CScanner main.c expect: ['compiler_gcc.h', 'arch_x64.h']
+CScanner main.c expect: ['compiler_mingw.h', 'arch_x64.h']
 CScanner main.c: !!! DEPENDENCIES DO NOT MATCH !!!
 scons: `.' is up to date.
 --- scons:deps:end ---

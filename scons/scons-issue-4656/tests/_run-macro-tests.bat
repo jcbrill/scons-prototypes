@@ -37,7 +37,7 @@
 
 @echo.
 @echo --- scons:deps:beg ---
-@"%PYEXE%" "%SCONS_ROOT%\scripts\scons.py" --site-dir="%SCONS_SITEDIR%" -Qn --scanner-deps %_SCONS_MSVC_COMPILER% --scanner=%_SCONS_SCANNER% --expected-map="{'main.c': ['compiler_gcc.h', 'arch_x64.h']}" --expected-scanner-map="[(['MSVC'], {'main.c': ['compiler_msvc.h', 'arch_x64.h']})]"
+@"%PYEXE%" "%SCONS_ROOT%\scripts\scons.py" --site-dir="%SCONS_SITEDIR%" -Qn --scanner-deps %_SCONS_MSVC_COMPILER% --scanner=%_SCONS_SCANNER% --expected-map="{'main.c': ['compiler_mingw.h', 'arch_x64.h']}" --expected-scanner-map="[(['MSVC'], {'main.c': ['compiler_msvc.h', 'arch_x64.h']})]"
 @echo --- scons:deps:end ---
 @echo.
 @echo --- scons:build:beg ---

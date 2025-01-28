@@ -1,7 +1,7 @@
-#if defined (__GNUC__) || defined(__GNUG__)
-    #include "compiler_gcc.h"
-#elif defined(__MINGW32__) || defined(__MINGW64__)
+#if defined(__MINGW32__) || defined(__MINGW64__)
     #include "compiler_mingw.h"
+#elif defined (__GNUC__) || defined(__GNUG__)
+    #include "compiler_gcc.h"
 #elif defined(_MSC_VER)
     #include "compiler_msvc.h"
 #else
