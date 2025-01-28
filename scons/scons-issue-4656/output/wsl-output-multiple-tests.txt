@@ -2,15 +2,15 @@
 ++++++ GCCProcessorScanner:beg ++++++
 
 --- scons:deps:beg ---
-main.c GCC /bin/gcc -fsyntax-only -E -dI -w /mnt/s/SCons/test-4656/tests/MultipleTest/main.c
-GCCPreProcessorScanner main.c result: ['include/include1.h', 'include/include2.h', 'include/include3.h', 'include/include4.h', 'include/include5.h']
-GCCPreProcessorScanner main.c expect: ['include/include1.h', 'include/include2.h', 'include/include3.h', 'include/include4.h', 'include/include5.h']
+main.c GCC /bin/gcc -fsyntax-only -E -dI -w /mnt/s/SCons/Test-4656/tests/MultipleTest/main.c
+GCCPreProcessorScanner main.c result: ['include/include1.h', 'include/include2.h', 'include/include3.h', 'include/include4.h']
+GCCPreProcessorScanner main.c expect: ['include/include1.h', 'include/include2.h', 'include/include3.h', 'include/include4.h']
 GCCPreProcessorScanner main.c: dependencies match
 scons: `.' is up to date.
 --- scons:deps:end ---
 
 --- scons:build:beg ---
-main.c GCC /bin/gcc -fsyntax-only -E -dI -w /mnt/s/SCons/test-4656/tests/MultipleTest/main.c
+main.c GCC /bin/gcc -fsyntax-only -E -dI -w /mnt/s/SCons/Test-4656/tests/MultipleTest/main.c
 gcc -o main.o -c main.c
 gcc -o main main.o
 +-.
@@ -20,7 +20,6 @@ gcc -o main main.o
   | +-include/include2.h
   | +-include/include3.h
   | +-include/include4.h
-  | +-include/include5.h
   +-main
   | +-main.o
   | | +-main.c
@@ -28,7 +27,6 @@ gcc -o main main.o
   | | +-include/include2.h
   | | +-include/include3.h
   | | +-include/include4.h
-  | | +-include/include5.h
   | | +-/bin/gcc
   | +-/bin/gcc
   +-main.c
@@ -38,12 +36,11 @@ gcc -o main main.o
     +-include/include2.h
     +-include/include3.h
     +-include/include4.h
-    +-include/include5.h
     +-/bin/gcc
 --- scons:build:end ---
 
 --- scons:clean:beg ---
-main.c GCC /bin/gcc -fsyntax-only -E -dI -w /mnt/s/SCons/test-4656/tests/MultipleTest/main.c
+main.c GCC /bin/gcc -fsyntax-only -E -dI -w /mnt/s/SCons/Test-4656/tests/MultipleTest/main.c
 Removed main.o
 Removed main
 --- scons:clean:end ---
@@ -53,8 +50,8 @@ Removed main
 ++++++ CConditionalModScanner:beg ++++++
 
 --- scons:deps:beg ---
-CConditionalModScanner main.c result: ['include/include1.h', 'include/include2.h', 'include/include3.h', 'include/include4.h']
-CConditionalModScanner main.c expect: ['include/include1.h', 'include/include2.h', 'include/include3.h', 'include/include4.h', 'include/include5.h']
+CConditionalModScanner main.c result: ['include/include1.h', 'include/include2.h', 'include/include3.h']
+CConditionalModScanner main.c expect: ['include/include1.h', 'include/include2.h', 'include/include3.h', 'include/include4.h']
 CConditionalModScanner main.c: !!! DEPENDENCIES DO NOT MATCH !!!
 scons: `.' is up to date.
 --- scons:deps:end ---
@@ -68,14 +65,12 @@ gcc -o main main.o
   | +-include/include1.h
   | +-include/include2.h
   | +-include/include3.h
-  | +-include/include4.h
   +-main
   | +-main.o
   | | +-main.c
   | | +-include/include1.h
   | | +-include/include2.h
   | | +-include/include3.h
-  | | +-include/include4.h
   | | +-/bin/gcc
   | +-/bin/gcc
   +-main.c
@@ -84,7 +79,6 @@ gcc -o main main.o
     +-include/include1.h
     +-include/include2.h
     +-include/include3.h
-    +-include/include4.h
     +-/bin/gcc
 --- scons:build:end ---
 
@@ -98,8 +92,8 @@ Removed main
 ++++++ CConditionalScanner:beg ++++++
 
 --- scons:deps:beg ---
-CConditionalScanner main.c result: ['include/include1.h', 'include/include2.h', 'include/include3.h', 'include/include4.h']
-CConditionalScanner main.c expect: ['include/include1.h', 'include/include2.h', 'include/include3.h', 'include/include4.h', 'include/include5.h']
+CConditionalScanner main.c result: ['include/include1.h', 'include/include2.h', 'include/include3.h']
+CConditionalScanner main.c expect: ['include/include1.h', 'include/include2.h', 'include/include3.h', 'include/include4.h']
 CConditionalScanner main.c: !!! DEPENDENCIES DO NOT MATCH !!!
 scons: `.' is up to date.
 --- scons:deps:end ---
@@ -113,14 +107,12 @@ gcc -o main main.o
   | +-include/include1.h
   | +-include/include2.h
   | +-include/include3.h
-  | +-include/include4.h
   +-main
   | +-main.o
   | | +-main.c
   | | +-include/include1.h
   | | +-include/include2.h
   | | +-include/include3.h
-  | | +-include/include4.h
   | | +-/bin/gcc
   | +-/bin/gcc
   +-main.c
@@ -129,7 +121,6 @@ gcc -o main main.o
     +-include/include1.h
     +-include/include2.h
     +-include/include3.h
-    +-include/include4.h
     +-/bin/gcc
 --- scons:build:end ---
 
@@ -143,8 +134,8 @@ Removed main
 ++++++ CScanner:beg ++++++
 
 --- scons:deps:beg ---
-CScanner main.c result: ['include/include1.h', 'include/include2.h', 'include/include3.h', 'include/include4.h', 'include/include5.h']
-CScanner main.c expect: ['include/include1.h', 'include/include2.h', 'include/include3.h', 'include/include4.h', 'include/include5.h']
+CScanner main.c result: ['include/include1.h', 'include/include2.h', 'include/include3.h', 'include/include4.h']
+CScanner main.c expect: ['include/include1.h', 'include/include2.h', 'include/include3.h', 'include/include4.h']
 CScanner main.c: dependencies match
 scons: `.' is up to date.
 --- scons:deps:end ---
@@ -159,7 +150,6 @@ gcc -o main main.o
   | +-include/include2.h
   | +-include/include3.h
   | +-include/include4.h
-  | +-include/include5.h
   +-main
   | +-main.o
   | | +-main.c
@@ -167,7 +157,6 @@ gcc -o main main.o
   | | +-include/include2.h
   | | +-include/include3.h
   | | +-include/include4.h
-  | | +-include/include5.h
   | | +-/bin/gcc
   | +-/bin/gcc
   +-main.c
@@ -177,7 +166,6 @@ gcc -o main main.o
     +-include/include2.h
     +-include/include3.h
     +-include/include4.h
-    +-include/include5.h
     +-/bin/gcc
 --- scons:build:end ---
 

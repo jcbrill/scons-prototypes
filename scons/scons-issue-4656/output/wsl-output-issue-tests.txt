@@ -2,7 +2,7 @@
 ++++++ GCCProcessorScanner:beg ++++++
 
 --- scons:deps:beg ---
-main.c GCC /bin/gcc -fsyntax-only -E -dI -w /mnt/s/SCons/test-4656/tests/IssueTest/main.c
+main.c GCC /bin/gcc -fsyntax-only -E -dI -w /mnt/s/SCons/Test-4656/tests/IssueTest/main.c
 GCCPreProcessorScanner main.c result: []
 GCCPreProcessorScanner main.c expect: []
 GCCPreProcessorScanner main.c: dependencies match
@@ -10,7 +10,7 @@ scons: `.' is up to date.
 --- scons:deps:end ---
 
 --- scons:build:beg ---
-main.c GCC /bin/gcc -fsyntax-only -E -dI -w /mnt/s/SCons/test-4656/tests/IssueTest/main.c
+main.c GCC /bin/gcc -fsyntax-only -E -dI -w /mnt/s/SCons/Test-4656/tests/IssueTest/main.c
 gcc -o main.o -c main.c
 gcc -o main main.o
 +-.
@@ -27,13 +27,13 @@ gcc -o main main.o
 --- scons:build:end ---
 
 --- scons:clean:beg ---
-main.c GCC /bin/gcc -fsyntax-only -E -dI -w /mnt/s/SCons/test-4656/tests/IssueTest/main.c
+main.c GCC /bin/gcc -fsyntax-only -E -dI -w /mnt/s/SCons/Test-4656/tests/IssueTest/main.c
 Removed main.o
 Removed main
 --- scons:clean:end ---
 
 --- scons:deps:beg ---
-main.c GCC /bin/gcc -fsyntax-only -E -dI -w -DFEATURE_A_ENABLED= /mnt/s/SCons/test-4656/tests/IssueTest/main.c
+main.c GCC /bin/gcc -fsyntax-only -E -dI -w -DFEATURE_A_ENABLED= /mnt/s/SCons/Test-4656/tests/IssueTest/main.c
 GCCPreProcessorScanner main.c -DFEATURE_A_ENABLED=
 GCCPreProcessorScanner main.c result: []
 GCCPreProcessorScanner main.c expect: []
@@ -42,7 +42,7 @@ scons: `.' is up to date.
 --- scons:deps:end ---
 
 --- scons:build:beg ---
-main.c GCC /bin/gcc -fsyntax-only -E -dI -w -DFEATURE_A_ENABLED= /mnt/s/SCons/test-4656/tests/IssueTest/main.c
+main.c GCC /bin/gcc -fsyntax-only -E -dI -w -DFEATURE_A_ENABLED= /mnt/s/SCons/Test-4656/tests/IssueTest/main.c
 gcc -o main.o -c -DFEATURE_A_ENABLED= main.c
 gcc -o main main.o
 +-.
@@ -59,13 +59,13 @@ gcc -o main main.o
 --- scons:build:end ---
 
 --- scons:clean:beg ---
-main.c GCC /bin/gcc -fsyntax-only -E -dI -w -DFEATURE_A_ENABLED= /mnt/s/SCons/test-4656/tests/IssueTest/main.c
+main.c GCC /bin/gcc -fsyntax-only -E -dI -w -DFEATURE_A_ENABLED= /mnt/s/SCons/Test-4656/tests/IssueTest/main.c
 Removed main.o
 Removed main
 --- scons:clean:end ---
 
 --- scons:deps:beg ---
-main.c GCC /bin/gcc -fsyntax-only -E -dI -w -DFEATURE_A_ENABLED=0 /mnt/s/SCons/test-4656/tests/IssueTest/main.c
+main.c GCC /bin/gcc -fsyntax-only -E -dI -w -DFEATURE_A_ENABLED=0 /mnt/s/SCons/Test-4656/tests/IssueTest/main.c
 GCCPreProcessorScanner main.c -DFEATURE_A_ENABLED=0
 GCCPreProcessorScanner main.c result: []
 GCCPreProcessorScanner main.c expect: []
@@ -74,7 +74,7 @@ scons: `.' is up to date.
 --- scons:deps:end ---
 
 --- scons:build:beg ---
-main.c GCC /bin/gcc -fsyntax-only -E -dI -w -DFEATURE_A_ENABLED=0 /mnt/s/SCons/test-4656/tests/IssueTest/main.c
+main.c GCC /bin/gcc -fsyntax-only -E -dI -w -DFEATURE_A_ENABLED=0 /mnt/s/SCons/Test-4656/tests/IssueTest/main.c
 gcc -o main.o -c -DFEATURE_A_ENABLED=0 main.c
 gcc -o main main.o
 +-.
@@ -91,13 +91,13 @@ gcc -o main main.o
 --- scons:build:end ---
 
 --- scons:clean:beg ---
-main.c GCC /bin/gcc -fsyntax-only -E -dI -w -DFEATURE_A_ENABLED=0 /mnt/s/SCons/test-4656/tests/IssueTest/main.c
+main.c GCC /bin/gcc -fsyntax-only -E -dI -w -DFEATURE_A_ENABLED=0 /mnt/s/SCons/Test-4656/tests/IssueTest/main.c
 Removed main.o
 Removed main
 --- scons:clean:end ---
 
 --- scons:deps:beg ---
-main.c GCC /bin/gcc -fsyntax-only -E -dI -w -DFEATURE_A_ENABLED /mnt/s/SCons/test-4656/tests/IssueTest/main.c
+main.c GCC /bin/gcc -fsyntax-only -E -dI -w -DFEATURE_A_ENABLED /mnt/s/SCons/Test-4656/tests/IssueTest/main.c
 GCCPreProcessorScanner main.c -DFEATURE_A_ENABLED
 GCCPreProcessorScanner main.c result: ['header1.h']
 GCCPreProcessorScanner main.c expect: ['header1.h']
@@ -106,7 +106,7 @@ scons: `.' is up to date.
 --- scons:deps:end ---
 
 --- scons:build:beg ---
-main.c GCC /bin/gcc -fsyntax-only -E -dI -w -DFEATURE_A_ENABLED /mnt/s/SCons/test-4656/tests/IssueTest/main.c
+main.c GCC /bin/gcc -fsyntax-only -E -dI -w -DFEATURE_A_ENABLED /mnt/s/SCons/Test-4656/tests/IssueTest/main.c
 gcc -o main.o -c -DFEATURE_A_ENABLED main.c
 gcc -o main main.o
 +-.
@@ -126,13 +126,13 @@ gcc -o main main.o
 --- scons:build:end ---
 
 --- scons:clean:beg ---
-main.c GCC /bin/gcc -fsyntax-only -E -dI -w -DFEATURE_A_ENABLED /mnt/s/SCons/test-4656/tests/IssueTest/main.c
+main.c GCC /bin/gcc -fsyntax-only -E -dI -w -DFEATURE_A_ENABLED /mnt/s/SCons/Test-4656/tests/IssueTest/main.c
 Removed main.o
 Removed main
 --- scons:clean:end ---
 
 --- scons:deps:beg ---
-main.c GCC /bin/gcc -fsyntax-only -E -dI -w -DFEATURE_A_ENABLED=1 /mnt/s/SCons/test-4656/tests/IssueTest/main.c
+main.c GCC /bin/gcc -fsyntax-only -E -dI -w -DFEATURE_A_ENABLED=1 /mnt/s/SCons/Test-4656/tests/IssueTest/main.c
 GCCPreProcessorScanner main.c -DFEATURE_A_ENABLED=1
 GCCPreProcessorScanner main.c result: ['header1.h']
 GCCPreProcessorScanner main.c expect: ['header1.h']
@@ -141,7 +141,7 @@ scons: `.' is up to date.
 --- scons:deps:end ---
 
 --- scons:build:beg ---
-main.c GCC /bin/gcc -fsyntax-only -E -dI -w -DFEATURE_A_ENABLED=1 /mnt/s/SCons/test-4656/tests/IssueTest/main.c
+main.c GCC /bin/gcc -fsyntax-only -E -dI -w -DFEATURE_A_ENABLED=1 /mnt/s/SCons/Test-4656/tests/IssueTest/main.c
 gcc -o main.o -c -DFEATURE_A_ENABLED=1 main.c
 gcc -o main main.o
 +-.
@@ -161,7 +161,7 @@ gcc -o main main.o
 --- scons:build:end ---
 
 --- scons:clean:beg ---
-main.c GCC /bin/gcc -fsyntax-only -E -dI -w -DFEATURE_A_ENABLED=1 /mnt/s/SCons/test-4656/tests/IssueTest/main.c
+main.c GCC /bin/gcc -fsyntax-only -E -dI -w -DFEATURE_A_ENABLED=1 /mnt/s/SCons/Test-4656/tests/IssueTest/main.c
 Removed main.o
 Removed main
 --- scons:clean:end ---

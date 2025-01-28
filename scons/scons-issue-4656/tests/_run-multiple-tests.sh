@@ -25,7 +25,7 @@ rm -f ./.sconsign.dblite
 
 echo
 echo --- scons:deps:beg ---
-python "${SCONS_ROOT}/scripts/scons.py" --site-dir="${SCONS_SITEDIR}" -Qn --scanner-deps --scanner=${_SCONS_SCANNER} --expected-map="{'main.c': ['include/include1.h', 'include/include2.h', 'include/include3.h', 'include/include4.h', 'include/include5.h']}"
+python "${SCONS_ROOT}/scripts/scons.py" --site-dir="${SCONS_SITEDIR}" -Qn --scanner-deps --scanner=${_SCONS_SCANNER} --expected-map="{'main.c': ['include/include1.h', 'include/include2.h', 'include/include3.h', 'include/include4.h']}"
 echo --- scons:deps:end ---
 echo
 echo --- scons:build:beg ---
