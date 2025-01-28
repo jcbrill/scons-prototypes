@@ -1,0 +1,739 @@
+import textwrap
+import warnings
+from typing import List, NamedTuple, Optional, Tuple
+
+from SCons.Scanner.C import (
+    CScanner,
+    CConditionalScanner,
+)
+from SCons.Tool.MSCommon.vc import get_installed_vcs
+
+from ppscanner import (
+    IS_WINDOWS,
+    CConditionalModScanner,
+    GCCPreProcessorScanner,
+    MSVCPreProcessorScanner,
+    ScanError,
+    ScanIncludeDepthWarning,
+)
+
+from sconstruct_common import scanner_dependencies
+
+# ### CONFIGURATION:BEGIN ###
+
+MSVC_ACTIVE = True
+GCC_ACTIVE = True
+SCONS_CCMOD_ACTIVE = True
+SCONS_CCOND_ACTIVE = True
+SCONS_C_ACTIVE = False
+
+FIRST_ONLY_MSVC_VERSIONS = True
+FIRST_ONLY_TEST = False
+
+OVERRIDE_TEST_SUITE = False
+
+# #### CONFIGURATION:END ###
+
+MSVC_DUMP = False
+GCC_DUMP = False
+SCONS_CCMOD_DUMP = False
+SCONS_CCOND_DUMP = False
+SCONS_C_DUMP = False
+
+DEFAULT_ENV = DefaultEnvironment(tools=[])
+
+class ScanAdapter:
+
+    msvc_scan_sourcefile = MSVCPreProcessorScanner()
+
+    gcc_scan_sourcefile = GCCPreProcessorScanner()
+
+    _C_CONDITIONALMOD_SCANNER = CConditionalModScanner()
+
+    @classmethod
+    def cconditionalmod_scan_sourcefile(cls, sourcefile, env):
+        cpppath = env.get("CPPPATH") if env else None
+        cpppath = env.Dir(cpppath) if cpppath else ()
+        node_list = scanner_dependencies(cls._C_CONDITIONALMOD_SCANNER, env.File(sourcefile), env, cpppath)
+        return node_list
+
+    _C_CONDITIONAL_SCANNER = CConditionalScanner()
+
+    @classmethod
+    def cconditional_scan_sourcefile(cls, sourcefile, env):
+        cpppath = env.get("CPPPATH") if env else None
+        cpppath = env.Dir(cpppath) if cpppath else ()
+        node_list = scanner_dependencies(cls._C_CONDITIONAL_SCANNER, env.File(sourcefile), env, cpppath)
+        return node_list
+
+    _C_SCANNER = CScanner()
+
+    @classmethod
+    def c_scan_sourcefile(cls, sourcefile, env):
+        cpppath = env.get("CPPPATH") if env else None
+        cpppath = env.Dir(cpppath) if cpppath else ()
+        node_list = scanner_dependencies(cls._C_SCANNER, env.File(sourcefile), env, cpppath)
+        return node_list
+
+class ScanTest:
+
+    DISPLAY_NODE_ABSPATH = False
+
+    MSVC_KIND = "MSVC"
+    MSVC_TOOLS = ["msvc", "mslink"]
+    MSVC_PROGNAME = "cl"
+
+    GCC_KIND = "GCC"
+    GCC_TOOLS = ["mingw"] if IS_WINDOWS else ["gcc", "gnulink"]
+    GCC_PROGNAME = "gcc"
+
+    SCONS_CCOND_KIND = "CCond"
+    SCONS_CCMOD_KIND = "CCMod"
+    SCONS_C_KIND = "C"
+    SCONS_TOOLS = ["default"]
+
+    PY_KIND_LIST = [SCONS_C_KIND, SCONS_CCOND_KIND, SCONS_CCMOD_KIND]
+    PP_KIND_LIST = [MSVC_KIND, GCC_KIND]
+
+    KIND_LIST = PY_KIND_LIST + PP_KIND_LIST
+
+    PY_KIND_LIST_MAXLEN = max([len(kind) for kind in PY_KIND_LIST])
+    PP_KIND_LIST_MAXLEN = max([len(kind) for kind in PP_KIND_LIST])
+
+    class ScanResult(NamedTuple):
+        sourcefile: str
+        kind: str
+        cppdefines: str
+        expected: list[str]
+        exceptionstr: Optional[str]
+        warningstr: Optional[str]
+        filenames: Optional[list[str]]
+        absfilenames: Optional[list[str]]
+        success: bool
+
+    @classmethod
+    def _have_program(cls, env, progname):
+        prog = env.WhereIs(progname) if env else None
+        rval = bool(prog)
+        return rval
+
+    @classmethod
+    def _format_warning(cls, w):
+        warnstr = f"{w.category.__name__!s} - {w.message!s}"
+        return warnstr
+
+    @classmethod
+    def _process_warnings(cls, recorded_warnings, expected_warnings):
+
+        if recorded_warnings:
+            all_warnings = recorded_warnings
+            unexpected_warnings = [w for w in recorded_warnings if w.category not in expected_warnings]
+        else:
+            all_warnings = None
+            unexpected_warnings = None
+
+        if all_warnings:
+            all_warningstr = '\n'.join([cls._format_warning(w) for w in all_warnings])
+        else:
+            all_warningstr = None
+
+        if unexpected_warnings:
+            unexpected_warningstr = '\n'.join([cls._format_warning(w) for w in unexpected_warnings])
+        else:
+            unexpected_warningstr = None
+
+        return all_warningstr, unexpected_warningstr
+
+    @classmethod
+    def _scan_sourcefile(cls, env, scanfunc, sourcefile, *, kind, expected, expected_warnings):
+
+        expected_nodes = [env.File(f) for f in expected]
+        expected_absfilenames = [node.get_abspath() for node in expected_nodes]
+        
+        with warnings.catch_warnings(record=True) as recorded_warnings:
+            try:
+                nodes = scanfunc(sourcefile, env)
+                exceptionstr = None
+            except ScanError as e:
+                nodes = []
+                exceptionstr = str(e)
+
+        all_warningstr, unexpected_warningstr = cls._process_warnings(recorded_warnings, expected_warnings)
+
+        if exceptionstr is None:
+            absfilenames = [node.get_abspath() for node in nodes]
+            filenames = [str(node).replace("\\", "/") for node in nodes]
+            success = bool(absfilenames == expected_absfilenames)
+        else:
+            absfilenames = None
+            filenames = None
+            success = False
+
+        cppdefines = env.subst("$_CPPDEFFLAGS").strip() if "_CPPDEFFLAGS" in env else ""
+
+        result = cls.ScanResult(
+            sourcefile=sourcefile,
+            kind=kind,
+            cppdefines=cppdefines,
+            expected=expected,
+            exceptionstr=exceptionstr,
+            warningstr=unexpected_warningstr,
+            filenames=filenames,
+            absfilenames=absfilenames,
+            success=success,
+        )
+
+        if result.cppdefines:
+            print(f"{sourcefile} {kind} {cppdefines}")
+
+        if all_warningstr:
+            print(f"{sourcefile} {kind} {all_warningstr}")
+
+        if exceptionstr:
+            print(f"{sourcefile} {kind} {exceptionstr}")
+        else:
+            print(f"{sourcefile} {kind} {result.absfilenames if cls.DISPLAY_NODE_ABSPATH else result.filenames}")
+
+        if not result.success:
+            print(f"{sourcefile} {kind} actual {filenames}")
+            print(f"{sourcefile} {kind} expect {expected}")
+
+        print(f"{sourcefile} {kind} {'pass' if result.success else '***FAIL***'}")
+
+        return result
+
+    @classmethod
+    def msvc_env_factory(cls, *, kwargs, common_kwargs):
+        if not (MSVC_ACTIVE and IS_WINDOWS):
+            rval = None
+        else:
+            env = Environment(
+                tools=cls.MSVC_TOOLS,
+                **kwargs,
+                **common_kwargs,
+            )
+            rval = env if cls._have_program(env, cls.MSVC_PROGNAME) else None
+        return rval
+
+    @classmethod
+    def gcc_env_factory(cls, *, kwargs, common_kwargs):
+        if not GCC_ACTIVE:
+            rval = None
+        else:
+            env = Environment(
+                tools=cls.GCC_TOOLS,
+                **kwargs,
+                **common_kwargs,
+            )
+            rval = env if cls._have_program(env, cls.GCC_PROGNAME) else None
+        return rval
+
+    @classmethod
+    def scons_ccmod_env_factory(cls, *, kwargs, common_kwargs):
+        if not SCONS_CCMOD_ACTIVE:
+            rval = None
+        else:
+            rval = Environment(
+                tools=cls.SCONS_TOOLS,
+                **kwargs,
+                **common_kwargs,
+            )
+        return rval
+
+    @classmethod
+    def scons_ccond_env_factory(cls, *, kwargs, common_kwargs):
+        if not SCONS_CCOND_ACTIVE:
+            rval = None
+        else:
+            rval = Environment(
+                tools=cls.SCONS_TOOLS,
+                **kwargs,
+                **common_kwargs,
+            )
+        return rval
+
+    @classmethod
+    def scons_c_env_factory(cls, *, kwargs, common_kwargs):
+        if not SCONS_C_ACTIVE:
+            rval = None
+        else:
+            rval = Environment(
+                tools=cls.SCONS_TOOLS,
+                **kwargs,
+                **common_kwargs,
+            )
+        return rval
+
+def get_expected(expected, kind, expected_map):
+    if expected_map and kind in expected_map:
+        rval = expected_map[kind]
+    else:
+        rval = expected
+    if rval is None:
+        rval = []
+    return rval
+
+def get_expected_warnings(kind, warnings_map):
+    rval = None
+    if warnings_map and kind in warnings_map:
+        rval = warnings_map[kind]
+    if rval is None:
+        rval = []
+    return rval
+
+def preprocess_sourcefile(sourcefile, common_kwargs, expected, expected_map, warnings_map):
+
+    scan_results = []
+
+    msvc_versions = get_installed_vcs(DEFAULT_ENV)
+    if FIRST_ONLY_MSVC_VERSIONS:
+        msvc_versions = msvc_versions[:1]
+
+    for msvc_version in msvc_versions:
+
+        msvc_env = ScanTest.msvc_env_factory(
+            kwargs={"MSVC_VERSION": msvc_version},
+            common_kwargs=common_kwargs,
+        )
+
+        if msvc_env:
+
+            if MSVC_DUMP:
+                print(msvc_env.Dump())
+
+            scan_result = ScanTest._scan_sourcefile(
+                msvc_env,
+                ScanAdapter.msvc_scan_sourcefile,
+                sourcefile,
+                kind=ScanTest.MSVC_KIND,
+                expected=get_expected(expected, ScanTest.MSVC_KIND, expected_map),
+                expected_warnings=get_expected_warnings(ScanTest.MSVC_KIND, warnings_map),
+            )
+            scan_results.append(scan_result)
+
+    gcc_env = ScanTest.gcc_env_factory(
+        kwargs={},
+        common_kwargs=common_kwargs,
+    )
+
+    if gcc_env:
+
+        if GCC_DUMP:
+            print(gcc_env.Dump())
+
+        scan_result = ScanTest._scan_sourcefile(
+            gcc_env,
+            ScanAdapter.gcc_scan_sourcefile,
+            sourcefile,
+            kind=ScanTest.GCC_KIND,
+            expected=get_expected(expected, ScanTest.GCC_KIND, expected_map),
+            expected_warnings=get_expected_warnings(ScanTest.GCC_KIND, warnings_map),
+        )
+        scan_results.append(scan_result)
+
+    ccmod_env = ScanTest.scons_ccmod_env_factory(
+        kwargs={},
+        common_kwargs=common_kwargs,
+    )
+
+    if ccmod_env:
+
+        if SCONS_CCMOD_DUMP:
+            print(ccmod_env.Dump())
+
+        scan_result = ScanTest._scan_sourcefile(
+            ccmod_env,
+            ScanAdapter.cconditionalmod_scan_sourcefile,
+            sourcefile,
+            kind=ScanTest.SCONS_CCMOD_KIND,
+            expected=get_expected(expected, ScanTest.SCONS_CCMOD_KIND, expected_map),
+            expected_warnings=get_expected_warnings(ScanTest.SCONS_CCMOD_KIND, warnings_map),
+        )
+        scan_results.append(scan_result)
+
+    c_env = ScanTest.scons_c_env_factory(
+        kwargs={},
+        common_kwargs=common_kwargs,
+    )
+
+    ccond_env = ScanTest.scons_ccond_env_factory(
+        kwargs={},
+        common_kwargs=common_kwargs,
+    )
+
+    if ccond_env:
+
+        if SCONS_CCOND_DUMP:
+            print(ccond_env.Dump())
+
+        scan_result = ScanTest._scan_sourcefile(
+            ccond_env,
+            ScanAdapter.cconditional_scan_sourcefile,
+            sourcefile,
+            kind=ScanTest.SCONS_CCOND_KIND,
+            expected=get_expected(expected, ScanTest.SCONS_CCOND_KIND, expected_map),
+            expected_warnings=get_expected_warnings(ScanTest.SCONS_CCOND_KIND, warnings_map),
+        )
+        scan_results.append(scan_result)
+
+    c_env = ScanTest.scons_c_env_factory(
+        kwargs={},
+        common_kwargs=common_kwargs,
+    )
+
+    if c_env:
+
+        if SCONS_C_DUMP:
+            print(c_env.Dump())
+
+        scan_result = ScanTest._scan_sourcefile(
+            c_env,
+            ScanAdapter.c_scan_sourcefile,
+            sourcefile,
+            kind=ScanTest.SCONS_C_KIND,
+            expected=get_expected(expected, ScanTest.SCONS_C_KIND, expected_map),
+            expected_warnings=get_expected_warnings(ScanTest.SCONS_C_KIND, warnings_map),
+        )
+        scan_results.append(scan_result)
+
+    return scan_results
+
+class TestConfig(NamedTuple):
+    sourcefile: str
+    cppdefines: Optional[List[Tuple[str, Optional[str]]]]
+    cpppath: Optional[List[str]]
+    expected: Optional[List[str]]
+    expected_scanner: Optional[List[Tuple[List[str], List[str]]]]
+    warnings_scanner: Optional[List[Tuple[List[str], List[str]]]]
+
+def run_tests(test_suite):
+
+    scan_warnings = []
+    scan_exceptions = []
+    scan_failures = {kind: [] for kind in ScanTest.KIND_LIST}
+    scan_tests = {kind: [] for kind in ScanTest.KIND_LIST}
+
+    print()
+    for indx, test_cfg in enumerate(test_suite):
+        if indx: print()
+
+        expected_map = {}
+        if test_cfg.expected_scanner:
+            for keys, val in test_cfg.expected_scanner:
+                for key in keys:
+                    expected_map[key] = val
+
+        warnings_map = {}
+        if test_cfg.warnings_scanner:
+            for keys, val in test_cfg.warnings_scanner:
+                for key in keys:
+                    warnings_map[key] = val
+
+        common_kwargs = {}
+        for key, val in [
+            ("CPPDEFINES", test_cfg.cppdefines),
+            ("CPPPATH", test_cfg.cpppath),
+        ]:
+            if val:
+                common_kwargs[key] = val
+
+        scan_results = preprocess_sourcefile(
+            test_cfg.sourcefile, common_kwargs, test_cfg.expected, expected_map, warnings_map,
+        )
+
+        for scan_result in scan_results:
+            if scan_result.warningstr:
+                scan_warnings.append(scan_result)
+            if scan_result.exceptionstr:
+                scan_exceptions.append(scan_result)
+            if not scan_result.success:
+                scan_failures[scan_result.kind].append(scan_result)
+            scan_tests[scan_result.kind].append(scan_result)
+
+        if FIRST_ONLY_TEST:
+            break
+
+    if scan_warnings:
+        print()
+        print(f"Scan warnings ({len(scan_warnings)}):")
+        for scan_result in scan_warnings:
+            print()
+            print(textwrap.indent(f"{scan_result.sourcefile} {scan_result.kind} {scan_result.warningstr}", "  "))
+
+    if scan_exceptions:
+        print()
+        print(f"Scan exceptions ({len(scan_exceptions)}):")
+        for scan_result in scan_exceptions:
+            print()
+            print(textwrap.indent(f"{scan_result.sourcefile} {scan_result.kind} {scan_result.exceptionstr}", "  "))
+
+    n_py_tests = sum([len(scan_tests[kind]) for kind in ScanTest.PY_KIND_LIST])
+    n_py_failures = sum([len(scan_failures[kind]) for kind in ScanTest.PY_KIND_LIST])
+
+    n_pp_tests = sum([len(scan_tests[kind]) for kind in ScanTest.PP_KIND_LIST])
+    n_pp_failures = sum([len(scan_failures[kind]) for kind in ScanTest.PP_KIND_LIST])
+
+    for label, n_tests, kind_list, kind_list_maxlen in [
+        ("PY", n_py_tests, ScanTest.PY_KIND_LIST, ScanTest.PY_KIND_LIST_MAXLEN),
+        ("PP", n_pp_tests, ScanTest.PP_KIND_LIST, ScanTest.PP_KIND_LIST_MAXLEN),
+    ]:
+
+        if n_tests:
+            print()
+            print(f"{label} scanner failures:")
+            for kind in kind_list:
+                if not len(scan_tests[kind]):
+                    continue
+                extra = " " * (kind_list_maxlen - len(kind))
+                print(f"  {kind}:{extra} {len(scan_failures[kind]):2d} of {len(scan_tests[kind]):2d}")
+
+    n_tests = sum([len(scan_tests[kind]) for kind in ScanTest.KIND_LIST])
+    if n_tests:
+        print()
+        for label, n_tests, n_failures in [
+            ("PY", n_py_tests, n_py_failures),
+            ("PP", n_pp_tests, n_pp_failures),
+        ]:
+            if n_tests:
+                print(f"Number of {label} scanner failures = {n_failures} ({n_tests})")
+
+    print()
+    print(f"Number of scanner exceptions = {len(scan_exceptions)}")
+    print()
+
+def test_config(*,
+    sourcefile,
+    cppdefines=None,
+    cpppath=None,
+    expected=None,
+    expected_scanner=None,
+    warnings_scanner=None,
+):
+    test_cfg = TestConfig(
+        sourcefile=sourcefile,
+        cppdefines=cppdefines,
+        cpppath=cpppath,
+        expected=[] if expected is None else expected,
+        expected_scanner=expected_scanner,
+        warnings_scanner=warnings_scanner,
+    )
+    return test_cfg
+
+test_suite = [
+
+    # (sourcefile, cppdefines, cpppath, expected, expected_scanner, warnings_scanner)
+
+    test_config(
+        sourcefile="test-scons-00.c",
+    ),
+
+    # CCMod: pass, CCond: FAIL
+    test_config(
+        sourcefile="test-scons-01.c",
+        expected=["if-false-1.h"],
+    ),
+
+    # CCMod: pass, CCond: FAIL
+    test_config(
+        sourcefile="test-scons-02.c",
+        expected=["if-true-1.h"],
+    ),
+
+    test_config(
+        sourcefile="test-scons-03.c",
+        expected=["if-false.h"],
+    ),
+    test_config(
+        sourcefile="test-scons-03.c",
+        cppdefines=[("FEATURE_A_ENABLED", "")],
+        expected=["if-false.h"],
+    ),
+    test_config(
+        sourcefile="test-scons-03.c",
+        cppdefines=[("FEATURE_A_ENABLED", None)],
+        expected=["if-true.h"],
+    ),
+    test_config(
+        sourcefile="test-scons-03.c",
+        cppdefines=[("FEATURE_A_ENABLED", "0")],
+        expected=["if-false.h"],
+    ),
+    test_config(
+        sourcefile="test-scons-03.c",
+        cppdefines=[("FEATURE_A_ENABLED", "1")],
+        expected=["if-true.h"]),
+    test_config(
+        sourcefile="test-scons-03.c",
+        cppdefines=[("FEATURE_A_ENABLED", "2")],
+        expected=["if-false.h"],
+    ),
+
+    test_config(
+        sourcefile="test-scons-04.c",
+        expected=["if-false-1.h", "if-false-2.h"],
+    ),
+    test_config(
+        sourcefile="test-scons-04.c",
+        cppdefines=[("FEATURE_A_ENABLED", "")],
+        expected=["if-true-1.h", "if-false-2.h"],
+    ),
+    test_config(
+        sourcefile="test-scons-04.c",
+        cppdefines=[("FEATURE_A_ENABLED", None)],
+        expected=["if-true-1.h",  "if-true-2.h"],
+    ),
+    test_config(sourcefile="test-scons-04.c",
+        cppdefines=[("FEATURE_A_ENABLED", "0")],
+        expected=["if-true-1.h", "if-false-2.h"],
+    ),
+    test_config(
+        sourcefile="test-scons-04.c",
+        cppdefines=[("FEATURE_A_ENABLED", "1")],
+        expected=["if-true-1.h", "if-true-2.h"],
+    ),
+    test_config(
+        sourcefile="test-scons-04.c",
+        cppdefines=[("FEATURE_A_ENABLED", "2")],
+        expected=["if-false-1.h", "if-false-2.h"],
+    ),
+
+    test_config(
+        sourcefile="test-scons-05.c",
+    ),
+
+    test_config(sourcefile="test-scons-06.c",
+        expected=[
+            "rel-include-1.h",
+            "include/rel-include-2.h",
+            "include-relative/rel-include-3.h",
+            "../ScannerTest-Rel/include/rel-include-4.h",
+        ],
+    ),
+    test_config(
+        sourcefile="test-scons-06.c",
+        cpppath=["include-system"],
+        expected=[
+            "rel-include-1.h",
+            "include/rel-include-2.h",
+            "include-relative/rel-include-3.h",
+            "../ScannerTest-Rel/include/rel-include-4.h",
+            "include-system/limits.h",
+        ],
+    ),
+
+    test_config(
+        sourcefile="test-scons-07.c",
+        expected=["cond-include.h", "if-true-1.h", "if-true-2.h"],
+    ),
+
+    # CCMod: pass, CCond: FAIL
+    test_config(
+        sourcefile="test-scons-08.c",
+        expected=["if-true.h"],
+    ),
+
+    # CCMod: pass, CCond: FAIL
+    test_config(
+        sourcefile="test-scons-09.c",
+        cpppath=["include-onpath"],
+        expected=[
+            "include-notonpath-a/not-onpath-1.h",
+            "include-onpath/onpath-1.h",
+            "include-notonpath-b/not-onpath-2.h",
+            "include-onpath/onpath-2.h",
+        ],
+    ),
+
+    # CCMod: pass, CCond: FAIL
+    test_config(
+        sourcefile="test-scons-10.c",
+        cpppath=["include-onpath"],
+        expected=[
+            "include-trail/trail-1.h",
+            "include-trail/include/trail-2.h",
+            "include-trail/include/include/trail-3.h",
+            "include-onpath/trail-a.h",
+            "include-onpath/trail-b.h",
+            "include-onpath/trail-c.h",
+        ],
+        expected_scanner=[
+            (["MSVC"], [
+                "include-trail/trail-1.h",
+                "include-trail/include/trail-2.h",
+                "include-trail/include/include/trail-3.h",
+                "trail-a.h",
+                "include-trail/trail-b.h",
+                "include-trail/include/trail-c.h",
+            ]),
+        ],
+    ),
+
+    # CCMod: pass, CCond: FAIL
+    test_config(
+        sourcefile="test-scons-11.c",
+        expected=["include-syspath/syspath-1.h"],
+    ),
+
+    # CCMod: pass, CCond: FAIL
+    test_config(
+        sourcefile="test-scons-12.c",
+    ),
+
+    # CCMod: pass, CCond: FAIL
+    test_config(
+        sourcefile="test-scons-13.c",
+        cpppath=["include-private-onpath"],
+        expected=[
+            "include-private/myprivate-1.h",
+            "include-private-onpath/myprivate.h"
+        ],
+        expected_scanner=[
+            (["MSVC"], [
+                "include-private/myprivate-1.h",
+                "myprivate.h"
+            ]),
+        ],
+    ),
+
+    # CCMod: pass, CCond: FAIL
+    test_config(
+        sourcefile="test-scons-14.c",
+        expected=[
+            "if-false-1.h",
+            "if-false-2.h",
+            "if-true-3.h",
+            "if-true-4.h"
+        ],
+    ),
+
+    # CCMod: pass, CCond: FAIL
+    test_config(
+        sourcefile="test-scons-15.c", #  msvc+gcc stderr errors, No warning: first include failed 
+    ),
+
+    # CCMod: pass, CCond: FAIL
+    test_config(
+        sourcefile="test-scons-16.c",  # msvc+gcc stderr errors, ScanWarning(depth > 0)
+        expected=["include-bracket/mybracket-1.h"],
+        warnings_scanner=[
+            (["GCC", "MSVC"], [ScanIncludeDepthWarning]),
+        ],
+    ),
+
+]
+
+if OVERRIDE_TEST_SUITE:
+    test_suite = [
+
+         test_config(
+             sourcefile="test-scons-00.c",
+             cppdefines=None,
+             cpppath=None,
+             expected=None,
+             expected_scanner=None,
+         ),
+
+     ]
+
+run_tests(test_suite)
+

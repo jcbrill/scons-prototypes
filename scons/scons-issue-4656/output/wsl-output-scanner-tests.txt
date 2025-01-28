@@ -1,0 +1,321 @@
+--- scons:beg ---
+
+test-scons-00.c GCC /bin/gcc -fsyntax-only -E -dI -w /mnt/s/SCons/test-4656/tests/ScannerTest/test-scons-00.c
+test-scons-00.c GCC []
+test-scons-00.c GCC pass
+test-scons-00.c CCMod []
+test-scons-00.c CCMod pass
+test-scons-00.c CCond []
+test-scons-00.c CCond pass
+
+test-scons-01.c GCC /bin/gcc -fsyntax-only -E -dI -w /mnt/s/SCons/test-4656/tests/ScannerTest/test-scons-01.c
+test-scons-01.c GCC ['if-false-1.h']
+test-scons-01.c GCC pass
+test-scons-01.c CCMod ['if-false-1.h']
+test-scons-01.c CCMod pass
+test-scons-01.c CCond ['if-true-1.h']
+test-scons-01.c CCond actual ['if-true-1.h']
+test-scons-01.c CCond expect ['if-false-1.h']
+test-scons-01.c CCond ***FAIL***
+
+test-scons-02.c GCC /bin/gcc -fsyntax-only -E -dI -w /mnt/s/SCons/test-4656/tests/ScannerTest/test-scons-02.c
+test-scons-02.c GCC ['if-true-1.h']
+test-scons-02.c GCC pass
+test-scons-02.c CCMod ['if-true-1.h']
+test-scons-02.c CCMod pass
+test-scons-02.c CCond ['if-false-1.h']
+test-scons-02.c CCond actual ['if-false-1.h']
+test-scons-02.c CCond expect ['if-true-1.h']
+test-scons-02.c CCond ***FAIL***
+
+test-scons-03.c GCC /bin/gcc -fsyntax-only -E -dI -w /mnt/s/SCons/test-4656/tests/ScannerTest/test-scons-03.c
+test-scons-03.c GCC ['if-false.h']
+test-scons-03.c GCC pass
+test-scons-03.c CCMod ['if-false.h']
+test-scons-03.c CCMod pass
+test-scons-03.c CCond ['if-false.h']
+test-scons-03.c CCond pass
+
+test-scons-03.c GCC /bin/gcc -fsyntax-only -E -dI -w -DFEATURE_A_ENABLED= /mnt/s/SCons/test-4656/tests/ScannerTest/test-scons-03.c
+test-scons-03.c GCC -DFEATURE_A_ENABLED=
+test-scons-03.c GCC ['if-false.h']
+test-scons-03.c GCC pass
+test-scons-03.c CCMod -DFEATURE_A_ENABLED=
+test-scons-03.c CCMod ['if-true.h']
+test-scons-03.c CCMod actual ['if-true.h']
+test-scons-03.c CCMod expect ['if-false.h']
+test-scons-03.c CCMod ***FAIL***
+test-scons-03.c CCond -DFEATURE_A_ENABLED=
+test-scons-03.c CCond ['if-true.h']
+test-scons-03.c CCond actual ['if-true.h']
+test-scons-03.c CCond expect ['if-false.h']
+test-scons-03.c CCond ***FAIL***
+
+test-scons-03.c GCC /bin/gcc -fsyntax-only -E -dI -w -DFEATURE_A_ENABLED /mnt/s/SCons/test-4656/tests/ScannerTest/test-scons-03.c
+test-scons-03.c GCC -DFEATURE_A_ENABLED
+test-scons-03.c GCC ['if-true.h']
+test-scons-03.c GCC pass
+test-scons-03.c CCMod -DFEATURE_A_ENABLED
+test-scons-03.c CCMod ['if-true.h']
+test-scons-03.c CCMod pass
+test-scons-03.c CCond -DFEATURE_A_ENABLED
+test-scons-03.c CCond ['if-true.h']
+test-scons-03.c CCond pass
+
+test-scons-03.c GCC /bin/gcc -fsyntax-only -E -dI -w -DFEATURE_A_ENABLED=0 /mnt/s/SCons/test-4656/tests/ScannerTest/test-scons-03.c
+test-scons-03.c GCC -DFEATURE_A_ENABLED=0
+test-scons-03.c GCC ['if-false.h']
+test-scons-03.c GCC pass
+test-scons-03.c CCMod -DFEATURE_A_ENABLED=0
+test-scons-03.c CCMod ['if-true.h']
+test-scons-03.c CCMod actual ['if-true.h']
+test-scons-03.c CCMod expect ['if-false.h']
+test-scons-03.c CCMod ***FAIL***
+test-scons-03.c CCond -DFEATURE_A_ENABLED=0
+test-scons-03.c CCond ['if-true.h']
+test-scons-03.c CCond actual ['if-true.h']
+test-scons-03.c CCond expect ['if-false.h']
+test-scons-03.c CCond ***FAIL***
+
+test-scons-03.c GCC /bin/gcc -fsyntax-only -E -dI -w -DFEATURE_A_ENABLED=1 /mnt/s/SCons/test-4656/tests/ScannerTest/test-scons-03.c
+test-scons-03.c GCC -DFEATURE_A_ENABLED=1
+test-scons-03.c GCC ['if-true.h']
+test-scons-03.c GCC pass
+test-scons-03.c CCMod -DFEATURE_A_ENABLED=1
+test-scons-03.c CCMod ['if-true.h']
+test-scons-03.c CCMod pass
+test-scons-03.c CCond -DFEATURE_A_ENABLED=1
+test-scons-03.c CCond ['if-true.h']
+test-scons-03.c CCond pass
+
+test-scons-03.c GCC /bin/gcc -fsyntax-only -E -dI -w -DFEATURE_A_ENABLED=2 /mnt/s/SCons/test-4656/tests/ScannerTest/test-scons-03.c
+test-scons-03.c GCC -DFEATURE_A_ENABLED=2
+test-scons-03.c GCC ['if-false.h']
+test-scons-03.c GCC pass
+test-scons-03.c CCMod -DFEATURE_A_ENABLED=2
+test-scons-03.c CCMod ['if-true.h']
+test-scons-03.c CCMod actual ['if-true.h']
+test-scons-03.c CCMod expect ['if-false.h']
+test-scons-03.c CCMod ***FAIL***
+test-scons-03.c CCond -DFEATURE_A_ENABLED=2
+test-scons-03.c CCond ['if-true.h']
+test-scons-03.c CCond actual ['if-true.h']
+test-scons-03.c CCond expect ['if-false.h']
+test-scons-03.c CCond ***FAIL***
+
+test-scons-04.c GCC /bin/gcc -fsyntax-only -E -dI -w /mnt/s/SCons/test-4656/tests/ScannerTest/test-scons-04.c
+test-scons-04.c GCC ['if-false-1.h', 'if-false-2.h']
+test-scons-04.c GCC pass
+test-scons-04.c CCMod ['if-false-1.h', 'if-false-2.h']
+test-scons-04.c CCMod pass
+test-scons-04.c CCond ['if-false-1.h', 'if-false-2.h']
+test-scons-04.c CCond pass
+
+test-scons-04.c GCC /bin/gcc -fsyntax-only -E -dI -w -DFEATURE_A_ENABLED= /mnt/s/SCons/test-4656/tests/ScannerTest/test-scons-04.c
+test-scons-04.c GCC -DFEATURE_A_ENABLED=
+test-scons-04.c GCC ['if-true-1.h', 'if-false-2.h']
+test-scons-04.c GCC pass
+test-scons-04.c CCMod -DFEATURE_A_ENABLED=
+test-scons-04.c CCMod ['if-true-1.h', 'if-true-2.h']
+test-scons-04.c CCMod actual ['if-true-1.h', 'if-true-2.h']
+test-scons-04.c CCMod expect ['if-true-1.h', 'if-false-2.h']
+test-scons-04.c CCMod ***FAIL***
+test-scons-04.c CCond -DFEATURE_A_ENABLED=
+test-scons-04.c CCond ['if-true-1.h', 'if-true-2.h']
+test-scons-04.c CCond actual ['if-true-1.h', 'if-true-2.h']
+test-scons-04.c CCond expect ['if-true-1.h', 'if-false-2.h']
+test-scons-04.c CCond ***FAIL***
+
+test-scons-04.c GCC /bin/gcc -fsyntax-only -E -dI -w -DFEATURE_A_ENABLED /mnt/s/SCons/test-4656/tests/ScannerTest/test-scons-04.c
+test-scons-04.c GCC -DFEATURE_A_ENABLED
+test-scons-04.c GCC ['if-true-1.h', 'if-true-2.h']
+test-scons-04.c GCC pass
+test-scons-04.c CCMod -DFEATURE_A_ENABLED
+test-scons-04.c CCMod ['if-true-1.h', 'if-true-2.h']
+test-scons-04.c CCMod pass
+test-scons-04.c CCond -DFEATURE_A_ENABLED
+test-scons-04.c CCond ['if-true-1.h', 'if-true-2.h']
+test-scons-04.c CCond pass
+
+test-scons-04.c GCC /bin/gcc -fsyntax-only -E -dI -w -DFEATURE_A_ENABLED=0 /mnt/s/SCons/test-4656/tests/ScannerTest/test-scons-04.c
+test-scons-04.c GCC -DFEATURE_A_ENABLED=0
+test-scons-04.c GCC ['if-true-1.h', 'if-false-2.h']
+test-scons-04.c GCC pass
+test-scons-04.c CCMod -DFEATURE_A_ENABLED=0
+test-scons-04.c CCMod ['if-true-1.h', 'if-true-2.h']
+test-scons-04.c CCMod actual ['if-true-1.h', 'if-true-2.h']
+test-scons-04.c CCMod expect ['if-true-1.h', 'if-false-2.h']
+test-scons-04.c CCMod ***FAIL***
+test-scons-04.c CCond -DFEATURE_A_ENABLED=0
+test-scons-04.c CCond ['if-true-1.h', 'if-true-2.h']
+test-scons-04.c CCond actual ['if-true-1.h', 'if-true-2.h']
+test-scons-04.c CCond expect ['if-true-1.h', 'if-false-2.h']
+test-scons-04.c CCond ***FAIL***
+
+test-scons-04.c GCC /bin/gcc -fsyntax-only -E -dI -w -DFEATURE_A_ENABLED=1 /mnt/s/SCons/test-4656/tests/ScannerTest/test-scons-04.c
+test-scons-04.c GCC -DFEATURE_A_ENABLED=1
+test-scons-04.c GCC ['if-true-1.h', 'if-true-2.h']
+test-scons-04.c GCC pass
+test-scons-04.c CCMod -DFEATURE_A_ENABLED=1
+test-scons-04.c CCMod ['if-true-1.h', 'if-true-2.h']
+test-scons-04.c CCMod pass
+test-scons-04.c CCond -DFEATURE_A_ENABLED=1
+test-scons-04.c CCond ['if-true-1.h', 'if-true-2.h']
+test-scons-04.c CCond pass
+
+test-scons-04.c GCC /bin/gcc -fsyntax-only -E -dI -w -DFEATURE_A_ENABLED=2 /mnt/s/SCons/test-4656/tests/ScannerTest/test-scons-04.c
+test-scons-04.c GCC -DFEATURE_A_ENABLED=2
+test-scons-04.c GCC ['if-false-1.h', 'if-false-2.h']
+test-scons-04.c GCC pass
+test-scons-04.c CCMod -DFEATURE_A_ENABLED=2
+test-scons-04.c CCMod ['if-true-1.h', 'if-true-2.h']
+test-scons-04.c CCMod actual ['if-true-1.h', 'if-true-2.h']
+test-scons-04.c CCMod expect ['if-false-1.h', 'if-false-2.h']
+test-scons-04.c CCMod ***FAIL***
+test-scons-04.c CCond -DFEATURE_A_ENABLED=2
+test-scons-04.c CCond ['if-true-1.h', 'if-true-2.h']
+test-scons-04.c CCond actual ['if-true-1.h', 'if-true-2.h']
+test-scons-04.c CCond expect ['if-false-1.h', 'if-false-2.h']
+test-scons-04.c CCond ***FAIL***
+
+test-scons-05.c GCC /bin/gcc -fsyntax-only -E -dI -w /mnt/s/SCons/test-4656/tests/ScannerTest/test-scons-05.c
+test-scons-05.c GCC []
+test-scons-05.c GCC pass
+test-scons-05.c CCMod []
+test-scons-05.c CCMod pass
+test-scons-05.c CCond []
+test-scons-05.c CCond pass
+
+test-scons-06.c GCC /bin/gcc -fsyntax-only -E -dI -w /mnt/s/SCons/test-4656/tests/ScannerTest/test-scons-06.c
+test-scons-06.c GCC ['rel-include-1.h', 'include/rel-include-2.h', 'include-relative/rel-include-3.h', '/mnt/s/SCons/test-4656/tests/ScannerTest-Rel/include/rel-include-4.h']
+test-scons-06.c GCC pass
+test-scons-06.c CCMod ['rel-include-1.h', 'include/rel-include-2.h', 'include-relative/rel-include-3.h', '/mnt/s/SCons/test-4656/tests/ScannerTest-Rel/include/rel-include-4.h']
+test-scons-06.c CCMod pass
+test-scons-06.c CCond ['rel-include-1.h', 'include/rel-include-2.h', 'include-relative/rel-include-3.h', '/mnt/s/SCons/test-4656/tests/ScannerTest-Rel/include/rel-include-4.h']
+test-scons-06.c CCond pass
+
+test-scons-06.c GCC /bin/gcc -fsyntax-only -E -dI -w -Iinclude-system /mnt/s/SCons/test-4656/tests/ScannerTest/test-scons-06.c
+test-scons-06.c GCC ['rel-include-1.h', 'include/rel-include-2.h', 'include-relative/rel-include-3.h', '/mnt/s/SCons/test-4656/tests/ScannerTest-Rel/include/rel-include-4.h', 'include-system/limits.h']
+test-scons-06.c GCC pass
+test-scons-06.c CCMod ['rel-include-1.h', 'include/rel-include-2.h', 'include-relative/rel-include-3.h', '/mnt/s/SCons/test-4656/tests/ScannerTest-Rel/include/rel-include-4.h', 'include-system/limits.h']
+test-scons-06.c CCMod pass
+test-scons-06.c CCond ['rel-include-1.h', 'include/rel-include-2.h', 'include-relative/rel-include-3.h', '/mnt/s/SCons/test-4656/tests/ScannerTest-Rel/include/rel-include-4.h', 'include-system/limits.h']
+test-scons-06.c CCond pass
+
+test-scons-07.c GCC /bin/gcc -fsyntax-only -E -dI -w /mnt/s/SCons/test-4656/tests/ScannerTest/test-scons-07.c
+test-scons-07.c GCC ['cond-include.h', 'if-true-1.h', 'if-true-2.h']
+test-scons-07.c GCC pass
+test-scons-07.c CCMod ['cond-include.h', 'if-true-1.h']
+test-scons-07.c CCMod actual ['cond-include.h', 'if-true-1.h']
+test-scons-07.c CCMod expect ['cond-include.h', 'if-true-1.h', 'if-true-2.h']
+test-scons-07.c CCMod ***FAIL***
+test-scons-07.c CCond ['cond-include.h', 'if-true-1.h']
+test-scons-07.c CCond actual ['cond-include.h', 'if-true-1.h']
+test-scons-07.c CCond expect ['cond-include.h', 'if-true-1.h', 'if-true-2.h']
+test-scons-07.c CCond ***FAIL***
+
+test-scons-08.c GCC /bin/gcc -fsyntax-only -E -dI -w /mnt/s/SCons/test-4656/tests/ScannerTest/test-scons-08.c
+test-scons-08.c GCC ['if-true.h']
+test-scons-08.c GCC pass
+test-scons-08.c CCMod ['if-true.h']
+test-scons-08.c CCMod pass
+test-scons-08.c CCond []
+test-scons-08.c CCond actual []
+test-scons-08.c CCond expect ['if-true.h']
+test-scons-08.c CCond ***FAIL***
+
+test-scons-09.c GCC /bin/gcc -fsyntax-only -E -dI -w -Iinclude-onpath /mnt/s/SCons/test-4656/tests/ScannerTest/test-scons-09.c
+test-scons-09.c GCC ['include-notonpath-a/not-onpath-1.h', 'include-onpath/onpath-1.h', 'include-notonpath-b/not-onpath-2.h', 'include-onpath/onpath-2.h']
+test-scons-09.c GCC pass
+test-scons-09.c CCMod ['include-notonpath-a/not-onpath-1.h', 'include-onpath/onpath-1.h', 'include-notonpath-b/not-onpath-2.h', 'include-onpath/onpath-2.h']
+test-scons-09.c CCMod pass
+test-scons-09.c CCond ['include-notonpath-a/not-onpath-1.h', 'include-onpath/onpath-1.h', 'include-notonpath-b/not-onpath-2.h', 'onpath-2.h', 'include-onpath/onpath-2.h']
+test-scons-09.c CCond actual ['include-notonpath-a/not-onpath-1.h', 'include-onpath/onpath-1.h', 'include-notonpath-b/not-onpath-2.h', 'onpath-2.h', 'include-onpath/onpath-2.h']
+test-scons-09.c CCond expect ['include-notonpath-a/not-onpath-1.h', 'include-onpath/onpath-1.h', 'include-notonpath-b/not-onpath-2.h', 'include-onpath/onpath-2.h']
+test-scons-09.c CCond ***FAIL***
+
+test-scons-10.c GCC /bin/gcc -fsyntax-only -E -dI -w -Iinclude-onpath /mnt/s/SCons/test-4656/tests/ScannerTest/test-scons-10.c
+test-scons-10.c GCC ['include-trail/trail-1.h', 'include-trail/include/trail-2.h', 'include-trail/include/include/trail-3.h', 'include-onpath/trail-a.h', 'include-onpath/trail-b.h', 'include-onpath/trail-c.h']
+test-scons-10.c GCC pass
+test-scons-10.c CCMod ['include-trail/trail-1.h', 'include-trail/include/trail-2.h', 'include-trail/include/include/trail-3.h', 'include-onpath/trail-a.h', 'include-onpath/trail-b.h', 'include-onpath/trail-c.h']
+test-scons-10.c CCMod pass
+test-scons-10.c CCond ['include-trail/trail-1.h', 'include-trail/include/trail-2.h', 'include-trail/include/include/trail-3.h', 'trail-a.h', 'include-onpath/trail-b.h', 'include-onpath/trail-c.h', 'include-onpath/trail-a.h', 'include-trail/include/trail-c.h', 'include-trail/trail-b.h']
+test-scons-10.c CCond actual ['include-trail/trail-1.h', 'include-trail/include/trail-2.h', 'include-trail/include/include/trail-3.h', 'trail-a.h', 'include-onpath/trail-b.h', 'include-onpath/trail-c.h', 'include-onpath/trail-a.h', 'include-trail/include/trail-c.h', 'include-trail/trail-b.h']
+test-scons-10.c CCond expect ['include-trail/trail-1.h', 'include-trail/include/trail-2.h', 'include-trail/include/include/trail-3.h', 'include-onpath/trail-a.h', 'include-onpath/trail-b.h', 'include-onpath/trail-c.h']
+test-scons-10.c CCond ***FAIL***
+
+test-scons-11.c GCC /bin/gcc -fsyntax-only -E -dI -w /mnt/s/SCons/test-4656/tests/ScannerTest/test-scons-11.c
+test-scons-11.c GCC ['include-syspath/syspath-1.h']
+test-scons-11.c GCC pass
+test-scons-11.c CCMod ['include-syspath/syspath-1.h']
+test-scons-11.c CCMod pass
+test-scons-11.c CCond ['include-syspath/syspath-1.h', 'include-syspath/limits.h']
+test-scons-11.c CCond actual ['include-syspath/syspath-1.h', 'include-syspath/limits.h']
+test-scons-11.c CCond expect ['include-syspath/syspath-1.h']
+test-scons-11.c CCond ***FAIL***
+
+test-scons-12.c GCC /bin/gcc -fsyntax-only -E -dI -w /mnt/s/SCons/test-4656/tests/ScannerTest/test-scons-12.c
+test-scons-12.c GCC []
+test-scons-12.c GCC pass
+test-scons-12.c CCMod []
+test-scons-12.c CCMod pass
+test-scons-12.c CCond ['myprivate.h']
+test-scons-12.c CCond actual ['myprivate.h']
+test-scons-12.c CCond expect []
+test-scons-12.c CCond ***FAIL***
+
+test-scons-13.c GCC /bin/gcc -fsyntax-only -E -dI -w -Iinclude-private-onpath /mnt/s/SCons/test-4656/tests/ScannerTest/test-scons-13.c
+test-scons-13.c GCC ['include-private/myprivate-1.h', 'include-private-onpath/myprivate.h']
+test-scons-13.c GCC pass
+test-scons-13.c CCMod ['include-private/myprivate-1.h', 'include-private-onpath/myprivate.h']
+test-scons-13.c CCMod pass
+test-scons-13.c CCond ['include-private/myprivate-1.h', 'myprivate.h', 'include-private-onpath/myprivate.h']
+test-scons-13.c CCond actual ['include-private/myprivate-1.h', 'myprivate.h', 'include-private-onpath/myprivate.h']
+test-scons-13.c CCond expect ['include-private/myprivate-1.h', 'include-private-onpath/myprivate.h']
+test-scons-13.c CCond ***FAIL***
+
+test-scons-14.c GCC /bin/gcc -fsyntax-only -E -dI -w /mnt/s/SCons/test-4656/tests/ScannerTest/test-scons-14.c
+test-scons-14.c GCC ['if-false-1.h', 'if-false-2.h', 'if-true-3.h', 'if-true-4.h']
+test-scons-14.c GCC pass
+test-scons-14.c CCMod ['if-false-1.h', 'if-false-2.h', 'if-true-3.h', 'if-true-4.h']
+test-scons-14.c CCMod pass
+test-scons-14.c CCond ['if-false-1.h', 'if-true-2.h', 'if-false-3.h', 'if-false-4.h']
+test-scons-14.c CCond actual ['if-false-1.h', 'if-true-2.h', 'if-false-3.h', 'if-false-4.h']
+test-scons-14.c CCond expect ['if-false-1.h', 'if-false-2.h', 'if-true-3.h', 'if-true-4.h']
+test-scons-14.c CCond ***FAIL***
+
+test-scons-15.c GCC /bin/gcc -fsyntax-only -E -dI -w /mnt/s/SCons/test-4656/tests/ScannerTest/test-scons-15.c
+test-scons-15.c GCC []
+test-scons-15.c GCC pass
+test-scons-15.c CCMod []
+test-scons-15.c CCMod pass
+test-scons-15.c CCond ['mybracket.h']
+test-scons-15.c CCond actual ['mybracket.h']
+test-scons-15.c CCond expect []
+test-scons-15.c CCond ***FAIL***
+
+test-scons-16.c GCC /bin/gcc -fsyntax-only -E -dI -w /mnt/s/SCons/test-4656/tests/ScannerTest/test-scons-16.c
+test-scons-16.c GCC ScanIncludeDepthWarning - Warning: Include visit depth (1) > 0 on exit
+test-scons-16.c GCC ['include-bracket/mybracket-1.h']
+test-scons-16.c GCC pass
+test-scons-16.c CCMod ['include-bracket/mybracket-1.h']
+test-scons-16.c CCMod pass
+test-scons-16.c CCond ['include-bracket/mybracket-1.h', 'mybracket.h', 'include-bracket/mybracket.h']
+test-scons-16.c CCond actual ['include-bracket/mybracket-1.h', 'mybracket.h', 'include-bracket/mybracket.h']
+test-scons-16.c CCond expect ['include-bracket/mybracket-1.h']
+test-scons-16.c CCond ***FAIL***
+
+PY scanner failures:
+  CCond: 18 of 28
+  CCMod:  7 of 28
+
+PP scanner failures:
+  GCC:   0 of 28
+
+Number of PY scanner failures = 25 (56)
+Number of PP scanner failures = 0 (28)
+
+Number of scanner exceptions = 0
+
+scons: `.' is up to date.
+--- scons:end ---

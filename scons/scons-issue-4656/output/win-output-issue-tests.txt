@@ -1,0 +1,662 @@
+
+++++++ GCCProcessorScanner:beg ++++++
+
+--- scons:deps:beg ---
+main.c GCC C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE -fsyntax-only -E -dI -w S:\SCons\Test-4656\tests\IssueTest\main.c
+GCCPreProcessorScanner main.c result: []
+GCCPreProcessorScanner main.c expect: []
+GCCPreProcessorScanner main.c: dependencies match
+scons: `.' is up to date.
+--- scons:deps:end ---
+
+--- scons:build:beg ---
+main.c GCC C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE -fsyntax-only -E -dI -w S:\SCons\Test-4656\tests\IssueTest\main.c
+gcc -o main.o -c main.c
+gcc -o main.exe main.o
++-.
+  +-main.c
+  +-main.exe
+  | +-main.o
+  | | +-main.c
+  | | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
+  | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
+  +-main.o
+  | +-main.c
+  | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
+  +-SConstruct
+--- scons:build:end ---
+
+--- scons:clean:beg ---
+main.c GCC C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE -fsyntax-only -E -dI -w S:\SCons\Test-4656\tests\IssueTest\main.c
+Removed main.o
+Removed main.exe
+--- scons:clean:end ---
+
+--- scons:deps:beg ---
+main.c GCC C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE -fsyntax-only -E -dI -w -DFEATURE_A_ENABLED= S:\SCons\Test-4656\tests\IssueTest\main.c
+GCCPreProcessorScanner main.c -DFEATURE_A_ENABLED=
+GCCPreProcessorScanner main.c result: []
+GCCPreProcessorScanner main.c expect: []
+GCCPreProcessorScanner main.c: dependencies match
+scons: `.' is up to date.
+--- scons:deps:end ---
+
+--- scons:build:beg ---
+main.c GCC C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE -fsyntax-only -E -dI -w -DFEATURE_A_ENABLED= S:\SCons\Test-4656\tests\IssueTest\main.c
+gcc -o main.o -c -DFEATURE_A_ENABLED= main.c
+gcc -o main.exe main.o
++-.
+  +-main.c
+  +-main.exe
+  | +-main.o
+  | | +-main.c
+  | | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
+  | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
+  +-main.o
+  | +-main.c
+  | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
+  +-SConstruct
+--- scons:build:end ---
+
+--- scons:clean:beg ---
+main.c GCC C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE -fsyntax-only -E -dI -w -DFEATURE_A_ENABLED= S:\SCons\Test-4656\tests\IssueTest\main.c
+Removed main.o
+Removed main.exe
+--- scons:clean:end ---
+
+--- scons:deps:beg ---
+main.c GCC C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE -fsyntax-only -E -dI -w -DFEATURE_A_ENABLED=0 S:\SCons\Test-4656\tests\IssueTest\main.c
+GCCPreProcessorScanner main.c -DFEATURE_A_ENABLED=0
+GCCPreProcessorScanner main.c result: []
+GCCPreProcessorScanner main.c expect: []
+GCCPreProcessorScanner main.c: dependencies match
+scons: `.' is up to date.
+--- scons:deps:end ---
+
+--- scons:build:beg ---
+main.c GCC C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE -fsyntax-only -E -dI -w -DFEATURE_A_ENABLED=0 S:\SCons\Test-4656\tests\IssueTest\main.c
+gcc -o main.o -c -DFEATURE_A_ENABLED=0 main.c
+gcc -o main.exe main.o
++-.
+  +-main.c
+  +-main.exe
+  | +-main.o
+  | | +-main.c
+  | | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
+  | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
+  +-main.o
+  | +-main.c
+  | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
+  +-SConstruct
+--- scons:build:end ---
+
+--- scons:clean:beg ---
+main.c GCC C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE -fsyntax-only -E -dI -w -DFEATURE_A_ENABLED=0 S:\SCons\Test-4656\tests\IssueTest\main.c
+Removed main.o
+Removed main.exe
+--- scons:clean:end ---
+
+--- scons:deps:beg ---
+main.c GCC C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE -fsyntax-only -E -dI -w -DFEATURE_A_ENABLED S:\SCons\Test-4656\tests\IssueTest\main.c
+GCCPreProcessorScanner main.c -DFEATURE_A_ENABLED
+GCCPreProcessorScanner main.c result: ['header1.h']
+GCCPreProcessorScanner main.c expect: ['header1.h']
+GCCPreProcessorScanner main.c: dependencies match
+scons: `.' is up to date.
+--- scons:deps:end ---
+
+--- scons:build:beg ---
+main.c GCC C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE -fsyntax-only -E -dI -w -DFEATURE_A_ENABLED S:\SCons\Test-4656\tests\IssueTest\main.c
+gcc -o main.o -c -DFEATURE_A_ENABLED main.c
+gcc -o main.exe main.o
++-.
+  +-header1.h
+  +-main.c
+  +-main.exe
+  | +-main.o
+  | | +-main.c
+  | | +-header1.h
+  | | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
+  | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
+  +-main.o
+  | +-main.c
+  | +-header1.h
+  | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
+  +-SConstruct
+--- scons:build:end ---
+
+--- scons:clean:beg ---
+main.c GCC C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE -fsyntax-only -E -dI -w -DFEATURE_A_ENABLED S:\SCons\Test-4656\tests\IssueTest\main.c
+Removed main.o
+Removed main.exe
+--- scons:clean:end ---
+
+--- scons:deps:beg ---
+main.c GCC C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE -fsyntax-only -E -dI -w -DFEATURE_A_ENABLED=1 S:\SCons\Test-4656\tests\IssueTest\main.c
+GCCPreProcessorScanner main.c -DFEATURE_A_ENABLED=1
+GCCPreProcessorScanner main.c result: ['header1.h']
+GCCPreProcessorScanner main.c expect: ['header1.h']
+GCCPreProcessorScanner main.c: dependencies match
+scons: `.' is up to date.
+--- scons:deps:end ---
+
+--- scons:build:beg ---
+main.c GCC C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE -fsyntax-only -E -dI -w -DFEATURE_A_ENABLED=1 S:\SCons\Test-4656\tests\IssueTest\main.c
+gcc -o main.o -c -DFEATURE_A_ENABLED=1 main.c
+gcc -o main.exe main.o
++-.
+  +-header1.h
+  +-main.c
+  +-main.exe
+  | +-main.o
+  | | +-main.c
+  | | +-header1.h
+  | | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
+  | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
+  +-main.o
+  | +-main.c
+  | +-header1.h
+  | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
+  +-SConstruct
+--- scons:build:end ---
+
+--- scons:clean:beg ---
+main.c GCC C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE -fsyntax-only -E -dI -w -DFEATURE_A_ENABLED=1 S:\SCons\Test-4656\tests\IssueTest\main.c
+Removed main.o
+Removed main.exe
+--- scons:clean:end ---
+
+++++++ GCCProcessorScanner:end ++++++
+
+++++++ MSVCProcessorScanner:beg ++++++
+
+--- scons:deps:beg ---
+main.c MSVC C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.42.34433\bin\HostX64\x64\cl.EXE /nologo /E /w S:\SCons\Test-4656\tests\IssueTest\main.c
+MSVCPreProcessorScanner main.c result: []
+MSVCPreProcessorScanner main.c expect: []
+MSVCPreProcessorScanner main.c: dependencies match
+scons: `.' is up to date.
+--- scons:deps:end ---
+
+--- scons:build:beg ---
+main.c MSVC C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.42.34433\bin\HostX64\x64\cl.EXE /nologo /E /w S:\SCons\Test-4656\tests\IssueTest\main.c
+cl /Fomain.obj /c main.c /nologo
+link /nologo /OUT:main.exe main.obj
++-.
+  +-main.c
+  +-main.exe
+  | +-main.obj
+  | | +-main.c
+  | | +-C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.42.34433\bin\HostX64\x64\cl.EXE
+  | +-C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.42.34433\bin\HostX64\x64\link.EXE
+  +-main.obj
+  | +-main.c
+  | +-C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.42.34433\bin\HostX64\x64\cl.EXE
+  +-SConstruct
+--- scons:build:end ---
+
+--- scons:clean:beg ---
+main.c MSVC C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.42.34433\bin\HostX64\x64\cl.EXE /nologo /E /w S:\SCons\Test-4656\tests\IssueTest\main.c
+Removed main.obj
+Removed main.exe
+--- scons:clean:end ---
+
+--- scons:deps:beg ---
+main.c MSVC C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.42.34433\bin\HostX64\x64\cl.EXE /nologo /E /w /DFEATURE_A_ENABLED= S:\SCons\Test-4656\tests\IssueTest\main.c
+MSVCPreProcessorScanner main.c /DFEATURE_A_ENABLED=
+MSVCPreProcessorScanner main.c result: []
+MSVCPreProcessorScanner main.c expect: []
+MSVCPreProcessorScanner main.c: dependencies match
+scons: `.' is up to date.
+--- scons:deps:end ---
+
+--- scons:build:beg ---
+main.c MSVC C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.42.34433\bin\HostX64\x64\cl.EXE /nologo /E /w /DFEATURE_A_ENABLED= S:\SCons\Test-4656\tests\IssueTest\main.c
+cl /Fomain.obj /c main.c /nologo /DFEATURE_A_ENABLED=
+link /nologo /OUT:main.exe main.obj
++-.
+  +-main.c
+  +-main.exe
+  | +-main.obj
+  | | +-main.c
+  | | +-C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.42.34433\bin\HostX64\x64\cl.EXE
+  | +-C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.42.34433\bin\HostX64\x64\link.EXE
+  +-main.obj
+  | +-main.c
+  | +-C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.42.34433\bin\HostX64\x64\cl.EXE
+  +-SConstruct
+--- scons:build:end ---
+
+--- scons:clean:beg ---
+main.c MSVC C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.42.34433\bin\HostX64\x64\cl.EXE /nologo /E /w /DFEATURE_A_ENABLED= S:\SCons\Test-4656\tests\IssueTest\main.c
+Removed main.obj
+Removed main.exe
+--- scons:clean:end ---
+
+--- scons:deps:beg ---
+main.c MSVC C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.42.34433\bin\HostX64\x64\cl.EXE /nologo /E /w /DFEATURE_A_ENABLED=0 S:\SCons\Test-4656\tests\IssueTest\main.c
+MSVCPreProcessorScanner main.c /DFEATURE_A_ENABLED=0
+MSVCPreProcessorScanner main.c result: []
+MSVCPreProcessorScanner main.c expect: []
+MSVCPreProcessorScanner main.c: dependencies match
+scons: `.' is up to date.
+--- scons:deps:end ---
+
+--- scons:build:beg ---
+main.c MSVC C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.42.34433\bin\HostX64\x64\cl.EXE /nologo /E /w /DFEATURE_A_ENABLED=0 S:\SCons\Test-4656\tests\IssueTest\main.c
+cl /Fomain.obj /c main.c /nologo /DFEATURE_A_ENABLED=0
+link /nologo /OUT:main.exe main.obj
++-.
+  +-main.c
+  +-main.exe
+  | +-main.obj
+  | | +-main.c
+  | | +-C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.42.34433\bin\HostX64\x64\cl.EXE
+  | +-C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.42.34433\bin\HostX64\x64\link.EXE
+  +-main.obj
+  | +-main.c
+  | +-C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.42.34433\bin\HostX64\x64\cl.EXE
+  +-SConstruct
+--- scons:build:end ---
+
+--- scons:clean:beg ---
+main.c MSVC C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.42.34433\bin\HostX64\x64\cl.EXE /nologo /E /w /DFEATURE_A_ENABLED=0 S:\SCons\Test-4656\tests\IssueTest\main.c
+Removed main.obj
+Removed main.exe
+--- scons:clean:end ---
+
+--- scons:deps:beg ---
+main.c MSVC C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.42.34433\bin\HostX64\x64\cl.EXE /nologo /E /w /DFEATURE_A_ENABLED S:\SCons\Test-4656\tests\IssueTest\main.c
+MSVCPreProcessorScanner main.c /DFEATURE_A_ENABLED
+MSVCPreProcessorScanner main.c result: ['header1.h']
+MSVCPreProcessorScanner main.c expect: ['header1.h']
+MSVCPreProcessorScanner main.c: dependencies match
+scons: `.' is up to date.
+--- scons:deps:end ---
+
+--- scons:build:beg ---
+main.c MSVC C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.42.34433\bin\HostX64\x64\cl.EXE /nologo /E /w /DFEATURE_A_ENABLED S:\SCons\Test-4656\tests\IssueTest\main.c
+cl /Fomain.obj /c main.c /nologo /DFEATURE_A_ENABLED
+link /nologo /OUT:main.exe main.obj
++-.
+  +-header1.h
+  +-main.c
+  +-main.exe
+  | +-main.obj
+  | | +-main.c
+  | | +-header1.h
+  | | +-C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.42.34433\bin\HostX64\x64\cl.EXE
+  | +-C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.42.34433\bin\HostX64\x64\link.EXE
+  +-main.obj
+  | +-main.c
+  | +-header1.h
+  | +-C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.42.34433\bin\HostX64\x64\cl.EXE
+  +-SConstruct
+--- scons:build:end ---
+
+--- scons:clean:beg ---
+main.c MSVC C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.42.34433\bin\HostX64\x64\cl.EXE /nologo /E /w /DFEATURE_A_ENABLED S:\SCons\Test-4656\tests\IssueTest\main.c
+Removed main.obj
+Removed main.exe
+--- scons:clean:end ---
+
+--- scons:deps:beg ---
+main.c MSVC C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.42.34433\bin\HostX64\x64\cl.EXE /nologo /E /w /DFEATURE_A_ENABLED=1 S:\SCons\Test-4656\tests\IssueTest\main.c
+MSVCPreProcessorScanner main.c /DFEATURE_A_ENABLED=1
+MSVCPreProcessorScanner main.c result: ['header1.h']
+MSVCPreProcessorScanner main.c expect: ['header1.h']
+MSVCPreProcessorScanner main.c: dependencies match
+scons: `.' is up to date.
+--- scons:deps:end ---
+
+--- scons:build:beg ---
+main.c MSVC C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.42.34433\bin\HostX64\x64\cl.EXE /nologo /E /w /DFEATURE_A_ENABLED=1 S:\SCons\Test-4656\tests\IssueTest\main.c
+cl /Fomain.obj /c main.c /nologo /DFEATURE_A_ENABLED=1
+link /nologo /OUT:main.exe main.obj
++-.
+  +-header1.h
+  +-main.c
+  +-main.exe
+  | +-main.obj
+  | | +-main.c
+  | | +-header1.h
+  | | +-C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.42.34433\bin\HostX64\x64\cl.EXE
+  | +-C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.42.34433\bin\HostX64\x64\link.EXE
+  +-main.obj
+  | +-main.c
+  | +-header1.h
+  | +-C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.42.34433\bin\HostX64\x64\cl.EXE
+  +-SConstruct
+--- scons:build:end ---
+
+--- scons:clean:beg ---
+main.c MSVC C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.42.34433\bin\HostX64\x64\cl.EXE /nologo /E /w /DFEATURE_A_ENABLED=1 S:\SCons\Test-4656\tests\IssueTest\main.c
+Removed main.obj
+Removed main.exe
+--- scons:clean:end ---
+
+++++++ MSVCProcessorScanner:end ++++++
+
+++++++ CConditionalScanner:beg ++++++
+
+--- scons:deps:beg ---
+CConditionalScanner main.c result: []
+CConditionalScanner main.c expect: []
+CConditionalScanner main.c: dependencies match
+scons: `.' is up to date.
+--- scons:deps:end ---
+
+--- scons:build:beg ---
+gcc -o main.o -c main.c
+gcc -o main.exe main.o
++-.
+  +-main.c
+  +-main.exe
+  | +-main.o
+  | | +-main.c
+  | | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
+  | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
+  +-main.o
+  | +-main.c
+  | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
+  +-SConstruct
+--- scons:build:end ---
+
+--- scons:clean:beg ---
+Removed main.o
+Removed main.exe
+--- scons:clean:end ---
+
+--- scons:deps:beg ---
+CConditionalScanner main.c -DFEATURE_A_ENABLED=
+CConditionalScanner main.c result: ['header1.h']
+CConditionalScanner main.c expect: []
+CConditionalScanner main.c: !!! DEPENDENCIES DO NOT MATCH !!!
+scons: `.' is up to date.
+--- scons:deps:end ---
+
+--- scons:build:beg ---
+gcc -o main.o -c -DFEATURE_A_ENABLED= main.c
+gcc -o main.exe main.o
++-.
+  +-header1.h
+  +-main.c
+  +-main.exe
+  | +-main.o
+  | | +-main.c
+  | | +-header1.h
+  | | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
+  | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
+  +-main.o
+  | +-main.c
+  | +-header1.h
+  | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
+  +-SConstruct
+--- scons:build:end ---
+
+--- scons:clean:beg ---
+Removed main.o
+Removed main.exe
+--- scons:clean:end ---
+
+--- scons:deps:beg ---
+CConditionalScanner main.c -DFEATURE_A_ENABLED=0
+CConditionalScanner main.c result: ['header1.h']
+CConditionalScanner main.c expect: []
+CConditionalScanner main.c: !!! DEPENDENCIES DO NOT MATCH !!!
+scons: `.' is up to date.
+--- scons:deps:end ---
+
+--- scons:build:beg ---
+gcc -o main.o -c -DFEATURE_A_ENABLED=0 main.c
+gcc -o main.exe main.o
++-.
+  +-header1.h
+  +-main.c
+  +-main.exe
+  | +-main.o
+  | | +-main.c
+  | | +-header1.h
+  | | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
+  | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
+  +-main.o
+  | +-main.c
+  | +-header1.h
+  | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
+  +-SConstruct
+--- scons:build:end ---
+
+--- scons:clean:beg ---
+Removed main.o
+Removed main.exe
+--- scons:clean:end ---
+
+--- scons:deps:beg ---
+CConditionalScanner main.c -DFEATURE_A_ENABLED
+CConditionalScanner main.c result: ['header1.h']
+CConditionalScanner main.c expect: ['header1.h']
+CConditionalScanner main.c: dependencies match
+scons: `.' is up to date.
+--- scons:deps:end ---
+
+--- scons:build:beg ---
+gcc -o main.o -c -DFEATURE_A_ENABLED main.c
+gcc -o main.exe main.o
++-.
+  +-header1.h
+  +-main.c
+  +-main.exe
+  | +-main.o
+  | | +-main.c
+  | | +-header1.h
+  | | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
+  | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
+  +-main.o
+  | +-main.c
+  | +-header1.h
+  | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
+  +-SConstruct
+--- scons:build:end ---
+
+--- scons:clean:beg ---
+Removed main.o
+Removed main.exe
+--- scons:clean:end ---
+
+--- scons:deps:beg ---
+CConditionalScanner main.c -DFEATURE_A_ENABLED=1
+CConditionalScanner main.c result: ['header1.h']
+CConditionalScanner main.c expect: ['header1.h']
+CConditionalScanner main.c: dependencies match
+scons: `.' is up to date.
+--- scons:deps:end ---
+
+--- scons:build:beg ---
+gcc -o main.o -c -DFEATURE_A_ENABLED=1 main.c
+gcc -o main.exe main.o
++-.
+  +-header1.h
+  +-main.c
+  +-main.exe
+  | +-main.o
+  | | +-main.c
+  | | +-header1.h
+  | | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
+  | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
+  +-main.o
+  | +-main.c
+  | +-header1.h
+  | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
+  +-SConstruct
+--- scons:build:end ---
+
+--- scons:clean:beg ---
+Removed main.o
+Removed main.exe
+--- scons:clean:end ---
+
+++++++ CConditionalScanner:end ++++++
+
+++++++ CScanner:beg ++++++
+
+--- scons:deps:beg ---
+CScanner main.c result: ['header1.h']
+CScanner main.c expect: []
+CScanner main.c: !!! DEPENDENCIES DO NOT MATCH !!!
+scons: `.' is up to date.
+--- scons:deps:end ---
+
+--- scons:build:beg ---
+gcc -o main.o -c main.c
+gcc -o main.exe main.o
++-.
+  +-header1.h
+  +-main.c
+  +-main.exe
+  | +-main.o
+  | | +-main.c
+  | | +-header1.h
+  | | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
+  | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
+  +-main.o
+  | +-main.c
+  | +-header1.h
+  | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
+  +-SConstruct
+--- scons:build:end ---
+
+--- scons:clean:beg ---
+Removed main.o
+Removed main.exe
+--- scons:clean:end ---
+
+--- scons:deps:beg ---
+CScanner main.c -DFEATURE_A_ENABLED=
+CScanner main.c result: ['header1.h']
+CScanner main.c expect: []
+CScanner main.c: !!! DEPENDENCIES DO NOT MATCH !!!
+scons: `.' is up to date.
+--- scons:deps:end ---
+
+--- scons:build:beg ---
+gcc -o main.o -c -DFEATURE_A_ENABLED= main.c
+gcc -o main.exe main.o
++-.
+  +-header1.h
+  +-main.c
+  +-main.exe
+  | +-main.o
+  | | +-main.c
+  | | +-header1.h
+  | | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
+  | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
+  +-main.o
+  | +-main.c
+  | +-header1.h
+  | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
+  +-SConstruct
+--- scons:build:end ---
+
+--- scons:clean:beg ---
+Removed main.o
+Removed main.exe
+--- scons:clean:end ---
+
+--- scons:deps:beg ---
+CScanner main.c -DFEATURE_A_ENABLED=0
+CScanner main.c result: ['header1.h']
+CScanner main.c expect: []
+CScanner main.c: !!! DEPENDENCIES DO NOT MATCH !!!
+scons: `.' is up to date.
+--- scons:deps:end ---
+
+--- scons:build:beg ---
+gcc -o main.o -c -DFEATURE_A_ENABLED=0 main.c
+gcc -o main.exe main.o
++-.
+  +-header1.h
+  +-main.c
+  +-main.exe
+  | +-main.o
+  | | +-main.c
+  | | +-header1.h
+  | | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
+  | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
+  +-main.o
+  | +-main.c
+  | +-header1.h
+  | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
+  +-SConstruct
+--- scons:build:end ---
+
+--- scons:clean:beg ---
+Removed main.o
+Removed main.exe
+--- scons:clean:end ---
+
+--- scons:deps:beg ---
+CScanner main.c -DFEATURE_A_ENABLED
+CScanner main.c result: ['header1.h']
+CScanner main.c expect: ['header1.h']
+CScanner main.c: dependencies match
+scons: `.' is up to date.
+--- scons:deps:end ---
+
+--- scons:build:beg ---
+gcc -o main.o -c -DFEATURE_A_ENABLED main.c
+gcc -o main.exe main.o
++-.
+  +-header1.h
+  +-main.c
+  +-main.exe
+  | +-main.o
+  | | +-main.c
+  | | +-header1.h
+  | | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
+  | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
+  +-main.o
+  | +-main.c
+  | +-header1.h
+  | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
+  +-SConstruct
+--- scons:build:end ---
+
+--- scons:clean:beg ---
+Removed main.o
+Removed main.exe
+--- scons:clean:end ---
+
+--- scons:deps:beg ---
+CScanner main.c -DFEATURE_A_ENABLED=1
+CScanner main.c result: ['header1.h']
+CScanner main.c expect: ['header1.h']
+CScanner main.c: dependencies match
+scons: `.' is up to date.
+--- scons:deps:end ---
+
+--- scons:build:beg ---
+gcc -o main.o -c -DFEATURE_A_ENABLED=1 main.c
+gcc -o main.exe main.o
++-.
+  +-header1.h
+  +-main.c
+  +-main.exe
+  | +-main.o
+  | | +-main.c
+  | | +-header1.h
+  | | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
+  | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
+  +-main.o
+  | +-main.c
+  | +-header1.h
+  | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
+  +-SConstruct
+--- scons:build:end ---
+
+--- scons:clean:beg ---
+Removed main.o
+Removed main.exe
+--- scons:clean:end ---
+
+++++++ CScanner:end ++++++
+

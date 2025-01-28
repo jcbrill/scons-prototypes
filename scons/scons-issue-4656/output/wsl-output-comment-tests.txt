@@ -1,0 +1,154 @@
+
+++++++ GCCProcessorScanner:beg ++++++
+
+--- scons:deps:beg ---
+main.c GCC /bin/gcc -fsyntax-only -E -dI -w /mnt/s/SCons/test-4656/tests/CommentTest/main.c
+GCCPreProcessorScanner main.c result: ['active/comment3.h', 'active/comment4.h']
+GCCPreProcessorScanner main.c expect: ['active/comment3.h', 'active/comment4.h']
+GCCPreProcessorScanner main.c: dependencies match
+scons: `.' is up to date.
+--- scons:deps:end ---
+
+--- scons:build:beg ---
+main.c GCC /bin/gcc -fsyntax-only -E -dI -w /mnt/s/SCons/test-4656/tests/CommentTest/main.c
+gcc -o main.o -c main.c
+gcc -o main main.o
++-.
+  +-SConstruct
+  +-active
+  | +-active/comment3.h
+  | +-active/comment4.h
+  +-main
+  | +-main.o
+  | | +-main.c
+  | | +-active/comment3.h
+  | | +-active/comment4.h
+  | | +-/bin/gcc
+  | +-/bin/gcc
+  +-main.c
+  +-main.o
+    +-main.c
+    +-active/comment3.h
+    +-active/comment4.h
+    +-/bin/gcc
+--- scons:build:end ---
+
+--- scons:clean:beg ---
+main.c GCC /bin/gcc -fsyntax-only -E -dI -w /mnt/s/SCons/test-4656/tests/CommentTest/main.c
+Removed main.o
+Removed main
+--- scons:clean:end ---
+
+++++++ GCCProcessorScanner:end ++++++
+
+++++++ CConditionalModScanner:beg ++++++
+
+--- scons:deps:beg ---
+CConditionalModScanner main.c result: ['active/comment3.h', 'active/comment4.h']
+CConditionalModScanner main.c expect: ['active/comment3.h', 'active/comment4.h']
+CConditionalModScanner main.c: dependencies match
+scons: `.' is up to date.
+--- scons:deps:end ---
+
+--- scons:build:beg ---
+gcc -o main.o -c main.c
+gcc -o main main.o
++-.
+  +-SConstruct
+  +-active
+  | +-active/comment3.h
+  | +-active/comment4.h
+  +-main
+  | +-main.o
+  | | +-main.c
+  | | +-active/comment3.h
+  | | +-active/comment4.h
+  | | +-/bin/gcc
+  | +-/bin/gcc
+  +-main.c
+  +-main.o
+    +-main.c
+    +-active/comment3.h
+    +-active/comment4.h
+    +-/bin/gcc
+--- scons:build:end ---
+
+--- scons:clean:beg ---
+Removed main.o
+Removed main
+--- scons:clean:end ---
+
+++++++ CConditionalModScanner:end ++++++
+
+++++++ CConditionalScanner:beg ++++++
+
+--- scons:deps:beg ---
+CConditionalScanner main.c result: ['inactive/comment2.h']
+CConditionalScanner main.c expect: ['active/comment3.h', 'active/comment4.h']
+CConditionalScanner main.c: !!! DEPENDENCIES DO NOT MATCH !!!
+scons: `.' is up to date.
+--- scons:deps:end ---
+
+--- scons:build:beg ---
+gcc -o main.o -c main.c
+gcc -o main main.o
++-.
+  +-SConstruct
+  +-inactive
+  | +-inactive/comment2.h
+  +-main
+  | +-main.o
+  | | +-main.c
+  | | +-inactive/comment2.h
+  | | +-/bin/gcc
+  | +-/bin/gcc
+  +-main.c
+  +-main.o
+    +-main.c
+    +-inactive/comment2.h
+    +-/bin/gcc
+--- scons:build:end ---
+
+--- scons:clean:beg ---
+Removed main.o
+Removed main
+--- scons:clean:end ---
+
+++++++ CConditionalScanner:end ++++++
+
+++++++ CScanner:beg ++++++
+
+--- scons:deps:beg ---
+CScanner main.c result: ['inactive/comment2.h']
+CScanner main.c expect: ['active/comment3.h', 'active/comment4.h']
+CScanner main.c: !!! DEPENDENCIES DO NOT MATCH !!!
+scons: `.' is up to date.
+--- scons:deps:end ---
+
+--- scons:build:beg ---
+gcc -o main.o -c main.c
+gcc -o main main.o
++-.
+  +-SConstruct
+  +-inactive
+  | +-inactive/comment2.h
+  +-main
+  | +-main.o
+  | | +-main.c
+  | | +-inactive/comment2.h
+  | | +-/bin/gcc
+  | +-/bin/gcc
+  +-main.c
+  +-main.o
+    +-main.c
+    +-inactive/comment2.h
+    +-/bin/gcc
+--- scons:build:end ---
+
+--- scons:clean:beg ---
+Removed main.o
+Removed main
+--- scons:clean:end ---
+
+++++++ CScanner:end ++++++
+

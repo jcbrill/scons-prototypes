@@ -1,0 +1,19 @@
+from sconstruct_common import scanner_configuration
+
+DefaultEnvironment(tools=[])
+
+scanner_cfg = scanner_configuration()
+
+env = Environment(
+    tools = scanner_cfg.tools,
+)
+
+sourcefile = "main.c"
+
+if scanner_cfg.scanner_dependencies:
+    scanner_cfg.dependencies(sourcefile, env, recurse=False)
+else:
+    env.Program(sourcefile)
+
+
+
