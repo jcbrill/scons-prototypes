@@ -18,6 +18,7 @@
 call "%SCRIPT_ROOT%\tests\comment-tests.bat" >"%SCRIPT_ROOT%\output\win-output%SCONS_ROOT_LABEL%-comment-tests.txt" 2>&1
 call "%SCRIPT_ROOT%\tests\incsyspath-tests.bat" >"%SCRIPT_ROOT%\output\win-output%SCONS_ROOT_LABEL%-incsyspath-tests.txt" 2>&1
 call "%SCRIPT_ROOT%\tests\issue-tests.bat" >"%SCRIPT_ROOT%\output\win-output%SCONS_ROOT_LABEL%-issue-tests.txt" 2>&1
+call "%SCRIPT_ROOT%\tests\known-tests.bat" >"%SCRIPT_ROOT%\output\win-output%SCONS_ROOT_LABEL%-known-tests.txt" 2>&1
 call "%SCRIPT_ROOT%\tests\macro-tests.bat" >"%SCRIPT_ROOT%\output\win-output%SCONS_ROOT_LABEL%-macro-tests.txt" 2>&1
 call "%SCRIPT_ROOT%\tests\multiple-tests.bat" >"%SCRIPT_ROOT%\output\win-output%SCONS_ROOT_LABEL%-multiple-tests.txt" 2>&1
 call "%SCRIPT_ROOT%\tests\recurse-tests.bat" >"%SCRIPT_ROOT%\output\win-output%SCONS_ROOT_LABEL%-recurse-tests.txt" 2>&1

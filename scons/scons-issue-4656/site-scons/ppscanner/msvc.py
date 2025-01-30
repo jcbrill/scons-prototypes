@@ -17,6 +17,7 @@ from ._common import (
     env_subst,
     file_abspath_normalize,
     platform_join_args,
+    platform_split_args,
     subprocess_run,
     warn_message,
 )
@@ -310,8 +311,12 @@ class _MSVCPreProcessor:
         for scons_key in ("_CPPDEFFLAGS", "_CPPINCFLAGS"):
             if env and scons_key in env:
                 subst_val = env_subst(env, scons_key).strip()
-                if subst_val:
-                    cmd.append(subst_val)
+                if not subst_val:
+                    continue
+                subst_args = platform_split_args(subst_val)
+                if not subst_args:
+                    continue
+                cmd.extend(subst_args)
         cmd.append(node.abspath)
 
         if _COMMAND or _DISPLAY:

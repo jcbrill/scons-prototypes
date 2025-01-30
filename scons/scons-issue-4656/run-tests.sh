@@ -16,6 +16,7 @@ set -x
 "${SCRIPT_ROOT}/tests/comment-tests.sh" >"${SCRIPT_ROOT}/output/wsl-output${SCONS_ROOT_LABEL}-comment-tests.txt" 2>&1
 "${SCRIPT_ROOT}/tests/incsyspath-tests.sh" >"${SCRIPT_ROOT}/output/wsl-output${SCONS_ROOT_LABEL}-incsyspath-tests.txt" 2>&1
 "${SCRIPT_ROOT}/tests/issue-tests.sh" >"${SCRIPT_ROOT}/output/wsl-output${SCONS_ROOT_LABEL}-issue-tests.txt" 2>&1
+"${SCRIPT_ROOT}/tests/known-tests.sh" >"${SCRIPT_ROOT}/output/wsl-output${SCONS_ROOT_LABEL}-known-tests.txt" 2>&1
 "${SCRIPT_ROOT}/tests/macro-tests.sh" >"${SCRIPT_ROOT}/output/wsl-output${SCONS_ROOT_LABEL}-macro-tests.txt" 2>&1
 "${SCRIPT_ROOT}/tests/multiple-tests.sh" >"${SCRIPT_ROOT}/output/wsl-output${SCONS_ROOT_LABEL}-multiple-tests.txt" 2>&1
 "${SCRIPT_ROOT}/tests/recurse-tests.sh" >"${SCRIPT_ROOT}/output/wsl-output${SCONS_ROOT_LABEL}-recurse-tests.txt" 2>&1

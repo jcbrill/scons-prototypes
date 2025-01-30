@@ -100,11 +100,27 @@ def scanner_dependencies(scanner, sourcenode, env, cpppath, recurse=True):
 
 class ScannerConfig(_ScannerConfig):
 
+    def _relpath(self, root_abspath, node):
+        path_str = str(node)
+        node_abspath = node.get_abspath()
+        try:
+            common_path = os.path.commonpath([root_abspath, node_abspath])
+        except ValueError:
+            common_path = None
+        if common_path:
+            rel_root_common = os.path.normpath(os.path.relpath(common_path, root_abspath))
+            if rel_root_common != ".":
+                node_head, node_tail = os.path.split(node_abspath)
+                rel_node_common = os.path.relpath(node_head, common_path)
+                path_str = os.path.join(rel_root_common, rel_node_common, node_tail)
+        return path_str
+
     def dependencies(self, sourcefile, env, recurse=True):
         display("dependendencies:beg")
         if self.scanner_expected_map is None or sourcefile not in self.scanner_expected_map:
             print(self.scanner_name)
         else:
+            root_abspath = env.Dir(".").get_abspath()
             srcenode = env.File(sourcefile)
             cppdefines = env.subst("$_CPPDEFFLAGS").strip() if "_CPPDEFFLAGS" in env else ""
             cpppath = tuple(env.Dir(env["CPPPATH"])) if "CPPPATH" in env else ()
@@ -119,8 +135,10 @@ class ScannerConfig(_ScannerConfig):
             }[status]
             if cppdefines:
                 print(f"{self.scanner_name} {sourcefile} {cppdefines}")
-            print(f"{self.scanner_name} {sourcefile} result: {[str(node) for node in result_nodes]}")
-            print(f"{self.scanner_name} {sourcefile} expect: {[str(node) for node in expect_nodes]}")
+            # print(f"{self.scanner_name} {sourcefile} result: {[str(node) for node in result_nodes]}")
+            # print(f"{self.scanner_name} {sourcefile} expect: {[str(node) for node in expect_nodes]}")
+            print(f"{self.scanner_name} {sourcefile} result: {[self._relpath(root_abspath, node) for node in result_nodes]}")
+            print(f"{self.scanner_name} {sourcefile} expect: {[self._relpath(root_abspath, node) for node in expect_nodes]}")
             print(status_msg)
         display("dependencies:end")
 

@@ -11,6 +11,8 @@ __all__ = [
     "ScanIncludeDepthWarning",
     "ScanWarning",
     "file_abspath_normalize",
+    "platform_join_args",
+    "platform_split_args",
 ]
 
 from ._common import (
@@ -20,6 +22,8 @@ from ._common import (
     ScanIncludeDepthWarning,
     ScanWarning,
     file_abspath_normalize,
+    platform_join_args,
+    platform_split_args,
 )
 
 from .gcc import(

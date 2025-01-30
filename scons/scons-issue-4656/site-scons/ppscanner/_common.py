@@ -13,6 +13,7 @@ __all__ = [
     "env_substr",
     "file_abspath_normalize",
     "platform_join_args",
+    "platform_split_args",
     "subprocess_run",
     "warn_message",
 ]
@@ -25,6 +26,8 @@ import warnings
 
 from typing import List, NamedTuple, Type
 
+from . import mswindev
+
 import SCons.Action
 import SCons.Scanner
 
@@ -33,6 +36,9 @@ IS_WINDOWS = bool(sys.platform.startswith("win"))
 DEFAULT_ENCODING = "oem" if IS_WINDOWS else "utf-8"
 
 _UNDEFINED = object()
+
+platform_join_args = mswindev.platform_join_args
+platform_split_args = mswindev.platform_split_args
 
 class ScanError(Exception):
     pass
@@ -121,15 +127,6 @@ def _decode_cmd_output(buffer, encoding):
     except Exception as e:
         raise
     return buffer.decode(encoding, errors="replace")
-
-if IS_WINDOWS:
-    def platform_join_args(args: List[str]) -> List[str]:
-        rval = subprocess.list2cmdline(args)
-        return rval
-else:
-    def platform_join_args(args: List[str]) -> List[str]:
-        rval = " ".join([shlex.quote(arg) for arg in args])
-        return rval
 
 def subprocess_run(cmd, env=None, encoding=None, check=False, shell=False):
 

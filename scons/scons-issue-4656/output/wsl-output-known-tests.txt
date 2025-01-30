@@ -1,0 +1,155 @@
+
+++++++ GCCProcessorScanner:beg ++++++
+
+--- scons:deps:beg ---
+main.c GCC /bin/gcc -fsyntax-only -E -dI -w -I./include -I../KnownIncl/include /mnt/s/SCons/Test-4656/tests/KnownTest/main.c
+GCCPreProcessorScanner main.c result: ['../KnownIncl/include/dqfile1.h', 'include/dqfile2.h']
+GCCPreProcessorScanner main.c expect: ['../KnownIncl/include/dqfile1.h', 'include/dqfile2.h']
+GCCPreProcessorScanner main.c: dependencies match
+scons: `.' is up to date.
+--- scons:deps:end ---
+
+--- scons:build:beg ---
+main.c GCC /bin/gcc -fsyntax-only -E -dI -w -I./include -I../KnownIncl/include /mnt/s/SCons/Test-4656/tests/KnownTest/main.c
+gcc -o main.o -c -Iinclude -I/mnt/s/SCons/Test-4656/tests/KnownIncl/include main.c
+gcc -o main main.o
++-.
+  +-SConstruct
+  +-include
+  | +-include/dqfile2.h
+  +-main
+  | +-main.o
+  | | +-main.c
+  | | +-/mnt/s/SCons/Test-4656/tests/KnownIncl/include/dqfile1.h
+  | | +-include/dqfile2.h
+  | | +-/bin/gcc
+  | +-/bin/gcc
+  +-main.c
+  +-main.o
+    +-main.c
+    +-/mnt/s/SCons/Test-4656/tests/KnownIncl/include/dqfile1.h
+    +-include/dqfile2.h
+    +-/bin/gcc
+--- scons:build:end ---
+
+--- scons:clean:beg ---
+main.c GCC /bin/gcc -fsyntax-only -E -dI -w -I./include -I../KnownIncl/include /mnt/s/SCons/Test-4656/tests/KnownTest/main.c
+Removed main.o
+Removed main
+--- scons:clean:end ---
+
+++++++ GCCProcessorScanner:end ++++++
+
+++++++ CConditionalModScanner:beg ++++++
+
+--- scons:deps:beg ---
+CConditionalModScanner main.c result: ['../KnownIncl/include/dqfile1.h', 'include/dqfile2.h']
+CConditionalModScanner main.c expect: ['../KnownIncl/include/dqfile1.h', 'include/dqfile2.h']
+CConditionalModScanner main.c: dependencies match
+scons: `.' is up to date.
+--- scons:deps:end ---
+
+--- scons:build:beg ---
+gcc -o main.o -c -Iinclude -I/mnt/s/SCons/Test-4656/tests/KnownIncl/include main.c
+gcc -o main main.o
++-.
+  +-SConstruct
+  +-include
+  | +-include/dqfile2.h
+  +-main
+  | +-main.o
+  | | +-main.c
+  | | +-/mnt/s/SCons/Test-4656/tests/KnownIncl/include/dqfile1.h
+  | | +-include/dqfile2.h
+  | | +-/bin/gcc
+  | +-/bin/gcc
+  +-main.c
+  +-main.o
+    +-main.c
+    +-/mnt/s/SCons/Test-4656/tests/KnownIncl/include/dqfile1.h
+    +-include/dqfile2.h
+    +-/bin/gcc
+--- scons:build:end ---
+
+--- scons:clean:beg ---
+Removed main.o
+Removed main
+--- scons:clean:end ---
+
+++++++ CConditionalModScanner:end ++++++
+
+++++++ CConditionalScanner:beg ++++++
+
+--- scons:deps:beg ---
+CConditionalScanner main.c result: ['../KnownIncl/include/dqfile1.h', '../KnownIncl/include/dqfile2.h']
+CConditionalScanner main.c expect: ['../KnownIncl/include/dqfile1.h', 'include/dqfile2.h']
+CConditionalScanner main.c: !!! DEPENDENCIES DO NOT MATCH !!!
+scons: `.' is up to date.
+--- scons:deps:end ---
+
+--- scons:build:beg ---
+gcc -o main.o -c -Iinclude -I/mnt/s/SCons/Test-4656/tests/KnownIncl/include main.c
+gcc -o main main.o
++-.
+  +-SConstruct
+  +-include
+  +-main
+  | +-main.o
+  | | +-main.c
+  | | +-/mnt/s/SCons/Test-4656/tests/KnownIncl/include/dqfile1.h
+  | | +-/mnt/s/SCons/Test-4656/tests/KnownIncl/include/dqfile2.h
+  | | +-/bin/gcc
+  | +-/bin/gcc
+  +-main.c
+  +-main.o
+    +-main.c
+    +-/mnt/s/SCons/Test-4656/tests/KnownIncl/include/dqfile1.h
+    +-/mnt/s/SCons/Test-4656/tests/KnownIncl/include/dqfile2.h
+    +-/bin/gcc
+--- scons:build:end ---
+
+--- scons:clean:beg ---
+Removed main.o
+Removed main
+--- scons:clean:end ---
+
+++++++ CConditionalScanner:end ++++++
+
+++++++ CScanner:beg ++++++
+
+--- scons:deps:beg ---
+CScanner main.c result: ['../KnownIncl/include/dqfile1.h', 'include/dqfile2.h']
+CScanner main.c expect: ['../KnownIncl/include/dqfile1.h', 'include/dqfile2.h']
+CScanner main.c: dependencies match
+scons: `.' is up to date.
+--- scons:deps:end ---
+
+--- scons:build:beg ---
+gcc -o main.o -c -Iinclude -I/mnt/s/SCons/Test-4656/tests/KnownIncl/include main.c
+gcc -o main main.o
++-.
+  +-SConstruct
+  +-include
+  | +-include/dqfile2.h
+  +-main
+  | +-main.o
+  | | +-main.c
+  | | +-/mnt/s/SCons/Test-4656/tests/KnownIncl/include/dqfile1.h
+  | | +-include/dqfile2.h
+  | | +-/bin/gcc
+  | +-/bin/gcc
+  +-main.c
+  +-main.o
+    +-main.c
+    +-/mnt/s/SCons/Test-4656/tests/KnownIncl/include/dqfile1.h
+    +-include/dqfile2.h
+    +-/bin/gcc
+--- scons:build:end ---
+
+--- scons:clean:beg ---
+Removed main.o
+Removed main
+--- scons:clean:end ---
+
+++++++ CScanner:end ++++++
+
