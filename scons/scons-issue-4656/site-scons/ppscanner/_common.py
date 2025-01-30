@@ -26,7 +26,7 @@ import warnings
 
 from typing import List, NamedTuple, Type
 
-from . import mswindev
+import mswindev
 
 import SCons.Action
 import SCons.Scanner
