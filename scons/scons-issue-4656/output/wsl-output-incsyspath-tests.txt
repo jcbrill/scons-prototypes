@@ -3,35 +3,41 @@
 
 --- scons:deps:beg ---
 main.c GCC /bin/gcc -fsyntax-only -E -dI -w /mnt/s/SCons/Test-4656/tests/IncSysPathTest/main.c
-GCCPreProcessorScanner main.c result: ['include/syspath1.h']
-GCCPreProcessorScanner main.c expect: ['include/syspath1.h']
+/mnt/s/SCons/Test-4656/site-scons/ppscanner/_common.py:152: ScanIncludeDepthWarning: Warning: Include visit depth (1) > 0 on exit
+  warnings.warn(message, category)
+GCCPreProcessorScanner main.c result: ['include/include.h']
+GCCPreProcessorScanner main.c expect: ['include/include.h']
 GCCPreProcessorScanner main.c: dependencies match
 scons: `.' is up to date.
 --- scons:deps:end ---
 
 --- scons:build:beg ---
 main.c GCC /bin/gcc -fsyntax-only -E -dI -w /mnt/s/SCons/Test-4656/tests/IncSysPathTest/main.c
+/mnt/s/SCons/Test-4656/site-scons/ppscanner/_common.py:152: ScanIncludeDepthWarning: Warning: Include visit depth (1) > 0 on exit
+  warnings.warn(message, category)
 gcc -o main.o -c main.c
 gcc -o main main.o
 +-.
   +-SConstruct
   +-include
-  | +-include/syspath1.h
+  | +-include/include.h
   +-main
   | +-main.o
   | | +-main.c
-  | | +-include/syspath1.h
+  | | +-include/include.h
   | | +-/bin/gcc
   | +-/bin/gcc
   +-main.c
   +-main.o
     +-main.c
-    +-include/syspath1.h
+    +-include/include.h
     +-/bin/gcc
 --- scons:build:end ---
 
 --- scons:clean:beg ---
 main.c GCC /bin/gcc -fsyntax-only -E -dI -w /mnt/s/SCons/Test-4656/tests/IncSysPathTest/main.c
+/mnt/s/SCons/Test-4656/site-scons/ppscanner/_common.py:152: ScanIncludeDepthWarning: Warning: Include visit depth (1) > 0 on exit
+  warnings.warn(message, category)
 Removed main.o
 Removed main
 --- scons:clean:end ---
@@ -41,8 +47,8 @@ Removed main
 ++++++ CConditionalModScanner:beg ++++++
 
 --- scons:deps:beg ---
-CConditionalModScanner main.c result: ['include/syspath1.h']
-CConditionalModScanner main.c expect: ['include/syspath1.h']
+CConditionalModScanner main.c result: ['include/include.h']
+CConditionalModScanner main.c expect: ['include/include.h']
 CConditionalModScanner main.c: dependencies match
 scons: `.' is up to date.
 --- scons:deps:end ---
@@ -53,17 +59,17 @@ gcc -o main main.o
 +-.
   +-SConstruct
   +-include
-  | +-include/syspath1.h
+  | +-include/include.h
   +-main
   | +-main.o
   | | +-main.c
-  | | +-include/syspath1.h
+  | | +-include/include.h
   | | +-/bin/gcc
   | +-/bin/gcc
   +-main.c
   +-main.o
     +-main.c
-    +-include/syspath1.h
+    +-include/include.h
     +-/bin/gcc
 --- scons:build:end ---
 
@@ -77,8 +83,8 @@ Removed main
 ++++++ CConditionalScanner:beg ++++++
 
 --- scons:deps:beg ---
-CConditionalScanner main.c result: ['include/syspath1.h', 'include/limits.h']
-CConditionalScanner main.c expect: ['include/syspath1.h']
+CConditionalScanner main.c result: ['include/include.h', 'limits.h', 'anglebracket.h']
+CConditionalScanner main.c expect: ['include/include.h']
 CConditionalScanner main.c: !!! DEPENDENCIES DO NOT MATCH !!!
 scons: `.' is up to date.
 --- scons:deps:end ---
@@ -88,21 +94,24 @@ gcc -o main.o -c main.c
 gcc -o main main.o
 +-.
   +-SConstruct
+  +-anglebracket.h
   +-include
-  | +-include/limits.h
-  | +-include/syspath1.h
+  | +-include/include.h
+  +-limits.h
   +-main
   | +-main.o
   | | +-main.c
-  | | +-include/syspath1.h
-  | | +-include/limits.h
+  | | +-include/include.h
+  | | +-limits.h
+  | | +-anglebracket.h
   | | +-/bin/gcc
   | +-/bin/gcc
   +-main.c
   +-main.o
     +-main.c
-    +-include/syspath1.h
-    +-include/limits.h
+    +-include/include.h
+    +-limits.h
+    +-anglebracket.h
     +-/bin/gcc
 --- scons:build:end ---
 
@@ -116,9 +125,9 @@ Removed main
 ++++++ CScanner:beg ++++++
 
 --- scons:deps:beg ---
-CScanner main.c result: ['include/syspath1.h', 'include/limits.h']
-CScanner main.c expect: ['include/syspath1.h']
-CScanner main.c: !!! DEPENDENCIES DO NOT MATCH !!!
+CScanner main.c result: ['include/include.h']
+CScanner main.c expect: ['include/include.h']
+CScanner main.c: dependencies match
 scons: `.' is up to date.
 --- scons:deps:end ---
 
@@ -128,20 +137,17 @@ gcc -o main main.o
 +-.
   +-SConstruct
   +-include
-  | +-include/limits.h
-  | +-include/syspath1.h
+  | +-include/include.h
   +-main
   | +-main.o
   | | +-main.c
-  | | +-include/syspath1.h
-  | | +-include/limits.h
+  | | +-include/include.h
   | | +-/bin/gcc
   | +-/bin/gcc
   +-main.c
   +-main.o
     +-main.c
-    +-include/syspath1.h
-    +-include/limits.h
+    +-include/include.h
     +-/bin/gcc
 --- scons:build:end ---
 

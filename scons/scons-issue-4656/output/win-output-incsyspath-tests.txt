@@ -3,35 +3,41 @@
 
 --- scons:deps:beg ---
 main.c GCC C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE -fsyntax-only -E -dI -w S:\SCons\Test-4656\tests\IncSysPathTest\main.c
-GCCPreProcessorScanner main.c result: ['include\\syspath1.h']
-GCCPreProcessorScanner main.c expect: ['include\\syspath1.h']
+S:\SCons\Test-4656\site-scons\ppscanner\_common.py:152: ScanIncludeDepthWarning: Warning: Include visit depth (1) > 0 on exit
+  warnings.warn(message, category)
+GCCPreProcessorScanner main.c result: ['include\\include.h']
+GCCPreProcessorScanner main.c expect: ['include\\include.h']
 GCCPreProcessorScanner main.c: dependencies match
 scons: `.' is up to date.
 --- scons:deps:end ---
 
 --- scons:build:beg ---
 main.c GCC C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE -fsyntax-only -E -dI -w S:\SCons\Test-4656\tests\IncSysPathTest\main.c
+S:\SCons\Test-4656\site-scons\ppscanner\_common.py:152: ScanIncludeDepthWarning: Warning: Include visit depth (1) > 0 on exit
+  warnings.warn(message, category)
 gcc -o main.o -c main.c
 gcc -o main.exe main.o
 +-.
   +-include
-  | +-include\syspath1.h
+  | +-include\include.h
   +-main.c
   +-main.exe
   | +-main.o
   | | +-main.c
-  | | +-include\syspath1.h
+  | | +-include\include.h
   | | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
   | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
   +-main.o
   | +-main.c
-  | +-include\syspath1.h
+  | +-include\include.h
   | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
   +-SConstruct
 --- scons:build:end ---
 
 --- scons:clean:beg ---
 main.c GCC C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE -fsyntax-only -E -dI -w S:\SCons\Test-4656\tests\IncSysPathTest\main.c
+S:\SCons\Test-4656\site-scons\ppscanner\_common.py:152: ScanIncludeDepthWarning: Warning: Include visit depth (1) > 0 on exit
+  warnings.warn(message, category)
 Removed main.o
 Removed main.exe
 --- scons:clean:end ---
@@ -42,35 +48,41 @@ Removed main.exe
 
 --- scons:deps:beg ---
 main.c MSVC C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.42.34433\bin\HostX64\x64\cl.EXE /nologo /E /w S:\SCons\Test-4656\tests\IncSysPathTest\main.c
-MSVCPreProcessorScanner main.c result: ['include\\syspath1.h']
-MSVCPreProcessorScanner main.c expect: ['include\\syspath1.h']
+S:\SCons\Test-4656\site-scons\ppscanner\_common.py:152: ScanIncludeDepthWarning: Warning: Include visit depth (1) > 0 on exit
+  warnings.warn(message, category)
+MSVCPreProcessorScanner main.c result: ['include\\include.h']
+MSVCPreProcessorScanner main.c expect: ['include\\include.h']
 MSVCPreProcessorScanner main.c: dependencies match
 scons: `.' is up to date.
 --- scons:deps:end ---
 
 --- scons:build:beg ---
 main.c MSVC C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.42.34433\bin\HostX64\x64\cl.EXE /nologo /E /w S:\SCons\Test-4656\tests\IncSysPathTest\main.c
+S:\SCons\Test-4656\site-scons\ppscanner\_common.py:152: ScanIncludeDepthWarning: Warning: Include visit depth (1) > 0 on exit
+  warnings.warn(message, category)
 cl /Fomain.obj /c main.c /nologo
 link /nologo /OUT:main.exe main.obj
 +-.
   +-include
-  | +-include\syspath1.h
+  | +-include\include.h
   +-main.c
   +-main.exe
   | +-main.obj
   | | +-main.c
-  | | +-include\syspath1.h
+  | | +-include\include.h
   | | +-C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.42.34433\bin\HostX64\x64\cl.EXE
   | +-C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.42.34433\bin\HostX64\x64\link.EXE
   +-main.obj
   | +-main.c
-  | +-include\syspath1.h
+  | +-include\include.h
   | +-C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.42.34433\bin\HostX64\x64\cl.EXE
   +-SConstruct
 --- scons:build:end ---
 
 --- scons:clean:beg ---
 main.c MSVC C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.42.34433\bin\HostX64\x64\cl.EXE /nologo /E /w S:\SCons\Test-4656\tests\IncSysPathTest\main.c
+S:\SCons\Test-4656\site-scons\ppscanner\_common.py:152: ScanIncludeDepthWarning: Warning: Include visit depth (1) > 0 on exit
+  warnings.warn(message, category)
 Removed main.obj
 Removed main.exe
 --- scons:clean:end ---
@@ -80,8 +92,8 @@ Removed main.exe
 ++++++ CConditionalModScanner:beg ++++++
 
 --- scons:deps:beg ---
-CConditionalModScanner main.c result: ['include\\syspath1.h']
-CConditionalModScanner main.c expect: ['include\\syspath1.h']
+CConditionalModScanner main.c result: ['include\\include.h']
+CConditionalModScanner main.c expect: ['include\\include.h']
 CConditionalModScanner main.c: dependencies match
 scons: `.' is up to date.
 --- scons:deps:end ---
@@ -91,17 +103,17 @@ gcc -o main.o -c main.c
 gcc -o main.exe main.o
 +-.
   +-include
-  | +-include\syspath1.h
+  | +-include\include.h
   +-main.c
   +-main.exe
   | +-main.o
   | | +-main.c
-  | | +-include\syspath1.h
+  | | +-include\include.h
   | | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
   | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
   +-main.o
   | +-main.c
-  | +-include\syspath1.h
+  | +-include\include.h
   | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
   +-SConstruct
 --- scons:build:end ---
@@ -116,8 +128,8 @@ Removed main.exe
 ++++++ CConditionalScanner:beg ++++++
 
 --- scons:deps:beg ---
-CConditionalScanner main.c result: ['include\\syspath1.h', 'include\\limits.h']
-CConditionalScanner main.c expect: ['include\\syspath1.h']
+CConditionalScanner main.c result: ['include\\include.h', 'limits.h', 'anglebracket.h']
+CConditionalScanner main.c expect: ['include\\include.h']
 CConditionalScanner main.c: !!! DEPENDENCIES DO NOT MATCH !!!
 scons: `.' is up to date.
 --- scons:deps:end ---
@@ -126,21 +138,24 @@ scons: `.' is up to date.
 gcc -o main.o -c main.c
 gcc -o main.exe main.o
 +-.
+  +-anglebracket.h
   +-include
-  | +-include\limits.h
-  | +-include\syspath1.h
+  | +-include\include.h
+  +-limits.h
   +-main.c
   +-main.exe
   | +-main.o
   | | +-main.c
-  | | +-include\syspath1.h
-  | | +-include\limits.h
+  | | +-include\include.h
+  | | +-limits.h
+  | | +-anglebracket.h
   | | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
   | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
   +-main.o
   | +-main.c
-  | +-include\syspath1.h
-  | +-include\limits.h
+  | +-include\include.h
+  | +-limits.h
+  | +-anglebracket.h
   | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
   +-SConstruct
 --- scons:build:end ---
@@ -155,9 +170,9 @@ Removed main.exe
 ++++++ CScanner:beg ++++++
 
 --- scons:deps:beg ---
-CScanner main.c result: ['include\\syspath1.h', 'include\\limits.h']
-CScanner main.c expect: ['include\\syspath1.h']
-CScanner main.c: !!! DEPENDENCIES DO NOT MATCH !!!
+CScanner main.c result: ['include\\include.h']
+CScanner main.c expect: ['include\\include.h']
+CScanner main.c: dependencies match
 scons: `.' is up to date.
 --- scons:deps:end ---
 
@@ -166,20 +181,17 @@ gcc -o main.o -c main.c
 gcc -o main.exe main.o
 +-.
   +-include
-  | +-include\limits.h
-  | +-include\syspath1.h
+  | +-include\include.h
   +-main.c
   +-main.exe
   | +-main.o
   | | +-main.c
-  | | +-include\syspath1.h
-  | | +-include\limits.h
+  | | +-include\include.h
   | | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
   | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
   +-main.o
   | +-main.c
-  | +-include\syspath1.h
-  | +-include\limits.h
+  | +-include\include.h
   | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
   +-SConstruct
 --- scons:build:end ---

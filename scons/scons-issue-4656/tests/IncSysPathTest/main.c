@@ -1,4 +1,4 @@
-# include "include/syspath1.h"
+#include "include/include.h"
 
 int main(void);
 int main(void) {}
