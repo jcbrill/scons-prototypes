@@ -3,8 +3,8 @@
 
 --- scons:deps:beg ---
 main.c GCC C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE -fsyntax-only -E -dI -w -I./include -I../KnownIncl/include S:\SCons\Test-4656\tests\KnownTest\main.c
-GCCPreProcessorScanner main.c result: ['..\\KnownIncl\\include\\dqfile1.h', 'include\\dqfile2.h']
-GCCPreProcessorScanner main.c expect: ['..\\KnownIncl\\include\\dqfile1.h', 'include\\dqfile2.h']
+GCCPreProcessorScanner main.c result: ['..\\KnownIncl\\include\\include1.h', 'include\\include2.h', '..\\KnownIncl\\include\\include3.h', 'include\\include4.h']
+GCCPreProcessorScanner main.c expect: ['..\\KnownIncl\\include\\include1.h', 'include\\include2.h', '..\\KnownIncl\\include\\include3.h', 'include\\include4.h']
 GCCPreProcessorScanner main.c: dependencies match
 scons: `.' is up to date.
 --- scons:deps:end ---
@@ -15,19 +15,24 @@ gcc -o main.o -c -Iinclude -IS:\SCons\Test-4656\tests\KnownIncl\include main.c
 gcc -o main.exe main.o
 +-.
   +-include
-  | +-include\dqfile2.h
+  | +-include\include2.h
+  | +-include\include4.h
   +-main.c
   +-main.exe
   | +-main.o
   | | +-main.c
-  | | +-S:\SCons\Test-4656\tests\KnownIncl\include\dqfile1.h
-  | | +-include\dqfile2.h
+  | | +-S:\SCons\Test-4656\tests\KnownIncl\include\include1.h
+  | | +-include\include2.h
+  | | +-S:\SCons\Test-4656\tests\KnownIncl\include\include3.h
+  | | +-include\include4.h
   | | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
   | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
   +-main.o
   | +-main.c
-  | +-S:\SCons\Test-4656\tests\KnownIncl\include\dqfile1.h
-  | +-include\dqfile2.h
+  | +-S:\SCons\Test-4656\tests\KnownIncl\include\include1.h
+  | +-include\include2.h
+  | +-S:\SCons\Test-4656\tests\KnownIncl\include\include3.h
+  | +-include\include4.h
   | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
   +-SConstruct
 --- scons:build:end ---
@@ -44,8 +49,8 @@ Removed main.exe
 
 --- scons:deps:beg ---
 main.c MSVC C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.42.34433\bin\HostX64\x64\cl.EXE /nologo /E /w /I./include /I../KnownIncl/include S:\SCons\Test-4656\tests\KnownTest\main.c
-MSVCPreProcessorScanner main.c result: ['..\\KnownIncl\\include\\dqfile1.h', 'include\\dqfile2.h']
-MSVCPreProcessorScanner main.c expect: ['..\\KnownIncl\\include\\dqfile1.h', 'include\\dqfile2.h']
+MSVCPreProcessorScanner main.c result: ['..\\KnownIncl\\include\\include1.h', 'include\\include2.h', '..\\KnownIncl\\include\\include3.h', 'include\\include4.h']
+MSVCPreProcessorScanner main.c expect: ['..\\KnownIncl\\include\\include1.h', 'include\\include2.h', '..\\KnownIncl\\include\\include3.h', 'include\\include4.h']
 MSVCPreProcessorScanner main.c: dependencies match
 scons: `.' is up to date.
 --- scons:deps:end ---
@@ -56,19 +61,24 @@ cl /Fomain.obj /c main.c /nologo /Iinclude /IS:\SCons\Test-4656\tests\KnownIncl\
 link /nologo /OUT:main.exe main.obj
 +-.
   +-include
-  | +-include\dqfile2.h
+  | +-include\include2.h
+  | +-include\include4.h
   +-main.c
   +-main.exe
   | +-main.obj
   | | +-main.c
-  | | +-S:\SCons\Test-4656\tests\KnownIncl\include\dqfile1.h
-  | | +-include\dqfile2.h
+  | | +-S:\SCons\Test-4656\tests\KnownIncl\include\include1.h
+  | | +-include\include2.h
+  | | +-S:\SCons\Test-4656\tests\KnownIncl\include\include3.h
+  | | +-include\include4.h
   | | +-C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.42.34433\bin\HostX64\x64\cl.EXE
   | +-C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.42.34433\bin\HostX64\x64\link.EXE
   +-main.obj
   | +-main.c
-  | +-S:\SCons\Test-4656\tests\KnownIncl\include\dqfile1.h
-  | +-include\dqfile2.h
+  | +-S:\SCons\Test-4656\tests\KnownIncl\include\include1.h
+  | +-include\include2.h
+  | +-S:\SCons\Test-4656\tests\KnownIncl\include\include3.h
+  | +-include\include4.h
   | +-C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.42.34433\bin\HostX64\x64\cl.EXE
   +-SConstruct
 --- scons:build:end ---
@@ -84,8 +94,8 @@ Removed main.exe
 ++++++ CConditionalModScanner:beg ++++++
 
 --- scons:deps:beg ---
-CConditionalModScanner main.c result: ['..\\KnownIncl\\include\\dqfile1.h', 'include\\dqfile2.h']
-CConditionalModScanner main.c expect: ['..\\KnownIncl\\include\\dqfile1.h', 'include\\dqfile2.h']
+CConditionalModScanner main.c result: ['..\\KnownIncl\\include\\include1.h', 'include\\include2.h', '..\\KnownIncl\\include\\include3.h', 'include\\include4.h']
+CConditionalModScanner main.c expect: ['..\\KnownIncl\\include\\include1.h', 'include\\include2.h', '..\\KnownIncl\\include\\include3.h', 'include\\include4.h']
 CConditionalModScanner main.c: dependencies match
 scons: `.' is up to date.
 --- scons:deps:end ---
@@ -95,19 +105,24 @@ gcc -o main.o -c -Iinclude -IS:\SCons\Test-4656\tests\KnownIncl\include main.c
 gcc -o main.exe main.o
 +-.
   +-include
-  | +-include\dqfile2.h
+  | +-include\include2.h
+  | +-include\include4.h
   +-main.c
   +-main.exe
   | +-main.o
   | | +-main.c
-  | | +-S:\SCons\Test-4656\tests\KnownIncl\include\dqfile1.h
-  | | +-include\dqfile2.h
+  | | +-S:\SCons\Test-4656\tests\KnownIncl\include\include1.h
+  | | +-include\include2.h
+  | | +-S:\SCons\Test-4656\tests\KnownIncl\include\include3.h
+  | | +-include\include4.h
   | | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
   | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
   +-main.o
   | +-main.c
-  | +-S:\SCons\Test-4656\tests\KnownIncl\include\dqfile1.h
-  | +-include\dqfile2.h
+  | +-S:\SCons\Test-4656\tests\KnownIncl\include\include1.h
+  | +-include\include2.h
+  | +-S:\SCons\Test-4656\tests\KnownIncl\include\include3.h
+  | +-include\include4.h
   | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
   +-SConstruct
 --- scons:build:end ---
@@ -122,8 +137,8 @@ Removed main.exe
 ++++++ CConditionalScanner:beg ++++++
 
 --- scons:deps:beg ---
-CConditionalScanner main.c result: ['..\\KnownIncl\\include\\dqfile1.h', '..\\KnownIncl\\include\\dqfile2.h']
-CConditionalScanner main.c expect: ['..\\KnownIncl\\include\\dqfile1.h', 'include\\dqfile2.h']
+CConditionalScanner main.c result: ['..\\KnownIncl\\include\\include1.h', '..\\KnownIncl\\include\\include2.h', '..\\KnownIncl\\include\\include3.h', '..\\KnownIncl\\include\\include4.h']
+CConditionalScanner main.c expect: ['..\\KnownIncl\\include\\include1.h', 'include\\include2.h', '..\\KnownIncl\\include\\include3.h', 'include\\include4.h']
 CConditionalScanner main.c: !!! DEPENDENCIES DO NOT MATCH !!!
 scons: `.' is up to date.
 --- scons:deps:end ---
@@ -137,14 +152,18 @@ gcc -o main.exe main.o
   +-main.exe
   | +-main.o
   | | +-main.c
-  | | +-S:\SCons\Test-4656\tests\KnownIncl\include\dqfile1.h
-  | | +-S:\SCons\Test-4656\tests\KnownIncl\include\dqfile2.h
+  | | +-S:\SCons\Test-4656\tests\KnownIncl\include\include1.h
+  | | +-S:\SCons\Test-4656\tests\KnownIncl\include\include2.h
+  | | +-S:\SCons\Test-4656\tests\KnownIncl\include\include3.h
+  | | +-S:\SCons\Test-4656\tests\KnownIncl\include\include4.h
   | | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
   | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
   +-main.o
   | +-main.c
-  | +-S:\SCons\Test-4656\tests\KnownIncl\include\dqfile1.h
-  | +-S:\SCons\Test-4656\tests\KnownIncl\include\dqfile2.h
+  | +-S:\SCons\Test-4656\tests\KnownIncl\include\include1.h
+  | +-S:\SCons\Test-4656\tests\KnownIncl\include\include2.h
+  | +-S:\SCons\Test-4656\tests\KnownIncl\include\include3.h
+  | +-S:\SCons\Test-4656\tests\KnownIncl\include\include4.h
   | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
   +-SConstruct
 --- scons:build:end ---
@@ -159,8 +178,8 @@ Removed main.exe
 ++++++ CScanner:beg ++++++
 
 --- scons:deps:beg ---
-CScanner main.c result: ['..\\KnownIncl\\include\\dqfile1.h', 'include\\dqfile2.h']
-CScanner main.c expect: ['..\\KnownIncl\\include\\dqfile1.h', 'include\\dqfile2.h']
+CScanner main.c result: ['..\\KnownIncl\\include\\include3.h', 'include\\include4.h', '..\\KnownIncl\\include\\include1.h', 'include\\include2.h']
+CScanner main.c expect: ['..\\KnownIncl\\include\\include1.h', 'include\\include2.h', '..\\KnownIncl\\include\\include3.h', 'include\\include4.h']
 CScanner main.c: dependencies match
 scons: `.' is up to date.
 --- scons:deps:end ---
@@ -170,19 +189,24 @@ gcc -o main.o -c -Iinclude -IS:\SCons\Test-4656\tests\KnownIncl\include main.c
 gcc -o main.exe main.o
 +-.
   +-include
-  | +-include\dqfile2.h
+  | +-include\include2.h
+  | +-include\include4.h
   +-main.c
   +-main.exe
   | +-main.o
   | | +-main.c
-  | | +-S:\SCons\Test-4656\tests\KnownIncl\include\dqfile1.h
-  | | +-include\dqfile2.h
+  | | +-S:\SCons\Test-4656\tests\KnownIncl\include\include3.h
+  | | +-include\include4.h
+  | | +-S:\SCons\Test-4656\tests\KnownIncl\include\include1.h
+  | | +-include\include2.h
   | | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
   | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
   +-main.o
   | +-main.c
-  | +-S:\SCons\Test-4656\tests\KnownIncl\include\dqfile1.h
-  | +-include\dqfile2.h
+  | +-S:\SCons\Test-4656\tests\KnownIncl\include\include3.h
+  | +-include\include4.h
+  | +-S:\SCons\Test-4656\tests\KnownIncl\include\include1.h
+  | +-include\include2.h
   | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
   +-SConstruct
 --- scons:build:end ---

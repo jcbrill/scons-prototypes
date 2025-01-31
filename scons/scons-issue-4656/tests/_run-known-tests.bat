@@ -37,7 +37,7 @@
 
 @echo.
 @echo --- scons:deps:beg ---
-@"%PYEXE%" "%SCONS_ROOT%\scripts\scons.py" --site-dir="%SCONS_SITEDIR%" -Qn --scanner-deps %_SCONS_MSVC_COMPILER% --scanner=%_SCONS_SCANNER% --expected-map="{'main.c': ['../KnownIncl/include/dqfile1.h', 'include/dqfile2.h']}"
+@"%PYEXE%" "%SCONS_ROOT%\scripts\scons.py" --site-dir="%SCONS_SITEDIR%" -Qn --scanner-deps %_SCONS_MSVC_COMPILER% --scanner=%_SCONS_SCANNER% --expected-map="{'main.c': ['../KnownIncl/include/include1.h', 'include/include2.h', '../KnownIncl/include/include3.h', 'include/include4.h']}"
 @echo --- scons:deps:end ---
 @echo.
 @echo --- scons:build:beg ---
