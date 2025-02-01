@@ -1,0 +1,179 @@
+
+++++++ GCCProcessorScanner:beg ++++++
+
+--- scons:deps:beg ---
+main.c GCC C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE -fsyntax-only -E -dI -w S:\SCons\Test-4656\tests\AngleBracketTest\main.c
+GCCPreProcessorScanner main.c result: []
+GCCPreProcessorScanner main.c expect: []
+GCCPreProcessorScanner main.c: dependencies match
+scons: `.' is up to date.
+--- scons:deps:end ---
+
+--- scons:build:beg ---
+main.c GCC C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE -fsyntax-only -E -dI -w S:\SCons\Test-4656\tests\AngleBracketTest\main.c
+gcc -o main.o -c main.c
+gcc -o main.exe main.o
++-.
+  +-main.c
+  +-main.exe
+  | +-main.o
+  | | +-main.c
+  | | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
+  | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
+  +-main.o
+  | +-main.c
+  | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
+  +-SConstruct
+--- scons:build:end ---
+
+--- scons:clean:beg ---
+main.c GCC C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE -fsyntax-only -E -dI -w S:\SCons\Test-4656\tests\AngleBracketTest\main.c
+Removed main.o
+Removed main.exe
+--- scons:clean:end ---
+
+++++++ GCCProcessorScanner:end ++++++
+
+++++++ MSVCProcessorScanner:beg ++++++
+
+--- scons:deps:beg ---
+main.c MSVC C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.42.34433\bin\HostX64\x64\cl.EXE /nologo /E /w S:\SCons\Test-4656\tests\AngleBracketTest\main.c
+MSVCPreProcessorScanner main.c result: []
+MSVCPreProcessorScanner main.c expect: []
+MSVCPreProcessorScanner main.c: dependencies match
+scons: `.' is up to date.
+--- scons:deps:end ---
+
+--- scons:build:beg ---
+main.c MSVC C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.42.34433\bin\HostX64\x64\cl.EXE /nologo /E /w S:\SCons\Test-4656\tests\AngleBracketTest\main.c
+cl /Fomain.obj /c main.c /nologo
+link /nologo /OUT:main.exe main.obj
++-.
+  +-main.c
+  +-main.exe
+  | +-main.obj
+  | | +-main.c
+  | | +-C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.42.34433\bin\HostX64\x64\cl.EXE
+  | +-C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.42.34433\bin\HostX64\x64\link.EXE
+  +-main.obj
+  | +-main.c
+  | +-C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.42.34433\bin\HostX64\x64\cl.EXE
+  +-SConstruct
+--- scons:build:end ---
+
+--- scons:clean:beg ---
+main.c MSVC C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.42.34433\bin\HostX64\x64\cl.EXE /nologo /E /w S:\SCons\Test-4656\tests\AngleBracketTest\main.c
+Removed main.obj
+Removed main.exe
+--- scons:clean:end ---
+
+++++++ MSVCProcessorScanner:end ++++++
+
+++++++ CConditionalModScanner:beg ++++++
+
+--- scons:deps:beg ---
+CConditionalModScanner main.c result: []
+CConditionalModScanner main.c expect: []
+CConditionalModScanner main.c: dependencies match
+scons: `.' is up to date.
+--- scons:deps:end ---
+
+--- scons:build:beg ---
+gcc -o main.o -c main.c
+gcc -o main.exe main.o
++-.
+  +-main.c
+  +-main.exe
+  | +-main.o
+  | | +-main.c
+  | | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
+  | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
+  +-main.o
+  | +-main.c
+  | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
+  +-SConstruct
+--- scons:build:end ---
+
+--- scons:clean:beg ---
+Removed main.o
+Removed main.exe
+--- scons:clean:end ---
+
+++++++ CConditionalModScanner:end ++++++
+
+++++++ CConditionalScanner:beg ++++++
+
+--- scons:deps:beg ---
+CConditionalScanner main.c result: ['limits.h', 'anglebracket.h']
+CConditionalScanner main.c expect: []
+CConditionalScanner main.c: !!! DEPENDENCIES DO NOT MATCH !!!
+scons: `.' is up to date.
+--- scons:deps:end ---
+
+--- scons:build:beg ---
+gcc -o main.o -c main.c
+gcc -o main.exe main.o
++-.
+  +-anglebracket.h
+  +-limits.h
+  +-main.c
+  +-main.exe
+  | +-main.o
+  | | +-main.c
+  | | +-limits.h
+  | | +-anglebracket.h
+  | | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
+  | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
+  +-main.o
+  | +-main.c
+  | +-limits.h
+  | +-anglebracket.h
+  | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
+  +-SConstruct
+--- scons:build:end ---
+
+--- scons:clean:beg ---
+Removed main.o
+Removed main.exe
+--- scons:clean:end ---
+
+++++++ CConditionalScanner:end ++++++
+
+++++++ CScanner:beg ++++++
+
+--- scons:deps:beg ---
+CScanner main.c result: ['anglebracket.h', 'limits.h']
+CScanner main.c expect: []
+CScanner main.c: !!! DEPENDENCIES DO NOT MATCH !!!
+scons: `.' is up to date.
+--- scons:deps:end ---
+
+--- scons:build:beg ---
+gcc -o main.o -c main.c
+gcc -o main.exe main.o
++-.
+  +-anglebracket.h
+  +-limits.h
+  +-main.c
+  +-main.exe
+  | +-main.o
+  | | +-main.c
+  | | +-anglebracket.h
+  | | +-limits.h
+  | | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
+  | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
+  +-main.o
+  | +-main.c
+  | +-anglebracket.h
+  | +-limits.h
+  | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
+  +-SConstruct
+--- scons:build:end ---
+
+--- scons:clean:beg ---
+Removed main.o
+Removed main.exe
+--- scons:clean:end ---
+
+++++++ CScanner:end ++++++
+

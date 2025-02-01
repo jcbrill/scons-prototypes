@@ -13,6 +13,7 @@ export SCONS_SITEDIR="${SCRIPT_ROOT}/site-scons"
 mkdir -p "${SCRIPT_ROOT}/output"
 set -x
 
+"${SCRIPT_ROOT}/tests/anglebracket-tests.sh" >"${SCRIPT_ROOT}/output/wsl-output${SCONS_ROOT_LABEL}-anglebracket-tests.txt" 2>&1
 "${SCRIPT_ROOT}/tests/comment-tests.sh" >"${SCRIPT_ROOT}/output/wsl-output${SCONS_ROOT_LABEL}-comment-tests.txt" 2>&1
 "${SCRIPT_ROOT}/tests/incsyspath-tests.sh" >"${SCRIPT_ROOT}/output/wsl-output${SCONS_ROOT_LABEL}-incsyspath-tests.txt" 2>&1
 "${SCRIPT_ROOT}/tests/issue-tests.sh" >"${SCRIPT_ROOT}/output/wsl-output${SCONS_ROOT_LABEL}-issue-tests.txt" 2>&1

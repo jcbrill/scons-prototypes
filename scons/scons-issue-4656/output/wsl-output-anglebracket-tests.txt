@@ -1,0 +1,144 @@
+
+++++++ GCCProcessorScanner:beg ++++++
+
+--- scons:deps:beg ---
+main.c GCC /bin/gcc -fsyntax-only -E -dI -w /mnt/s/SCons/Test-4656/tests/AngleBracketTest/main.c
+GCCPreProcessorScanner main.c result: []
+GCCPreProcessorScanner main.c expect: []
+GCCPreProcessorScanner main.c: dependencies match
+scons: `.' is up to date.
+--- scons:deps:end ---
+
+--- scons:build:beg ---
+main.c GCC /bin/gcc -fsyntax-only -E -dI -w /mnt/s/SCons/Test-4656/tests/AngleBracketTest/main.c
+gcc -o main.o -c main.c
+gcc -o main main.o
++-.
+  +-SConstruct
+  +-main
+  | +-main.o
+  | | +-main.c
+  | | +-/bin/gcc
+  | +-/bin/gcc
+  +-main.c
+  +-main.o
+    +-main.c
+    +-/bin/gcc
+--- scons:build:end ---
+
+--- scons:clean:beg ---
+main.c GCC /bin/gcc -fsyntax-only -E -dI -w /mnt/s/SCons/Test-4656/tests/AngleBracketTest/main.c
+Removed main.o
+Removed main
+--- scons:clean:end ---
+
+++++++ GCCProcessorScanner:end ++++++
+
+++++++ CConditionalModScanner:beg ++++++
+
+--- scons:deps:beg ---
+CConditionalModScanner main.c result: []
+CConditionalModScanner main.c expect: []
+CConditionalModScanner main.c: dependencies match
+scons: `.' is up to date.
+--- scons:deps:end ---
+
+--- scons:build:beg ---
+gcc -o main.o -c main.c
+gcc -o main main.o
++-.
+  +-SConstruct
+  +-main
+  | +-main.o
+  | | +-main.c
+  | | +-/bin/gcc
+  | +-/bin/gcc
+  +-main.c
+  +-main.o
+    +-main.c
+    +-/bin/gcc
+--- scons:build:end ---
+
+--- scons:clean:beg ---
+Removed main.o
+Removed main
+--- scons:clean:end ---
+
+++++++ CConditionalModScanner:end ++++++
+
+++++++ CConditionalScanner:beg ++++++
+
+--- scons:deps:beg ---
+CConditionalScanner main.c result: ['limits.h', 'anglebracket.h']
+CConditionalScanner main.c expect: []
+CConditionalScanner main.c: !!! DEPENDENCIES DO NOT MATCH !!!
+scons: `.' is up to date.
+--- scons:deps:end ---
+
+--- scons:build:beg ---
+gcc -o main.o -c main.c
+gcc -o main main.o
++-.
+  +-SConstruct
+  +-anglebracket.h
+  +-limits.h
+  +-main
+  | +-main.o
+  | | +-main.c
+  | | +-limits.h
+  | | +-anglebracket.h
+  | | +-/bin/gcc
+  | +-/bin/gcc
+  +-main.c
+  +-main.o
+    +-main.c
+    +-limits.h
+    +-anglebracket.h
+    +-/bin/gcc
+--- scons:build:end ---
+
+--- scons:clean:beg ---
+Removed main.o
+Removed main
+--- scons:clean:end ---
+
+++++++ CConditionalScanner:end ++++++
+
+++++++ CScanner:beg ++++++
+
+--- scons:deps:beg ---
+CScanner main.c result: ['anglebracket.h', 'limits.h']
+CScanner main.c expect: []
+CScanner main.c: !!! DEPENDENCIES DO NOT MATCH !!!
+scons: `.' is up to date.
+--- scons:deps:end ---
+
+--- scons:build:beg ---
+gcc -o main.o -c main.c
+gcc -o main main.o
++-.
+  +-SConstruct
+  +-anglebracket.h
+  +-limits.h
+  +-main
+  | +-main.o
+  | | +-main.c
+  | | +-anglebracket.h
+  | | +-limits.h
+  | | +-/bin/gcc
+  | +-/bin/gcc
+  +-main.c
+  +-main.o
+    +-main.c
+    +-anglebracket.h
+    +-limits.h
+    +-/bin/gcc
+--- scons:build:end ---
+
+--- scons:clean:beg ---
+Removed main.o
+Removed main
+--- scons:clean:end ---
+
+++++++ CScanner:end ++++++
+

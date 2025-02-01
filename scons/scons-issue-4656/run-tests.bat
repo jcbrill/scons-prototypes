@@ -15,6 +15,7 @@
 
 @if not exist "%SCRIPT_ROOT%\output" @mkdir "%SCRIPT_ROOT%\output"
 
+call "%SCRIPT_ROOT%\tests\anglebracket-tests.bat" >"%SCRIPT_ROOT%\output\win-output%SCONS_ROOT_LABEL%-anglebracket-tests.txt" 2>&1
 call "%SCRIPT_ROOT%\tests\comment-tests.bat" >"%SCRIPT_ROOT%\output\win-output%SCONS_ROOT_LABEL%-comment-tests.txt" 2>&1
 call "%SCRIPT_ROOT%\tests\incsyspath-tests.bat" >"%SCRIPT_ROOT%\output\win-output%SCONS_ROOT_LABEL%-incsyspath-tests.txt" 2>&1
 call "%SCRIPT_ROOT%\tests\issue-tests.bat" >"%SCRIPT_ROOT%\output\win-output%SCONS_ROOT_LABEL%-issue-tests.txt" 2>&1
