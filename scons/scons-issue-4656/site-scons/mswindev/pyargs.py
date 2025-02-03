@@ -21,7 +21,7 @@
 
 """Command-line argument utilities."""
 
-from typing import Callable, List, Optional
+from typing import Callable, List
 
 __all__: List[str] = [
     "nonposix_join_args",
@@ -330,10 +330,10 @@ nonposix_join_args = _NonPosix.join_list
 
 # platform: windows, posix, None
 
-platform_split_args: Optional[Callable]
-platform_quote_arg: Optional[Callable]
-platform_quote_args: Optional[Callable]
-platform_join_args: Optional[Callable]
+platform_split_args: Callable
+platform_quote_arg: Callable
+platform_quote_args: Callable
+platform_join_args: Callable
 
 if pyinfo.pyplatform_cfg.IS_WINDOWS:
 
