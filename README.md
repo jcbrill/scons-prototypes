@@ -1,2 +1,2 @@
 # scons-prototypes
-Throwaway code snippets, fragments, and scripts for SCons testing and prototyping.
+Code snippets, fragments, and scripts for SCons research, testing, and prototyping.
