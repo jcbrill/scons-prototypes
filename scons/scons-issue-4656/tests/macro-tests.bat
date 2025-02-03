@@ -17,6 +17,11 @@
 @echo ++++++ MSVCProcessorScanner:end ++++++
 
 @echo.
+@echo ++++++ CConditionalModScanner:beg ++++++
+@call "%SCRIPT_ROOT%\_run-macro-tests.bat" CConditionalModScanner
+@echo ++++++ CConditionalModScanner:end ++++++
+
+@echo.
 @echo ++++++ CConditionalScanner:beg ++++++
 @call "%SCRIPT_ROOT%\_run-macro-tests.bat" CConditionalScanner
 @echo ++++++ CConditionalScanner:end ++++++

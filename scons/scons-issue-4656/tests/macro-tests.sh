@@ -11,6 +11,11 @@ echo ++++++ GCCProcessorScanner:beg ++++++
 echo ++++++ GCCProcessorScanner:end ++++++
 
 echo
+echo ++++++ CConditionalModScanner:beg ++++++
+"${SCRIPT_ROOT}/_run-macro-tests.sh" CConditionalModScanner
+echo ++++++ CConditionalModScanner:end ++++++
+
+echo
 echo ++++++ CConditionalScanner:beg ++++++
 "${SCRIPT_ROOT}/_run-macro-tests.sh" CConditionalScanner
 echo ++++++ CConditionalScanner:end ++++++

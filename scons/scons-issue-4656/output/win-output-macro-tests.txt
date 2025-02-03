@@ -81,6 +81,38 @@ Removed main.exe
 
 ++++++ MSVCProcessorScanner:end ++++++
 
+++++++ CConditionalModScanner:beg ++++++
+
+--- scons:deps:beg ---
+CConditionalModScanner main.c result: []
+CConditionalModScanner main.c expect: ['compiler_mingw.h', 'arch_x64.h']
+CConditionalModScanner main.c: !!! DEPENDENCIES DO NOT MATCH !!!
+scons: `.' is up to date.
+--- scons:deps:end ---
+
+--- scons:build:beg ---
+gcc -o main.o -c main.c
+gcc -o main.exe main.o
++-.
+  +-main.c
+  +-main.exe
+  | +-main.o
+  | | +-main.c
+  | | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
+  | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
+  +-main.o
+  | +-main.c
+  | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
+  +-SConstruct
+--- scons:build:end ---
+
+--- scons:clean:beg ---
+Removed main.o
+Removed main.exe
+--- scons:clean:end ---
+
+++++++ CConditionalModScanner:end ++++++
+
 ++++++ CConditionalScanner:beg ++++++
 
 --- scons:deps:beg ---
