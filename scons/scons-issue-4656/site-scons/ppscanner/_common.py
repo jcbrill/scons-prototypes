@@ -1,5 +1,5 @@
-__copyright__ = "Copyright (C) 2025 Joseph C. Brill"
-__license__ = "MIT License"
+# SPDX-FileCopyrightText: Copyright 2025 Joseph C. Brill
+# SPDX-License-Identifier: MIT
 
 __all__ = [
     "DEFAULT_ENCODING",

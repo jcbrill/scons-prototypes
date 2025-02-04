@@ -1,5 +1,5 @@
-__copyright__ = "Copyright (C) 2025 Joseph C. Brill"
-__license__ = "MIT License"
+# SPDX-FileCopyrightText: Copyright 2025 Joseph C. Brill
+# SPDX-License-Identifier: MIT
 
 # C++ raw strings are not supported
 # trigraphs are not supported
