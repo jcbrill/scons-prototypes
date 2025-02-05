@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: Copyright 2025 Joseph C. Brill
+# SPDX-FileCopyrightText: Copyright (c) 2025 Joseph C. Brill
 # SPDX-License-Identifier: MIT
 
 __all__ = [
