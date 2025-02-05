@@ -27,6 +27,7 @@ Table of Contents:
 * [5. Custom Compiler Preprocessor Scanners](#jcbrill-c01-5)
 * [6. File Inclusion Search Paths](#jcbrill-c01-6)
 * [7. Discussion](#jcbrill-c01-7) ${\color{#D8A200} \text{[Under Construction]}}$
+* [A. Known Issues Addendum](#jcbrill-c01-a) ${\color{#D8A200} \text{[Under Construction]}}$
 
 <a id='jcbrill-c01-1'></a>
 ## 1. Introduction
@@ -41,7 +42,12 @@ The content presented is based on insights and results derived from a series of 
 
 [Section 5](#jcbrill-c01-5) contains a discussion of results from the custom compiler preprocessor scanners.
 
-[Section 6](#jcbrill-c01-6) contains a discussion of the findings.
+[Section 6](#jcbrill-c01-6) contains documentation of the file inclusion search paths from the c and c++ standards and the MSVC and GNU compilers.
+
+[Section 7](#jcbrill-c01-7) contains a discussion of the research presented.
+
+[Addendum A](#jcbrill-c01-7) contains additional known issues for the SCons C scanners.
+
 
 <a id='jcbrill-c01-2'></a>
 ## 2. Research Repository
@@ -1190,7 +1196,6 @@ If you specify other options on the command line, such as -I, that affect where 
 
 Note that you can also prevent the preprocessor from searching any of the default system header directories with the -nostdinc option. This is useful when you are compiling an operating system kernel or some other program that does not use the standard C library facilities, or the standard C library itself.  
 
-
 <a id='jcbrill-c01-7'></a>
 ## 7. Discussion
 
@@ -1203,3 +1208,33 @@ Issues:
 * 3.3 KnownTest: CConditionalScanner
 * 3.4 AngleBracketTest: CConditionalScanner, CScanner
 * 3.5 CommentTest: CConditionalSCanner, CScanner
+
+<a id='jcbrill-c01-a'></a>
+## A. Known Issues Addendum
+
+Subsection map:
+* [A.1 SCons/cpp.py](#jcbrill-c01-a.1)
+* [A.2 Test Suite](#jcbrill-c01-a.2)
+
+<a id='jcbrill-c01-a.1'></a>
+### A.1 *SCons/cpp.py*
+
+Reference: https://github.com/SCons/scons/pull/4629#issuecomment-2467069747 (edited locally)
+
+Known issues, potential issues and research items for `SCons/cpp.py`:
+* The regex substitution for integer literals strips the optional suffix.  It is possible that a macro argument is a valid integer literal and the macro implementation is using the argument for token pasting/concatenation.  In this case, stripping the suffix is invalid.  This is likely either very difficult or nearly impossible to handle based on the current implementation.
+* The cpp namespace dictionary may need to add symbols `true` and `false` to be compatible with the c and c++ standard specifications (i.e., if `true` and `false` are not in the namespace dictionary, then add them).
+* In some contexts, an undefined preprocessor symbol is treated as `0` while in the SCons implementation, an undefined symbol causes `eval` to fail.  A UserDict overriding `__getitem__` might be necessary.
+* For a defined symbol whose value is a literal integer, the literal integer string is converted to an integer in the namespace dictionary.  If the same symbol is then used with token pasting/concatenation, the evaluation most likely fails due trying to "add" a string and an integer.
+* Verify if the "stringify" operator (i.e., `#`) is supported.  If the stringify operator is not supported, determine if is there a reasonable implementation.
+* Unlike include resolution, the expression evaluation for `#IF` and `#IFDEF` is not recursive at present (i.e., only one expansion is performed).
+* Expansion issues (see above) can cause a string to be "evaluated" as the result of the expansion causing the test to be true.  For example, if  `'0'` is returned, the result would be `True`; where if `0` is returned the result would be `False`.  There may be examples of this behavior in the current test suite.
+* Verify if the existing recursive implementation correctly handles macro calls with macro arguments and parenthesized arguments correctly.
+
+<a id='jcbrill-c01-a.2'></a>
+### A.2 Test Suite
+
+> [!WARNING]
+> Under Construction.
+
+${\color{#FF695C} \normalsize \textbf{TODO}}$: Find *CConditionalScanner* tests which employ invalid c code that result in errors using modern compilers.
