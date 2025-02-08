@@ -10,11 +10,6 @@
 <!--- ${\color{#00C500} \normalsize GREEN}$ -->
 <!--- ${\normalsize NORMAL}$ -->
 
-> [!CAUTION]
-> This comment is under construction and will continue to be edited until complete. \
-> A local document is being used to develop the content prior to editing/updating this comment. \
-> *This admonition will be removed once all of intended information is presented.*
-
 The intent of this post is to document some of the existing issues and limitations of the *CConditionalScanner*, and to a lesser extent, the *CScanner*.
 
 ***Please report any erroneous assumptions, interpretations, and conclusions.***
@@ -26,8 +21,8 @@ Table of Contents:
 * [4. SCons Scanner Limitations](#jcbrill-c01-4)
 * [5. Custom Compiler Preprocessor Scanners](#jcbrill-c01-5)
 * [6. File Inclusion Search Paths](#jcbrill-c01-6)
-* [7. Discussion](#jcbrill-c01-7) ${\color{#D8A200} \text{[Under Construction]}}$
-* [A. Known Issues Addendum](#jcbrill-c01-a) ${\color{#D8A200} \text{[Under Construction]}}$
+* [7. Discussion](#jcbrill-c01-7)
+* [A. Known Issues Addendum](#jcbrill-c01-a)
 
 <a id='jcbrill-c01-1'></a>
 ## 1. Introduction
@@ -1199,15 +1194,53 @@ Note that you can also prevent the preprocessor from searching any of the defaul
 <a id='jcbrill-c01-7'></a>
 ## 7. Discussion
 
-> [!WARNING]
-> Under Construction.
+The estimated effort/complexity to address the issues described in [Section 3](#jcbrill-c01-3) is summarized in the following table.
 
-Issues:
-* 3.1 RecurseTest: CConditionalScanner
-* 3.2 MultipleTest: CConditionalScanner, CConditionalModScanner
-* 3.3 KnownTest: CConditionalScanner
-* 3.4 AngleBracketTest: CConditionalScanner, CScanner
-* 3.5 CommentTest: CConditionalSCanner, CScanner
+| Note | Section | Issue     | Effort | Affects |
+| :-: | :-: | :--       | :--  | :-- |
+| 1 | [3.1](#jcbrill-c01-3.1) | Recurse nodes | Easy | ${\color{#FF695C} \normalsize \textit{CConditionalScanner}}$ |
+| 2 | [3.2](#jcbrill-c01-3.2) | Multiple file inclusions | Hard | ${\color{#FF695C} \normalsize \textit{CConditionalScanner}}$, ${\normalsize \textit{CConditionalModScanner}}$ |
+| 3 | [3.3](#jcbrill-c01-3.3) | Known paths prefix   | Easy | ${\color{#FF695C} \normalsize \textit{CConditionalScanner}}$ |
+| 4 | [3.4](#jcbrill-c01-3.4) | Angle bracket search path | Easy | ${\color{#FF695C} \normalsize \textit{CConditionalScanner}}$, ${\color{#FF695C} \normalsize \textit{CScanner}}$ | 
+| 5 | [3.5](#jcbrill-c01-3.5) | Text transformation | Hard | ${\color{#FF695C} \normalsize \textit{CConditionalScanner}}$, ${\color{#FF695C} \normalsize \textit{CScanner}}$, ${\normalsize \textit{CConditionalModScanner}}$ |
+
+Notes:
+
+1. Scanners that have a recursive implementation should:
+   * return an empty list from the `recurse_nodes` method, and/or,
+   * pass `recursive=False` in the constructor for scanners derived from *SCons.Scanner.ScannerBase*.
+
+2. The cycle prevention implementation prevents processing an included header more than once.  In both c and c++, a file can be legitimately included multiple times (e.g., code generation based on the values of defines set before inclusion) with possibly different dependencies on each inclusion.
+
+   The global list employed to gather files while walking the tree can erroneously prune branches from the search tree.
+   
+   While not intractable, the effort to fix these issues is anticipated to be more involved.
+
+3. There are multiple issues with the search path adjustment for known paths in the *CConditionalScanner* implementation.  The adjustment to the search order can yield incorrect dependencies as compared to the dependencies seen by the compiler.
+
+   The known paths implementation should be removed outright.
+
+4. The source file directory is at the end of the angle bracket search path.
+
+   Modern gcc and MSVC compilers do not include the source file directory in the angle bracket search path by default.
+
+5. The *CScanner* and *CConditionalScanner* do not implement all of the transformations described by the c and c++ standards prior to searching for preprocessor directives.
+
+   Most notably, removing comments from the text priot to the scan for preprocessor directives.  Unfortunately, to correctly remove comments, global regular expression search and replace cannot be employed.  For example, it is perfectly legal for the comment delimiters/tokens to appear in literal strings, (.e.g., `"/*"`).
+
+   The text transformation for stripping comments is not intractable.  However, support for C++ raw strings adds significant complexity.
+   
+   See [*\_preprocess.py*](https://github.com/jcbrill/scons-prototypes/blob/main/scons/scons-issue-4656/site-scons/ppscanner/_preprocess.py) for a prototype implementation *without* C++ raw strings.
+
+Refer to the individual linked sections for a more comprehensive discussion and examples of each of the issues.
+
+As described in [Section 6.2](#jcbrill-c01-6.2), the gcc and MSVC compilers have different search path implementations for quoted include files.  This could possibly lead to the *CConditionalScanner* producing erroneous dependencies if the compiler search path rules were relied on when writing the source code for a specific compiler.
+
+*The issues discussed in this document coupled with the issues documented earlier (reproduced in [Section A.1](#jcbrill-c01-a) below) will take a **significant** development effort to resolve.*
+
+The author has doubts about the efficacy of a compiler agnostic conditional scanner.  File inclusion search paths are implementation defined.  Compatibility with the c and c++ standards needs to continuously evolve.  Correctly evaluating preprocessing directives is very difficult and is predicated on the correct discovery and inclusion of dependent files.
+
+For the gcc and MSVC compilers, it may be less involved and more maintainable to use the compiler preprocessors directly to detect implicit dependencies when compared to fixing the known issues with the *CConditionalScanner*.  However, there are a number of challenges involved with using the compiler preprocessors directly as well.  Basically, one set of challenges is traded for a different set of challenges.
 
 <a id='jcbrill-c01-a'></a>
 ## A. Known Issues Addendum
@@ -1234,7 +1267,4 @@ Known issues, potential issues and research items for `SCons/cpp.py`:
 <a id='jcbrill-c01-a.2'></a>
 ### A.2 Test Suite
 
-> [!WARNING]
-> Under Construction.
-
-${\color{#FF695C} \normalsize \textbf{TODO}}$: Find *CConditionalScanner* tests which employ invalid c code that result in errors using modern compilers.
+${\color{#D8A200} \normalsize \textbf{TODO}}$: Document *CConditionalScanner* tests which employ invalid c code for testing that would otherwise result in compiler preprocessor errors.
