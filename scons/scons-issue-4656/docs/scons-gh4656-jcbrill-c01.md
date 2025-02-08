@@ -73,9 +73,9 @@ The primary test environments employed for this document are:
   * gcc 11.2.0 (mingw-w64)
   * msvc 14.42.34433 (vs2022 community)
   * python 3.7.9 (embedded)
-* Windows 10 WSL2 (Windows Subsystem for Linux):
-  * gcc 9.4.0
-  * python 3.10.16
+* Windows 10 WSL2 (Ubuntu 22.04):
+  * gcc 11.4.0
+  * python 3.10.12
 
 <a id='jcbrill-c01-2.1'></a>
 ### 2.1 External Library

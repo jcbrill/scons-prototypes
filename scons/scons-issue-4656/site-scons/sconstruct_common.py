@@ -6,6 +6,7 @@ __all__ = [
     "scanner_dependencies",
 ]
 
+import ast
 import os
 from typing import Any, Dict, List, NamedTuple, Optional
 
@@ -223,7 +224,7 @@ def scanner_configuration(suffixes=_UNDEFINED):
             SCons.Script.SourceFileScanner.add_scanner(suffix, c_scanner)
 
     expected_scanner_str = SCons.Script.GetOption("expected_scanner_map")
-    expected_scanner = eval(expected_scanner_str) if expected_scanner_str != _UNDEFINED else None
+    expected_scanner = ast.literal_eval(expected_scanner_str) if expected_scanner_str != _UNDEFINED else None
 
     expected_scanner_dict = {}
     if expected_scanner:
@@ -232,7 +233,7 @@ def scanner_configuration(suffixes=_UNDEFINED):
                     expected_scanner_dict[key] = val
 
     expected_str = SCons.Script.GetOption("expected_map")
-    expected_dict = eval(expected_str) if expected_str != _UNDEFINED else None
+    expected_dict = ast.literal_eval(expected_str) if expected_str != _UNDEFINED else None
 
     if expected_scanner_dict and c_scanner_kind in expected_scanner_dict:
         expected_map = expected_scanner_dict[c_scanner_kind]
