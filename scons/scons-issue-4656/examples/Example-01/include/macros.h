@@ -1,5 +1,5 @@
-#ifndef COMMON_H
-#define COMMON_H
+#ifndef MACROS_H
+#define MACROS_H
 
     #if defined(_MSC_VER) && _MSVC_VER < 1400
 
