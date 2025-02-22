@@ -1,0 +1,180 @@
+
+++++++ GCCProcessorScanner:beg ++++++
+
+--- scons:deps:beg ---
+src\main.c GCC C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE -fsyntax-only -E -dI -w -Iinclude S:\SCons\Test-4656\examples\Example-01\src\main.c
+GCCPreProcessorScanner src/main.c result: []
+GCCPreProcessorScanner src/main.c expect: []
+GCCPreProcessorScanner src/main.c: dependencies match
+scons: `.' is up to date.
+--- scons:deps:end ---
+
+--- scons:build:beg ---
+src\main.c GCC C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE -fsyntax-only -E -dI -w -Iinclude S:\SCons\Test-4656\examples\Example-01\src\main.c
+gcc -o src\main.o -c -Iinclude src\main.c
+gcc -o src\main.exe src\main.o
++-.
+  +-include
+  +-SConstruct
+  +-src
+    +-src\main.c
+    +-src\main.exe
+    | +-src\main.o
+    | | +-src\main.c
+    | | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
+    | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
+    +-src\main.o
+      +-src\main.c
+      +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
+--- scons:build:end ---
+
+--- scons:clean:beg ---
+src\main.c GCC C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE -fsyntax-only -E -dI -w -Iinclude S:\SCons\Test-4656\examples\Example-01\src\main.c
+Removed src\main.o
+Removed src\main.exe
+--- scons:clean:end ---
+
+--- scons:deps:beg ---
+src\main.c GCC C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE -fsyntax-only -E -dI -w -DFEATURE_A_ENABLED= -Iinclude S:\SCons\Test-4656\examples\Example-01\src\main.c
+GCCPreProcessorScanner src/main.c -DFEATURE_A_ENABLED=
+GCCPreProcessorScanner src/main.c result: []
+GCCPreProcessorScanner src/main.c expect: []
+GCCPreProcessorScanner src/main.c: dependencies match
+scons: `.' is up to date.
+--- scons:deps:end ---
+
+--- scons:build:beg ---
+src\main.c GCC C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE -fsyntax-only -E -dI -w -DFEATURE_A_ENABLED= -Iinclude S:\SCons\Test-4656\examples\Example-01\src\main.c
+gcc -o src\main.o -c -DFEATURE_A_ENABLED= -Iinclude src\main.c
+gcc -o src\main.exe src\main.o
++-.
+  +-include
+  +-SConstruct
+  +-src
+    +-src\main.c
+    +-src\main.exe
+    | +-src\main.o
+    | | +-src\main.c
+    | | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
+    | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
+    +-src\main.o
+      +-src\main.c
+      +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
+--- scons:build:end ---
+
+--- scons:clean:beg ---
+src\main.c GCC C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE -fsyntax-only -E -dI -w -DFEATURE_A_ENABLED= -Iinclude S:\SCons\Test-4656\examples\Example-01\src\main.c
+Removed src\main.o
+Removed src\main.exe
+--- scons:clean:end ---
+
+--- scons:deps:beg ---
+src\main.c GCC C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE -fsyntax-only -E -dI -w -DFEATURE_A_ENABLED=0 -Iinclude S:\SCons\Test-4656\examples\Example-01\src\main.c
+GCCPreProcessorScanner src/main.c -DFEATURE_A_ENABLED=0
+GCCPreProcessorScanner src/main.c result: []
+GCCPreProcessorScanner src/main.c expect: []
+GCCPreProcessorScanner src/main.c: dependencies match
+scons: `.' is up to date.
+--- scons:deps:end ---
+
+--- scons:build:beg ---
+src\main.c GCC C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE -fsyntax-only -E -dI -w -DFEATURE_A_ENABLED=0 -Iinclude S:\SCons\Test-4656\examples\Example-01\src\main.c
+gcc -o src\main.o -c -DFEATURE_A_ENABLED=0 -Iinclude src\main.c
+gcc -o src\main.exe src\main.o
++-.
+  +-include
+  +-SConstruct
+  +-src
+    +-src\main.c
+    +-src\main.exe
+    | +-src\main.o
+    | | +-src\main.c
+    | | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
+    | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
+    +-src\main.o
+      +-src\main.c
+      +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
+--- scons:build:end ---
+
+--- scons:clean:beg ---
+src\main.c GCC C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE -fsyntax-only -E -dI -w -DFEATURE_A_ENABLED=0 -Iinclude S:\SCons\Test-4656\examples\Example-01\src\main.c
+Removed src\main.o
+Removed src\main.exe
+--- scons:clean:end ---
+
+--- scons:deps:beg ---
+src\main.c GCC C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE -fsyntax-only -E -dI -w -DFEATURE_A_ENABLED -Iinclude S:\SCons\Test-4656\examples\Example-01\src\main.c
+GCCPreProcessorScanner src/main.c -DFEATURE_A_ENABLED
+GCCPreProcessorScanner src/main.c result: ['include\\header1.h']
+GCCPreProcessorScanner src/main.c expect: ['include\\header1.h']
+GCCPreProcessorScanner src/main.c: dependencies match
+scons: `.' is up to date.
+--- scons:deps:end ---
+
+--- scons:build:beg ---
+src\main.c GCC C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE -fsyntax-only -E -dI -w -DFEATURE_A_ENABLED -Iinclude S:\SCons\Test-4656\examples\Example-01\src\main.c
+gcc -o src\main.o -c -DFEATURE_A_ENABLED -Iinclude src\main.c
+gcc -o src\main.exe src\main.o
++-.
+  +-include
+  | +-include\header1.h
+  +-SConstruct
+  +-src
+    +-src\main.c
+    +-src\main.exe
+    | +-src\main.o
+    | | +-src\main.c
+    | | +-include\header1.h
+    | | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
+    | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
+    +-src\main.o
+      +-src\main.c
+      +-include\header1.h
+      +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
+--- scons:build:end ---
+
+--- scons:clean:beg ---
+src\main.c GCC C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE -fsyntax-only -E -dI -w -DFEATURE_A_ENABLED -Iinclude S:\SCons\Test-4656\examples\Example-01\src\main.c
+Removed src\main.o
+Removed src\main.exe
+--- scons:clean:end ---
+
+--- scons:deps:beg ---
+src\main.c GCC C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE -fsyntax-only -E -dI -w -DFEATURE_A_ENABLED=1 -Iinclude S:\SCons\Test-4656\examples\Example-01\src\main.c
+GCCPreProcessorScanner src/main.c -DFEATURE_A_ENABLED=1
+GCCPreProcessorScanner src/main.c result: ['include\\header1.h']
+GCCPreProcessorScanner src/main.c expect: ['include\\header1.h']
+GCCPreProcessorScanner src/main.c: dependencies match
+scons: `.' is up to date.
+--- scons:deps:end ---
+
+--- scons:build:beg ---
+src\main.c GCC C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE -fsyntax-only -E -dI -w -DFEATURE_A_ENABLED=1 -Iinclude S:\SCons\Test-4656\examples\Example-01\src\main.c
+gcc -o src\main.o -c -DFEATURE_A_ENABLED=1 -Iinclude src\main.c
+gcc -o src\main.exe src\main.o
++-.
+  +-include
+  | +-include\header1.h
+  +-SConstruct
+  +-src
+    +-src\main.c
+    +-src\main.exe
+    | +-src\main.o
+    | | +-src\main.c
+    | | +-include\header1.h
+    | | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
+    | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
+    +-src\main.o
+      +-src\main.c
+      +-include\header1.h
+      +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
+--- scons:build:end ---
+
+--- scons:clean:beg ---
+src\main.c GCC C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE -fsyntax-only -E -dI -w -DFEATURE_A_ENABLED=1 -Iinclude S:\SCons\Test-4656\examples\Example-01\src\main.c
+Removed src\main.o
+Removed src\main.exe
+--- scons:clean:end ---
+
+++++++ GCCProcessorScanner:end ++++++
+

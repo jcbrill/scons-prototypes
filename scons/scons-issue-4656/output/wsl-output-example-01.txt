@@ -1,0 +1,180 @@
+
+++++++ GCCProcessorScanner:beg ++++++
+
+--- scons:deps:beg ---
+src/main.c GCC /bin/gcc -fsyntax-only -E -dI -w -Iinclude /mnt/s/SCons/Test-4656/examples/Example-01/src/main.c
+GCCPreProcessorScanner src/main.c result: []
+GCCPreProcessorScanner src/main.c expect: []
+GCCPreProcessorScanner src/main.c: dependencies match
+scons: `.' is up to date.
+--- scons:deps:end ---
+
+--- scons:build:beg ---
+src/main.c GCC /bin/gcc -fsyntax-only -E -dI -w -Iinclude /mnt/s/SCons/Test-4656/examples/Example-01/src/main.c
+gcc -o src/main.o -c -Iinclude src/main.c
+gcc -o src/main src/main.o
++-.
+  +-SConstruct
+  +-include
+  +-src
+    +-src/main
+    | +-src/main.o
+    | | +-src/main.c
+    | | +-/bin/gcc
+    | +-/bin/gcc
+    +-src/main.c
+    +-src/main.o
+      +-src/main.c
+      +-/bin/gcc
+--- scons:build:end ---
+
+--- scons:clean:beg ---
+src/main.c GCC /bin/gcc -fsyntax-only -E -dI -w -Iinclude /mnt/s/SCons/Test-4656/examples/Example-01/src/main.c
+Removed src/main.o
+Removed src/main
+--- scons:clean:end ---
+
+--- scons:deps:beg ---
+src/main.c GCC /bin/gcc -fsyntax-only -E -dI -w -DFEATURE_A_ENABLED= -Iinclude /mnt/s/SCons/Test-4656/examples/Example-01/src/main.c
+GCCPreProcessorScanner src/main.c -DFEATURE_A_ENABLED=
+GCCPreProcessorScanner src/main.c result: []
+GCCPreProcessorScanner src/main.c expect: []
+GCCPreProcessorScanner src/main.c: dependencies match
+scons: `.' is up to date.
+--- scons:deps:end ---
+
+--- scons:build:beg ---
+src/main.c GCC /bin/gcc -fsyntax-only -E -dI -w -DFEATURE_A_ENABLED= -Iinclude /mnt/s/SCons/Test-4656/examples/Example-01/src/main.c
+gcc -o src/main.o -c -DFEATURE_A_ENABLED= -Iinclude src/main.c
+gcc -o src/main src/main.o
++-.
+  +-SConstruct
+  +-include
+  +-src
+    +-src/main
+    | +-src/main.o
+    | | +-src/main.c
+    | | +-/bin/gcc
+    | +-/bin/gcc
+    +-src/main.c
+    +-src/main.o
+      +-src/main.c
+      +-/bin/gcc
+--- scons:build:end ---
+
+--- scons:clean:beg ---
+src/main.c GCC /bin/gcc -fsyntax-only -E -dI -w -DFEATURE_A_ENABLED= -Iinclude /mnt/s/SCons/Test-4656/examples/Example-01/src/main.c
+Removed src/main.o
+Removed src/main
+--- scons:clean:end ---
+
+--- scons:deps:beg ---
+src/main.c GCC /bin/gcc -fsyntax-only -E -dI -w -DFEATURE_A_ENABLED=0 -Iinclude /mnt/s/SCons/Test-4656/examples/Example-01/src/main.c
+GCCPreProcessorScanner src/main.c -DFEATURE_A_ENABLED=0
+GCCPreProcessorScanner src/main.c result: []
+GCCPreProcessorScanner src/main.c expect: []
+GCCPreProcessorScanner src/main.c: dependencies match
+scons: `.' is up to date.
+--- scons:deps:end ---
+
+--- scons:build:beg ---
+src/main.c GCC /bin/gcc -fsyntax-only -E -dI -w -DFEATURE_A_ENABLED=0 -Iinclude /mnt/s/SCons/Test-4656/examples/Example-01/src/main.c
+gcc -o src/main.o -c -DFEATURE_A_ENABLED=0 -Iinclude src/main.c
+gcc -o src/main src/main.o
++-.
+  +-SConstruct
+  +-include
+  +-src
+    +-src/main
+    | +-src/main.o
+    | | +-src/main.c
+    | | +-/bin/gcc
+    | +-/bin/gcc
+    +-src/main.c
+    +-src/main.o
+      +-src/main.c
+      +-/bin/gcc
+--- scons:build:end ---
+
+--- scons:clean:beg ---
+src/main.c GCC /bin/gcc -fsyntax-only -E -dI -w -DFEATURE_A_ENABLED=0 -Iinclude /mnt/s/SCons/Test-4656/examples/Example-01/src/main.c
+Removed src/main.o
+Removed src/main
+--- scons:clean:end ---
+
+--- scons:deps:beg ---
+src/main.c GCC /bin/gcc -fsyntax-only -E -dI -w -DFEATURE_A_ENABLED -Iinclude /mnt/s/SCons/Test-4656/examples/Example-01/src/main.c
+GCCPreProcessorScanner src/main.c -DFEATURE_A_ENABLED
+GCCPreProcessorScanner src/main.c result: ['include/header1.h']
+GCCPreProcessorScanner src/main.c expect: ['include/header1.h']
+GCCPreProcessorScanner src/main.c: dependencies match
+scons: `.' is up to date.
+--- scons:deps:end ---
+
+--- scons:build:beg ---
+src/main.c GCC /bin/gcc -fsyntax-only -E -dI -w -DFEATURE_A_ENABLED -Iinclude /mnt/s/SCons/Test-4656/examples/Example-01/src/main.c
+gcc -o src/main.o -c -DFEATURE_A_ENABLED -Iinclude src/main.c
+gcc -o src/main src/main.o
++-.
+  +-SConstruct
+  +-include
+  | +-include/header1.h
+  +-src
+    +-src/main
+    | +-src/main.o
+    | | +-src/main.c
+    | | +-include/header1.h
+    | | +-/bin/gcc
+    | +-/bin/gcc
+    +-src/main.c
+    +-src/main.o
+      +-src/main.c
+      +-include/header1.h
+      +-/bin/gcc
+--- scons:build:end ---
+
+--- scons:clean:beg ---
+src/main.c GCC /bin/gcc -fsyntax-only -E -dI -w -DFEATURE_A_ENABLED -Iinclude /mnt/s/SCons/Test-4656/examples/Example-01/src/main.c
+Removed src/main.o
+Removed src/main
+--- scons:clean:end ---
+
+--- scons:deps:beg ---
+src/main.c GCC /bin/gcc -fsyntax-only -E -dI -w -DFEATURE_A_ENABLED=1 -Iinclude /mnt/s/SCons/Test-4656/examples/Example-01/src/main.c
+GCCPreProcessorScanner src/main.c -DFEATURE_A_ENABLED=1
+GCCPreProcessorScanner src/main.c result: ['include/header1.h']
+GCCPreProcessorScanner src/main.c expect: ['include/header1.h']
+GCCPreProcessorScanner src/main.c: dependencies match
+scons: `.' is up to date.
+--- scons:deps:end ---
+
+--- scons:build:beg ---
+src/main.c GCC /bin/gcc -fsyntax-only -E -dI -w -DFEATURE_A_ENABLED=1 -Iinclude /mnt/s/SCons/Test-4656/examples/Example-01/src/main.c
+gcc -o src/main.o -c -DFEATURE_A_ENABLED=1 -Iinclude src/main.c
+gcc -o src/main src/main.o
++-.
+  +-SConstruct
+  +-include
+  | +-include/header1.h
+  +-src
+    +-src/main
+    | +-src/main.o
+    | | +-src/main.c
+    | | +-include/header1.h
+    | | +-/bin/gcc
+    | +-/bin/gcc
+    +-src/main.c
+    +-src/main.o
+      +-src/main.c
+      +-include/header1.h
+      +-/bin/gcc
+--- scons:build:end ---
+
+--- scons:clean:beg ---
+src/main.c GCC /bin/gcc -fsyntax-only -E -dI -w -DFEATURE_A_ENABLED=1 -Iinclude /mnt/s/SCons/Test-4656/examples/Example-01/src/main.c
+Removed src/main.o
+Removed src/main
+--- scons:clean:end ---
+
+++++++ GCCProcessorScanner:end ++++++
+

@@ -1,0 +1,39 @@
+from sconstruct_common import scanner_configuration
+
+_UNDEFINED = object()
+
+AddOption(
+    "--FEATURE_A_ENABLED",
+    dest="FEATURE_A_ENABLED",
+    type="string",
+    action="store",
+    default=_UNDEFINED,
+)
+
+def cppdefines(symbols):
+    cppdefines_tuples = []
+    for symbol in symbols:
+        val = GetOption(symbol)
+        if val != _UNDEFINED:
+            value = val if val.lower() != "none" else None
+            define_t = (symbol, value)
+            cppdefines_tuples.append(define_t)
+    return cppdefines_tuples
+
+DefaultEnvironment(tools=[])
+
+scanner_cfg = scanner_configuration()
+
+env = Environment(
+    tools = scanner_cfg.tools,
+    CPPPATH = ["include"],
+    CPPDEFINES = cppdefines(["FEATURE_A_ENABLED"]),
+)
+
+sourcefile = "src/main.c"
+
+if scanner_cfg.scanner_dependencies:
+    scanner_cfg.dependencies(sourcefile, env)
+else:
+    env.Program(source=[sourcefile])
+
