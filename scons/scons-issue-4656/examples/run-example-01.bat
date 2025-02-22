@@ -12,6 +12,11 @@
 @echo ++++++ GCCProcessorScanner:end ++++++
 
 @echo.
+@echo ++++++ MSVCProcessorScanner:beg ++++++
+@call "%SCRIPT_ROOT%\_run-example-01-tests.bat" CPreProcessorScanner --msvc-compiler
+@echo ++++++ MSVCProcessorScanner:end ++++++
+
+@echo.
 
 @endlocal
 

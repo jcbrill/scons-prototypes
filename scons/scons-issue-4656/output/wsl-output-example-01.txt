@@ -3,8 +3,8 @@
 
 --- scons:deps:beg ---
 src/main.c GCC /bin/gcc -fsyntax-only -E -dI -w -Iinclude /mnt/s/SCons/Test-4656/examples/Example-01/src/main.c
-GCCPreProcessorScanner src/main.c result: []
-GCCPreProcessorScanner src/main.c expect: []
+GCCPreProcessorScanner src/main.c result: ['include/macros.h']
+GCCPreProcessorScanner src/main.c expect: ['include/macros.h']
 GCCPreProcessorScanner src/main.c: dependencies match
 scons: `.' is up to date.
 --- scons:deps:end ---
@@ -16,15 +16,18 @@ gcc -o src/main src/main.o
 +-.
   +-SConstruct
   +-include
+  | +-include/macros.h
   +-src
     +-src/main
     | +-src/main.o
     | | +-src/main.c
+    | | +-include/macros.h
     | | +-/bin/gcc
     | +-/bin/gcc
     +-src/main.c
     +-src/main.o
       +-src/main.c
+      +-include/macros.h
       +-/bin/gcc
 --- scons:build:end ---
 
@@ -37,8 +40,8 @@ Removed src/main
 --- scons:deps:beg ---
 src/main.c GCC /bin/gcc -fsyntax-only -E -dI -w -DFEATURE_A_ENABLED= -Iinclude /mnt/s/SCons/Test-4656/examples/Example-01/src/main.c
 GCCPreProcessorScanner src/main.c -DFEATURE_A_ENABLED=
-GCCPreProcessorScanner src/main.c result: []
-GCCPreProcessorScanner src/main.c expect: []
+GCCPreProcessorScanner src/main.c result: ['include/macros.h']
+GCCPreProcessorScanner src/main.c expect: ['include/macros.h']
 GCCPreProcessorScanner src/main.c: dependencies match
 scons: `.' is up to date.
 --- scons:deps:end ---
@@ -50,15 +53,18 @@ gcc -o src/main src/main.o
 +-.
   +-SConstruct
   +-include
+  | +-include/macros.h
   +-src
     +-src/main
     | +-src/main.o
     | | +-src/main.c
+    | | +-include/macros.h
     | | +-/bin/gcc
     | +-/bin/gcc
     +-src/main.c
     +-src/main.o
       +-src/main.c
+      +-include/macros.h
       +-/bin/gcc
 --- scons:build:end ---
 
@@ -71,8 +77,8 @@ Removed src/main
 --- scons:deps:beg ---
 src/main.c GCC /bin/gcc -fsyntax-only -E -dI -w -DFEATURE_A_ENABLED=0 -Iinclude /mnt/s/SCons/Test-4656/examples/Example-01/src/main.c
 GCCPreProcessorScanner src/main.c -DFEATURE_A_ENABLED=0
-GCCPreProcessorScanner src/main.c result: []
-GCCPreProcessorScanner src/main.c expect: []
+GCCPreProcessorScanner src/main.c result: ['include/macros.h']
+GCCPreProcessorScanner src/main.c expect: ['include/macros.h']
 GCCPreProcessorScanner src/main.c: dependencies match
 scons: `.' is up to date.
 --- scons:deps:end ---
@@ -84,15 +90,18 @@ gcc -o src/main src/main.o
 +-.
   +-SConstruct
   +-include
+  | +-include/macros.h
   +-src
     +-src/main
     | +-src/main.o
     | | +-src/main.c
+    | | +-include/macros.h
     | | +-/bin/gcc
     | +-/bin/gcc
     +-src/main.c
     +-src/main.o
       +-src/main.c
+      +-include/macros.h
       +-/bin/gcc
 --- scons:build:end ---
 
@@ -105,8 +114,8 @@ Removed src/main
 --- scons:deps:beg ---
 src/main.c GCC /bin/gcc -fsyntax-only -E -dI -w -DFEATURE_A_ENABLED -Iinclude /mnt/s/SCons/Test-4656/examples/Example-01/src/main.c
 GCCPreProcessorScanner src/main.c -DFEATURE_A_ENABLED
-GCCPreProcessorScanner src/main.c result: ['include/header1.h']
-GCCPreProcessorScanner src/main.c expect: ['include/header1.h']
+GCCPreProcessorScanner src/main.c result: ['include/macros.h', 'include/feature_a.h']
+GCCPreProcessorScanner src/main.c expect: ['include/macros.h', 'include/feature_a.h']
 GCCPreProcessorScanner src/main.c: dependencies match
 scons: `.' is up to date.
 --- scons:deps:end ---
@@ -118,18 +127,21 @@ gcc -o src/main src/main.o
 +-.
   +-SConstruct
   +-include
-  | +-include/header1.h
+  | +-include/feature_a.h
+  | +-include/macros.h
   +-src
     +-src/main
     | +-src/main.o
     | | +-src/main.c
-    | | +-include/header1.h
+    | | +-include/macros.h
+    | | +-include/feature_a.h
     | | +-/bin/gcc
     | +-/bin/gcc
     +-src/main.c
     +-src/main.o
       +-src/main.c
-      +-include/header1.h
+      +-include/macros.h
+      +-include/feature_a.h
       +-/bin/gcc
 --- scons:build:end ---
 
@@ -142,8 +154,8 @@ Removed src/main
 --- scons:deps:beg ---
 src/main.c GCC /bin/gcc -fsyntax-only -E -dI -w -DFEATURE_A_ENABLED=1 -Iinclude /mnt/s/SCons/Test-4656/examples/Example-01/src/main.c
 GCCPreProcessorScanner src/main.c -DFEATURE_A_ENABLED=1
-GCCPreProcessorScanner src/main.c result: ['include/header1.h']
-GCCPreProcessorScanner src/main.c expect: ['include/header1.h']
+GCCPreProcessorScanner src/main.c result: ['include/macros.h', 'include/feature_a.h']
+GCCPreProcessorScanner src/main.c expect: ['include/macros.h', 'include/feature_a.h']
 GCCPreProcessorScanner src/main.c: dependencies match
 scons: `.' is up to date.
 --- scons:deps:end ---
@@ -155,18 +167,21 @@ gcc -o src/main src/main.o
 +-.
   +-SConstruct
   +-include
-  | +-include/header1.h
+  | +-include/feature_a.h
+  | +-include/macros.h
   +-src
     +-src/main
     | +-src/main.o
     | | +-src/main.c
-    | | +-include/header1.h
+    | | +-include/macros.h
+    | | +-include/feature_a.h
     | | +-/bin/gcc
     | +-/bin/gcc
     +-src/main.c
     +-src/main.o
       +-src/main.c
-      +-include/header1.h
+      +-include/macros.h
+      +-include/feature_a.h
       +-/bin/gcc
 --- scons:build:end ---
 

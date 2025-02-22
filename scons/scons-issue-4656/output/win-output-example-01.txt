@@ -3,8 +3,8 @@
 
 --- scons:deps:beg ---
 src\main.c GCC C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE -fsyntax-only -E -dI -w -Iinclude S:\SCons\Test-4656\examples\Example-01\src\main.c
-GCCPreProcessorScanner src/main.c result: []
-GCCPreProcessorScanner src/main.c expect: []
+GCCPreProcessorScanner src/main.c result: ['include\\macros.h']
+GCCPreProcessorScanner src/main.c expect: ['include\\macros.h']
 GCCPreProcessorScanner src/main.c: dependencies match
 scons: `.' is up to date.
 --- scons:deps:end ---
@@ -15,16 +15,19 @@ gcc -o src\main.o -c -Iinclude src\main.c
 gcc -o src\main.exe src\main.o
 +-.
   +-include
+  | +-include\macros.h
   +-SConstruct
   +-src
     +-src\main.c
     +-src\main.exe
     | +-src\main.o
     | | +-src\main.c
+    | | +-include\macros.h
     | | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
     | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
     +-src\main.o
       +-src\main.c
+      +-include\macros.h
       +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
 --- scons:build:end ---
 
@@ -37,8 +40,8 @@ Removed src\main.exe
 --- scons:deps:beg ---
 src\main.c GCC C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE -fsyntax-only -E -dI -w -DFEATURE_A_ENABLED= -Iinclude S:\SCons\Test-4656\examples\Example-01\src\main.c
 GCCPreProcessorScanner src/main.c -DFEATURE_A_ENABLED=
-GCCPreProcessorScanner src/main.c result: []
-GCCPreProcessorScanner src/main.c expect: []
+GCCPreProcessorScanner src/main.c result: ['include\\macros.h']
+GCCPreProcessorScanner src/main.c expect: ['include\\macros.h']
 GCCPreProcessorScanner src/main.c: dependencies match
 scons: `.' is up to date.
 --- scons:deps:end ---
@@ -49,16 +52,19 @@ gcc -o src\main.o -c -DFEATURE_A_ENABLED= -Iinclude src\main.c
 gcc -o src\main.exe src\main.o
 +-.
   +-include
+  | +-include\macros.h
   +-SConstruct
   +-src
     +-src\main.c
     +-src\main.exe
     | +-src\main.o
     | | +-src\main.c
+    | | +-include\macros.h
     | | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
     | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
     +-src\main.o
       +-src\main.c
+      +-include\macros.h
       +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
 --- scons:build:end ---
 
@@ -71,8 +77,8 @@ Removed src\main.exe
 --- scons:deps:beg ---
 src\main.c GCC C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE -fsyntax-only -E -dI -w -DFEATURE_A_ENABLED=0 -Iinclude S:\SCons\Test-4656\examples\Example-01\src\main.c
 GCCPreProcessorScanner src/main.c -DFEATURE_A_ENABLED=0
-GCCPreProcessorScanner src/main.c result: []
-GCCPreProcessorScanner src/main.c expect: []
+GCCPreProcessorScanner src/main.c result: ['include\\macros.h']
+GCCPreProcessorScanner src/main.c expect: ['include\\macros.h']
 GCCPreProcessorScanner src/main.c: dependencies match
 scons: `.' is up to date.
 --- scons:deps:end ---
@@ -83,16 +89,19 @@ gcc -o src\main.o -c -DFEATURE_A_ENABLED=0 -Iinclude src\main.c
 gcc -o src\main.exe src\main.o
 +-.
   +-include
+  | +-include\macros.h
   +-SConstruct
   +-src
     +-src\main.c
     +-src\main.exe
     | +-src\main.o
     | | +-src\main.c
+    | | +-include\macros.h
     | | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
     | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
     +-src\main.o
       +-src\main.c
+      +-include\macros.h
       +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
 --- scons:build:end ---
 
@@ -105,8 +114,8 @@ Removed src\main.exe
 --- scons:deps:beg ---
 src\main.c GCC C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE -fsyntax-only -E -dI -w -DFEATURE_A_ENABLED -Iinclude S:\SCons\Test-4656\examples\Example-01\src\main.c
 GCCPreProcessorScanner src/main.c -DFEATURE_A_ENABLED
-GCCPreProcessorScanner src/main.c result: ['include\\header1.h']
-GCCPreProcessorScanner src/main.c expect: ['include\\header1.h']
+GCCPreProcessorScanner src/main.c result: ['include\\macros.h', 'include\\feature_a.h']
+GCCPreProcessorScanner src/main.c expect: ['include\\macros.h', 'include\\feature_a.h']
 GCCPreProcessorScanner src/main.c: dependencies match
 scons: `.' is up to date.
 --- scons:deps:end ---
@@ -117,19 +126,22 @@ gcc -o src\main.o -c -DFEATURE_A_ENABLED -Iinclude src\main.c
 gcc -o src\main.exe src\main.o
 +-.
   +-include
-  | +-include\header1.h
+  | +-include\feature_a.h
+  | +-include\macros.h
   +-SConstruct
   +-src
     +-src\main.c
     +-src\main.exe
     | +-src\main.o
     | | +-src\main.c
-    | | +-include\header1.h
+    | | +-include\macros.h
+    | | +-include\feature_a.h
     | | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
     | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
     +-src\main.o
       +-src\main.c
-      +-include\header1.h
+      +-include\macros.h
+      +-include\feature_a.h
       +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
 --- scons:build:end ---
 
@@ -142,8 +154,8 @@ Removed src\main.exe
 --- scons:deps:beg ---
 src\main.c GCC C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE -fsyntax-only -E -dI -w -DFEATURE_A_ENABLED=1 -Iinclude S:\SCons\Test-4656\examples\Example-01\src\main.c
 GCCPreProcessorScanner src/main.c -DFEATURE_A_ENABLED=1
-GCCPreProcessorScanner src/main.c result: ['include\\header1.h']
-GCCPreProcessorScanner src/main.c expect: ['include\\header1.h']
+GCCPreProcessorScanner src/main.c result: ['include\\macros.h', 'include\\feature_a.h']
+GCCPreProcessorScanner src/main.c expect: ['include\\macros.h', 'include\\feature_a.h']
 GCCPreProcessorScanner src/main.c: dependencies match
 scons: `.' is up to date.
 --- scons:deps:end ---
@@ -154,19 +166,22 @@ gcc -o src\main.o -c -DFEATURE_A_ENABLED=1 -Iinclude src\main.c
 gcc -o src\main.exe src\main.o
 +-.
   +-include
-  | +-include\header1.h
+  | +-include\feature_a.h
+  | +-include\macros.h
   +-SConstruct
   +-src
     +-src\main.c
     +-src\main.exe
     | +-src\main.o
     | | +-src\main.c
-    | | +-include\header1.h
+    | | +-include\macros.h
+    | | +-include\feature_a.h
     | | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
     | +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
     +-src\main.o
       +-src\main.c
-      +-include\header1.h
+      +-include\macros.h
+      +-include\feature_a.h
       +-C:\mingw-w64\x86_64-1120-win32-seh-rt_v9-rev0\mingw64\bin\gcc.EXE
 --- scons:build:end ---
 
@@ -177,4 +192,198 @@ Removed src\main.exe
 --- scons:clean:end ---
 
 ++++++ GCCProcessorScanner:end ++++++
+
+++++++ MSVCProcessorScanner:beg ++++++
+
+--- scons:deps:beg ---
+src\main.c MSVC C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.43.34808\bin\HostX64\x64\cl.EXE /nologo /E /w /Iinclude S:\SCons\Test-4656\examples\Example-01\src\main.c
+MSVCPreProcessorScanner src/main.c result: ['include\\macros.h']
+MSVCPreProcessorScanner src/main.c expect: ['include\\macros.h']
+MSVCPreProcessorScanner src/main.c: dependencies match
+scons: `.' is up to date.
+--- scons:deps:end ---
+
+--- scons:build:beg ---
+src\main.c MSVC C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.43.34808\bin\HostX64\x64\cl.EXE /nologo /E /w /Iinclude S:\SCons\Test-4656\examples\Example-01\src\main.c
+cl /Fosrc\main.obj /c src\main.c /nologo /Iinclude
+link /nologo /OUT:src\main.exe src\main.obj
++-.
+  +-include
+  | +-include\macros.h
+  +-SConstruct
+  +-src
+    +-src\main.c
+    +-src\main.exe
+    | +-src\main.obj
+    | | +-src\main.c
+    | | +-include\macros.h
+    | | +-C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.43.34808\bin\HostX64\x64\cl.EXE
+    | +-C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.43.34808\bin\HostX64\x64\link.EXE
+    +-src\main.obj
+      +-src\main.c
+      +-include\macros.h
+      +-C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.43.34808\bin\HostX64\x64\cl.EXE
+--- scons:build:end ---
+
+--- scons:clean:beg ---
+src\main.c MSVC C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.43.34808\bin\HostX64\x64\cl.EXE /nologo /E /w /Iinclude S:\SCons\Test-4656\examples\Example-01\src\main.c
+Removed src\main.obj
+Removed src\main.exe
+--- scons:clean:end ---
+
+--- scons:deps:beg ---
+src\main.c MSVC C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.43.34808\bin\HostX64\x64\cl.EXE /nologo /E /w /DFEATURE_A_ENABLED= /Iinclude S:\SCons\Test-4656\examples\Example-01\src\main.c
+MSVCPreProcessorScanner src/main.c /DFEATURE_A_ENABLED=
+MSVCPreProcessorScanner src/main.c result: ['include\\macros.h']
+MSVCPreProcessorScanner src/main.c expect: ['include\\macros.h']
+MSVCPreProcessorScanner src/main.c: dependencies match
+scons: `.' is up to date.
+--- scons:deps:end ---
+
+--- scons:build:beg ---
+src\main.c MSVC C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.43.34808\bin\HostX64\x64\cl.EXE /nologo /E /w /DFEATURE_A_ENABLED= /Iinclude S:\SCons\Test-4656\examples\Example-01\src\main.c
+cl /Fosrc\main.obj /c src\main.c /nologo /DFEATURE_A_ENABLED= /Iinclude
+link /nologo /OUT:src\main.exe src\main.obj
++-.
+  +-include
+  | +-include\macros.h
+  +-SConstruct
+  +-src
+    +-src\main.c
+    +-src\main.exe
+    | +-src\main.obj
+    | | +-src\main.c
+    | | +-include\macros.h
+    | | +-C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.43.34808\bin\HostX64\x64\cl.EXE
+    | +-C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.43.34808\bin\HostX64\x64\link.EXE
+    +-src\main.obj
+      +-src\main.c
+      +-include\macros.h
+      +-C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.43.34808\bin\HostX64\x64\cl.EXE
+--- scons:build:end ---
+
+--- scons:clean:beg ---
+src\main.c MSVC C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.43.34808\bin\HostX64\x64\cl.EXE /nologo /E /w /DFEATURE_A_ENABLED= /Iinclude S:\SCons\Test-4656\examples\Example-01\src\main.c
+Removed src\main.obj
+Removed src\main.exe
+--- scons:clean:end ---
+
+--- scons:deps:beg ---
+src\main.c MSVC C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.43.34808\bin\HostX64\x64\cl.EXE /nologo /E /w /DFEATURE_A_ENABLED=0 /Iinclude S:\SCons\Test-4656\examples\Example-01\src\main.c
+MSVCPreProcessorScanner src/main.c /DFEATURE_A_ENABLED=0
+MSVCPreProcessorScanner src/main.c result: ['include\\macros.h']
+MSVCPreProcessorScanner src/main.c expect: ['include\\macros.h']
+MSVCPreProcessorScanner src/main.c: dependencies match
+scons: `.' is up to date.
+--- scons:deps:end ---
+
+--- scons:build:beg ---
+src\main.c MSVC C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.43.34808\bin\HostX64\x64\cl.EXE /nologo /E /w /DFEATURE_A_ENABLED=0 /Iinclude S:\SCons\Test-4656\examples\Example-01\src\main.c
+cl /Fosrc\main.obj /c src\main.c /nologo /DFEATURE_A_ENABLED=0 /Iinclude
+link /nologo /OUT:src\main.exe src\main.obj
++-.
+  +-include
+  | +-include\macros.h
+  +-SConstruct
+  +-src
+    +-src\main.c
+    +-src\main.exe
+    | +-src\main.obj
+    | | +-src\main.c
+    | | +-include\macros.h
+    | | +-C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.43.34808\bin\HostX64\x64\cl.EXE
+    | +-C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.43.34808\bin\HostX64\x64\link.EXE
+    +-src\main.obj
+      +-src\main.c
+      +-include\macros.h
+      +-C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.43.34808\bin\HostX64\x64\cl.EXE
+--- scons:build:end ---
+
+--- scons:clean:beg ---
+src\main.c MSVC C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.43.34808\bin\HostX64\x64\cl.EXE /nologo /E /w /DFEATURE_A_ENABLED=0 /Iinclude S:\SCons\Test-4656\examples\Example-01\src\main.c
+Removed src\main.obj
+Removed src\main.exe
+--- scons:clean:end ---
+
+--- scons:deps:beg ---
+src\main.c MSVC C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.43.34808\bin\HostX64\x64\cl.EXE /nologo /E /w /DFEATURE_A_ENABLED /Iinclude S:\SCons\Test-4656\examples\Example-01\src\main.c
+MSVCPreProcessorScanner src/main.c /DFEATURE_A_ENABLED
+MSVCPreProcessorScanner src/main.c result: ['include\\macros.h', 'include\\feature_a.h']
+MSVCPreProcessorScanner src/main.c expect: ['include\\macros.h', 'include\\feature_a.h']
+MSVCPreProcessorScanner src/main.c: dependencies match
+scons: `.' is up to date.
+--- scons:deps:end ---
+
+--- scons:build:beg ---
+src\main.c MSVC C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.43.34808\bin\HostX64\x64\cl.EXE /nologo /E /w /DFEATURE_A_ENABLED /Iinclude S:\SCons\Test-4656\examples\Example-01\src\main.c
+cl /Fosrc\main.obj /c src\main.c /nologo /DFEATURE_A_ENABLED /Iinclude
+link /nologo /OUT:src\main.exe src\main.obj
++-.
+  +-include
+  | +-include\feature_a.h
+  | +-include\macros.h
+  +-SConstruct
+  +-src
+    +-src\main.c
+    +-src\main.exe
+    | +-src\main.obj
+    | | +-src\main.c
+    | | +-include\macros.h
+    | | +-include\feature_a.h
+    | | +-C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.43.34808\bin\HostX64\x64\cl.EXE
+    | +-C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.43.34808\bin\HostX64\x64\link.EXE
+    +-src\main.obj
+      +-src\main.c
+      +-include\macros.h
+      +-include\feature_a.h
+      +-C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.43.34808\bin\HostX64\x64\cl.EXE
+--- scons:build:end ---
+
+--- scons:clean:beg ---
+src\main.c MSVC C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.43.34808\bin\HostX64\x64\cl.EXE /nologo /E /w /DFEATURE_A_ENABLED /Iinclude S:\SCons\Test-4656\examples\Example-01\src\main.c
+Removed src\main.obj
+Removed src\main.exe
+--- scons:clean:end ---
+
+--- scons:deps:beg ---
+src\main.c MSVC C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.43.34808\bin\HostX64\x64\cl.EXE /nologo /E /w /DFEATURE_A_ENABLED=1 /Iinclude S:\SCons\Test-4656\examples\Example-01\src\main.c
+MSVCPreProcessorScanner src/main.c /DFEATURE_A_ENABLED=1
+MSVCPreProcessorScanner src/main.c result: ['include\\macros.h', 'include\\feature_a.h']
+MSVCPreProcessorScanner src/main.c expect: ['include\\macros.h', 'include\\feature_a.h']
+MSVCPreProcessorScanner src/main.c: dependencies match
+scons: `.' is up to date.
+--- scons:deps:end ---
+
+--- scons:build:beg ---
+src\main.c MSVC C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.43.34808\bin\HostX64\x64\cl.EXE /nologo /E /w /DFEATURE_A_ENABLED=1 /Iinclude S:\SCons\Test-4656\examples\Example-01\src\main.c
+cl /Fosrc\main.obj /c src\main.c /nologo /DFEATURE_A_ENABLED=1 /Iinclude
+link /nologo /OUT:src\main.exe src\main.obj
++-.
+  +-include
+  | +-include\feature_a.h
+  | +-include\macros.h
+  +-SConstruct
+  +-src
+    +-src\main.c
+    +-src\main.exe
+    | +-src\main.obj
+    | | +-src\main.c
+    | | +-include\macros.h
+    | | +-include\feature_a.h
+    | | +-C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.43.34808\bin\HostX64\x64\cl.EXE
+    | +-C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.43.34808\bin\HostX64\x64\link.EXE
+    +-src\main.obj
+      +-src\main.c
+      +-include\macros.h
+      +-include\feature_a.h
+      +-C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.43.34808\bin\HostX64\x64\cl.EXE
+--- scons:build:end ---
+
+--- scons:clean:beg ---
+src\main.c MSVC C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.43.34808\bin\HostX64\x64\cl.EXE /nologo /E /w /DFEATURE_A_ENABLED=1 /Iinclude S:\SCons\Test-4656\examples\Example-01\src\main.c
+Removed src\main.obj
+Removed src\main.exe
+--- scons:clean:end ---
+
+++++++ MSVCProcessorScanner:end ++++++
 
