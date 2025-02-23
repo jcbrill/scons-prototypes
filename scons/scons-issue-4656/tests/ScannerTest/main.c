@@ -7,6 +7,12 @@
 
 */
 
+/**
+ * SCons issue 4656:
+ *     comment: https://github.com/SCons/scons/issues/4656#issue-2694850829
+ *     author: relfock
+ */ 
+
 #define FEATURE_A_ENABLED 0
 
 /**

@@ -49,7 +49,7 @@ Removed main.exe
 ++++++ MSVCProcessorScanner:beg ++++++
 
 --- scons:deps:norecurse:beg ---
-main.c MSVC C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.42.34433\bin\HostX64\x64\cl.EXE /nologo /E /w S:\SCons\Test-4656\tests\RecurseTest\main.c
+main.c MSVC C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.43.34808\bin\HostX64\x64\cl.EXE /nologo /E /w S:\SCons\Test-4656\tests\RecurseTest\main.c
 MSVCPreProcessorScanner main.c result: ['include\\recurse1.h']
 MSVCPreProcessorScanner main.c expect: ['include\\recurse1.h']
 MSVCPreProcessorScanner main.c: dependencies match
@@ -57,7 +57,7 @@ scons: `.' is up to date.
 --- scons:deps:norecurse:end ---
 
 --- scons:deps:beg ---
-main.c MSVC C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.42.34433\bin\HostX64\x64\cl.EXE /nologo /E /w S:\SCons\Test-4656\tests\RecurseTest\main.c
+main.c MSVC C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.43.34808\bin\HostX64\x64\cl.EXE /nologo /E /w S:\SCons\Test-4656\tests\RecurseTest\main.c
 MSVCPreProcessorScanner main.c result: ['include\\recurse1.h']
 MSVCPreProcessorScanner main.c expect: ['include\\recurse1.h']
 MSVCPreProcessorScanner main.c: dependencies match
@@ -65,7 +65,7 @@ scons: `.' is up to date.
 --- scons:deps:end ---
 
 --- scons:build:beg ---
-main.c MSVC C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.42.34433\bin\HostX64\x64\cl.EXE /nologo /E /w S:\SCons\Test-4656\tests\RecurseTest\main.c
+main.c MSVC C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.43.34808\bin\HostX64\x64\cl.EXE /nologo /E /w S:\SCons\Test-4656\tests\RecurseTest\main.c
 cl /Fomain.obj /c main.c /nologo
 link /nologo /OUT:main.exe main.obj
 +-.
@@ -76,17 +76,17 @@ link /nologo /OUT:main.exe main.obj
   | +-main.obj
   | | +-main.c
   | | +-include\recurse1.h
-  | | +-C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.42.34433\bin\HostX64\x64\cl.EXE
-  | +-C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.42.34433\bin\HostX64\x64\link.EXE
+  | | +-C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.43.34808\bin\HostX64\x64\cl.EXE
+  | +-C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.43.34808\bin\HostX64\x64\link.EXE
   +-main.obj
   | +-main.c
   | +-include\recurse1.h
-  | +-C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.42.34433\bin\HostX64\x64\cl.EXE
+  | +-C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.43.34808\bin\HostX64\x64\cl.EXE
   +-SConstruct
 --- scons:build:end ---
 
 --- scons:clean:beg ---
-main.c MSVC C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.42.34433\bin\HostX64\x64\cl.EXE /nologo /E /w S:\SCons\Test-4656\tests\RecurseTest\main.c
+main.c MSVC C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.43.34808\bin\HostX64\x64\cl.EXE /nologo /E /w S:\SCons\Test-4656\tests\RecurseTest\main.c
 Removed main.obj
 Removed main.exe
 --- scons:clean:end ---

@@ -24,6 +24,12 @@
     #elif defined(__MINGW32__) || defined(__MINGW64__) || defined (__GNUC__) || defined(__GNUG__)
 
         /**
+         * SCons issue 4656:
+         *     comment: https://github.com/SCons/scons/issues/4656#issue-2694850829
+         *     author: relfock
+         */ 
+
+        /**
          * @brief Macro for checking if the specified identifier is defined and it has
          *        a non-zero value.
          *

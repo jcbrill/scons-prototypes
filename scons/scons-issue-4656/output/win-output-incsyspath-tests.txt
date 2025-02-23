@@ -47,7 +47,7 @@ Removed main.exe
 ++++++ MSVCProcessorScanner:beg ++++++
 
 --- scons:deps:beg ---
-main.c MSVC C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.42.34433\bin\HostX64\x64\cl.EXE /nologo /E /w S:\SCons\Test-4656\tests\IncSysPathTest\main.c
+main.c MSVC C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.43.34808\bin\HostX64\x64\cl.EXE /nologo /E /w S:\SCons\Test-4656\tests\IncSysPathTest\main.c
 S:\SCons\Test-4656\site-scons\ppscanner\_common.py:152: ScanIncludeDepthWarning: Warning: Include visit depth (1) > 0 on exit
   warnings.warn(message, category)
 MSVCPreProcessorScanner main.c result: ['include\\include.h']
@@ -57,7 +57,7 @@ scons: `.' is up to date.
 --- scons:deps:end ---
 
 --- scons:build:beg ---
-main.c MSVC C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.42.34433\bin\HostX64\x64\cl.EXE /nologo /E /w S:\SCons\Test-4656\tests\IncSysPathTest\main.c
+main.c MSVC C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.43.34808\bin\HostX64\x64\cl.EXE /nologo /E /w S:\SCons\Test-4656\tests\IncSysPathTest\main.c
 S:\SCons\Test-4656\site-scons\ppscanner\_common.py:152: ScanIncludeDepthWarning: Warning: Include visit depth (1) > 0 on exit
   warnings.warn(message, category)
 cl /Fomain.obj /c main.c /nologo
@@ -70,17 +70,17 @@ link /nologo /OUT:main.exe main.obj
   | +-main.obj
   | | +-main.c
   | | +-include\include.h
-  | | +-C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.42.34433\bin\HostX64\x64\cl.EXE
-  | +-C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.42.34433\bin\HostX64\x64\link.EXE
+  | | +-C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.43.34808\bin\HostX64\x64\cl.EXE
+  | +-C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.43.34808\bin\HostX64\x64\link.EXE
   +-main.obj
   | +-main.c
   | +-include\include.h
-  | +-C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.42.34433\bin\HostX64\x64\cl.EXE
+  | +-C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.43.34808\bin\HostX64\x64\cl.EXE
   +-SConstruct
 --- scons:build:end ---
 
 --- scons:clean:beg ---
-main.c MSVC C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.42.34433\bin\HostX64\x64\cl.EXE /nologo /E /w S:\SCons\Test-4656\tests\IncSysPathTest\main.c
+main.c MSVC C:\Software\MSVS-2022-143-Com\VC\Tools\MSVC\14.43.34808\bin\HostX64\x64\cl.EXE /nologo /E /w S:\SCons\Test-4656\tests\IncSysPathTest\main.c
 S:\SCons\Test-4656\site-scons\ppscanner\_common.py:152: ScanIncludeDepthWarning: Warning: Include visit depth (1) > 0 on exit
   warnings.warn(message, category)
 Removed main.obj
