@@ -32,7 +32,9 @@ The content presented is based on insights and results derived from a series of 
 
 [Section 7](#jcbrill-c01-7) contains a discussion of the research presented.
 
-[Addendum A](#jcbrill-c01-7) contains additional known issues for the SCons C scanners.
+[Addendum A](#jcbrill-c01-a) contains additional known issues for the SCons C scanners.
+
+[Addendum B](#jcbrill-c01-b) contains the revision history for this document.
 
 
 <a id='jcbrill-c01-2'></a>
