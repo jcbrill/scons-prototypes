@@ -1,15 +1,5 @@
 <a id='jcbrill-c01-top'></a>
 
-<!--- ${\color{#FF695C} \normalsize \text{RED}}$ -->
-<!--- ${\color{#D8A200} \normalsize \text{YELLOW}}$ -->
-<!--- ${\color{#00C500} \normalsize \text{GREEN}}$-->
-<!--- ${\normalsize \text{NORMAL}}$ -->
-
-<!--- ${\color{#FF695C} \normalsize RED}$ -->
-<!--- ${\color{#D8A200} \normalsize YELLOW}$ -->
-<!--- ${\color{#00C500} \normalsize GREEN}$ -->
-<!--- ${\normalsize NORMAL}$ -->
-
 The intent of this post is to document some of the existing issues and limitations of the *CConditionalScanner*, and to a lesser extent, the *CScanner*.
 
 ***Please report any erroneous assumptions, interpretations, and conclusions.***
@@ -23,6 +13,7 @@ Table of Contents:
 * [6. File Inclusion Search Paths](#jcbrill-c01-6)
 * [7. Discussion](#jcbrill-c01-7)
 * [A. Known Issues Addendum](#jcbrill-c01-a)
+* [B. Revisions Addendum](#jcbrill-c01-b)
 
 <a id='jcbrill-c01-1'></a>
 ## 1. Introduction
@@ -255,8 +246,8 @@ int main(void) {}
 ```
 
 *CConditionalScanner*:
-* ${\normalsize \text{calling the scan method directly}}$: `['include/recurse1.h']`
-* ${\color{#FF695C} \normalsize \text{calling the scan method recursively}}$: `['include/recurse1.h', 'include/include/recurse2.h']`
+* calling the scan method directly: `['include/recurse1.h']`
+* calling the scan method recursively: `['include/recurse1.h', 'include/include/recurse2.h']`
 
 The SCons produced tree using *CConditionalScanner* is:
 ```
@@ -297,7 +288,7 @@ Scanner dependencies:
 * *GCCPreProcessorScanner*: `['include/recurse1.h']`
 * *MSVCPreProcessorScanner*: ` ['include/recurse1.h']`
 * *CConditionalModScanner*: `['include/recurse1.h']`
-* ${\color{#FF695C} \normalsize CConditionalScanner}$: `['include/recurse1.h', 'include/include/recurse2.h']`
+* *CConditionalScanner*: `['include/recurse1.h', 'include/include/recurse2.h']`
 * *CScanner*: `['include/recurse1.h', 'include/include/recurse2.h']`
 
 
@@ -421,8 +412,8 @@ Trail 2: (main.c, include1.h, include2.h, include4.h)
 Scanner dependencies:
 * *GCCPreProcessorScanner*: `['include/include1.h', 'include/include2.h', 'include/include3.h', 'include/include4.h']`
 * *MSVCPreProcessorScanner*: `['include/include1.h', 'include/include2.h', 'include/include3.h', 'include/include4.h']`
-* ${\color{#FF695C} \normalsize CConditionalModScanner}$: `['include/include1.h', 'include/include2.h', 'include/include3.h']`
-* ${\color{#FF695C} \normalsize CConditionalScanner}$: `['include/include1.h', 'include/include2.h', 'include/include3.h']`
+* *CConditionalModScanner*: `['include/include1.h', 'include/include2.h', 'include/include3.h']`
+* *CConditionalScanner*: `['include/include1.h', 'include/include2.h', 'include/include3.h']`
 * *CScanner*: `['include/include1.h', 'include/include2.h', 'include/include3.h', 'include/include4.h']`
 
 *CConditionalScannerMod* and *CConditionalScanner* result list sequence:
@@ -528,7 +519,7 @@ Scanner dependencies:
   [ '..\\KnownIncl/include/include1.h', 'include/include2.h',
     '..\\KnownIncl/include/include3.h', 'include/include4.h']
   ```
-* ${\color{#FF695C} \normalsize CConditionalScanner}$:
+* *CConditionalScanner*:
   ```py
   [ '../KnownIncl/include/include1.h', '../KnownIncl/include/include2.h',
     '../KnownIncl/include/include3.h', '../KnownIncl/include/include4.h']
@@ -609,8 +600,8 @@ Scanner dependencies:
 * *GCCPreProcessorScanner*: `[]` (*anglebracket.h* error)
 * *MSVCPreProcessorScanner*: `[]` (*anglebracket.h* error)
 * *CConditionalModScanner*: `[]`
-* ${\color{#FF695C} \normalsize CConditionalScanner}$: `['limits.h', 'anglebracket.h']`
-* ${\color{#FF695C} \normalsize CScanner}$: `['anglebracket.h', 'limits.h']`
+* *CConditionalScanner*: `['limits.h', 'anglebracket.h']`
+* *CScanner*: `['anglebracket.h', 'limits.h']`
 
 <a id='jcbrill-c01-3.4.1'></a>
 #### 3.4.1 CConditionalScanner Extended Example
@@ -672,7 +663,7 @@ Scanner dependencies:
 * *GCCPreProcessorScanner*: `['include/include.h']` (*anglebracket.h* error)
 * *MSVCPreProcessorScanner*: `['include/include.h']` (*anglebracket.h* error)
 * *CConditionalModScanner*: `'include/include.h']`
-* ${\color{#FF695C} \normalsize CConditionalScanner}$: `['include/include.h', 'limits.h', 'anglebracket.h']`
+* *CConditionalScanner*: `['include/include.h', 'limits.h', 'anglebracket.h']`
 * *CScanner*: `['include/include.h']`
 
 <a id='jcbrill-c01-3.5'></a>
@@ -750,8 +741,8 @@ Scanner dependencies:
 * *GCCPreProcessorScanner*: `['active/comment3.h', 'active/comment4.h']`
 * *MSVCPreProcessorScanner*: `['active/comment3.h', 'active/comment4.h']`
 * *CConditionalModScanner*: `['active/comment3.h', 'active/comment4.h']`
-* ${\color{#FF695C} \normalsize CConditionalScanner}$: `['inactive/comment2.h']`
-* ${\color{#FF695C} \normalsize CScanner}$: `['inactive/comment2.h']`
+* *CConditionalScanner*: `['inactive/comment2.h']`
+* *CScanner*: `['inactive/comment2.h']`
 
 *CConditionalScanner* and *CScanner*:
 * correctly ignore `inactive/comment1.h`
@@ -840,8 +831,8 @@ Scanner dependencies:
 * *GCCPreProcessorScanner [Win]*: `['compiler_mingw.h', 'arch_x64.h']`
 * *GCCPreProcessorScanner [WSL]*: `['compiler_gcc.h', 'arch_x64.h']`
 * *MSVCPreProcessorScanner*: `['compiler_msvc.h', 'arch_x64.h']`
-* ${\color{#FF695C} \normalsize CConditionalModScanner}$: `[]`
-* ${\color{#FF695C} \normalsize CConditionalScanner}$: `[]`
+* *CConditionalModScanner*: `[]`
+* *CConditionalScanner*: `[]`
 * *CScanner*: `['arch_x64.h', 'arch_x86.h', 'compiler_gcc.h', 'compiler_mingw.h', 'compiler_msvc.h']`
 
 
@@ -1198,11 +1189,11 @@ The estimated effort/complexity to address the issues described in [Section 3](#
 
 | Note | Section | Issue     | Effort | Affects |
 | :-: | :-: | :--       | :--  | :-- |
-| 1 | [3.1](#jcbrill-c01-3.1) | Recurse nodes | Easy | ${\color{#FF695C} \normalsize \textit{CConditionalScanner}}$ |
-| 2 | [3.2](#jcbrill-c01-3.2) | Multiple file inclusions | Hard | ${\color{#FF695C} \normalsize \textit{CConditionalScanner}}$, ${\normalsize \textit{CConditionalModScanner}}$ |
-| 3 | [3.3](#jcbrill-c01-3.3) | Known paths prefix   | Easy | ${\color{#FF695C} \normalsize \textit{CConditionalScanner}}$ |
-| 4 | [3.4](#jcbrill-c01-3.4) | Angle bracket search path | Easy | ${\color{#FF695C} \normalsize \textit{CConditionalScanner}}$, ${\color{#FF695C} \normalsize \textit{CScanner}}$ | 
-| 5 | [3.5](#jcbrill-c01-3.5) | Text transformation | Hard | ${\color{#FF695C} \normalsize \textit{CConditionalScanner}}$, ${\color{#FF695C} \normalsize \textit{CScanner}}$, ${\normalsize \textit{CConditionalModScanner}}$ |
+| 1 | [3.1](#jcbrill-c01-3.1) | Recurse nodes | Easy | *CConditionalScanner* |
+| 2 | [3.2](#jcbrill-c01-3.2) | Multiple file inclusions | Hard | *CConditionalScanner*, *CConditionalModScanner* |
+| 3 | [3.3](#jcbrill-c01-3.3) | Known paths prefix   | Easy | *CConditionalScanner* |
+| 4 | [3.4](#jcbrill-c01-3.4) | Angle bracket search path | Easy | *CConditionalScanner*, *CScanner* | 
+| 5 | [3.5](#jcbrill-c01-3.5) | Text transformation | Hard | *CConditionalScanner*, *CScanner*, *CConditionalModScanner* |
 
 Notes:
 
@@ -1267,4 +1258,11 @@ Known issues, potential issues and research items for `SCons/cpp.py`:
 <a id='jcbrill-c01-a.2'></a>
 ### A.2 Test Suite
 
-${\color{#D8A200} \normalsize \textbf{TODO}}$: Document *CConditionalScanner* tests which employ invalid c code for testing that would otherwise result in compiler preprocessor errors.
+**TODO**: Document *CConditionalScanner* tests which employ invalid c code for testing that would otherwise result in compiler preprocessor errors.
+
+<a id='jcbrill-c01-b'></a>
+## B. Revisions Addendum
+
+Edits:
+* ***2025-06-06***:
+  * Remove inline math-mode color specifications due to rendering errors that did not exist when originally written.
