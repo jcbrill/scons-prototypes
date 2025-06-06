@@ -39,12 +39,12 @@ The content presented is based on insights and results derived from a series of 
 ## 2. Research Repository
 
 Subsection map:
-* [2.1 External Library](#jcbrill-c01-2.1)
-  * [2.1.1 Platform Split/Quote Command-Line Arguments](#jcbrill-c01-2.1.1)
-* [2.2 Custom Scanners](#jcbrill-c01-2.2)
-  * [2.2.1 GCCPreProcessorScanner](#jcbrill-c01-2.2.1)
-  * [2.2.2 MSVCPreProcessorScanner](#jcbrill-c01-2.2.2)
-  * [2.2.3 CConditionalModScanner](#jcbrill-c01-2.2.3)
+* [2.1 External Library](#jcbrill-c01-2-1)
+  * [2.1.1 Platform Split/Quote Command-Line Arguments](#jcbrill-c01-2-1-1)
+* [2.2 Custom Scanners](#jcbrill-c01-2-2)
+  * [2.2.1 GCCPreProcessorScanner](#jcbrill-c01-2-2-1)
+  * [2.2.2 MSVCPreProcessorScanner](#jcbrill-c01-2-2-2)
+  * [2.2.3 CConditionalModScanner](#jcbrill-c01-2-2-3)
 
 The research repository is available at: https://github.com/jcbrill/scons-prototypes/tree/main/scons/scons-issue-4656.
 
@@ -63,7 +63,7 @@ The primary test environments employed for this document are:
   * gcc 11.4.0
   * python 3.10.12
 
-<a id='jcbrill-c01-2.1'></a>
+<a id='jcbrill-c01-2-1'></a>
 ### 2.1 External Library
 
 The external library is a limited subset of the author's research and reference library for msvc detection.
@@ -79,7 +79,7 @@ Folder layout:
 
 *pyinfo.py* is a minimal *shim* in order for *pyargs.py* to work in isolation for the research repository.
 
-<a id='jcbrill-c01-2.1.1'></a>
+<a id='jcbrill-c01-2-1-1'></a>
 #### 2.1.1 Platform Split/Quote Command-Line Arguments
 
 Source file: [*site-scons/mswindev/pyargs.py*](https://github.com/jcbrill/scons-prototypes/blob/main/scons/scons-issue-4656/site-scons/mswindev/pyargs.py)
@@ -97,7 +97,7 @@ The three (3) platforms supported are:
 
 There is a known issue with the SCons splitting of command-line arguments containing quoted strings with embedded spaces.
 
-<a id='jcbrill-c01-2.2'></a>
+<a id='jcbrill-c01-2-2'></a>
 ### 2.2 Custom Scanners
 
 Three custom scanners were developed as part of the research effort.
@@ -113,7 +113,7 @@ Three custom scanners were developed as part of the research effort.
     └─ scons.py
 ```
 
-<a id='jcbrill-c01-2.2.1'></a>
+<a id='jcbrill-c01-2-2-1'></a>
 #### 2.2.1 GCCPreProcessorScanner
 
 Source files:
@@ -128,7 +128,7 @@ The *GCCPreProcessorScanner* parses the output produced by the gcc compiler prep
 
 System include file detection is based on the optional flags present in the line directive output.  Errors are possible based on the author's understanding of the meaning attached to the line directive flag values.
 
-<a id='jcbrill-c01-2.2.2'></a>
+<a id='jcbrill-c01-2-2-2'></a>
 #### 2.2.2 MSVCPreProcessorScanner
 
 Source files:
@@ -144,7 +144,7 @@ The *MSVCPreProcessorScanner* parses the output produced by the msvc compiler pr
 
 A path classification heuristic is employed for system include file detection when processing the msvc preprocessor output.  The path classification heuristic is incomplete and should be revisited.
 
-<a id='jcbrill-c01-2.2.3'></a>
+<a id='jcbrill-c01-2-2-3'></a>
 #### 2.2.3 CConditionalModScanner
 
 Source files:
@@ -158,14 +158,14 @@ The *CConditionalModScanner* is implemented by subclassing *SConsCPPConditionalS
 ## 3. SCons Scanner Issues
 
 Subsection map:
-* [3.1 CConditionalScanner Recursion](#jcbrill-c01-3.1)
-* [3.2 PreProcessor File Inclusion](#jcbrill-c01-3.2)
-* [3.3 CConditionalScanner Alternate Search Paths](#jcbrill-c01-3.3)
-* [3.4 Angle Bracket Include Search Path](#jcbrill-c01-3.4)
-  * [3.4.1 CConditionalScanner Extended Example](#jcbrill-c01-3.4.1)
-* [3.5 Text Transformations Prior to Scanning](#jcbrill-c01-3.5)
+* [3.1 CConditionalScanner Recursion](#jcbrill-c01-3-1)
+* [3.2 PreProcessor File Inclusion](#jcbrill-c01-3-2)
+* [3.3 CConditionalScanner Alternate Search Paths](#jcbrill-c01-3-3)
+* [3.4 Angle Bracket Include Search Path](#jcbrill-c01-3-4)
+  * [3.4.1 CConditionalScanner Extended Example](#jcbrill-c01-3-4-1)
+* [3.5 Text Transformations Prior to Scanning](#jcbrill-c01-3-5)
 
-<a id='jcbrill-c01-3.1'></a>
+<a id='jcbrill-c01-3-1'></a>
 ### 3.1 CConditionalScanner Recursion
 
 For recursive scanners (e.g., *CScanner*), the dependencies list produced when invoking the scanner *scan* function directly and the dependencies list produced by SCons execution via *get_implicit_dependencies* may not be the same.
@@ -292,7 +292,7 @@ Scanner dependencies:
 * *CScanner*: `['include/recurse1.h', 'include/include/recurse2.h']`
 
 
-<a id='jcbrill-c01-3.2'></a>
+<a id='jcbrill-c01-3-2'></a>
 ### 3.2 PreProcessor File Inclusion
 
 There are issues with the include processing in the `do_include` method of the *cpp.Preprocessor* class which also affects the *CConditionalScanner*.
@@ -424,7 +424,7 @@ Scanner dependencies:
 'include/include2.h' in ['include/include1.h', 'include/include2.h', 'include/include3.h'] -> skip
 ```
 
-<a id='jcbrill-c01-3.3'></a>
+<a id='jcbrill-c01-3-3'></a>
 ### 3.3 CConditionalScanner Alternate Search Paths
 
 Include file search path notes:
@@ -530,7 +530,7 @@ Scanner dependencies:
     '..\\KnownIncl/include/include1.h', 'include/include2.h']
   ```
 
-<a id='jcbrill-c01-3.4'></a>
+<a id='jcbrill-c01-3-4'></a>
 ### 3.4 Angle Bracket Include Search Path
 
 Include file search path notes:
@@ -603,7 +603,7 @@ Scanner dependencies:
 * *CConditionalScanner*: `['limits.h', 'anglebracket.h']`
 * *CScanner*: `['anglebracket.h', 'limits.h']`
 
-<a id='jcbrill-c01-3.4.1'></a>
+<a id='jcbrill-c01-3-4-1'></a>
 #### 3.4.1 CConditionalScanner Extended Example
 
 Folder layout:
@@ -666,7 +666,7 @@ Scanner dependencies:
 * *CConditionalScanner*: `['include/include.h', 'limits.h', 'anglebracket.h']`
 * *CScanner*: `['include/include.h']`
 
-<a id='jcbrill-c01-3.5'></a>
+<a id='jcbrill-c01-3-5'></a>
 ### 3.5 Text Transformations Prior to Scanning
 
 The *CConditionalScanner* and *CScanner* scanners do not perform all text transformations as described in the c and c++ standards on source file contents *prior* to scanning for preprocessor directives.
@@ -756,17 +756,17 @@ Scanner dependencies:
 ## 4. SCons Scanner Limitations
 
 Subsection map:
-* [4.1 *\#pragma once* Is Not Supported](#jcbrill-c01-4.1)
-* [4.2 Compiler Defined Symbols](#jcbrill-c01-4.2)
+* [4.1 *\#pragma once* Is Not Supported](#jcbrill-c01-4-1)
+* [4.2 Compiler Defined Symbols](#jcbrill-c01-4-2)
 
-<a id='jcbrill-c01-4.1'></a>
+<a id='jcbrill-c01-4-1'></a>
 ### 4.1 *\#pragma once* Is Not Supported
 
-See [Section 3.2](#jcbrill-c01-3.2) for discussion concerning `#pragma once`.
+See [Section 3.2](#jcbrill-c01-3-2) for discussion concerning `#pragma once`.
 
-If the issues in [Section 3.2](#jcbrill-c01-3.2) are resolved, it might be beneficial to investigate adding limited support for `#pragma once`.
+If the issues in [Section 3.2](#jcbrill-c01-3-2) are resolved, it might be beneficial to investigate adding limited support for `#pragma once`.
 
-<a id='jcbrill-c01-4.2'></a>
+<a id='jcbrill-c01-4-2'></a>
 ### 4.2 Compiler Defined Symbols
 
 By default, the SCons c and c++ scanners do not include any of the compiler-specific pre-defined symbols that c and c++ source files may employ in conditional logic.
@@ -839,7 +839,7 @@ Scanner dependencies:
 <a id='jcbrill-c01-5'></a>
 ## 5. Custom Compiler Preprocessor Scanners
 
-See [Section 2.2.1](#jcbrill-c01-2.2.1) and [Section 2.2.2](#jcbrill-c01-2.2.2) for discussion of the custom compiler preprocessor scanner disclaimers and limitations.
+See [Section 2.2.1](#jcbrill-c01-2-2-1) and [Section 2.2.2](#jcbrill-c01-2-2-2) for discussion of the custom compiler preprocessor scanner disclaimers and limitations.
 
 The file *main.c* referenced in the top post of [Issue 4656](https://github.com/SCons/scons/issues/4656#issue-2694850829) was modified to support MSVC compilers (versions 6.0 and later) and is implemented as *ScannerTest/test-03.c* which is shown below.
 
@@ -1022,22 +1022,22 @@ test-scons-03.c GCC pass
 ## 6. File Inclusion Search Paths
 
 Subsection map:
-* [6.1 C and C++ Standards](#jcbrill-c01-6.1)
-  * [6.1.1 C23 Standard](#jcbrill-c01-6.1.1)
-  * [6.1.2 C++23 Standard](#jcbrill-c01-6.1.2)
-* [6.2 Compilers](#jcbrill-c01-6.2)
-  * [6.2.1 MSVC Compiler](#jcbrill-c01-6.2.1)
-  * [6.2.2 GCC Compiler](#jcbrill-c01-6.2.2)
+* [6.1 C and C++ Standards](#jcbrill-c01-6-1)
+  * [6.1.1 C23 Standard](#jcbrill-c01-6-1-1)
+  * [6.1.2 C++23 Standard](#jcbrill-c01-6-1-2)
+* [6.2 Compilers](#jcbrill-c01-6-2)
+  * [6.2.1 MSVC Compiler](#jcbrill-c01-6-2-1)
+  * [6.2.2 GCC Compiler](#jcbrill-c01-6-2-2)
 
 
 *The include file search paths for quote, angle bracket, and preprocessing token forms of include directives are implementation dependent.*
 
-<a id='jcbrill-c01-6.1'></a>
+<a id='jcbrill-c01-6-1'></a>
 ### 6.1 C and C++ Standards
 
 *Conditional file inclusion documentation is not included.  Refer to the appropriate standards documents for more information.*
 
-<a id='jcbrill-c01-6.1.1'></a>
+<a id='jcbrill-c01-6-1-1'></a>
 #### 6.1.1 C23 Standard
 
 Reference: C23 (ISO/IEC 9899:2024 (en) — N3220 working draft).
@@ -1084,7 +1084,7 @@ Reference: C23 (ISO/IEC 9899:2024 (en) — N3220 working draft).
   combined into a single header name preprocessing token is implementation-defined.
   ```
     
-<a id='jcbrill-c01-6.1.2'></a>
+<a id='jcbrill-c01-6-1-2'></a>
 #### 6.1.2 C++23 Standard
 
 Reference: C++23 (ISO/IEC N4950 working draft).
@@ -1129,10 +1129,10 @@ Reference: C++23 (ISO/IEC N4950 working draft).
   a single header name preprocessing token is implementation-defined.
   ```
 
-<a id='jcbrill-c01-6.2'></a>
+<a id='jcbrill-c01-6-2'></a>
 ### 6.2 Compilers
 
-<a id='jcbrill-c01-6.2.1'></a>
+<a id='jcbrill-c01-6-2-1'></a>
 #### 6.2.1 MSVC Compiler
 
 Reference: https://learn.microsoft.com/en-us/cpp/preprocessor/hash-include-directive-c-cpp?view=msvc-170.
@@ -1157,7 +1157,7 @@ Reference: https://learn.microsoft.com/en-us/cpp/preprocessor/hash-include-direc
 
   2) When compiling occurs on the command line, along the paths that are specified by the INCLUDE environment variable.
 
-<a id='jcbrill-c01-6.2.2'></a>
+<a id='jcbrill-c01-6-2-2'></a>
 #### 6.2.2 GCC Compiler
 
 Reference: https://gcc.gnu.org/onlinedocs/cpp/Search-Path.html
@@ -1189,11 +1189,11 @@ The estimated effort/complexity to address the issues described in [Section 3](#
 
 | Note | Section | Issue     | Effort | Affects |
 | :-: | :-: | :--       | :--  | :-- |
-| 1 | [3.1](#jcbrill-c01-3.1) | Recurse nodes | Easy | *CConditionalScanner* |
-| 2 | [3.2](#jcbrill-c01-3.2) | Multiple file inclusions | Hard | *CConditionalScanner*, *CConditionalModScanner* |
-| 3 | [3.3](#jcbrill-c01-3.3) | Known paths prefix   | Easy | *CConditionalScanner* |
-| 4 | [3.4](#jcbrill-c01-3.4) | Angle bracket search path | Easy | *CConditionalScanner*, *CScanner* | 
-| 5 | [3.5](#jcbrill-c01-3.5) | Text transformation | Hard | *CConditionalScanner*, *CScanner*, *CConditionalModScanner* |
+| 1 | [3.1](#jcbrill-c01-3-1) | Recurse nodes | Easy | *CConditionalScanner* |
+| 2 | [3.2](#jcbrill-c01-3-2) | Multiple file inclusions | Hard | *CConditionalScanner*, *CConditionalModScanner* |
+| 3 | [3.3](#jcbrill-c01-3-3) | Known paths prefix   | Easy | *CConditionalScanner* |
+| 4 | [3.4](#jcbrill-c01-3-4) | Angle bracket search path | Easy | *CConditionalScanner*, *CScanner* | 
+| 5 | [3.5](#jcbrill-c01-3-5) | Text transformation | Hard | *CConditionalScanner*, *CScanner*, *CConditionalModScanner* |
 
 Notes:
 
@@ -1225,7 +1225,7 @@ Notes:
 
 Refer to the individual linked sections for a more comprehensive discussion and examples of each of the issues.
 
-As described in [Section 6.2](#jcbrill-c01-6.2), the gcc and MSVC compilers have different search path implementations for quoted include files.  This could possibly lead to the *CConditionalScanner* producing erroneous dependencies if the compiler search path rules were relied on when writing the source code for a specific compiler.
+As described in [Section 6.2](#jcbrill-c01-6-2), the gcc and MSVC compilers have different search path implementations for quoted include files.  This could possibly lead to the *CConditionalScanner* producing erroneous dependencies if the compiler search path rules were relied on when writing the source code for a specific compiler.
 
 *The issues discussed in this document coupled with the issues documented earlier (reproduced in [Section A.1](#jcbrill-c01-a) below) will take a **significant** development effort to resolve.*
 
@@ -1237,10 +1237,10 @@ For the gcc and MSVC compilers, it may be less involved and more maintainable to
 ## A. Known Issues Addendum
 
 Subsection map:
-* [A.1 SCons/cpp.py](#jcbrill-c01-a.1)
-* [A.2 Test Suite](#jcbrill-c01-a.2)
+* [A.1 SCons/cpp.py](#jcbrill-c01-a-1)
+* [A.2 Test Suite](#jcbrill-c01-a-2)
 
-<a id='jcbrill-c01-a.1'></a>
+<a id='jcbrill-c01-a-1'></a>
 ### A.1 *SCons/cpp.py*
 
 Reference: https://github.com/SCons/scons/pull/4629#issuecomment-2467069747 (edited locally)
@@ -1255,7 +1255,7 @@ Known issues, potential issues and research items for `SCons/cpp.py`:
 * Expansion issues (see above) can cause a string to be "evaluated" as the result of the expansion causing the test to be true.  For example, if  `'0'` is returned, the result would be `True`; where if `0` is returned the result would be `False`.  There may be examples of this behavior in the current test suite.
 * Verify if the existing recursive implementation correctly handles macro calls with macro arguments and parenthesized arguments correctly.
 
-<a id='jcbrill-c01-a.2'></a>
+<a id='jcbrill-c01-a-2'></a>
 ### A.2 Test Suite
 
 **TODO**: Document *CConditionalScanner* tests which employ invalid c code for testing that would otherwise result in compiler preprocessor errors.
@@ -1266,3 +1266,4 @@ Known issues, potential issues and research items for `SCons/cpp.py`:
 Edits:
 * ***2025-06-06***:
   * Remove inline math-mode color specifications due to rendering errors that did not exist when originally written.
+  * Replace `.` characters in anchor names with `-`.
