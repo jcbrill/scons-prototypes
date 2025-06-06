@@ -1269,3 +1269,4 @@ Edits:
 * ***2025-06-06***:
   * Remove inline math-mode color specifications due to rendering errors that did not exist when originally written.
   * Replace `.` characters in anchor names with `-`.
+  * Add revision history addendum to introduction and fix addendum links.
